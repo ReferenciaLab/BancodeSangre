@@ -1,0 +1,35 @@
+unit Untbusca_donacion;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DB, ADODB;
+
+type
+  TFrmbusca_donacion = class(TForm)
+    Dsdonacion: TDataSource;
+    Qdonaciones: TADOQuery;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frmbusca_donacion: TFrmbusca_donacion;
+
+implementation
+
+uses ActionsDM, DataModule;
+
+{$R *.dfm}
+
+procedure TFrmbusca_donacion.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+Action:= caFree;
+end;
+
+end.

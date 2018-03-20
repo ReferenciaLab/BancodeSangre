@@ -1,0 +1,24 @@
+unit UntInventario_Empresas;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs;
+
+type
+  TFrmInventario_Empresas = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmInventario_Empresas: TFrmInventario_Empresas;
+
+implementation
+
+{$R *.dfm}
+
+end.

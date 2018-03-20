@@ -1,0 +1,109 @@
+inherited FrmregRetenciones: TFrmregRetenciones
+  Caption = 'Registrar Retenciones'
+  ClientHeight = 219
+  ExplicitHeight = 247
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited lcDialog: TdxLayoutControl
+    Height = 219
+    ExplicitHeight = 219
+    inherited btCancelar: TcxButton
+      Top = 183
+      TabOrder = 4
+      OnClick = btCancelarClick
+      ExplicitTop = 183
+    end
+    inherited btAceptar: TcxButton
+      Top = 183
+      TabOrder = 3
+      OnClick = btAceptarClick
+      ExplicitTop = 183
+    end
+    object cxTextEdit3: TcxTextEdit [2]
+      Left = 105
+      Top = 36
+      Style.BorderColor = clTeal
+      Style.BorderStyle = ebsSingle
+      Style.HotTrack = False
+      TabOrder = 0
+      Width = 256
+    end
+    object cxCurrencyEdit1: TcxCurrencyEdit [3]
+      Left = 105
+      Top = 63
+      Style.BorderColor = clTeal
+      Style.BorderStyle = ebsSingle
+      Style.HotTrack = False
+      TabOrder = 1
+      Width = 121
+    end
+    object cxTextEdit1: TcxTextEdit [4]
+      Left = 105
+      Top = 90
+      Style.BorderColor = clTeal
+      Style.BorderStyle = ebsSingle
+      Style.HotTrack = False
+      TabOrder = 2
+      Width = 121
+    end
+    inherited lcDialogGroup_Root: TdxLayoutGroup
+      inherited lcDialogGroup1: TdxLayoutGroup
+        Caption = ''
+        object lcDialogItem3: TdxLayoutItem
+          Caption = 'Numero Cheque'
+          Control = cxTextEdit3
+          ControlOptions.ShowBorder = False
+        end
+        object lcDialogItem1: TdxLayoutItem
+          Caption = 'Monto Cheque'
+          Control = cxCurrencyEdit1
+          ControlOptions.ShowBorder = False
+        end
+        object lcDialogItem2: TdxLayoutItem
+          Caption = 'Institucion'
+          Control = cxTextEdit1
+          ControlOptions.ShowBorder = False
+        end
+      end
+    end
+  end
+  object Qretenciones: TADOQuery
+    Connection = DM.Database
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT ENTRADAID, FECHA_FACTURA, MONTO_FACTURA, NUMERO_CHEQUE, M' +
+        'ONTO_CHEQUE, NOMBRE_INSTITUCION, USUARIO_CREA, FECHA_CREA, MONTO' +
+        '_RETENCION'
+      'FROM PAGOS_RETENCIONES')
+    Left = 208
+    Top = 120
+    object QretencionesENTRADAID: TStringField
+      FieldName = 'ENTRADAID'
+      Size = 15
+    end
+    object QretencionesFECHA_FACTURA: TDateTimeField
+      FieldName = 'FECHA_FACTURA'
+    end
+    object QretencionesMONTO_FACTURA: TFloatField
+      FieldName = 'MONTO_FACTURA'
+    end
+    object QretencionesNUMERO_CHEQUE: TIntegerField
+      FieldName = 'NUMERO_CHEQUE'
+    end
+    object QretencionesMONTO_CHEQUE: TFloatField
+      FieldName = 'MONTO_CHEQUE'
+    end
+    object QretencionesNOMBRE_INSTITUCION: TStringField
+      FieldName = 'NOMBRE_INSTITUCION'
+      Size = 100
+    end
+    object QretencionesUSUARIO_CREA: TStringField
+      FieldName = 'USUARIO_CREA'
+    end
+    object QretencionesFECHA_CREA: TDateTimeField
+      FieldName = 'FECHA_CREA'
+    end
+  end
+end

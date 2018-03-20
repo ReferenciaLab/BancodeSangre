@@ -1,0 +1,222 @@
+inherited frmDatosVentasProductos: TfrmDatosVentasProductos
+  Caption = 'Ventas por productos'
+  ExplicitWidth = 642
+  ExplicitHeight = 422
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited dxLayoutControl1: TdxLayoutControl
+    inherited pcDatos: TcxPageControl
+      ClientRectBottom = 517
+      ClientRectRight = 736
+      ClientRectTop = 24
+      inherited tsMain: TcxTabSheet
+        ExplicitWidth = 602
+        ExplicitHeight = 327
+        inherited lcGrid: TdxLayoutControl
+          ExplicitWidth = 602
+          ExplicitHeight = 327
+          inherited dgDatos: TcxGrid
+            Width = 550
+            Height = 240
+            TabOrder = 3
+            ExplicitWidth = 550
+            ExplicitHeight = 240
+            inherited tvDatos: TcxGridDBTableView
+              DataController.Summary.FooterSummaryItems = <
+                item
+                  Format = '#,##0.00'
+                  Kind = skSum
+                  FieldName = 'TOTAL'
+                  Column = tvDatosTOTAL
+                end
+                item
+                  Kind = skSum
+                  FieldName = 'Cantidad'
+                  Column = Cantidad
+                end>
+              OptionsView.Footer = True
+              object tvDatosProductoID: TcxGridDBColumn
+                Caption = 'CODIGO'
+                DataBinding.FieldName = 'ProductoID'
+                Width = 68
+              end
+              object tvDatosProductoDes: TcxGridDBColumn
+                Caption = 'PRODUCTO'
+                DataBinding.FieldName = 'ProductoDes'
+                Width = 246
+              end
+              object Cantidad: TcxGridDBColumn
+                Caption = 'CANTIDAD'
+                DataBinding.FieldName = 'Cantidad'
+                FooterAlignmentHorz = taRightJustify
+                HeaderAlignmentHorz = taRightJustify
+                Width = 117
+              end
+              object tvDatosTOTAL: TcxGridDBColumn
+                DataBinding.FieldName = 'TOTAL'
+                FooterAlignmentHorz = taRightJustify
+                HeaderAlignmentHorz = taRightJustify
+                Width = 115
+              end
+            end
+          end
+          inherited btBuscar: TcxButton
+            Left = 346
+            TabOrder = 2
+            OnClick = btBuscarClick
+            ExplicitLeft = 346
+          end
+          object desde: TcxDateEdit [2]
+            Left = 59
+            Top = 36
+            Style.BorderColor = clTeal
+            Style.BorderStyle = ebsSingle
+            Style.HotTrack = False
+            Style.ButtonStyle = btsHotFlat
+            Style.PopupBorderStyle = epbsSingle
+            TabOrder = 0
+            Width = 121
+          end
+          object hasta: TcxDateEdit [3]
+            Left = 219
+            Top = 36
+            Style.BorderColor = clTeal
+            Style.BorderStyle = ebsSingle
+            Style.HotTrack = False
+            Style.ButtonStyle = btsHotFlat
+            Style.PopupBorderStyle = epbsSingle
+            TabOrder = 1
+            Width = 121
+          end
+          inherited dxLayoutGroup1: TdxLayoutGroup
+            inherited lcGrupoBuscar: TdxLayoutGroup
+              Visible = True
+              object lcGridItem3: TdxLayoutItem [0]
+                Caption = 'Desde'
+                Control = desde
+                ControlOptions.ShowBorder = False
+              end
+              object lcGridItem2: TdxLayoutItem [1]
+                Caption = 'Hasta'
+                Control = hasta
+                ControlOptions.ShowBorder = False
+              end
+            end
+          end
+        end
+      end
+      inherited tsDatos: TcxTabSheet
+        ExplicitWidth = 602
+        ExplicitHeight = 327
+        inherited lcDatos: TdxLayoutControl
+          ExplicitWidth = 602
+          ExplicitHeight = 327
+          object cxDateEdit1: TcxDateEdit [0]
+            Left = 10000
+            Top = 10000
+            Style.BorderColor = clTeal
+            Style.BorderStyle = ebsSingle
+            Style.HotTrack = False
+            Style.ButtonStyle = btsHotFlat
+            Style.PopupBorderStyle = epbsSingle
+            TabOrder = 0
+            Visible = False
+            Width = 121
+          end
+          object lcDatosItem1: TdxLayoutItem
+            Caption = 'cxDateEdit1'
+            Control = cxDateEdit1
+            ControlOptions.ShowBorder = False
+          end
+        end
+      end
+    end
+  end
+  inherited dsDatos: TDataSource
+    DataSet = qrVentas
+  end
+  inherited dxPrintGrid: TdxComponentPrinter
+    inherited dxPrintGridLink: TdxGridReportLink
+      ReportDocument.CreationDate = 39385.797214513890000000
+      BuiltInReportLink = True
+    end
+    inherited dxPrintGridDatos: TdxLayoutControlReportLink
+      ReportDocument.CreationDate = 39385.797214513890000000
+      BuiltInReportLink = True
+      HiddenComponents = {}
+      ExcludedComponents = {}
+      AggregatedReportLinks = {}
+    end
+  end
+  inherited alEdit: TActionList
+    Top = 112
+    object Open: TAction
+      Caption = 'Open'
+      OnExecute = OpenExecute
+    end
+  end
+  inherited qrVistas: TABSQuery
+    Left = 260
+    Top = 160
+  end
+  object qrVentas: TADOQuery
+    Connection = DM.Database
+    CursorType = ctStatic
+    Parameters = <
+      item
+        Name = 'Desde'
+        Attributes = [paNullable]
+        DataType = ftDateTime
+        NumericScale = 3
+        Precision = 23
+        Size = 16
+        Value = Null
+      end
+      item
+        Name = 'Hasta'
+        Attributes = [paNullable]
+        DataType = ftDateTime
+        NumericScale = 3
+        Precision = 23
+        Size = 16
+        Value = Null
+      end>
+    SQL.Strings = (
+      
+        'SELECT     COUNT(*) AS Cantidad, dbo.BSProductos.ProductoID, dbo' +
+        '.BSProductos.ProductoDes, SUM(dbo.BSVENTADETALLE.PRECIO) AS TOTA' +
+        'L'
+      'FROM         dbo.BSVENTADETALLE INNER JOIN'
+      
+        '                      dbo.BSProductos ON dbo.BSVENTADETALLE.PRUE' +
+        'BAID = dbo.BSProductos.ProductoID INNER JOIN'
+      
+        '                      dbo.BSVenta ON dbo.BSVENTADETALLE.RECID = ' +
+        'dbo.BSVenta.RECID'
+      'WHERE     (dbo.BSVenta.FECHA BETWEEN :Desde AND :Hasta)'
+      'GROUP BY dbo.BSProductos.ProductoID, dbo.BSProductos.ProductoDes')
+    Left = 440
+    Top = 87
+    object qrVentasProductoID: TWideStringField
+      FieldName = 'ProductoID'
+      FixedChar = True
+      Size = 10
+    end
+    object qrVentasProductoDes: TWideStringField
+      FieldName = 'ProductoDes'
+      FixedChar = True
+      Size = 30
+    end
+    object qrVentasTOTAL: TBCDField
+      FieldName = 'TOTAL'
+      ReadOnly = True
+      DisplayFormat = '#,##0.00'
+      Precision = 32
+      Size = 12
+    end
+    object qrVentasCantidad: TIntegerField
+      FieldName = 'Cantidad'
+      ReadOnly = True
+    end
+  end
+end

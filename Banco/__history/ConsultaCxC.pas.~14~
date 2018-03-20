@@ -1,0 +1,128 @@
+unit ConsultaCxC;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, CustomModule, Menus, StdActns, ActnList, JvComponentBase,
+  JvFormPlacement, ExtCtrls, JvExControls, JvComponent, JvEnterTab, StdCtrls,
+  cxGraphics, cxDropDownEdit, cxDBEdit, cxCheckBox, cxTextEdit, cxMaskEdit,
+  cxCalendar, cxControls, cxContainer, cxEdit, cxLabel, DB, cxLookupEdit,
+  cxDBLookupEdit, cxDBLookupComboBox, ADODB, DBCtrls, cxStyles, cxCustomData,
+  cxFilter, cxData, cxDataStorage, cxDBData, cxGridLevel, cxClasses,
+  cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
+  cxGrid, cxLookAndFeelPainters, cxButtons, Grids, DBGrids;
+
+type
+  TfrmConsultacxc = class(TfrmCustomModule)
+    Panel1: TPanel;
+    cxDateEdit1: TcxDateEdit;
+    cxDateEdit2: TcxDateEdit;
+    cxCheckBox1: TcxCheckBox;
+    cxCheckBox2: TcxCheckBox;
+    Panel2: TPanel;
+    TBtipoCliente: TADOTable;
+    TBGrupoCliente: TADOTable;
+    TBtipoClienteTIPOCLIENTE: TStringField;
+    TBtipoClienteDESCRIPCION: TStringField;
+    TBGrupoClienteGRUPOCLIENTE: TStringField;
+    TBGrupoClienteDESCRIPCION: TStringField;
+    DSgrupoCliente: TDataSource;
+    DStipoCliente: TDataSource;
+    TBGrupoClienteGRUPO: TStringField;
+    cxDBLookupComboBox1: TcxDBLookupComboBox;
+    TBtipoClienteTIPO: TStringField;
+    cxDBLookupComboBox2: TcxDBLookupComboBox;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    cxCheckBox3: TcxCheckBox;
+    cxCheckBox4: TcxCheckBox;
+    cxGrid1DBTableView1Column1: TcxGridDBColumn;
+    cxGrid1DBTableView1Column2: TcxGridDBColumn;
+    cxGrid1DBTableView1Column4: TcxGridDBColumn;
+    cxGrid1DBTableView1Column5: TcxGridDBColumn;
+    cxGrid1DBTableView1Column6: TcxGridDBColumn;
+    cxGrid1DBTableView1Column7: TcxGridDBColumn;
+    cxButton1: TcxButton;
+    cxButton2: TcxButton;
+    cxButton3: TcxButton;
+    Qrydatos: TADOQuery;
+    DSdatos: TDataSource;
+    Panel3: TPanel;
+    DBGrid1: TDBGrid;
+    cxButton4: TcxButton;
+    cxTextEdit1: TcxTextEdit;
+    cxTextEdit2: TcxTextEdit;
+    cxTextEdit3: TcxTextEdit;
+    cxTextEdit4: TcxTextEdit;
+    cxLabel1: TcxLabel;
+    cxLabel2: TcxLabel;
+    QrydatosRECID: TIntegerField;
+    QrydatosPACIENTEID: TStringField;
+    QrydatosNOMBREPACIENTE: TStringField;
+    QrydatosNETO: TBCDField;
+    QrydatosTOTALPAGADO: TBCDField;
+    QrydatosTotalPendiente: TBCDField;
+    QrydatosFECHA: TDateTimeField;
+    QrydatosGRUPOCLIENTE: TStringField;
+    QrydatosTIPOCLIENTE: TStringField;
+    procedure cxButton4Click(Sender: TObject);
+    procedure cxGrid1DBTableView1DblClick(Sender: TObject);
+    procedure cxButton1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmConsultacxc: TfrmConsultacxc;
+
+implementation
+
+uses DataModule;
+
+{$R *.dfm}
+
+procedure TfrmConsultacxc.cxButton1Click(Sender: TObject);
+begin
+  inherited;
+With Qrydatos do
+ begin
+   Close;
+   Sql.Clear;
+   Sql.Add('SELECT * FROM V_CXC');
+   Sql.Add('WHERE TOTALPENDIENTE > 0');
+   Sql.Add('');
+   Open;
+
+
+
+ end;
+end;
+
+procedure TfrmConsultacxc.cxButton4Click(Sender: TObject);
+begin
+  inherited;
+Panel3.Visible := false;
+end;
+
+procedure TfrmConsultacxc.cxGrid1DBTableView1DblClick(Sender: TObject);
+begin
+  inherited;
+    Panel3.Visible := True;
+    cxTextEdit3.Text := QrydatosPACIENTEID.AsString;
+    cxTextEdit4.Text := QrydatosNOMBREPACIENTE.AsString;
+
+end;
+
+procedure TfrmConsultacxc.FormCreate(Sender: TObject);
+begin
+  inherited;
+TBtipoCliente.Open;
+TBGrupoCliente.Open;
+end;
+
+end.

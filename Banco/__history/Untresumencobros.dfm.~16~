@@ -1,0 +1,259 @@
+object Frmresumencobros: TFrmresumencobros
+  Left = 0
+  Top = 0
+  Caption = 'Resumen de Movimientos de caja'
+  ClientHeight = 258
+  ClientWidth = 474
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 48
+    Top = 129
+    Width = 60
+    Height = 13
+    Caption = 'Fecha Hasta'
+  end
+  object Label2: TLabel
+    Left = 48
+    Top = 92
+    Width = 62
+    Height = 13
+    Caption = 'Fecha Desde'
+  end
+  object Label3: TLabel
+    Left = 48
+    Top = 65
+    Width = 40
+    Height = 13
+    Caption = 'Sucursal'
+  end
+  object cxDateEdit1: TcxDateEdit
+    Left = 123
+    Top = 89
+    TabOrder = 0
+    Width = 121
+  end
+  object cxDateEdit2: TcxDateEdit
+    Left = 123
+    Top = 122
+    TabOrder = 1
+    Width = 121
+  end
+  object cxButton1: TcxButton
+    Left = 80
+    Top = 185
+    Width = 122
+    Height = 41
+    Caption = 'Imprimir'
+    TabOrder = 2
+  end
+  object cxButton2: TcxButton
+    Left = 240
+    Top = 185
+    Width = 122
+    Height = 41
+    Caption = 'Salir'
+    TabOrder = 3
+    OnClick = cxButton2Click
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 123
+    Top = 62
+    Width = 206
+    Height = 21
+    DataField = 'DESSUCURSAL'
+    DataSource = DSsucursal
+    TabOrder = 4
+  end
+  object DSsucursal: TDataSource
+    DataSet = TBsucursal
+    Left = 384
+    Top = 104
+  end
+  object TBsucursal: TADOTable
+    Active = True
+    Connection = DM.Database
+    CursorType = ctStatic
+    TableName = 'PTSUCURSAL'
+    Left = 320
+    Top = 104
+    object TBsucursalNOMBRE: TStringField
+      FieldName = 'NOMBRE'
+      Size = 50
+    end
+    object TBsucursalSUCURSALID: TStringField
+      FieldName = 'SUCURSALID'
+      Size = 10
+    end
+    object TBsucursalDIRECCION: TMemoField
+      FieldName = 'DIRECCION'
+      BlobType = ftMemo
+    end
+    object TBsucursalTELEFONO: TStringField
+      FieldName = 'TELEFONO'
+    end
+    object TBsucursalFAX: TStringField
+      FieldName = 'FAX'
+    end
+    object TBsucursalCLIENTEID: TStringField
+      FieldName = 'CLIENTEID'
+    end
+    object TBsucursalGRUPOID: TStringField
+      FieldName = 'GRUPOID'
+      Size = 10
+    end
+    object TBsucursalCLIENTE_UNO: TStringField
+      FieldName = 'CLIENTE_UNO'
+      Size = 10
+    end
+    object TBsucursalCLIENTE_DOS: TStringField
+      FieldName = 'CLIENTE_DOS'
+      Size = 10
+    end
+    object TBsucursalIMPRESIONES: TIntegerField
+      FieldName = 'IMPRESIONES'
+    end
+    object TBsucursalDATAAREAID: TStringField
+      FieldName = 'DATAAREAID'
+      Size = 3
+    end
+    object TBsucursalRECID: TIntegerField
+      FieldName = 'RECID'
+    end
+    object TBsucursalmsrepl_tran_version: TGuidField
+      FieldName = 'msrepl_tran_version'
+      FixedChar = True
+      Size = 38
+    end
+    object TBsucursalDESSUCURSAL: TStringField
+      FieldKind = fkLookup
+      FieldName = 'DESSUCURSAL'
+      LookupDataSet = DM.qrSucursal
+      LookupKeyFields = 'SUCURSALID'
+      LookupResultField = 'NOMBRE'
+      KeyFields = 'SUCURSALID'
+      Size = 50
+      Lookup = True
+    end
+  end
+  object Qreporte: TADOQuery
+    Active = True
+    Connection = DM.Database
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      ''
+      'SELECT * FROM V_COBROS'
+      'order by sucursalid, Fecha')
+    Left = 392
+    Top = 8
+    object QreporteFecha: TDateTimeField
+      FieldName = 'Fecha'
+    end
+    object QreporteCobroID: TStringField
+      FieldName = 'CobroID'
+      Size = 10
+    end
+    object QreporteSucursalID: TStringField
+      FieldName = 'SucursalID'
+      Size = 10
+    end
+    object QreporteDescripcion: TStringField
+      FieldName = 'Descripcion'
+      Size = 50
+    end
+    object QreporteNUMERO: TStringField
+      FieldName = 'NUMERO'
+    end
+    object QreporteTotalCobrado: TBCDField
+      FieldName = 'TotalCobrado'
+      Precision = 19
+    end
+    object QreporteTipoDoc: TStringField
+      FieldName = 'TipoDoc'
+      Size = 2
+    end
+    object QreporteSUCURSAL: TStringField
+      FieldName = 'SUCURSAL'
+      Size = 50
+    end
+    object QreporteTARJETA: TBCDField
+      FieldName = 'TARJETA'
+      ReadOnly = True
+      Precision = 19
+    end
+    object QreporteEFECTIVO: TBCDField
+      FieldName = 'EFECTIVO'
+      ReadOnly = True
+      Precision = 19
+    end
+    object QreporteCHEQUE: TBCDField
+      FieldName = 'CHEQUE'
+      ReadOnly = True
+      Precision = 19
+    end
+  end
+  object pReporte: TppReport
+    AutoStop = False
+    DataPipeline = ppBDEPipeline1
+    PrinterSetup.BinName = 'Default'
+    PrinterSetup.DocumentName = 'Report'
+    PrinterSetup.PaperName = 'Carta'
+    PrinterSetup.PrinterName = 'Default'
+    PrinterSetup.mmMarginBottom = 6350
+    PrinterSetup.mmMarginLeft = 6350
+    PrinterSetup.mmMarginRight = 6350
+    PrinterSetup.mmMarginTop = 6350
+    PrinterSetup.mmPaperHeight = 279401
+    PrinterSetup.mmPaperWidth = 215900
+    PrinterSetup.PaperSize = 1
+    DeviceType = 'Screen'
+    EmailSettings.ReportFormat = 'PDF'
+    OutlineSettings.CreateNode = True
+    OutlineSettings.CreatePageNodes = True
+    OutlineSettings.Enabled = True
+    OutlineSettings.Visible = True
+    TextSearchSettings.DefaultString = '<FindText>'
+    TextSearchSettings.Enabled = True
+    Left = 32
+    Top = 8
+    Version = '10.04'
+    mmColumnWidth = 0
+    DataPipelineName = 'ppBDEPipeline1'
+    object ppHeaderBand1: TppHeaderBand
+      mmBottomOffset = 0
+      mmHeight = 13229
+      mmPrintPosition = 0
+    end
+    object ppDetailBand1: TppDetailBand
+      mmBottomOffset = 0
+      mmHeight = 13229
+      mmPrintPosition = 0
+    end
+    object ppFooterBand1: TppFooterBand
+      mmBottomOffset = 0
+      mmHeight = 13229
+      mmPrintPosition = 0
+    end
+  end
+  object ppBDEPipeline1: TppBDEPipeline
+    DataSource = DSreporte
+    UserName = 'BDEPipeline1'
+    Left = 120
+    Top = 8
+  end
+  object DSreporte: TDataSource
+    DataSet = Qreporte
+    Left = 408
+    Top = 160
+  end
+end

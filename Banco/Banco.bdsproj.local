@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2011/08/08 11:15:28.206.pas,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.pas=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Untbusca_donacion.pas</Transaction>
+    <Transaction>2011/08/08 11:15:28.206.dfm,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.dfm=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Untbusca_donacion.dfm</Transaction>
+    <Transaction>2011/10/07 15:51:44.450.pas,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.pas=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Untlistadocruce.pas</Transaction>
+    <Transaction>2011/10/07 15:51:44.450.dfm,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.dfm=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Untlistadocruce.dfm</Transaction>
+    <Transaction>2012/02/06 16:04:25.188.pas,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.pas=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Untescaneo.pas</Transaction>
+    <Transaction>2012/02/06 16:04:25.188.dfm,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.dfm=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Untescaneo.dfm</Transaction>
+    <Transaction>2012/02/28 15:05:45.782.pas,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.pas=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Untmovimiento.pas</Transaction>
+    <Transaction>2012/02/28 15:05:45.782.dfm,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.dfm=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Untmovimiento.dfm</Transaction>
+    <Transaction>2012/03/22 15:43:31.923.pas,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.pas=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Untsalidaproducto.pas</Transaction>
+    <Transaction>2012/03/22 15:43:31.923.dfm,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.dfm=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Untsalidaproducto.dfm</Transaction>
+    <Transaction>2012/05/14 15:56:48.644.pas,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.pas=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Untautorizar.pas</Transaction>
+    <Transaction>2012/05/14 15:56:48.644.dfm,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.dfm=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Untautorizar.dfm</Transaction>
+    <Transaction>2012/06/28 14:54:06.570.pas,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.pas=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Untconsulta_productos.pas</Transaction>
+    <Transaction>2012/06/28 14:54:06.576.dfm,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.dfm=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Untconsulta_productos.dfm</Transaction>
+    <Transaction>2012/08/08 16:59:20.375.pas,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.pas=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Untconsulta_general.pas</Transaction>
+    <Transaction>2012/08/08 16:59:20.375.dfm,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.dfm=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Untconsulta_general.dfm</Transaction>
+    <Transaction>2015/01/29 09:59:02.234.pas,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.pas=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\UntCobroEmpleados.pas</Transaction>
+    <Transaction>2015/01/29 09:59:02.234.dfm,C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\Unit1.dfm=C:\Program Files\Borland\BDS\4.0\lib\Utileria\Banco\UntCobroEmpleados.dfm</Transaction>
+    <Transaction>2015/11/11 12:01:40.790.pas,C:\Desarrollo\Banco\Unit1.pas=C:\Desarrollo\Banco\UntpreciosCategorias.pas</Transaction>
+    <Transaction>2015/11/11 12:01:40.790.dfm,C:\Desarrollo\Banco\Unit1.dfm=C:\Desarrollo\Banco\UntpreciosCategorias.dfm</Transaction>
+    <Transaction>2015/11/30 11:37:02.084.pas,C:\Desarrollo\Banco\Unit1.pas=C:\Desarrollo\Banco\UntconsultaCXC.pas</Transaction>
+    <Transaction>2015/11/30 11:37:02.084.dfm,C:\Desarrollo\Banco\Unit1.dfm=C:\Desarrollo\Banco\UntconsultaCXC.dfm</Transaction>
+    <Transaction>2015/12/02 10:22:24.254.pas,C:\Desarrollo\Banco\UntconsultaCXC.pas=</Transaction>
+    <Transaction>2015/12/02 10:22:24.281.dfm,C:\Desarrollo\Banco\UntconsultaCXC.dfm=</Transaction>
+    <Transaction>2015/12/02 10:25:09.674.pas,C:\Desarrollo\Banco\Unit1.pas=C:\Desarrollo\Banco\Untmodelo.pas</Transaction>
+    <Transaction>2015/12/02 10:25:09.674.dfm,C:\Desarrollo\Banco\Unit1.dfm=C:\Desarrollo\Banco\Untmodelo.dfm</Transaction>
+    <Transaction>2015/12/02 11:00:11.720.pas,C:\Desarrollo\Banco\Untmodelo.pas=</Transaction>
+    <Transaction>2015/12/02 11:00:11.720.dfm,C:\Desarrollo\Banco\Untmodelo.dfm=</Transaction>
+    <Transaction>2015/12/02 11:03:50.455.pas,C:\Desarrollo\Banco\Unit1.pas=C:\Desarrollo\Banco\ConsultaCxC.pas</Transaction>
+    <Transaction>2015/12/02 11:03:50.455.dfm,C:\Desarrollo\Banco\Unit1.dfm=C:\Desarrollo\Banco\ConsultaCxC.dfm</Transaction>
+    <Transaction>2016/02/15 12:00:55.721.pas,C:\Desarrollo\Banco\Unit1.pas=C:\Desarrollo\Banco\UntRegretenciones.pas</Transaction>
+    <Transaction>2016/02/15 12:00:55.721.dfm,C:\Desarrollo\Banco\Unit1.dfm=C:\Desarrollo\Banco\UntRegretenciones.dfm</Transaction>
+    <Transaction>2016/02/25 10:44:18.700.pas,C:\Desarrollo\Banco\Unit1.pas=C:\Desarrollo\Banco\UntConsultaRechazos.pas</Transaction>
+    <Transaction>2016/02/25 10:44:18.700.dfm,C:\Desarrollo\Banco\Unit1.dfm=C:\Desarrollo\Banco\UntConsultaRechazos.dfm</Transaction>
+    <Transaction>2016/10/03 11:59:10.494.pas,C:\Desarrollo\Banco\Unit1.pas=C:\Desarrollo\Banco\Unttarjetas.pas</Transaction>
+    <Transaction>2016/10/03 11:59:10.494.dfm,C:\Desarrollo\Banco\Unit1.dfm=C:\Desarrollo\Banco\Unttarjetas.dfm</Transaction>
+    <Transaction>2016/11/15 11:56:57.922.pas,C:\Desarrollo\Banco\Unit1.pas=C:\Desarrollo\Banco\UntInventario_Empresas.pas</Transaction>
+    <Transaction>2016/11/15 11:56:57.922.dfm,C:\Desarrollo\Banco\Unit1.dfm=C:\Desarrollo\Banco\UntInventario_Empresas.dfm</Transaction>
+    <Transaction>2016/11/18 11:40:38.962.pas,C:\Desarrollo\Banco\Unit1.pas=C:\Desarrollo\Banco\UntAplicarEmpresas.pas</Transaction>
+    <Transaction>2016/11/18 11:40:38.962.dfm,C:\Desarrollo\Banco\Unit1.dfm=C:\Desarrollo\Banco\UntAplicarEmpresas.dfm</Transaction>
+    <Transaction>2016/11/28 12:12:44.236.pas,C:\Desarrollo\Banco\Unit1.pas=C:\Desarrollo\Banco\UntMenuProcesos.pas</Transaction>
+    <Transaction>2016/11/28 12:12:44.236.dfm,C:\Desarrollo\Banco\Unit1.dfm=C:\Desarrollo\Banco\UntMenuProcesos.dfm</Transaction>
+    <Transaction>2016/11/29 11:23:48.959.pas,C:\Desarrollo\Banco\Unit1.pas=C:\Desarrollo\Banco\UntAsignarFactura.pas</Transaction>
+    <Transaction>2016/11/29 11:23:48.959.dfm,C:\Desarrollo\Banco\Unit1.dfm=C:\Desarrollo\Banco\UntAsignarFactura.dfm</Transaction>
+    <Transaction>2016/12/13 11:57:59.862.pas,C:\Desarrollo\Banco\Unit1.pas=C:\Desarrollo\Banco\Untresumencobros.pas</Transaction>
+    <Transaction>2016/12/13 11:57:59.886.dfm,C:\Desarrollo\Banco\Unit1.dfm=C:\Desarrollo\Banco\Untresumencobros.dfm</Transaction>
+    <Transaction>2017/11/01 13:04:33.668.pas,C:\Desarrollo\Banco\Unit1.pas=C:\Desarrollo\Banco\UntDatosClinicas.pas</Transaction>
+    <Transaction>2017/11/01 13:04:33.668.dfm,C:\Desarrollo\Banco\Unit1.dfm=C:\Desarrollo\Banco\UntDatosClinicas.dfm</Transaction>
+    <Transaction>2017/11/14 11:23:33.447.pas,C:\Desarrollo\Banco\Unit1.pas=C:\Desarrollo\Banco\UntBuscar.pas</Transaction>
+    <Transaction>2017/11/14 11:23:33.447.dfm,C:\Desarrollo\Banco\Unit1.dfm=C:\Desarrollo\Banco\UntBuscar.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

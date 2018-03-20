@@ -1,0 +1,137 @@
+unit UntConsultaRechazos;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ConsultaModule, cxStyles, cxCustomData, cxGraphics, cxFilter, cxData,
+  cxDataStorage, cxEdit, DB, cxDBData, Menus, cxLookAndFeelPainters, dxPSGlbl,
+  dxPSUtl, dxPSEngn, dxPrnPg, dxBkgnd, dxWrap, dxPrnDev, dxPSCompsProvider,
+  dxPSFillPatterns, dxPSEdgePatterns, ABSMain, JvStringHolder, StdActns,
+  ActnList, JvComponentBase, JvFormPlacement, ADODB, dxPSCore, dxPScxCommon,
+  dxPScxGridLnk, cxGridCustomPopupMenu, cxGridPopupMenu, ExtCtrls,
+  dxLayoutControl, StdCtrls, cxButtons, cxContainer, cxTextEdit, cxMaskEdit,
+  cxDropDownEdit, cxCalendar, cxGridLevel, cxClasses, cxControls,
+  cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
+  cxGrid, JvExControls, JvComponent, JvEnterTab, cxMemo, cxDBEdit, cxCheckBox;
+
+type
+  TFrmconsultaRechazos = class(TfrmConsultaModule)
+    Qdatos: TADOQuery;
+    tvConsultaColumn1: TcxGridDBColumn;
+    tvConsultaColumn2: TcxGridDBColumn;
+    tvConsultaColumn3: TcxGridDBColumn;
+    tvConsultaColumn4: TcxGridDBColumn;
+    cxDBMemo1: TcxDBMemo;
+    lcDatosItem2: TdxLayoutItem;
+    tvConsultaColumn5: TcxGridDBColumn;
+    tvConsultaColumn6: TcxGridDBColumn;
+    tvConsultaColumn7: TcxGridDBColumn;
+    tvConsultaColumn8: TcxGridDBColumn;
+    tvConsultaColumn9: TcxGridDBColumn;
+    QdatosPacienteID: TStringField;
+    QdatosNOMBRE: TStringField;
+    QdatosDonacionID: TStringField;
+    QdatosMuestraNo: TStringField;
+    QdatosFecha: TDateTimeField;
+    QdatosUserIdRechaza: TStringField;
+    QdatosFechaRechaza: TDateTimeField;
+    QdatosRechazoNota: TStringField;
+    QdatosProducto: TWideStringField;
+    QdatosCausa: TStringField;
+    QdatosRechaso: TWideStringField;
+    QdatosTipoSangre: TWideStringField;
+    QdatosRH: TWideStringField;
+    cxComboBox1: TcxComboBox;
+    lcDatosItem3: TdxLayoutItem;
+    cxComboBox2: TcxComboBox;
+    lcDatosItem4: TdxLayoutItem;
+    lcDatosGroup1: TdxLayoutGroup;
+    cxComboBox3: TcxComboBox;
+    lcDatosItem5: TdxLayoutItem;
+    lcDatosItem6: TdxLayoutItem;
+    cxDBMemo2: TcxDBMemo;
+    lcDatosGroup2: TdxLayoutGroup;
+    lcDatosGroup3: TdxLayoutGroup;
+    cxCheckBox1: TcxCheckBox;
+    lcDatosItem7: TdxLayoutItem;
+    cxDateEdit2: TcxDateEdit;
+    lcDatosItem9: TdxLayoutItem;
+    cxDateEdit3: TcxDateEdit;
+    lcDatosItem10: TdxLayoutItem;
+    lcDatosGroup5: TdxLayoutGroup;
+    QdatosFechaAuditoria: TDateTimeField;
+    QdatosUsuarioAudito: TStringField;
+    QdatosNotaAuditoria: TMemoField;
+    lcDatosGroup4: TdxLayoutGroup;
+    cxButton1: TcxButton;
+    lcDatosItem8: TdxLayoutItem;
+    Panel1: TPanel;
+    lcDatosItem11: TdxLayoutItem;
+    cxMemo1: TcxMemo;
+    cxDateEdit1: TcxDateEdit;
+    Label1: TLabel;
+    cxButton2: TcxButton;
+    cxButton3: TcxButton;
+    procedure cxButton1Click(Sender: TObject);
+    procedure btBuscarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmconsultaRechazos: TFrmconsultaRechazos;
+
+implementation
+
+uses DataModule;
+
+{$R *.dfm}
+
+procedure TFrmconsultaRechazos.btBuscarClick(Sender: TObject);
+begin
+  inherited;
+
+  With Qdatos do
+   begin
+      Close;
+      Sql.Clear;
+      Sql.Add('select a.PacienteID, b.NOMBRE, a.DonacionID, a.MuestraNo, a.Fecha, a.UserIdRechaza, ');
+      Sql.Add('a.FechaRechaza, a.RechazoNota, Producto = (select ProductoDes from BSProductos where ProductoID = ');
+      Sql.Add('a.ProductoID), c.Causa,');
+      Sql.Add('d.Rechaso, d.TipoSangre, d.RH, a.FechaAuditoria, a.UsuarioAudito, a.NotaAuditoria');
+      Sql.Add('from BSDonacion a, PTCLIENTE b, BSCausasRechazo c, BSDonante D');
+      Sql.Add('where a.PacienteID = b.CLIENTEID');
+      Sql.Add('And a.CausaRechazoId = c.Id');
+      Sql.Add('And b.CLIENTEID = d.PacienteID');
+      Sql.Add('and a.DonacionStatus = ''Rechazado''  ');
+      Sql.Add('and a.Fecha between :f1 and :f2 ');
+      Parameters.ParamByName('f1').Value := deDesde.Date;
+      Parameters.ParamByName('f2').Value := deHasta.Date;
+      if (cxComboBox2.Text <> '') and (cxComboBox2.Text <> 'Todos') then
+      Sql.Add('and d.Rechaso = '+ #39 + cxComboBox2.Text + #39);
+      if (cxComboBox1.Text <> '') and (cxComboBox1.Text <> 'Todos') then
+      Sql.Add('and d.TipoSangre = '+ #39 + cxComboBox1.Text + #39);
+      if (cxComboBox3.Text <> '') and (cxComboBox3.Text <> 'Todos') then
+      Sql.Add('and d.RH = '+ #39 + cxComboBox3.Text + #39);
+      if cxCheckBox1.Checked = true  then
+       begin
+        Sql.Add('and a.FechaAuditoria between :f3 and :f4 ');
+        Parameters.ParamByName('f3').Value := cxDateEdit2.Date;
+        Parameters.ParamByName('f4').Value := cxDateEdit3.Date;
+       end;
+      Open;
+   end;
+
+end;
+
+procedure TFrmconsultaRechazos.cxButton1Click(Sender: TObject);
+begin
+  inherited;
+   Panel1.Visible := TRUE;
+
+end;
+
+end.

@@ -1,0 +1,85 @@
+unit Untautorizar;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, cxLookAndFeelPainters, StdCtrls, cxButtons, cxMemo,
+  cxTextEdit, cxControls, cxContainer, cxEdit, cxGroupBox, DB, ADODB;
+
+type
+  TFrmautorizar = class(TForm)
+    cxGroupBox1: TcxGroupBox;
+    cxGroupBox2: TcxGroupBox;
+    cxTextEdit1: TcxTextEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    cxMemo1: TcxMemo;
+    cxButton1: TcxButton;
+    cxButton2: TcxButton;
+    Label3: TLabel;
+    cxTextEdit2: TcxTextEdit;
+    qrLogin: TADOQuery;
+    qrLoginUserId: TStringField;
+    qrLoginClave: TStringField;
+    qrLoginNombre: TStringField;
+    qrLoginRolID: TSmallintField;
+    procedure cxButton1Click(Sender: TObject);
+    procedure cxButton2Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frmautorizar: TFrmautorizar;
+
+implementation
+
+uses DataModule;
+
+{$R *.dfm}
+
+procedure TFrmautorizar.cxButton1Click(Sender: TObject);
+begin
+if cxTextEdit1.Text  <> '' then
+ begin
+  qrLogin.Close;
+  qrLogin.Parameters.ParamByName('pUser').Value := trim(cxTextEdit1.Text);
+  qrLogin.Open;
+  if (qrLogin.RecordCount > 0)  then
+    begin
+      if (DecryptKey(qrLoginClave.Text) = cxTextEdit2.Text ) then
+       begin
+
+       end
+       else
+       begin
+         ShowMessage('Error clave incorrecta');
+         cxTextEdit2.SetFocus;
+       end;
+    end
+    else
+    begin
+      ShowMessage('Este Usuario no Existe o bien no puede realizar esta operacion');
+      cxTextEdit1.Clear;
+      cxTextEdit1.SetFocus;
+    end;
+
+ end;
+
+end;
+
+procedure TFrmautorizar.cxButton2Click(Sender: TObject);
+begin
+Close;
+end;
+
+procedure TFrmautorizar.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+Action := caFree;
+end;
+
+end.

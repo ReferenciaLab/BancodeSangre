@@ -1,0 +1,1007 @@
+unit BancoReportes;
+
+interface
+
+uses
+  SysUtils, Classes, ppDB, ppDBPipe, DB, ADODB, ppParameter, ppBands, ppStrtch,
+  ppMemo, ppCtrls, ppVar, ppPrnabl, ppClass, ppCache, ppComm, ppRelatv, ppProd,
+  ppReport, myChkBox, jpeg, ppBarCod, RpCon, RpConDS, RpDefine, RpRave;
+
+type
+  TBSReportes = class(TDataModule)
+    ppDonacion: TppReport;
+    ppHeaderBand2: TppHeaderBand;
+    ppShape2: TppShape;
+    ppDBText30: TppDBText;
+    ppDBText31: TppDBText;
+    ppLabel29: TppLabel;
+    ppLabel35: TppLabel;
+    ppLabel1: TppLabel;
+    ppDBText1: TppDBText;
+    ppLabel2: TppLabel;
+    ppDBText2: TppDBText;
+    ppDetailBand2: TppDetailBand;
+    ppDBMemo2: TppDBMemo;
+    ppFooterBand2: TppFooterBand;
+    ppParameterList1: TppParameterList;
+    dsDomaciones: TDataSource;
+    qrDonaciones: TADOQuery;
+    plDonacion: TppDBPipeline;
+    dsExistencia: TDataSource;
+    qrExistencia: TADOQuery;
+    plExistencia: TppDBPipeline;
+    ppExistencia: TppReport;
+    ppHeaderBand1: TppHeaderBand;
+    ppDBText5: TppDBText;
+    ppDBText6: TppDBText;
+    ppDBText7: TppDBText;
+    ppDBText8: TppDBText;
+    ppSystemVariable1: TppSystemVariable;
+    ppSystemVariable2: TppSystemVariable;
+    ppLabel6: TppLabel;
+    ppLabel7: TppLabel;
+    ppLabel8: TppLabel;
+    ppLabel9: TppLabel;
+    ppLabel10: TppLabel;
+    ppLabel12: TppLabel;
+    ppDBText12: TppDBText;
+    ppShape1: TppShape;
+    ppLabel13: TppLabel;
+    ppLabel36: TppLabel;
+    ppLabel39: TppLabel;
+    ppLabel40: TppLabel;
+    ppDetailBand1: TppDetailBand;
+    ppFooterBand1: TppFooterBand;
+    ppLine2: TppLine;
+    ppDBText14: TppDBText;
+    ppDBText15: TppDBText;
+    myDBCheckBox1: TmyDBCheckBox;
+    ppGroup1: TppGroup;
+    ppGroupHeaderBand1: TppGroupHeaderBand;
+    ppGroupFooterBand1: TppGroupFooterBand;
+    ppDBText9: TppDBText;
+    ppLabel11: TppLabel;
+    ppDBText10: TppDBText;
+    ppLabel14: TppLabel;
+    ppDBText11: TppDBText;
+    ppLabel15: TppLabel;
+    ppDBText13: TppDBText;
+    ppLabel3: TppLabel;
+    ppDBText3: TppDBText;
+    ppLabel4: TppLabel;
+    ppDBText4: TppDBText;
+    ppDBText16: TppDBText;
+    ppDBText17: TppDBText;
+    ppLabel16: TppLabel;
+    ppDBText18: TppDBText;
+    ppLabel17: TppLabel;
+    ppDBText19: TppDBText;
+    ppLabel18: TppLabel;
+    ppDBText20: TppDBText;
+    ppLabel19: TppLabel;
+    ppDBText21: TppDBText;
+    ppLabel20: TppLabel;
+    ppDBText22: TppDBText;
+    qrExistenciaProductoDes: TWideStringField;
+    qrExistenciaFecha: TDateTimeField;
+    qrExistenciaVence: TDateTimeField;
+    qrExistenciaReservado: TBooleanField;
+    qrExistenciaReservadoHasta: TDateTimeField;
+    qrExistenciaCantidad: TBCDField;
+    qrExistenciaCodigoId: TStringField;
+    qrExistenciaNombre: TStringField;
+    qrExistenciaTipoSangre: TWideStringField;
+    qrExistenciaRH: TWideStringField;
+    ppImpCuadreCaja: TppReport;
+    ppHeaderBand4: TppHeaderBand;
+    ppLabel46: TppLabel;
+    ppSystemVariable3: TppSystemVariable;
+    ppSystemVariable4: TppSystemVariable;
+    ppLabel47: TppLabel;
+    ppLabel48: TppLabel;
+    ppLabel49: TppLabel;
+    ppDBText41: TppDBText;
+    ppLabel50: TppLabel;
+    ppDBText58: TppDBText;
+    ppLabel51: TppLabel;
+    ppLine3: TppLine;
+    ppDBText40: TppDBText;
+    ppColumnHeaderBand1: TppColumnHeaderBand;
+    ppDetailBand5: TppDetailBand;
+    ppColumnFooterBand1: TppColumnFooterBand;
+    ppSummaryBand5: TppSummaryBand;
+    qrCuadreCaja: TADOQuery;
+    dsCuadreCaja: TDataSource;
+    plCuadreCaja: TppDBPipeline;
+    ppLabel21: TppLabel;
+    ppDBText23: TppDBText;
+    ppLabel22: TppLabel;
+    ppDBText24: TppDBText;
+    ppLabel23: TppLabel;
+    ppDBText25: TppDBText;
+    ppDBText32: TppDBText;
+    ppDBText33: TppDBText;
+    ppDBText34: TppDBText;
+    ppGroup2: TppGroup;
+    ppGroupHeaderBand2: TppGroupHeaderBand;
+    ppGroupFooterBand2: TppGroupFooterBand;
+    ppDBCalc1: TppDBCalc;
+    ppPageStyle1: TppPageStyle;
+    ppImage1: TppImage;
+    ppLabel28: TppLabel;
+    ppDBText26: TppDBText;
+    qrCuadreCajaENTRADAID: TStringField;
+    qrCuadreCajaUSERID: TStringField;
+    qrCuadreCajaEFECTIVO: TBCDField;
+    qrCuadreCajaCHEQUE: TBCDField;
+    qrCuadreCajaTARJETA: TBCDField;
+    qrCuadreCajaNOTACREDITO: TBCDField;
+    qrCuadreCajaCuadreUsuario: TStringField;
+    qrCuadreCajaFECHA: TDateTimeField;
+    ppDBCalc2: TppDBCalc;
+    ppDBCalc3: TppDBCalc;
+    ppDBCalc4: TppDBCalc;
+    qrCuadreCajaNOMBREPACIENTE: TStringField;
+    qrCuadreCajaTotalCobrado: TBCDField;
+    dsEtiquetas: TDataSource;
+    qrEtiqueta: TADOQuery;
+    RvEtiqueta: TRvProject;
+    RvDataSetConnection1: TRvDataSetConnection;
+    rvProducto: TRvDataSetConnection;
+    qrProducto: TADOQuery;
+    qrLabel: TADOQuery;
+    qrLabelMuestraNo: TStringField;
+    qrLabelPacienteId: TStringField;
+    qrLabelPruebas: TStringField;
+    qrLabelLinea1: TStringField;
+    qrLabelLinea2: TStringField;
+    qrLabelDeptId: TStringField;
+    RvDataSetConnection3: TRvDataSetConnection;
+    qrLabelNombre: TStringField;
+    qrLabelDepartamento: TStringField;
+    tbLabel: TADOTable;
+    dsLabel: TDataSource;
+    tbLabelMuestraNo: TStringField;
+    tbLabelDeptId: TStringField;
+    tbLabelPacienteId: TStringField;
+    tbLabelPruebas: TStringField;
+    tbLabelLinea1: TStringField;
+    tbLabelLinea2: TStringField;
+    tbLabelNombre: TStringField;
+    tbLabelDepartamento: TStringField;
+    rvEntrega: TRvDataSetConnection;
+    dsProducto: TDataSource;
+    tbPruebas: TADOTable;
+    rvPruebas: TRvDataSetConnection;
+    tbPruebasPRUEBAID: TStringField;
+    tbPruebasResultado: TStringField;
+    tbPruebasDESCRIPCION: TStringField;
+    tbPruebasMUESTRANO: TStringField;
+    RvDonacion: TRvProject;
+    rvDonaciones: TRvDataSetConnection;
+    tbReceptor: TADOTable;
+    rvReceptor: TRvDataSetConnection;
+    tbReceptorCLIENTEID: TStringField;
+    tbReceptorNOMBRE: TStringField;
+    tbReceptorTELEFONO: TStringField;
+    tbResultados: TADOTable;
+    tbResultadosMUESTRANO: TStringField;
+    tbResultadosMuestraNoAS: TStringField;
+    tbResultadosPruebaId: TStringField;
+    tbResultadosResultado: TStringField;
+    tbResultadosDESCRIPCION: TStringField;
+    rvResultados: TRvDataSetConnection;
+    qrDonacionesDonacionID: TStringField;
+    qrDonacionesMuestraNo: TStringField;
+    qrDonacionesMuestraNoAS: TStringField;
+    qrDonacionesFecha: TDateTimeField;
+    qrDonacionesPacienteID: TStringField;
+    qrDonacionesNotaEntrevista: TMemoField;
+    qrDonacionesDonacionStatus: TWideStringField;
+    qrDonacionesDonacionTipo: TStringField;
+    qrDonacionesComentario: TMemoField;
+    qrDonacionesCantidadRecogida: TBCDField;
+    qrDonacionesTemperatura: TBCDField;
+    qrDonacionesPeso: TBCDField;
+    qrDonacionesPulsoMinimo: TBCDField;
+    qrDonacionesPulsoEstado: TStringField;
+    qrDonacionesTensionArteriar: TStringField;
+    qrDonacionesHoraInicio: TDateTimeField;
+    qrDonacionesHoraFin: TDateTimeField;
+    qrDonacionesDirigidoPacienteId: TStringField;
+    qrDonacionesDirigidoNombre: TStringField;
+    qrDonacionesHospital: TStringField;
+    qrDonacionesFechaTranfusion: TDateTimeField;
+    qrDonacionesMedico: TStringField;
+    qrDonacionesTelefono: TStringField;
+    qrDonacionesTelefono2: TStringField;
+    qrDonacionesDireccionMedico: TMemoField;
+    qrDonacionesPagina: TSmallintField;
+    qrDonacionesTipoFundaID: TWideStringField;
+    qrDonacionesHemoglobina: TStringField;
+    qrDonacionesHematocito: TStringField;
+    qrDonacionesGlobulosBlancos: TStringField;
+    qrDonacionesPlaquetas: TStringField;
+    qrDonacionesNotasCuestionario: TMemoField;
+    qrDonacionesProductoID: TWideStringField;
+    qrDonacionesReservado: TBooleanField;
+    qrDonacionesDisponible: TBooleanField;
+    qrDonacionesDoctorId: TStringField;
+    qrDonacionesUserIdCuestionario: TStringField;
+    qrDonacionesUserIdMuestra: TStringField;
+    qrDonacionesIDENTIFICACION: TStringField;
+    qrDonacionesNOMBRE: TStringField;
+    qrDonacionesDIRECCION: TStringField;
+    qrDonacionesExpr1: TStringField;
+    qrDonacionesEMAIL: TStringField;
+    qrDonacionesFECHANACIMIENTO: TDateTimeField;
+    qrDonacionesSEXO: TIntegerField;
+    qrDonacionesCIUDADID: TStringField;
+    qrDonacionesExpr2: TMemoField;
+    qrDonacionesExpr3: TWideStringField;
+    qrDonacionesTipoSangre: TWideStringField;
+    qrDonacionesRH: TWideStringField;
+    rvPEntrega: TRvProject;
+    tbReceptor1: TADOTable;
+    StringField1: TStringField;
+    StringField2: TStringField;
+    StringField3: TStringField;
+    rvReceptor1: TRvDataSetConnection;
+    qrLabelBarra: TStringField;
+    qrDonacionesNoAsCorto: TStringField;
+    qrDonantes: TADOQuery;
+    rdsDonantes: TRvDataSetConnection;
+    rvListados: TRvProject;
+    qrOperaciones: TADOQuery;
+    rdsOperaciones: TRvDataSetConnection;
+    qrOperacionesOperacion: TStringField;
+    qrOperacionesHistCons: TLargeintField;
+    qrOperacionesCodigoId: TStringField;
+    qrOperacionesFecha: TDateTimeField;
+    qrOperacionesOperacionId: TWideStringField;
+    qrOperacionesUserId: TStringField;
+    qrOperacionesNota: TMemoField;
+    qrOperacionesReceptorId: TStringField;
+    qrOperacionesDoctorId: TStringField;
+    qrDonantesPacienteID: TStringField;
+    qrDonantesTipoDonante: TWideStringField;
+    qrDonantesEstado: TWideStringField;
+    qrDonantesRechaso: TWideStringField;
+    qrDonantesRechasoNota: TWideStringField;
+    qrDonantesDonanteActivo: TSmallintField;
+    qrDonantesTipoSangre: TWideStringField;
+    qrDonantesRH: TWideStringField;
+    qrDonantesUltimaDonacionId: TStringField;
+    qrDonantesFechaUltimaDon: TDateTimeField;
+    qrDonantesNOMBRE: TStringField;
+    qrDonantesCONTACTO: TStringField;
+    qrDonantesTELEFONO: TStringField;
+    qrDonantesFAX: TStringField;
+    qrDonantesIDENTIFICACION: TStringField;
+    qrOperacionesReceptor: TStringField;
+    qrOperacionesDoctor: TStringField;
+    qrVencimientos: TADOQuery;
+    rdsVencimientos: TRvDataSetConnection;
+    qrVencimientosCodigoId: TStringField;
+    qrVencimientosDonacionId: TStringField;
+    qrVencimientosProductoID: TWideStringField;
+    qrVencimientosCantidad: TBCDField;
+    qrVencimientosFecha: TDateTimeField;
+    qrVencimientosHora: TStringField;
+    qrVencimientosProcesoID: TWideStringField;
+    qrVencimientosReservado: TBooleanField;
+    qrVencimientosReservadoHasta: TDateTimeField;
+    qrVencimientosDias: TIntegerField;
+    qrVencimientosVence: TDateTimeField;
+    qrVencimientosCruce: TBooleanField;
+    qrVencimientosCrucePacienteId: TStringField;
+    qrVencimientosDisponible: TBooleanField;
+    qrVencimientosReceptorId: TStringField;
+    qrVencimientosDoctorId: TStringField;
+    qrVencimientosPrecio1: TBCDField;
+    qrVencimientosCosto1: TBCDField;
+    qrVencimientosProductoDes: TWideStringField;
+    qrRechasados: TADOQuery;
+    rdvRechasados: TRvDataSetConnection;
+    qrRechasadosNOMBRE: TStringField;
+    qrRechasadosTELEFONO: TStringField;
+    qrRechasadosTipoSangre: TWideStringField;
+    qrRechasadosRH: TWideStringField;
+    qrRechasadosRechaso: TWideStringField;
+    qrRechasadosFechaUltimaDon: TDateTimeField;
+    qrRechasadosDIRECCION: TStringField;
+    rdcExistencia: TRvDataSetConnection;
+    ppLabel5: TppLabel;
+    ppLabel25: TppLabel;
+    ppLabel30: TppLabel;
+    qrRechasadosRechasoNota: TWideStringField;
+    ppLabel24: TppLabel;
+    qrUltimoCuadre: TADOQuery;
+    qrUltimoCuadreCorteID: TStringField;
+    ppSystemVariable5: TppSystemVariable;
+    qrCobros: TADOQuery;
+    StringField4: TStringField;
+    StringField5: TStringField;
+    BCDField1: TBCDField;
+    BCDField2: TBCDField;
+    BCDField3: TBCDField;
+    BCDField4: TBCDField;
+    StringField6: TStringField;
+    DateTimeField1: TDateTimeField;
+    StringField7: TStringField;
+    BCDField5: TBCDField;
+    qrVentas: TADOQuery;
+    dsVentas: TRvDataSetConnection;
+    qrVentasPRUEBAID: TStringField;
+    qrVentasDESCRIPCION: TStringField;
+    qrVentasPRECIO: TBCDField;
+    qrDetVentas: TADOQuery;
+    qrDetVentasPRUEBAID: TStringField;
+    qrDetVentasDESCRIPCION: TStringField;
+    qrDetVentasPRECIO: TBCDField;
+    qrDetVentasPACIENTEID: TStringField;
+    qrDetVentasNOMBRE: TStringField;
+    qrDetVentasCODIGOID: TStringField;
+    rvDetVenta: TRvDataSetConnection;
+    qrDetVentasFECHA: TDateTimeField;
+    qrTotal: TADOQuery;
+    qrTotalPRECIO: TBCDField;
+    rvTotal: TRvDataSetConnection;
+    qrVentaCobro: TADOQuery;
+    dsVentaCobro: TRvDataSetConnection;
+    qrVentasDESDE: TDateTimeField;
+    qrVentasHASTA: TDateTimeField;
+    qrVentasCANTIDAD: TIntegerField;
+    qrDetVentasDESDE: TDateTimeField;
+    qrDetVentasHASTA: TDateTimeField;
+    qrDetVentasENTRADAID: TStringField;
+    qrVentaCobroENTRADAID: TStringField;
+    qrVentaCobroUSERID: TStringField;
+    qrVentaCobroFormaDePagoID: TStringField;
+    qrVentaCobroMonto: TBCDField;
+    qrVentaCobroCobroID: TStringField;
+    qrVentaCobroNOMBREPACIENTE: TStringField;
+    qrVentaCobroTotalFactura: TBCDField;
+    qrVentaCobroTipoDoc: TStringField;
+    qrVentaCobroReciboNo: TStringField;
+    qrVentaCobroFECHA: TDateTimeField;
+    qrVentaCobroTotalCobrado: TBCDField;
+    qrDonacionesFechaUltimaDon: TDateTimeField;
+    qrDonacionesFAX: TStringField;
+    tbReceptorFAX: TStringField;
+    tbReceptorTELEFONO2: TStringField;
+    tbReceptorSEX: TStringField;
+    qrDonacionesSEX: TStringField;
+    qrDonacionesEdad: TIntegerField;
+    qrEtiquetaDonacionID: TStringField;
+    qrEtiquetaMuestraNoAS: TStringField;
+    qrEtiquetaFecha: TDateTimeField;
+    qrEtiquetaPacienteID: TStringField;
+    qrEtiquetaNOMBRE: TStringField;
+    qrEtiquetaVence: TDateTimeField;
+    qrEtiquetaTipoFundaDes: TWideStringField;
+    qrEtiquetaTipo: TWideStringField;
+    qrEtiquetaNoAsCorto: TStringField;
+    ppLabel52: TppLabel;
+    ppDBText35: TppDBText;
+    ppLine1: TppLine;
+    tbDoctor: TADOTable;
+    dsDoctor: TRvDataSetConnection;
+    tbDoctorDOCTORID: TStringField;
+    tbDoctorNOMBRE: TStringField;
+    tbDoctorTELEFONO: TStringField;
+    tbDoctorFAX: TStringField;
+    tbDoctorCELULAR: TStringField;
+    qrLabelTIPO: TStringField;
+    qrProductoDonacionID: TStringField;
+    qrProductoMuestraNoAS: TStringField;
+    qrProductofjvence: TStringField;
+    qrProductoTipoFundaDes: TWideStringField;
+    qrProductoTipo: TWideStringField;
+    qrProductoTS: TWideStringField;
+    qrProductoCodigoId: TStringField;
+    qrProductoProductoID: TWideStringField;
+    qrProductoProductoDes: TWideStringField;
+    qrProductoMuestraNo: TStringField;
+    qrProductoTipoSangre: TWideStringField;
+    qrProductoRH: TWideStringField;
+    qrProductoReceptorId: TStringField;
+    qrProductoDoctorId: TStringField;
+    qrProductoCruce: TBooleanField;
+    qrProductoCrucePacienteId: TStringField;
+    qrProductoDu: TWideStringField;
+    qrProductoISTBDonacion: TStringField;
+    qrProductoCheckDigit: TStringField;
+    qrProductoCheckChar: TStringField;
+    qrProductoCodeBar: TWideStringField;
+    qrProductoISTB128CodeBar: TWideStringField;
+    qrProductoISTBProducto: TWideStringField;
+    qrProductoISTBAOBCODE: TWideStringField;
+    qrProductoBSCode: TWideStringField;
+    qrProductoISTBTipo: TWideStringField;
+    qrProductoISTBRH: TWideStringField;
+    qrProductofjfecha: TStringField;
+    qrProductoFecha: TWideStringField;
+    qrProductoVence: TWideStringField;
+    qrProductoDonacionTipo: TStringField;
+    ppLabel26: TppLabel;
+    qrProductoTemperatura: TStringField;
+    qrProductoISBT128DivCode: TWideStringField;
+    qrProductoBarra: TWideStringField;
+    qrProductoVolumen_actual: TIntegerField;
+    qrEtiquetaFECHA_RECOLECCION: TDateTimeField;
+    RvReporte_pruebas: TRvProject;
+    RvProject1: TRvProject;
+    rvPentregaE0195: TRvProject;
+    Etiqueta: TppReport;
+    ppHeaderBand3: TppHeaderBand;
+    ppDetailBand3: TppDetailBand;
+    ppDBPipeline1: TppDBPipeline;
+    Qprueba: TADOQuery;
+    DataSource1: TDataSource;
+    ppDBBarCode1: TppDBBarCode;
+    ppDBText28: TppDBText;
+    ppDBText29: TppDBText;
+    ppShape3: TppShape;
+    ppLabel27: TppLabel;
+    ppMemo1: TppMemo;
+    ppDBText36: TppDBText;
+    ppDBText27: TppDBText;
+    ppDBBarCode2: TppDBBarCode;
+    ppDBText37: TppDBText;
+    ppDBMemo1: TppDBMemo;
+    ppMemo2: TppMemo;
+    ppLabel31: TppLabel;
+    ppDBText38: TppDBText;
+    ppDBBarCode3: TppDBBarCode;
+    ppDBText39: TppDBText;
+    ppDBText42: TppDBText;
+    ppDBText43: TppDBText;
+    ppDBBarCode4: TppDBBarCode;
+    ppDBText44: TppDBText;
+    ppDBText45: TppDBText;
+    ppImage2: TppImage;
+    ppReport1: TppReport;
+    ppHeaderBand5: TppHeaderBand;
+    ppDetailBand4: TppDetailBand;
+    ppFooterBand3: TppFooterBand;
+    ppLabel32: TppLabel;
+    ppDBText46: TppDBText;
+    ppDBText47: TppDBText;
+    Etiqueta2: TppReport;
+    ppHeaderBand6: TppHeaderBand;
+    ppShape4: TppShape;
+    ppDBBarCode5: TppDBBarCode;
+    ppDBText48: TppDBText;
+    ppDBText49: TppDBText;
+    ppLabel33: TppLabel;
+    ppMemo3: TppMemo;
+    ppDBText50: TppDBText;
+    ppDBText51: TppDBText;
+    ppDBBarCode6: TppDBBarCode;
+    ppDBText52: TppDBText;
+    ppDBMemo3: TppDBMemo;
+    ppMemo4: TppMemo;
+    ppLabel34: TppLabel;
+    ppDBText53: TppDBText;
+    ppDBBarCode7: TppDBBarCode;
+    ppDBText54: TppDBText;
+    ppDBText55: TppDBText;
+    ppDBText56: TppDBText;
+    ppDBBarCode8: TppDBBarCode;
+    ppDBText57: TppDBText;
+    ppDBText59: TppDBText;
+    ppImage3: TppImage;
+    ppDBText60: TppDBText;
+    ppDetailBand6: TppDetailBand;
+    ppImage4: TppImage;
+    ppDBPipeline2: TppDBPipeline;
+    ppMemo5: TppMemo;
+    ppLabel38: TppLabel;
+    ppLabel37: TppLabel;
+    ppLabel41: TppLabel;
+    tbLabelBarra: TStringField;
+    procedure tbLabelCalcFields(DataSet: TDataSet);
+    procedure ppHeaderBand6BeforePrint(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    Donacion_Tipo : String;
+    procedure ShowExistencia;
+    procedure Donacion(DonacionId: String);
+    procedure PrintCuadre(Cuadre: String);
+    procedure EtiquetaDonacion(DonacionId: String);
+    procedure EtiquetaProducto(CodigoId: String);
+    procedure EtiquetaPequena(MuestraNo: String);
+    procedure EtiquetaPequena_bolsa(MuestraNo: String);
+    procedure Entrega(CodigoId: String);
+    procedure Pruebas(CodigoId: String);
+    procedure Donantes;
+    procedure Operaciones;
+    procedure Vencimientos;
+    procedure rechasados;
+    procedure UltimoCuadre;
+    procedure VentasPeriodo;
+    procedure DetalleVenta;
+    procedure VentasCobros;
+  end;
+
+var
+  BSReportes: TBSReportes;
+
+implementation
+uses DataModule, Fechas, DataBanco, DCobros;
+
+{$R *.dfm}
+
+procedure TBSReportes.VentasCobros;
+var
+  Desde, Hasta: TDateTime;
+begin
+
+  if not DMB.fecha(Desde, Hasta)  then Exit;
+
+  qrTotal.Close;
+  qrTotal.Parameters.ParamByName('Desde').Value:= Desde;
+  qrTotal.Parameters.ParamByName('Hasta').Value:= Hasta;
+  qrTotal.Open;
+
+  qrVentaCobro.Close;
+  qrVentaCobro.Parameters.ParamByName('Desde').Value:= Desde;
+  qrVentaCobro.Parameters.ParamByName('Hasta').Value:= Hasta;
+  qrVentaCobro.Open;
+
+  if not qrVentaCobro.Eof then
+    begin
+      //RvListados.ExecuteReport('DetalleVenta');
+      RvListados.ExecuteReport('VentaCobro');
+    end;
+
+  qrTotal.Close;
+  qrVentaCobro.Close;
+
+end;
+
+
+procedure TBSReportes.DetalleVenta;
+var
+  Desde, Hasta: TDateTime;
+begin
+
+  if not DMB.fecha(Desde, Hasta)  then Exit;
+
+  qrTotal.Close;
+  qrTotal.Parameters.ParamByName('Desde').Value:= Desde;
+  qrTotal.Parameters.ParamByName('Hasta').Value:= Hasta;
+  qrTotal.Open;
+
+  qrDetVentas.Close;
+  qrDetVentas.Parameters.ParamByName('Desde').Value:= Desde;
+  qrDetVentas.Parameters.ParamByName('Hasta').Value:= Hasta;
+  qrDetVentas.Open;
+
+  if not qrDetVentas.Eof then
+    begin
+      RvListados.ExecuteReport('DetalleVenta');
+      //RvListados.ExecuteReport('DetalleVenta1');
+    end;
+
+  qrTotal.Close;
+  qrDetVentas.Close;
+
+end;
+
+procedure TBSReportes.VentasPeriodo;
+var
+  Desde, Hasta: TDateTime;
+begin
+
+  if not DMB.fecha(Desde, Hasta)  then Exit;
+
+
+  qrVentas.Close;
+  qrVentas.Parameters.ParamByName('Desde').Value:= Desde;
+  qrVentas.Parameters.ParamByName('Hasta').Value:= Hasta;
+  qrVentas.Open;
+
+  if not qrVentas.Eof then
+    begin
+      RvListados.ExecuteReport('VentasPeriodo');
+    end;
+
+  qrVentas.Close;
+
+end;
+
+
+procedure TBSReportes.Rechasados;
+begin
+
+  qrRechasados.Close;
+  qrRechasados.Open;
+
+  if not qrRechasados.Eof then
+    begin
+      RvListados.ExecuteReport('Rechasados');
+    end;
+
+  qrRechasados.Close;
+
+end;
+
+
+procedure TBSReportes.Vencimientos;
+begin
+
+  qrVencimientos.Close;
+  qrVencimientos.Open;
+
+  if not qrVencimientos.Eof then
+    begin
+      RvListados.ExecuteReport('Vencimientos');
+    end;
+
+  qrVencimientos.Close;
+
+end;
+
+
+procedure TBSReportes.Operaciones;
+var
+  Desde, Hasta: TDateTime;
+begin
+
+  if not DMB.fecha(Desde, Hasta)  then Exit;
+
+
+  qrOperaciones.Close;
+  qrOperaciones.Parameters.ParamByName('Desde').Value:= Desde;
+  qrOperaciones.Parameters.ParamByName('Hasta').Value:= Hasta;
+  qrOperaciones.Open;
+
+  if not qrOperaciones.Eof then
+    begin
+      RvListados.ExecuteReport('Operaciones');
+    end;
+
+  qrOperaciones.Close;
+
+end;
+
+procedure TBSReportes.ppHeaderBand6BeforePrint(Sender: TObject);
+begin
+if (copy(qrProductoDonacionTipo.Value,1,16) <> 'DONANTE AUTOLOGO') then
+  ppMemo5.Visible := false
+  else
+  ppMemo5.Visible := true;
+
+end;
+
+procedure TBSReportes.Donantes;
+var
+  Desde, Hasta: TDateTime;
+begin
+
+  if not DMB.fecha(Desde, Hasta)  then Exit;
+
+  qrDonantes.Close;
+  qrDonantes.Parameters.ParamByName('Desde').Value:= Desde;
+  qrDonantes.Parameters.ParamByName('Hasta').Value:= Hasta;
+  qrDonantes.Open;
+
+  if not qrDonantes.Eof then
+    begin
+      RvListados.ExecuteReport('Donantes');
+    end;
+
+  qrDonantes.Close;
+
+end;
+
+procedure TBSReportes.EtiquetaProducto(CodigoId: String);
+begin
+
+  qrProducto.Close;
+  qrProducto.Parameters.ParamByName('Codigo').Value:= Trim(CodigoId);
+  qrProducto.Parameters.ParamByName('INTENCION').Value:= Donacion_Tipo;
+  qrProducto.Open;
+
+if not qrProducto.Eof then
+ begin
+  if  (copy(qrProductoDonacionTipo.Value,1,16) = 'AUTOLOGO') or (Pos('ALT',qrProductoDonacionTipo.AsString)<> 0) Then
+     begin
+        //*************  SI LA SANGRE ES TIPO O NEGATIVO ********************
+        if (qrProductoISTBRH.AsString = 'NEGATIVO') And (qrProductoISTBTipo.AsString = 'O') then
+            ppImage3.Picture.LoadFromFile('C:\Banco\O negativo.jpg')
+            else
+        //*************  SI LA SANGRE ES TIPO B NEGATIVO ********************
+        if (qrProductoISTBRH.AsString = 'NEGATIVO') And (qrProductoISTBTipo.AsString = 'B') then
+            ppImage3.Picture.LoadFromFile('C:\Banco\B negativo.jpg')
+            else
+         //*************  SI LA SANGRE ES TIPO A NEGATIVO ********************
+        if (qrProductoISTBRH.AsString = 'NEGATIVO') And (qrProductoISTBTipo.AsString = 'A') then
+            ppImage3.Picture.LoadFromFile('C:\Banco\A negativo.jpg')
+            else
+         //*************  SI LA SANGRE ES TIPO AB NEGATIVO ********************
+        if (qrProductoISTBRH.AsString = 'NEGATIVO') And (qrProductoISTBTipo.AsString = 'AB') then
+            ppImage3.Picture.LoadFromFile('C:\Banco\AB negativo.jpg');
+         if (qrProductoISTBRH.AsString = 'NEGATIVO') And (qrProductoISTBTipo.AsString = 'O') then
+            ppImage3.Visible := true
+            else
+        if (qrProductoISTBRH.AsString = 'NEGATIVO') And (qrProductoISTBTipo.AsString = 'B') then
+            ppImage3.Visible := true
+            else
+         if (qrProductoISTBRH.AsString = 'NEGATIVO') And (qrProductoISTBTipo.AsString = 'A') then
+            ppImage3.Visible := true
+            Else
+         if (qrProductoISTBRH.AsString = 'NEGATIVO') And (qrProductoISTBTipo.AsString = 'AB') then
+            begin
+            ppImage3.Visible := true;
+            ppDBText56.Visible := false;
+            end
+            else
+            begin
+            ppImage3.Visible := false;
+            ppDBText56.Visible := true;
+            end;
+        ETIQUETA2.Print;
+     end
+     else
+     begin
+     if (qrProductoISTB128CodeBar.Value = 'E0195') or (qrProductoISTB128CodeBar.Value = 'E2833') or (qrProductoISTB128CodeBar.Value = 'E0053')then
+         begin
+           ppDBText47.Visible := false;
+           ppMemo2.Visible := false;
+         end
+        else
+        begin
+         ppMemo2.Visible := true;
+         ppDBText47.Visible := true;
+        end;
+
+        //*************  SI LA SANGRE ES TIPO O NEGATIVO ********************
+        if (qrProductoISTBRH.AsString = 'NEGATIVO') And (qrProductoISTBTipo.AsString = 'O') then
+            ppImage2.Picture.LoadFromFile('C:\Banco\O negativo.jpg')
+            else
+        //*************  SI LA SANGRE ES TIPO B NEGATIVO ********************
+        if (qrProductoISTBRH.AsString = 'NEGATIVO') And (qrProductoISTBTipo.AsString = 'B') then
+            ppImage2.Picture.LoadFromFile('C:\Banco\B negativo.jpg')
+            else
+         //*************  SI LA SANGRE ES TIPO A NEGATIVO ********************
+        if (qrProductoISTBRH.AsString = 'NEGATIVO') And (qrProductoISTBTipo.AsString = 'A') then
+            ppImage2.Picture.LoadFromFile('C:\Banco\A negativo.jpg')
+            else
+         //*************  SI LA SANGRE ES TIPO AB NEGATIVO ********************
+        if (qrProductoISTBRH.AsString = 'NEGATIVO') And (qrProductoISTBTipo.AsString = 'AB') then
+            ppImage2.Picture.LoadFromFile('C:\Banco\AB negativo.jpg');
+
+
+
+        if (qrProductoISTBRH.AsString = 'NEGATIVO') And (qrProductoISTBTipo.AsString = 'O') then
+            ppImage2.Visible := true
+            else
+        if (qrProductoISTBRH.AsString = 'NEGATIVO') And (qrProductoISTBTipo.AsString = 'B') then
+            ppImage2.Visible := true
+            else
+         if (qrProductoISTBRH.AsString = 'NEGATIVO') And (qrProductoISTBTipo.AsString = 'A') then
+            ppImage2.Visible := true
+            Else
+         if (qrProductoISTBRH.AsString = 'NEGATIVO') And (qrProductoISTBTipo.AsString = 'AB') then
+            begin
+            ppImage2.Visible := true;
+            ppDBText42.Visible := false;
+            end
+            else
+            begin
+            ppImage2.Visible := false;
+            ppDBText42.Visible := true;
+            end;
+            Etiqueta.Print;
+        //rvPEntrega.ExecuteReport('ProductLabel');
+    end;
+ end;
+  qrEtiqueta.Close;
+
+end;
+
+procedure TBSReportes.Pruebas(CodigoId: String);
+begin
+
+  DM.DataBase.Execute(
+    ' INSERT INTO TRAZA (TEXTO )' +
+    ' VALUES ('' Entrado a la query de productos '' ) ');
+
+  qrProducto.Close;
+  qrProducto.Parameters.ParamByName('Codigo').Value:= Trim(CodigoId);
+  qrProducto.Parameters.ParamByName('INTENCION').Value:= Donacion_Tipo;
+  qrProducto.Open;
+
+  DM.DataBase.Execute(
+    ' INSERT INTO TRAZA (TEXTO )' +
+    ' VALUES ('' Entrado a la tabla de pruebas '' ) ');
+
+  tbPruebas.Close;
+  tbPruebas.Open;
+
+  DM.DataBase.Execute(
+    ' INSERT INTO TRAZA (TEXTO )' +
+    ' VALUES ('' Entrado a la tabla de receptor '' ) ');
+
+  tbReceptor1.Close;
+  tbReceptor1.Open;
+
+  if not qrProducto.Eof then
+    begin
+        DM.DataBase.Execute(
+        ' INSERT INTO TRAZA (TEXTO )' +
+        ' VALUES ('' Ejecutar Reporte '' ) ');
+
+     RvReporte_pruebas.Execute;   //Report('Pruebas_ge');
+     //RvPEntrega.ExecuteReport('Pruebas');
+
+     DM.DataBase.Execute(
+           ' INSERT INTO TRAZA (TEXTO )' +
+           ' VALUES ('' Reporte ejecutado '' ) ');
+
+    end;
+
+  tbPruebas.Close;
+  tbReceptor1.Close;
+  qrEtiqueta.Close;
+
+end;
+
+
+procedure TBSReportes.Entrega(CodigoId: String);
+begin
+
+  qrProducto.Close;
+  qrProducto.Parameters.ParamByName('Codigo').Value:= CodigoId;
+  qrProducto.Open;
+
+  tbPruebas.Close;
+  tbPruebas.Open;
+
+  tbReceptor1.Close;
+  tbReceptor1.Open;
+
+  if not qrProducto.Eof then
+    RvPEntrega.ExecuteReport('Entrega');
+
+  tbPruebas.Close;
+  tbReceptor1.Close;
+  qrEtiqueta.Close;
+end;
+
+procedure TBSReportes.EtiquetaPequena(MuestraNo: String);
+begin
+
+  qrLabel.Close;
+  qrlabel.Parameters.ParamByName('MuestraNo').Value:= MuestraNo;
+  qrlabel.Open;
+  tbLabel.Close;
+  tbLabel.Open;
+
+  if qrLabel.Eof then Exit;
+
+  //while not qrLabel.Eof do
+    //begin
+      RvEtiqueta.ExecuteReport('Report3');
+      //qrLabel.Next;
+    //end;
+
+  tbLabel.Close;
+
+end;
+
+procedure TBSReportes.EtiquetaPequena_bolsa(MuestraNo: String);
+begin
+  
+  qrLabel.Close;
+  qrlabel.Parameters.ParamByName('MuestraNo').Value:= MuestraNo;
+  qrlabel.Open;
+
+  if qrLabel.Eof then Exit;
+
+  //while not qrLabel.Eof do
+    //begin
+      RvEtiqueta.ExecuteReport('Report4');
+      //qrLabel.Next;
+    //end;
+
+  tbLabel.Close;
+
+end;
+
+procedure TBSReportes.EtiquetaDonacion(DonacionId: String);
+begin
+
+  qrEtiqueta.Close;
+  qrEtiqueta.Parameters.ParamByName('DonacionId').Value:= DonacionId;
+  qrEtiqueta.Open;
+
+  if not qrEtiqueta.Eof then
+    begin
+      RvEtiqueta.ExecuteReport('Report1');
+    end;
+
+  qrEtiqueta.Close;
+
+end;
+
+
+procedure TBSReportes.PrintCuadre(Cuadre: string);
+begin
+
+  dmCobros.PrintCorte(Cuadre);
+
+  exit;
+
+  qrCuadreCaja.Close;
+  qrCuadreCaja.Parameters.ParamByName('CorteId').Value:= Cuadre;
+  qrCuadreCaja.Open;
+
+  if not qrCuadreCaja.Eof then
+  begin
+   ppImpCuadreCaja.DeviceType := '559155748'; //dtScreen;
+   ppImpCuadreCaja.Print;
+  end;
+
+end;
+
+procedure TBSReportes.UltimoCuadre;
+begin
+
+  qrUltimoCuadre.Close;
+  qrUltimoCuadre.Open;
+
+  dmCobros.PrintCorte(qrUltimoCuadreCorteID.Value);
+
+end;
+
+
+procedure TBSReportes.Donacion(DonacionId: String);
+begin
+
+  qrDonaciones.Close;
+  qrDonaciones.Parameters.ParamByName('DonacionId').Value:= DonacionId;
+  qrDonaciones.Open;
+  tbReceptor.Close;
+  tbReceptor.Open;
+  tbDoctor.Close;
+  tbDoctor.Open;
+
+  if not qrDonaciones.Eof then
+    begin
+      rvDonacion.ExecuteReport('Donante');
+    end;
+
+  tbReceptor.Close;
+  qrDonaciones.Close;
+
+end;
+
+procedure TBSReportes.ShowExistencia;
+begin
+
+  qrExistencia.Close;
+  qrExistencia.Open;
+
+  if not qrExistencia.Eof then
+  begin
+    RvListados.ExecuteReport('Existencia');
+   //ppExistencia.DeviceType := '559155748'; //dtScreen;
+   //ppExistencia.Print;
+  end;
+
+  qrExistencia.Close;
+
+end;
+
+procedure TBSReportes.tbLabelCalcFields(DataSet: TDataSet);
+begin
+  tbLabelbarra.value:= qrlabelbarra.value;
+end;
+
+end.

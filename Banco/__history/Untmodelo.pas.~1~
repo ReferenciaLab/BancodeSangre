@@ -1,0 +1,24 @@
+unit Untmodelo;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs;
+
+type
+  TFrmmodelo = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frmmodelo: TFrmmodelo;
+
+implementation
+
+{$R *.dfm}
+
+end.

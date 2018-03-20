@@ -1,0 +1,368 @@
+inherited frmDialogConsultaDonaciones: TfrmDialogConsultaDonaciones
+  Caption = 'Consulta de Donaciones'
+  ClientHeight = 551
+  ClientWidth = 956
+  KeyPreview = True
+  Position = poDesigned
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  ExplicitLeft = -200
+  ExplicitWidth = 972
+  ExplicitHeight = 589
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited dxLayoutControl1: TdxLayoutControl
+    Width = 956
+    Height = 551
+    ExplicitWidth = 956
+    ExplicitHeight = 551
+    inherited edbuscarpor: TcxComboBox
+      Properties.Items.Strings = (
+        'Registro No.'
+        'Paciente'
+        'Nombre del Paciente'
+        'Cliente'
+        'Nombre del Cliente'
+        'Telefono')
+    end
+    inherited edbuscar: TcxTextEdit
+      RepositoryItem = DM.cxTextEdit
+      Properties.OnChange = edbuscarPropertiesChange
+    end
+    inherited cgDatos: TcxGrid
+      Width = 934
+      Height = 392
+      OnEnter = cgDatosEnter
+      OnExit = cgDatosExit
+      ExplicitWidth = 934
+      ExplicitHeight = 392
+      inherited dbDatos: TcxGridDBTableView
+        DataController.KeyFieldNames = 'ENTRADAID'
+        object dbDatosEntredaID: TcxGridDBColumn
+          Caption = 'Registro No.'
+          DataBinding.FieldName = 'ENTRADAID'
+          Width = 68
+        end
+        object dbDatosFecha: TcxGridDBColumn
+          DataBinding.FieldName = 'Fecha'
+          Width = 61
+        end
+        object dbDatosPacienteID: TcxGridDBColumn
+          Caption = 'Paciente'
+          DataBinding.FieldName = 'PacienteID'
+          Width = 76
+        end
+        object dbDatosNombrePaciente: TcxGridDBColumn
+          Caption = 'Nombre Paciente'
+          DataBinding.FieldName = 'NombrePaciente'
+          Width = 223
+        end
+        object dbDatosColumn2: TcxGridDBColumn
+          Caption = 'Telefono'
+          DataBinding.FieldName = 'Telefonos'
+        end
+        object dbDatosClienteID: TcxGridDBColumn
+          Caption = 'Cliente'
+          DataBinding.FieldName = 'ClienteID'
+          Width = 61
+        end
+        object dbDatosClienteNombre: TcxGridDBColumn
+          Caption = 'Nombre Cliente'
+          DataBinding.FieldName = 'ClienteNombre'
+          Width = 158
+        end
+        object dbDatosColumn1: TcxGridDBColumn
+          Caption = 'Moneda'
+          DataBinding.FieldName = 'MonedaID'
+          Width = 48
+        end
+        object dbDatosNeto: TcxGridDBColumn
+          DataBinding.FieldName = 'Neto'
+          Width = 82
+        end
+        object dbDatosTotalPagado: TcxGridDBColumn
+          Caption = 'Pagado'
+          DataBinding.FieldName = 'TotalPagado'
+          Width = 76
+        end
+        object dbDatosTotalPendiente: TcxGridDBColumn
+          Caption = 'Pendiente'
+          DataBinding.FieldName = 'TotalPendiente'
+          Width = 69
+        end
+        object dbDatosHold: TcxGridDBColumn
+          DataBinding.FieldName = 'Hold'
+          Width = 50
+        end
+      end
+    end
+    inherited btcancelar: TcxButton
+      Left = 870
+      Top = 515
+      ExplicitLeft = 870
+      ExplicitTop = 515
+    end
+    inherited btaceptar: TcxButton
+      Left = 789
+      Top = 515
+      ExplicitLeft = 789
+      ExplicitTop = 515
+    end
+    inherited pnCaption: TPanel
+      object cxButton1: TcxButton
+        Left = 312
+        Top = 0
+        Width = 75
+        Height = 25
+        Caption = 'cxButton1'
+        TabOrder = 0
+        OnClick = cxButton1Click
+      end
+    end
+  end
+  inherited dsDatos: TDataSource
+    DataSet = DMB.qrDonaciones
+  end
+  object qrDonaciones: TADOQuery
+    Connection = DM.Database
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT     dbo.BSDonacion.*, dbo.PTCliente.Identificacion, dbo.P' +
+        'TCliente.Nombre, '
+      
+        '                      dbo.PTCliente.Direccion, dbo.PTCliente.Tel' +
+        'efono, dbo.PTCliente.email, dbo.PTCliente.FechaNacimiento, dbo.P' +
+        'TCliente.Sexo, dbo.PTCliente.CiudadID, '
+      
+        '                      dbo.BSDonacion.NotaEntrevista, dbo.BSDonac' +
+        'ion.DonacionStatus'
+      'FROM         dbo.BSDonacion INNER JOIN'
+      
+        '                      dbo.PTCliente ON dbo.BSDonacion.PacienteID' +
+        ' = dbo.PTCliente.ClienteID'
+      'WHERE (DonacionStatus <> '#39'Rechazado'#39') '
+      'AND  (DonacionStatus <> '#39'Pendiente'#39')'
+      'AND  (DonacionStatus <> '#39'Aprobada'#39')'
+      'AND  (DonacionStatus <> '#39'Procesada'#39')'
+      'ORDER BY dbo.BSDonacion.DonacionID DESC')
+    Left = 432
+    Top = 227
+    object qrDonacionesDonacionID: TStringField
+      FieldName = 'DonacionID'
+    end
+    object qrDonacionesMuestraNo: TStringField
+      FieldName = 'MuestraNo'
+    end
+    object qrDonacionesMuestraNoAS: TStringField
+      FieldName = 'MuestraNoAS'
+      ReadOnly = True
+      Size = 11
+    end
+    object qrDonacionesFecha: TDateTimeField
+      FieldName = 'Fecha'
+    end
+    object qrDonacionesPacienteID: TStringField
+      FieldName = 'PacienteID'
+      Size = 10
+    end
+    object qrDonacionesNotaEntrevista: TMemoField
+      FieldName = 'NotaEntrevista'
+      BlobType = ftMemo
+    end
+    object qrDonacionesDonacionStatus: TWideStringField
+      FieldName = 'DonacionStatus'
+      FixedChar = True
+    end
+    object qrDonacionesDonacionTipo: TStringField
+      FieldName = 'DonacionTipo'
+    end
+    object qrDonacionesComentario: TMemoField
+      FieldName = 'Comentario'
+      BlobType = ftMemo
+    end
+    object qrDonacionesCantidadRecogida: TBCDField
+      FieldName = 'CantidadRecogida'
+      Precision = 19
+    end
+    object qrDonacionesTemperatura: TBCDField
+      FieldName = 'Temperatura'
+      Precision = 19
+    end
+    object qrDonacionesPeso: TBCDField
+      FieldName = 'Peso'
+      Precision = 19
+    end
+    object qrDonacionesPulsoMinimo: TBCDField
+      FieldName = 'PulsoMinimo'
+      Precision = 19
+    end
+    object qrDonacionesPulsoEstado: TStringField
+      FieldName = 'PulsoEstado'
+      Size = 10
+    end
+    object qrDonacionesTensionArteriar: TStringField
+      FieldName = 'TensionArteriar'
+      Size = 10
+    end
+    object qrDonacionesHoraInicio: TDateTimeField
+      FieldName = 'HoraInicio'
+    end
+    object qrDonacionesHoraFin: TDateTimeField
+      FieldName = 'HoraFin'
+    end
+    object qrDonacionesDirigidoPacienteId: TStringField
+      FieldName = 'DirigidoPacienteId'
+      Size = 10
+    end
+    object qrDonacionesDirigidoNombre: TStringField
+      FieldName = 'DirigidoNombre'
+      Size = 50
+    end
+    object qrDonacionesHospital: TStringField
+      FieldName = 'Hospital'
+      Size = 50
+    end
+    object qrDonacionesFechaTranfusion: TDateTimeField
+      FieldName = 'FechaTranfusion'
+    end
+    object qrDonacionesMedico: TStringField
+      FieldName = 'Medico'
+      Size = 50
+    end
+    object qrDonacionesTelefono: TStringField
+      FieldName = 'Telefono'
+      Size = 16
+    end
+    object qrDonacionesTelefono2: TStringField
+      FieldName = 'Telefono2'
+      Size = 16
+    end
+    object qrDonacionesDireccionMedico: TMemoField
+      FieldName = 'DireccionMedico'
+      BlobType = ftMemo
+    end
+    object qrDonacionesPagina: TSmallintField
+      FieldName = 'Pagina'
+    end
+    object qrDonacionesTipoFundaID: TWideStringField
+      FieldName = 'TipoFundaID'
+      FixedChar = True
+      Size = 2
+    end
+    object qrDonacionesHemoglobina: TStringField
+      FieldName = 'Hemoglobina'
+      Size = 15
+    end
+    object qrDonacionesHematocito: TStringField
+      FieldName = 'Hematocito'
+      Size = 15
+    end
+    object qrDonacionesGlobulosBlancos: TStringField
+      FieldName = 'GlobulosBlancos'
+      Size = 15
+    end
+    object qrDonacionesPlaquetas: TStringField
+      FieldName = 'Plaquetas'
+      Size = 15
+    end
+    object qrDonacionesNotasCuestionario: TMemoField
+      FieldName = 'NotasCuestionario'
+      BlobType = ftMemo
+    end
+    object qrDonacionesProductoID: TWideStringField
+      FieldName = 'ProductoID'
+      FixedChar = True
+      Size = 10
+    end
+    object qrDonacionesReservado: TBooleanField
+      FieldName = 'Reservado'
+    end
+    object qrDonacionesDisponible: TBooleanField
+      FieldName = 'Disponible'
+    end
+    object qrDonacionesDoctorId: TStringField
+      FieldName = 'DoctorId'
+      Size = 10
+    end
+    object qrDonacionesUserIdCuestionario: TStringField
+      FieldName = 'UserIdCuestionario'
+      Size = 10
+    end
+    object qrDonacionesUserIdMuestra: TStringField
+      FieldName = 'UserIdMuestra'
+      Size = 10
+    end
+    object qrDonacionesIdentificacion: TStringField
+      FieldName = 'Identificacion'
+    end
+    object qrDonacionesNombre: TStringField
+      FieldName = 'Nombre'
+      Size = 80
+    end
+    object qrDonacionesDireccion: TStringField
+      FieldName = 'Direccion'
+      Size = 255
+    end
+    object qrDonacionesTelefono_1: TStringField
+      FieldName = 'Telefono_1'
+    end
+    object qrDonacionesemail: TStringField
+      FieldName = 'email'
+      Size = 80
+    end
+    object qrDonacionesFechaNacimiento: TDateTimeField
+      FieldName = 'FechaNacimiento'
+    end
+    object qrDonacionesSexo: TIntegerField
+      FieldName = 'Sexo'
+    end
+    object qrDonacionesCiudadID: TStringField
+      FieldName = 'CiudadID'
+      Size = 10
+    end
+    object qrDonacionesNotaEntrevista_1: TMemoField
+      FieldName = 'NotaEntrevista_1'
+      BlobType = ftMemo
+    end
+    object qrDonacionesDonacionStatus_1: TWideStringField
+      FieldName = 'DonacionStatus_1'
+      FixedChar = True
+    end
+    object qrDonacionesNoAsCorto: TStringField
+      FieldName = 'NoAsCorto'
+      ReadOnly = True
+      Size = 8
+    end
+    object qrDonacionesUsuarioAS: TStringField
+      FieldName = 'UsuarioAS'
+      FixedChar = True
+      Size = 15
+    end
+    object qrDonacionesUserIdHemograma: TStringField
+      FieldName = 'UserIdHemograma'
+      Size = 50
+    end
+    object qrDonacionesDoctorIdAutoriza: TStringField
+      FieldName = 'DoctorIdAutoriza'
+      Size = 10
+    end
+    object qrDonacionesObservacionAutoriza: TMemoField
+      FieldName = 'ObservacionAutoriza'
+      BlobType = ftMemo
+    end
+    object qrDonacionesUserIdRechaza: TStringField
+      FieldName = 'UserIdRechaza'
+      Size = 50
+    end
+    object qrDonacionesFechaRechaza: TDateTimeField
+      FieldName = 'FechaRechaza'
+    end
+    object qrDonacionesRechazoNota: TStringField
+      FieldName = 'RechazoNota'
+      Size = 1000
+    end
+  end
+end

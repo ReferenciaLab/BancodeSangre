@@ -1,0 +1,341 @@
+unit ListaCaja;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DatosModule, cxStyles, cxCustomData, cxGraphics, cxFilter, cxData,
+  cxDataStorage, cxEdit, DB, cxDBData, Menus, cxLookAndFeelPainters, dxPSGlbl,
+  dxPSUtl, dxPSEngn, dxPrnPg, dxBkgnd, dxWrap, dxPrnDev, dxPSCompsProvider,
+  dxPSFillPatterns, dxPSEdgePatterns, ABSMain, JvStringHolder, StdActns,
+  ActnList, ADODB, cxGridCustomPopupMenu, cxGridPopupMenu, dxPSContainerLnk,
+  dxPSdxLCLnk, dxPSCore, dxPScxCommon, dxPScxGridLnk, JvComponentBase,
+  JvFormPlacement, ExtCtrls, dxLayoutControl, StdCtrls, cxButtons, cxGridLevel,
+  cxClasses, cxControls, cxGridCustomView, cxGridCustomTableView,
+  cxGridTableView, cxGridDBTableView, cxGrid, cxPC, JvExControls, JvComponent,
+  JvEnterTab, cxTextEdit, cxContainer, cxMaskEdit, cxDropDownEdit;
+
+type
+  TfrmListaCaja = class(TfrmDatosModule)
+    cxButton1: TcxButton;
+    cxButton2: TcxButton;
+    Cobrar: TAction;
+    Descuento: TAction;
+    Mostrar: TAction;
+    Imprimir: TAction;
+    cxButton3: TcxButton;
+    cxButton4: TcxButton;
+    tvDatosENTRADAID: TcxGridDBColumn;
+    tvDatosFECHA: TcxGridDBColumn;
+    tvDatosRECID: TcxGridDBColumn;
+    tvDatosPACIENTEID: TcxGridDBColumn;
+    tvDatosNOMBREPACIENTE: TcxGridDBColumn;
+    tvDatosCLIENTEID: TcxGridDBColumn;
+    tvDatosCLIENTENOMBRE: TcxGridDBColumn;
+    tvDatosBRUTO: TcxGridDBColumn;
+    tvDatosDESCUENTO: TcxGridDBColumn;
+    tvDatosSUBTOTAL: TcxGridDBColumn;
+    tvDatosNETO: TcxGridDBColumn;
+    tvDatosTOTALPAGADO: TcxGridDBColumn;
+    tvDatosTotalPendiente: TcxGridDBColumn;
+    cxButton5: TcxButton;
+    PrintCobros: TAction;
+    lcGridItem1: TdxLayoutItem;
+    edbuscarpor: TcxComboBox;
+    lcGridItem2: TdxLayoutItem;
+    edbuscar: TcxTextEdit;
+    CobrarNCF: TAction;
+    cxButton6: TcxButton;
+    dxLayoutControl1Item1: TdxLayoutItem;
+    dxLayoutControl1Item2: TdxLayoutItem;
+    dxLayoutControl1Item3: TdxLayoutItem;
+    dxLayoutControl1Item4: TdxLayoutItem;
+    dxLayoutControl1Item5: TdxLayoutItem;
+    dxLayoutControl1Item6: TdxLayoutItem;
+    Timer1: TTimer;
+    cxButton7: TcxButton;
+    dxLayoutControl1Item7: TdxLayoutItem;
+    cxButton9: TcxButton;
+    dxLayoutControl1Item8: TdxLayoutItem;
+    cxButton8: TcxButton;
+    dxLayoutControl1Item9: TdxLayoutItem;
+    procedure cxButton8Click(Sender: TObject);
+    procedure cxButton9Click(Sender: TObject);
+    procedure cxButton7Click(Sender: TObject);
+    procedure btBuscarClick(Sender: TObject);
+    procedure CobrarNCFExecute(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+    procedure edbuscarPropertiesChange(Sender: TObject);
+    procedure MostrarExecute(Sender: TObject);
+    procedure DescuentoExecute(Sender: TObject);
+    procedure PrintCobrosExecute(Sender: TObject);
+    procedure CobrarExecute(Sender: TObject);
+    procedure ImprimirExecute(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  protected
+    procedure DoPost; override;
+    procedure DoInsert; override;
+    procedure DoDelete; override;
+    function  CanAdd : Boolean;
+    function  CanEdit : Boolean;
+    function  CanDelete : Boolean;
+  public
+    { Public declarations }
+    procedure BuscarData;
+  end;
+
+var
+  frmListaCaja: TfrmListaCaja;
+
+implementation
+
+uses BancoVenta, DataFactura, DCobros, DialogShowFactura, DataBanco, DataModule,
+  UntCobroEmpleados, UntRegretenciones, UntAplicarEmpresas;
+
+{$R *.dfm}
+
+procedure TfrmListaCaja.btBuscarClick(Sender: TObject);
+begin
+  inherited;
+  BuscarData;
+end;
+
+procedure TfrmListaCaja.BuscarData;
+var
+ sqlString : String;
+begin
+
+ sqlString := 'Select  * from BSVenta Where ( TotalPendiente <> 0 ) And sucursalid =  ' + #39+ dm.CurSucursal + #39 ;
+
+ if edbuscar.Text <> '' then begin
+
+   case edbuscarpor.ItemIndex of
+     0 :  sqlString := sqlString +
+          ' AND EntradaID like '+#39+'%'+edbuscar.Text+'%'+#39 +
+          ' ORDER BY EntradaID ';
+     1 :  sqlString := sqlString +
+          ' AND PacienteID like '+#39+'%'+edbuscar.Text+'%'+#39 +
+          ' ORDER BY PacienteID ';
+     2 :  sqlString := sqlString +
+          ' AND NombrePaciente like '+#39+'%'+'%'+edbuscar.Text+'%'+#39 +
+          ' ORDER BY NombrePaciente ';
+     3 :  sqlString := sqlString +
+          ' AND ClienteID like '+#39+'%'+edbuscar.Text+'%'+#39+
+          ' ORDER BY ClienteID ';
+     4 :  sqlString := sqlString +
+          ' AND ClienteNombre like '+#39+'%'+edbuscar.Text+'%'+#39 +
+          ' ORDER BY ClienteNombre ';
+     5 :  sqlString := sqlString +
+          ' AND Telefonos like '+#39+'%'+edbuscar.Text+'%'+#39 +
+          ' ORDER BY Telefonos ';
+   end;
+
+ end;
+
+ dmFactura.qrPendientesCobros.DisableControls;
+ dmFactura.qrPendientesCobros.Close;
+ dmFactura.qrPendientesCobros.SQL.Text := sqlString ;
+ dmFactura.qrPendientesCobros.Open;
+  dmFactura.qrPendientesCobros.EnableControls;
+end;
+
+
+procedure TfrmListaCaja.CobrarExecute(Sender: TObject);
+begin
+  inherited;
+
+  dmFactura.AplicarCobro(dsDatos.DataSet.FieldByName('EntradaId').AsString);
+
+  Buscardata;
+
+end;
+
+procedure TfrmListaCaja.CobrarNCFExecute(Sender: TObject);
+var
+  Empresa: String;
+begin
+  inherited;
+
+
+  Exit;
+
+  Empresa:= DMB.BuscarEmpresa;
+
+  if (trim(dmFactura.qrPendientesCobrosNCF.Value) = '') then
+    begin
+     if (true) then
+        begin
+          if not(dmFactura.qrPendientesCobros.State in [dsInsert, dsEdit]) then
+            dmFactura.qrPendientesCobros.Edit;
+            dmFactura.qrPendientesCobrosNCF.Value:= DMB.GetNCF('02');
+            dmFactura.qrPendientesCobros.Post;
+        end
+      else
+        begin
+          dmFactura.qrPendientesCobros.Edit;
+          dmFactura.qrPendientesCobrosNCF.Value:= DMB.GetNCF('02');
+          dmFactura.qrPendientesCobros.Post;
+        end;
+    end;
+
+  CobrarExecute(Sender);
+
+end;
+
+procedure TfrmListaCaja.cxButton7Click(Sender: TObject);
+begin
+  inherited;
+  With dm.Qutilitario do
+    Begin
+      close;
+      sql.clear;
+      sql.Add('SELECT clienteid, identificacion, nombre FROM PTCLIENTE');
+      sql.Add('WHERE tipocliente = ''EMP'' ');
+      sql.Add('AND CLIENTEID = '+#39+ dmFactura.qrPendientesCobrosCLIENTEID.value +#39);
+      Open;
+
+    if recordcount > 0  then
+       begin
+          Application.CreateForm(TFrmCobroEmpleados,FrmCobroEmpleados);
+          FrmCobroEmpleados.cxTextEdit1.Text := dmFactura.qrPendientesCobrosNOMBREPACIENTE.Text;
+          FrmCobroEmpleados.cxTextEdit2.Text := dmFactura.qrPendientesCobrosENTRADAID.value;
+          FrmCobroEmpleados.cxTextEdit3.Text := formatfloat('###,###.00', dmFactura.qrPendientesCobrosNeto.value);
+          FrmCobroEmpleados.cxTextEdit4.Text := formatfloat('###,###.00', dmFactura.qrPendientesCobrosTotalPendiente.value);
+
+          FrmCobroEmpleados.Showmodal;
+       end
+       else
+       ShowMessage('Este Paciente no es un Empleado');
+
+    end;
+end;
+
+procedure TfrmListaCaja.cxButton8Click(Sender: TObject);
+begin
+  inherited;
+Application.CreateForm(TFrmAplicarEMpresa,FrmAplicarEMpresa);
+FrmAplicarEMpresa.cxTextEdit5.Text :=
+FrmAplicarEMpresa.cxTextEdit6.Text :=
+FrmAplicarEMpresa.Show;
+end;
+
+procedure TfrmListaCaja.cxButton9Click(Sender: TObject);
+begin
+  inherited;
+ if dmFactura.qrPendientesCobrosTotalPendiente.value = (dmFactura.qrPendientesCobrosNeto.value * 5) / 100 then
+   begin
+     Application.CreateForm(TFrmregRetenciones,FrmregRetenciones);
+     FrmregRetenciones.showmodal;
+   end
+   else
+   begin
+      ShowMessage('Esta Factura no Aplica para este procedimiento');
+   end;
+
+
+end;
+
+procedure TfrmListaCaja.DescuentoExecute(Sender: TObject);
+var
+  Descuento: Currency;
+begin
+  inherited;
+  dmFactura.DialogoDescuento;
+  //dmFactura.AplicarDescuento(dsDatos.DataSet.FieldByName('EntradaId').AsString, Descuento );
+end;
+
+procedure TfrmListaCaja.FormCreate(Sender: TObject);
+begin
+
+  edbuscarpor.ItemIndex:= 0;
+  BuscarData;
+  dsDatos.DataSet:= dmfactura.qrPendientesCobros;
+
+  inherited;
+
+end;
+
+procedure TfrmListaCaja.ImprimirExecute(Sender: TObject);
+begin
+  inherited;
+
+  dmFactura.ImprimirFactura(dsDatos.DataSet.FieldByName('EntradaId').AsString);
+
+end;
+
+procedure TfrmListaCaja.MostrarExecute(Sender: TObject);
+begin
+  inherited;
+
+  dmFactura.AbrirFactura(dsDatos.DataSet.FieldByName('EntradaId').AsString);
+  TfrmDialogShowFactura.Create(Self).Run;
+
+end;
+
+procedure TfrmListaCaja.PrintCobrosExecute(Sender: TObject);
+begin
+  inherited;
+
+  dmCobros.ImprimirRecibos(dsDatos.DataSet.FieldByName('RecId').AsInteger);
+
+end;
+
+procedure TfrmListaCaja.Timer1Timer(Sender: TObject);
+var
+  vIndex:Integer;
+begin
+  inherited;
+  if Application.Terminated then Exit;
+  
+  Timer1.Enabled := false;
+  vIndex := tvDatos.Controller.FocusedRowIndex;
+  dmFactura.qrPendientesCobros.DisableControls;
+  dmFactura.qrPendientesCobros.Close;
+  dmfactura.qrPendientesCobros.Open;
+  dmFactura.qrPendientesCobros.EnableControls;
+  if (vIndex <> -1) and (tvDatos.DataController.RowCount > 0) then
+    tvDatos.Controller.FocusedRowIndex := vIndex;
+  Timer1.Enabled := true;    
+end;
+
+procedure TfrmListaCaja.DoPost;
+begin
+
+end;
+
+procedure TfrmListaCaja.edbuscarPropertiesChange(Sender: TObject);
+begin
+  inherited;
+
+  BuscarData;
+
+end;
+
+function  TfrmListaCaja.CanAdd : Boolean;
+begin
+  result:= false;
+end;
+
+function  TfrmListaCaja.CanEdit : Boolean;
+begin
+  result:= false;
+end;
+
+function  TfrmListaCaja.CanDelete : Boolean;
+begin
+  result:= false;
+end;
+
+procedure TfrmListaCaja.DoInsert;
+begin
+
+end;
+
+procedure TfrmListaCaja.DoDelete;
+begin
+
+end;
+
+end.

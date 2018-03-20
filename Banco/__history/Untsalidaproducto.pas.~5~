@@ -1,0 +1,71 @@
+unit Untsalidaproducto;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DB, ADODB, StdCtrls, DBCtrls, jpeg, ExtCtrls;
+
+type
+  TFrmsalidaproducto = class(TForm)
+    GroupBox1: TGroupBox;
+    Label2: TLabel;
+    DBText1: TDBText;
+    Image1: TImage;
+    DBText7: TDBText;
+    DBText6: TDBText;
+    Label3: TLabel;
+    Edit1: TEdit;
+    DBMemo1: TDBMemo;
+    Edit2: TEdit;
+    DSetiquetas: TDataSource;
+    Qetiquetas: TADOQuery;
+    GroupBox2: TGroupBox;
+    GroupBox3: TGroupBox;
+    Memo1: TMemo;
+    Label1: TLabel;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Edit2KeyPress(Sender: TObject; var Key: Char);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frmsalidaproducto: TFrmsalidaproducto;
+
+implementation
+
+uses DataModule;
+
+{$R *.dfm}
+
+procedure TFrmsalidaproducto.Edit2KeyPress(Sender: TObject; var Key: Char);
+begin
+if Key = #13 then
+  Begin
+     if Edit1.Text <> '' then
+       Begin
+        With Qetiquetas do
+          begin
+           Close;
+           Sql.Clear;
+           Sql.Add('SELECT * FROM V_ETIQUETAS (NOLOCK)');
+           Sql.Add('WHERE ISTBDONACION ='+ #39+ Edit1.Text + #39);
+           Sql.Add('AND BARRA ='+ #39+ Edit2.Text + #39);
+           Open;
+          end;
+     end;
+
+  end;
+
+end;
+
+procedure TFrmsalidaproducto.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+action := caFree;
+end;
+
+end.

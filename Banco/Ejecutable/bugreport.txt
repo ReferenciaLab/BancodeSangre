@@ -1,0 +1,1723 @@
+date/time         : 2016-06-15, 11:03:50, 409ms
+computer name     : ASISTENTE5TO
+user name         : pgm1 <admin>
+operating system  : Windows NT New Service Pack 1 build 7601
+system language   : Spanish
+system up time    : 5 days 23 hours
+program up time   : 4 minutes 29 seconds
+processors        : 2x Pentium(R) Dual-Core CPU E5500 @ 2.80GHz
+physical memory   : 1161/3037 MB (free/total)
+free disk space   : (C:) 141,64 GB
+display mode      : 1440x900, 32 bit
+process id        : $21a0
+allocated memory  : 87,20 MB
+executable        : Banco.exe
+exec. date/time   : 2016-04-27 11:54
+version           : 1.5.1.15
+madExcept version : 3.0b
+callstack crc     : $bb78b700, $c27588d1, $c27588d1
+exception number  : 3
+exception class   : EAccessViolation
+exception message : Access violation at address 004BBB30 in module 'Banco.exe'. Read of address 0000005C.
+
+main thread ($a44):
+004bbb30 +0e0 Banco.exe    Controls                TControl.SetAlign
+008f7be3 +07f Banco.exe    LMDFormDisplay          TLMDFormDisplay.HideForm
+008f7c37 +027 Banco.exe    LMDFormDisplay          TLMDFormDisplay.RemoveForm
+0108190b +047 Banco.exe    Main           2268  +9 TfrmMain.tsVentanasCanClose
+00bc3f79 +031 Banco.exe    AdvTabSet      5039  +6 TAdvTabSet.CloseButtonClick
+00bc230c +0b8 Banco.exe    AdvTabSet      4055 +27 TAdvTabSet.MouseUp
+004be6f4 +02c Banco.exe    Controls                TControl.DoMouseUp
+004be776 +076 Banco.exe    Controls                TControl.WMLButtonUp
+004bddeb +2bb Banco.exe    Controls                TControl.WndProc
+004c1c14 +46c Banco.exe    Controls                TWinControl.WndProc
+004c13cc +02c Banco.exe    Controls                TWinControl.MainWndProc
+0047bbf4 +014 Banco.exe    Classes                 StdWndProc
+75902e3c +00a USER32.dll                           DispatchMessageA
+004dc0d4 +0fc Banco.exe    Forms                   TApplication.ProcessMessage
+004dc10e +00a Banco.exe    Forms                   TApplication.HandleMessage
+004dc32e +096 Banco.exe    Forms                   TApplication.Run
+01091825 +189 Banco.exe    Banco           426 +23 initialization
+757ced6a +010 kernel32.dll                         BaseThreadInitThunk
+
+thread $1b48:
+76f17094 +00 ntdll.dll     KiFastSystemCallRet
+76f16a02 +0a ntdll.dll     NtWaitForMultipleObjects
+757ced6a +10 kernel32.dll  BaseThreadInitThunk
+
+thread $668:
+76f17094 +00 ntdll.dll       KiFastSystemCallRet
+76f16a22 +0a ntdll.dll       NtWaitForSingleObject
+75311796 +66 KERNELBASE.dll  WaitForSingleObjectEx
+757cc2ee +3e kernel32.dll    WaitForSingleObjectEx
+757cc29d +0d kernel32.dll    WaitForSingleObject
+757ced6a +10 kernel32.dll    BaseThreadInitThunk
+
+thread $16a4 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $9d0 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $1bb4 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $22a8 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $1e14 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $66c (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $1678 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $25b8 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $900 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $2588 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $2570 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $20e4 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $24b8 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $ac4 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $1fdc (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $1dec (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $1a78 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $9c4 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $182c (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $20e0 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $1a4c (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $1b6c (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $22fc (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $16ac (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $143c: <priority:2>
+76f17094 +00 ntdll.dll              KiFastSystemCallRet
+759018d4 +3b USER32.dll             GetMessageA
+0044f701 +0d Banco.exe    madExcept CallThreadProcSafe
+0044f76b +37 Banco.exe    madExcept ThreadExceptFrame
+757ced6a +10 kernel32.dll           BaseThreadInitThunk
+>> created by main thread ($a44) at:
+72506c8b +00 winmm.dll
+
+thread $24f0:
+76f17094 +00 ntdll.dll     KiFastSystemCallRet
+76f16a32 +0a ntdll.dll     NtWaitForWorkViaWorkerFactory
+757ced6a +10 kernel32.dll  BaseThreadInitThunk
+
+thread $18d4:
+76f17094 +0000 ntdll.dll       KiFastSystemCallRet
+76f16a02 +000a ntdll.dll       NtWaitForMultipleObjects
+75316a30 +0000 KERNELBASE.dll  WaitForMultipleObjectsEx
+757cbd19 +0089 kernel32.dll    WaitForMultipleObjectsEx
+759062f3 +7f8a USER32.dll      MsgWaitForMultipleObjectsEx
+759037f2 +001a USER32.dll      MsgWaitForMultipleObjects
+757ced6a +0010 kernel32.dll    BaseThreadInitThunk
+
+modules:
+00400000 Banco.exe            1.5.1.15           C:\Desarrollo\Banco\Ejecutable
+060d0000 OLEDB32R.DLL         6.1.7600.16385     C:\Program Files\Common Files\System\Ole DB
+060f0000 comsvcs.dll          2001.12.8530.16385 C:\Windows\system32
+06230000 MSDATL3.dll          6.1.7600.16385     C:\Program Files\Common Files\System\Ole DB
+06630000 odbccp32.dll         6.1.7601.17632     C:\Windows\system32
+08ab0000 ttyui.dll            0.3.7600.16385     C:\Windows\system32\spool\DRIVERS\W32X86\3
+08ae0000 unires.dll           0.3.7601.17514     C:\Windows\system32\spool\DRIVERS\W32X86\3
+08de0000 DBNETLIB.DLL         6.1.7600.16385     C:\Windows\system32
+142d0000 msadce.dll           6.1.7601.17514     C:\Program Files\Common Files\System\msadc
+15ae0000 msdasql.dll          6.1.7601.17514     C:\Program Files\Common Files\System\Ole DB
+1b2d0000 oledb32.dll          6.1.7601.17514     C:\Program Files\Common Files\System\Ole DB
+1ba70000 sqloledb.dll         6.1.7601.17514     C:\Program Files\Common Files\System\Ole DB
+1d4a0000 msado15.dll          6.1.7601.17514     C:\Program Files\Common Files\System\ado
+5cda0000 UNIDRV.DLL           0.3.7601.17514     C:\Windows\system32\spool\DRIVERS\W32X86\3
+61df0000 CWBSOMRI.DLL         12.0.0.0           C:\Program Files\IBM\Client Access\MRI2931
+62050000 cwbcomsg.dll                            C:\Program Files\IBM\Client Access\MRI2931
+620f0000 cwbodmsg.dll         12.0.0.0           C:\Program Files\IBM\Client Access\MRI2931
+63ae0000 cwbunssl.dll         12.0.0.0           C:\Windows\system32
+63b00000 cwbunpls.dll         12.0.0.0           C:\Windows\system32
+63b10000 CWBUNPLA.dll         12.0.0.0           C:\Windows\system32
+63c90000 cwbsv.dll                               C:\Windows\system32
+63e20000 cwbsof.dll           12.0.0.0           C:\Windows\system32
+63ed0000 cwbrw.dll                               C:\Windows\system32
+63f10000 cwbrc.dll            12.0.0.0           C:\Windows\system32
+63fb0000 cwbnl.dll                               C:\Windows\system32
+64120000 cwbcore.dll          12.0.0.0           C:\Windows\system32
+64240000 cwbco.dll                               C:\Windows\system32
+64250000 cwbbsspi.dll         12.0.0.0           C:\Windows\system32
+64270000 cwbbspc.dll          12.0.0.0           C:\Windows\system32
+642b0000 cwbad1.dll           12.0.0.0           C:\Windows\system32
+642c0000 cwbad.dll                               C:\Windows\system32
+64810000 cwbodbc.dll          12.0.0.0           C:\Windows\system32
+66770000 UNIDRVUI.DLL         0.3.7601.17514     C:\Windows\system32\spool\DRIVERS\W32X86\3
+66a50000 MSVCP80.dll          8.0.50727.6195     C:\Windows\WinSxS\x86_microsoft.vc80.crt_1fc8b3b9a1e18e3b_8.0.50727.6195_none_d09154e044272b9a
+66ae0000 MFC80U.DLL           8.0.50727.6195     C:\Windows\WinSxS\x86_microsoft.vc80.mfc_1fc8b3b9a1e18e3b_8.0.50727.6195_none_cbf5e994470a1a8f
+69310000 olepro32.dll         6.1.7601.17514     C:\Windows\system32
+696d0000 winspool.drv         6.1.7601.17514     C:\Windows\system32
+69730000 MSDASQLR.DLL         6.1.7600.16385     C:\Program Files\Common Files\System\Ole DB
+69740000 MSDART.DLL           6.1.7600.16385     C:\Windows\system32
+69840000 msadcer.dll          6.1.7600.16385     C:\Program Files\Common Files\System\msadc
+6a060000 security.dll         6.1.7600.16385     C:\Windows\system32
+6be50000 SHFOLDER.dll         6.1.7600.16385     C:\Windows\system32
+6caa0000 odbcint.dll          6.1.7600.16385     C:\Windows\system32
+6cae0000 ODBC32.dll           6.1.7601.17514     C:\Windows\system32
+6e870000 MSVCR80.dll          8.0.50727.6195     C:\Windows\WinSxS\x86_microsoft.vc80.crt_1fc8b3b9a1e18e3b_8.0.50727.6195_none_d09154e044272b9a
+6f820000 ntdsapi.dll          6.1.7600.16385     C:\Windows\system32
+70340000 rasadhlp.dll         6.1.7600.16385     C:\Windows\system32
+70350000 WLIDNSP.DLL          7.250.4232.0       C:\Program Files\Common Files\Microsoft Shared\Windows Live
+712d0000 wsock32.dll          6.1.7600.16385     C:\Windows\system32
+71d00000 fwpuclnt.dll         6.1.7601.17514     C:\Windows\System32
+71d90000 WINNSI.DLL           6.1.7600.16385     C:\Windows\system32
+71df0000 IPHLPAPI.DLL         6.1.7601.17514     C:\Windows\system32
+72110000 ttyres.dll           6.1.7600.16385     C:\Windows\system32\spool\DRIVERS\W32X86\3
+72170000 tty.dll              0.3.7600.16385     C:\Windows\system32\spool\DRIVERS\W32X86\3
+72340000 SQLOLEDB.RLL         6.1.7600.16385     C:\Program Files\Common Files\System\Ole DB
+724e0000 ATL.DLL              3.5.2284.0         C:\Windows\system32
+72500000 winmm.dll            6.1.7601.17514     C:\Windows\system32
+728a0000 msimg32.dll          6.1.7600.16385     C:\Windows\system32
+72e80000 wkscli.dll           6.1.7601.17514     C:\Windows\system32
+72e90000 NETAPI32.dll         6.1.7601.17514     C:\Windows\system32
+73810000 dwmapi.dll           6.1.7600.16385     C:\Windows\system32
+73ac0000 gdiplus.dll          6.1.7601.17514     C:\Windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.7601.17514_none_72d18a4386696c80
+73da0000 uxtheme.dll          6.1.7600.16385     C:\Windows\system32
+73f70000 comctl32.dll         6.10.7601.17514    C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_41e6975e2bd6f2b2
+744e0000 version.dll          6.1.7600.16385     C:\Windows\system32
+745a0000 wshtcpip.dll         6.1.7600.16385     C:\Windows\System32
+74780000 bcryptprimitives.dll 6.1.7600.16385     C:\Windows\system32
+74840000 rsaenh.dll           6.1.7600.16385     C:\Windows\system32
+748b0000 schannel.DLL         6.1.7601.17725     C:\Windows\system32
+749d0000 DNSAPI.dll           6.1.7601.17570     C:\Windows\system32
+74a20000 msv1_0.DLL           6.1.7601.17514     C:\Windows\system32
+74a70000 credssp.dll          6.1.7601.17514     C:\Windows\system32
+74a80000 netutils.dll         6.1.7601.17514     C:\Windows\system32
+74a90000 mswsock.dll          6.1.7601.17514     C:\Windows\system32
+74ad0000 CRYPTSP.dll          6.1.7600.16385     C:\Windows\system32
+74bd0000 bcrypt.dll           6.1.7600.16385     C:\Windows\system32
+74bf0000 ncrypt.dll           6.1.7600.16385     C:\Windows\system32
+74c60000 wship6.dll           6.1.7600.16385     C:\Windows\System32
+74cd0000 cryptdll.dll         6.1.7600.16385     C:\Windows\system32
+74da0000 srvcli.dll           6.1.7601.17514     C:\Windows\system32
+74f20000 SECUR32.DLL          6.1.7601.17725     C:\Windows\system32
+74f40000 SspiCli.dll          6.1.7601.17725     C:\Windows\system32
+74f60000 CRYPTBASE.dll        6.1.7600.16385     C:\Windows\system32
+75050000 RpcRtRemote.dll      6.1.7601.17514     C:\Windows\system32
+75060000 profapi.dll          6.1.7600.16385     C:\Windows\system32
+750d0000 MSASN1.dll           6.1.7601.17514     C:\Windows\system32
+75130000 CRYPT32.dll          6.1.7601.17514     C:\Windows\system32
+75250000 WINTRUST.dll         6.1.7601.17514     C:\Windows\system32
+75310000 KERNELBASE.dll       6.1.7601.17651     C:\Windows\system32
+753c0000 advapi32.dll         6.1.7601.17514     C:\Windows\system32
+75490000 WS2_32.dll           6.1.7601.17514     C:\Windows\system32
+755f0000 CLBCatQ.DLL          2001.12.8530.16385 C:\Windows\system32
+75680000 RPCRT4.dll           6.1.7601.17514     C:\Windows\system32
+75730000 GDI32.dll            6.1.7601.17514     C:\Windows\system32
+75780000 kernel32.dll         6.1.7601.17651     C:\Windows\system32
+75860000 sechost.dll          6.1.7600.16385     C:\Windows\SYSTEM32
+75880000 SHLWAPI.dll          6.1.7601.17514     C:\Windows\system32
+758f0000 USER32.dll           6.1.7601.17514     C:\Windows\system32
+759c0000 shell32.dll          6.1.7601.17755     C:\Windows\system32
+767d0000 oleaut32.dll         6.1.7601.17676     C:\Windows\system32
+76860000 msvcrt.dll           7.0.7601.17744     C:\Windows\system32
+76910000 MSCTF.dll            6.1.7600.16385     C:\Windows\system32
+76b50000 comdlg32.dll         6.1.7601.17514     C:\Windows\system32
+76bd0000 ole32.dll            6.1.7601.17514     C:\Windows\system32
+76ed0000 ntdll.dll            6.1.7601.17725     C:\Windows\SYSTEM32
+77010000 NSI.dll              6.1.7600.16385     C:\Windows\system32
+77020000 LPK.dll              6.1.7600.16385     C:\Windows\system32
+77030000 PSAPI.DLL            6.1.7600.16385     C:\Windows\system32
+77040000 imm32.dll            6.1.7601.17514     C:\Windows\system32
+77060000 USP10.dll            1.626.7601.17514   C:\Windows\system32
+
+processes:
+0000 Idle                       0
+0004 System                     0
+01a4 smss.exe                   0
+0230 csrss.exe                  0
+0264 csrss.exe                  1
+026c wininit.exe                0
+029c winlogon.exe               1
+02cc services.exe               0
+02d4 lsass.exe                  0
+02dc lsm.exe                    0
+0348 svchost.exe                0
+03a4 svchost.exe                0
+0408 svchost.exe                0
+0420 iSafeSvc.exe               0
+0498 iSafeSvc2.exe              0
+04d8 svchost.exe                0
+04f8 svchost.exe                0
+05c4 svchost.exe                0
+068c svchost.exe                0
+078c qkseeSvc.exe               0
+023c spoolsv.exe                0
+01e4 svchost.exe                0
+0700 svchost.exe                0
+06e8 atashost.exe               0
+074c cktSvc.exe                 0
+0878 ContentProtector.exe       0
+08a4 ContentProtectorUpdate.exe 0
+08d0 svchost.exe                0
+0a38 inetinfo.exe               0
+0a64 klnagent.exe               0
+0b80 mdm.exe                    0
+0c54 taskhost.exe               1 normal C:\Windows\system32
+0c90 Dwm.exe                    1 high   C:\Windows\system32
+0ca8 Explorer.EXE               1 normal C:\Windows
+0cd4 iSafeTray.exe              1 normal C:\Program Files\Elex-tech\YAC
+0f28 LenovoFSC.exe              1 normal C:\Program Files\Lenovo\FanSpeedControl
+0fe8 ICO.exe                    1 normal C:\Program Files\Lenovo\Lenovo Mouse Suite
+0a94 igfxsrvc.exe               1 normal C:\Windows\system32
+0a5c hkcmd.exe                  1 normal C:\Windows\System32
+0c28 igfxpers.exe               1 normal C:\Windows\System32
+0cc0 rundll32.exe               1 normal C:\Windows\System32
+0d1c SCHTASK.EXE                1 normal C:\Program Files\ThinkPad\Utilities
+0d04 MCPLaunch.exe              1 idle   C:\Program Files\Lenovo\Message Center Plus
+01d0 sqlservr.exe               0
+0ea8 hppfaxprintersrv.exe       1 normal C:\Program Files\HP\HP LaserJet Professional CM1410 series\Fax Driver
+0e94 PWRISOVM.EXE               1 normal C:\Program Files\PowerISO
+0950 avastui.exe                1 normal C:\Program Files\AVAST Software\Avast
+0a54 msmdsrv.exe                0
+0dc4 soffice.exe                1 normal C:\Program Files\OpenOffice.org 3\program
+0eb4 PelService.exe             0
+0d74 PWMDBSVC.exe               0
+0f54 soffice.bin                1 normal C:\Program Files\OpenOffice.org 3\program
+1188 sftvsa.exe                 0
+11b8 snmp.exe                   0
+11dc FSRremoS.EXE               1 normal C:\Program Files\Lenovo\Lenovo Mouse Suite
+11e4 sqlwriter.exe              0
+1208 svchost.exe                0
+1240 TData.exe                  0
+129c PelElvDm.exe               1
+12f8 TeamViewer_Service.exe     0
+1348 tvnserver.exe              0
+13ac UncheckitSvc.exe           0
+141c svchost.exe                0
+1434 uncheckitBsn.exe           1 normal C:\Program Files\Uncheckit
+14a0 winvnc4.exe                0
+14c4 winvnc4.exe                1
+1504 WLIDSVC.EXE                0
+1570 WLIDSVCM.EXE               0
+1578 CcmExec.exe                0
+1654 sftlist.exe                0
+16e8 unsecapp.exe               1 normal C:\Windows\system32\wbem
+1798 WmiPrvSE.exe               0
+1314 CVHSVC.EXE                 0
+10f4 SearchIndexer.exe          0
+104c svchost.exe                0
+19c4 WmiPrvSE.exe               0
+1b9c TeamViewer.exe             1 normal C:\Program Files\TeamViewer
+1c98 tv_w32.exe                 1
+1d48 mobsync.exe                1 normal C:\Windows\System32
+11c4 vapm.exe                   0
+1b74 svchost.exe                0
+1c28 unsecapp.exe               0
+1d6c tvt_reg_monitor_svc.exe    0
+12dc protect.exe                0
+11b0 WmiPrvSE.exe               0
+1090 SMSCliUI.exe               1 normal C:\Windows\system32\CCM
+1dc8 rrservice.exe              0
+1ed4 scheduler_proxy.exe        1 normal C:\Program Files\Common Files\Lenovo\Scheduler
+1bbc Ssms.exe                   1 normal C:\Program Files\Microsoft SQL Server\110\Tools\Binn\ManagementStudio
+1124 taskhost.exe               1 normal C:\Windows\system32
+1fd4 ctfmon.exe                 1 normal C:\Windows\system32
+09bc WFini.exe                  0
+1aec SSFK.exe                   0
+0bb0 OSPPSVC.EXE                0
+26c4 bds.exe                    1 normal C:\Program Files\Borland\BDS\4.0\Bin
+2734 AvastSvc.exe               0
+20b0 winzipersvc.exe            0
+0de8 notepad++.exe              1 normal C:\Program Files\Notepad++
+02a8 pcsws.exe                  1 normal C:\Program Files\IBM\Client Access\Emulator
+0970 pcscm.exe                  1 normal C:\Program Files\IBM\Client Access\Emulator
+21ac WUDFHost.exe               0
+26a4 csrss.exe                  2
+2794 winlogon.exe               2
+2004 taskhost.exe               2 normal C:\Windows\system32
+2060 Dwm.exe                    2 high   C:\Windows\system32
+23b4 Explorer.EXE               2 normal C:\Windows
+0ca0 iSafeTray.exe              2 normal C:\Program Files\Elex-tech\YAC
+1034 LenovoFSC.exe              2 normal C:\Program Files\Lenovo\FanSpeedControl
+1980 ICO.exe                    2 normal C:\Program Files\Lenovo\Lenovo Mouse Suite
+0764 igfxtray.exe               2 normal C:\Windows\System32
+27a0 hkcmd.exe                  2 normal C:\Windows\System32
+1f88 igfxsrvc.exe               2
+00c8 igfxpers.exe               2 normal C:\Windows\System32
+1320 rundll32.exe               2 normal C:\Windows\System32
+265c MCPLaunch.exe              2 idle   C:\Program Files\Lenovo\Message Center Plus
+258c SCHTASK.EXE                2 normal C:\Program Files\ThinkPad\Utilities
+2518 tvnserver.exe              2 normal C:\Program Files\TightVNC
+151c HPTLBXFX.exe               2 normal C:\Program Files\HP\ToolboxFX\bin
+2410 hppfaxprintersrv.exe       2 normal C:\Program Files\HP\HP LaserJet Professional CM1410 series\Fax Driver
+0504 PWRISOVM.EXE               2 normal C:\Program Files\PowerISO
+2364 avastui.exe                2 normal C:\Program Files\AVAST Software\Avast
+20fc TeamViewer.exe             2 normal C:\Program Files\TeamViewer
+2110 unsecapp.exe               2
+1b24 tv_w32.exe                 2
+2120 devenv.exe                 2 normal C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE
+13c8 FSRremoS.EXE               2 normal C:\Program Files\Lenovo\Lenovo Mouse Suite
+09a4 PelElvDm.exe               2
+1a74 OUTLOOK.EXE                1 normal C:\Program Files\Microsoft Office\Office14
+0968 OSE.EXE                    0
+21a0 Banco.exe                  1 normal C:\Desarrollo\Banco\Ejecutable
+19a0 audiodg.exe                0
+
+hardware:
++ Batteries
+  - Batería compuesta de Microsoft
++ Computer
+  - Equipo basado en ACPI x86
++ Disk drives
+  - Kingston DataTraveler 2.0 USB Device
+  - WDC WD3200AAJS-08L7A0 ATA Device
+  - ZTE MMC Storage USB Device
++ Display adapters
+  - Intel(R) G41 Express Chipset (driver 8.15.10.2040)
+  - LogMeIn Mirror Driver (driver 7.1.542.0)
+  - VNC Mirror Driver (driver 1.8.0.0)
++ DVD/CD-ROM drives
+  - PLDS DVD-RW DH16ABSH ATA Device
+  - ZTE USB SCSI CD-ROM USB Device
++ Human Interface Devices
+  - Dispositivo de entrada USB
+  - Dispositivo de entrada USB
++ IDE ATA/ATAPI controllers
+  - ATA Channel 0
+  - ATA Channel 0
+  - ATA Channel 1
+  - ATA Channel 1
+  - Controladora de almacenamiento ATA serie Intel(R) 82801GB/GR/GH (familia ICH7) - 27C0
+  - Controladoras de almacenamiento Ultra ATA Intel(R) 82801G (familia ICH7) - 27DF
++ Keyboards
+  - Dispositivo de teclado HID
++ Mice and other pointing devices
+  - Mouse compatible con HID
++ Monitors
+  - Monitor PnP genérico
++ Network adapters
+  - Generic Marvell Yukon 88E8057 PCI-E Gigabit Ethernet Controller #2 (driver 11.10.5.3)
+  - TeamViewer VPN Adapter (driver 2.10.0.0)
++ Portable Devices
+  - HGV
+  - I:\
++ Ports (COM & LPT)
+  - Puerto de comunicaciones (COM1)
++ Processors
+  - Pentium(R) Dual-Core  CPU      E5500  @ 2.80GHz
+  - Pentium(R) Dual-Core  CPU      E5500  @ 2.80GHz
++ SM Driver
+  - SM bios service (driver 6.1.1015.0)
++ Sound, video and game controllers
+  - Realtek High Definition Audio (driver 6.0.1.6019)
++ Storage volume shadow copies
+  - Instantánea de volumen genérico
+  - Instantánea de volumen genérico
+  - Instantánea de volumen genérico
+  - Instantánea de volumen genérico
++ System devices
+  - Administrador de volúmenes
+  - Altavoz del sistema
+  - Archivar como controlador de volumen
+  - Botón de característica fija ACPI
+  - Botón de encendido ACPI
+  - Bus PCI
+  - Controlador BIOS de Microsoft System Management
+  - Controlador de enumerador de unidades virtuales de Microsoft
+  - Controlador de mouse de Terminal Server
+  - Controlador de teclado de Terminal Server
+  - Controladora de acceso directo a memoria
+  - Controladora de High Definition Audio
+  - Controladora de interfaz LPC de Intel(R) 82801GB/GR (familia ICH7) - 27B8
+  - Controladora de procesador del chipset Intel(R) 4 Series a E/S - 2E30
+  - Controladora programable de interrupciones
+  - Controladora SMBus de Intel(R) 82801G (familia ICH7) - 27DA
+  - Cronómetro del sistema
+  - Dispositivo concentrador de firmware Intel(R) 82802
+  - Enumerador de bus compuesto
+  - Enumerador de bus raíz de UMBus
+  - Enumerador de dispositivos de software Plug and Play
+  - Enumerador de UMBus
+  - Enumerador de UMBus
+  - Lenovo ASD HWM Driver (driver 1.0.0.2)
+  - Procesador de datos numéricos
+  - Puente PCI Intel(R) 82801 - 244E
+  - Puerto raíz PCI Express de Intel(R) 82801G (familia ICH7) - 27D0
+  - Puerto raíz PCI Express de Intel(R) 82801G (familia ICH7) - 27D2
+  - Recursos de la placa base
+  - Recursos de la placa base
+  - Recursos de la placa base
+  - Recursos de la placa base
+  - Recursos de la placa base
+  - Remote Desktop Device Redirector Bus
+  - Sistema CMOS/reloj en tiempo real
+  - Sistema Microsoft compatible con ACPI
+  - Tarjeta de sistema
+  - Tarjeta de sistema
+  - Temporizador de eventos de alta precisión
++ Universal Serial Bus controllers
+  - Concentrador raíz USB
+  - Concentrador raíz USB
+  - Concentrador raíz USB
+  - Concentrador raíz USB
+  - Concentrador raíz USB
+  - Controlador de host mejorado USB2 Intel(R) 82801G (familia ICH7) - 27CC
+  - Controlador de host universal USB Intel(R) 82801G (familia ICH7) - 27C8
+  - Controlador de host universal USB Intel(R) 82801G (familia ICH7) - 27C9
+  - Controlador de host universal USB Intel(R) 82801G (familia ICH7) - 27CA
+  - Controlador de host universal USB Intel(R) 82801G (familia ICH7) - 27CB
+  - Dispositivo de almacenamiento USB
+  - Dispositivo de almacenamiento USB
+
+cpu registers:
+eax = 04568150
+ebx = 00000000
+ecx = 00000001
+edx = 00000000
+esi = 044f0c00
+edi = 04568150
+eip = 004bbb30
+esp = 0012fb78
+ebp = 0012fbc4
+
+stack dump:
+0012fb78  01 00 00 00 50 81 56 04 - 00 0c 4f 04 50 81 56 04  ....P.V...O.P.V.
+0012fb88  e8 7b 8f 00 00 0c 4f 04 - 50 81 56 04 01 00 00 00  .{....O.P.V.....
+0012fb98  3c 7c 8f 00 57 00 00 00 - 00 0c 4f 04 c0 9e 57 04  <|..W.....O...W.
+0012fba8  10 19 08 01 a8 fd 12 00 - 5b 57 40 00 c4 fb 12 00  ........[W@.....
+0012fbb8  57 00 00 00 01 00 00 00 - 90 08 4f 04 f0 fb 12 00  W.........O.....
+0012fbc8  7f 3f bc 00 d0 fb 12 00 - 00 00 00 00 90 08 4f 04  .?............O.
+0012fbd8  01 00 00 00 11 23 bc 00 - 90 08 4f 04 54 22 bc 00  .....#....O.T"..
+0012fbe8  00 00 00 00 00 00 00 00 - 60 fd 12 00 f9 e6 4b 00  ........`.....K.
+0012fbf8  0e 00 00 00 57 00 00 00 - d8 fd 12 00 90 08 4f 04  ....W.........O.
+0012fc08  90 08 4f 04 7b e7 4b 00 - 2d 6d 92 75 02 00 00 00  ..O.{.K.-m.u....
+0012fc18  6f 00 00 00 79 00 00 00 - 68 0d 17 00 4d 00 00 00  o...y...h...M...
+0012fc28  64 fe 12 00 64 fe 12 00 - 90 08 4f 04 d8 fd 12 00  d...d.....O.....
+0012fc38  ee dd 4b 00 64 fe 12 00 - 02 02 00 00 90 08 4f 04  ..K.d.........O.
+0012fc48  00 00 00 00 00 00 07 00 - 00 00 00 00 70 fc 12 00  ............p...
+0012fc58  7d 76 55 00 0f 06 59 05 - 00 00 00 00 02 02 00 00  }vU...Y.........
+0012fc68  34 fd 12 00 34 fd 12 00 - a4 fc 12 00 80 6d 92 75  4...4........m.u
+0012fc78  00 00 00 00 02 02 00 00 - 34 fd 12 00 01 00 07 00  ........4.......
+0012fc88  cc f6 fd 7f 01 00 00 00 - cc f6 fd 7f 01 00 07 00  ................
+0012fc98  3c 57 f2 76 00 00 00 00 - 01 00 00 00 e4 fc 12 00  <W.v............
+0012fca8  a9 e1 8f 75 00 00 00 00 - 02 02 00 00 34 fd 12 00  ...u........4...
+
+disassembling:
+[...]
+010818fe        mov     eax, esi
+01081900        call    -$78a399 ($8f756c)     ; LMDFormDisplay.TLMDFormDisplay.GetActiveForm
+01081905        mov     edx, eax
+01081907        mov     eax, esi
+01081909        mov     cl, 1
+0108190b      > call    -$789d00 ($8f7c10)     ; LMDFormDisplay.TLMDFormDisplay.RemoveForm
+01081910 2269   mov     eax, [ebp+8]
+01081913        mov     byte ptr [eax], 1
+01081916        xor     eax, eax
+01081918        pop     edx
+01081919        pop     ecx
+[...]
+
+date/time         : 2016-06-15, 11:03:55, 564ms
+computer name     : ASISTENTE5TO
+user name         : pgm1 <admin>
+operating system  : Windows NT New Service Pack 1 build 7601
+system language   : Spanish
+system up time    : 5 days 23 hours
+program up time   : 4 minutes 35 seconds
+processors        : 2x Pentium(R) Dual-Core CPU E5500 @ 2.80GHz
+physical memory   : 1161/3037 MB (free/total)
+free disk space   : (C:) 141,64 GB
+display mode      : 1440x900, 32 bit
+process id        : $21a0
+allocated memory  : 87,20 MB
+executable        : Banco.exe
+exec. date/time   : 2016-04-27 11:54
+version           : 1.5.1.15
+madExcept version : 3.0b
+callstack crc     : $bb78b700, $0289b253, $0289b253
+exception number  : 4
+exception class   : EAccessViolation
+exception message : Access violation at address 004BBB30 in module 'Banco.exe'. Read of address 0000005C.
+
+main thread ($a44):
+004bbb30 +0e0 Banco.exe    Controls                TControl.SetAlign
+008f7be3 +07f Banco.exe    LMDFormDisplay          TLMDFormDisplay.HideForm
+008f7346 +076 Banco.exe    LMDFormDisplay          TLMDFormDisplay.SetActiveFormIndex
+010819a8 +06c Banco.exe    Main           2289  +9 TfrmMain.tsVentanasChange
+00bc1bdb +02f Banco.exe    AdvTabSet      3703  +6 TAdvTabSet.CanChange
+00bc1c49 +05d Banco.exe    AdvTabSet      3725 +16 TAdvTabSet.SetTabIndex
+00bc2101 +0d5 Banco.exe    AdvTabSet      3963 +27 TAdvTabSet.MouseDown
+004be3c6 +076 Banco.exe    Controls                TControl.DoMouseDown
+004be414 +040 Banco.exe    Controls                TControl.WMLButtonDown
+004bddeb +2bb Banco.exe    Controls                TControl.WndProc
+004c1c14 +46c Banco.exe    Controls                TWinControl.WndProc
+004c13cc +02c Banco.exe    Controls                TWinControl.MainWndProc
+0047bbf4 +014 Banco.exe    Classes                 StdWndProc
+75902e3c +00a USER32.dll                           DispatchMessageA
+004dc0d4 +0fc Banco.exe    Forms                   TApplication.ProcessMessage
+004dc10e +00a Banco.exe    Forms                   TApplication.HandleMessage
+004dc32e +096 Banco.exe    Forms                   TApplication.Run
+01091825 +189 Banco.exe    Banco           426 +23 initialization
+757ced6a +010 kernel32.dll                         BaseThreadInitThunk
+
+thread $1b48:
+76f17094 +00 ntdll.dll     KiFastSystemCallRet
+76f16a02 +0a ntdll.dll     NtWaitForMultipleObjects
+757ced6a +10 kernel32.dll  BaseThreadInitThunk
+
+thread $668:
+76f17094 +00 ntdll.dll       KiFastSystemCallRet
+76f16a22 +0a ntdll.dll       NtWaitForSingleObject
+75311796 +66 KERNELBASE.dll  WaitForSingleObjectEx
+757cc2ee +3e kernel32.dll    WaitForSingleObjectEx
+757cc29d +0d kernel32.dll    WaitForSingleObject
+757ced6a +10 kernel32.dll    BaseThreadInitThunk
+
+thread $16a4 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $9d0 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $1bb4 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $22a8 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $1e14 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $66c (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $1678 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $25b8 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $900 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $2588 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $2570 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $20e4 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $24b8 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $ac4 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $1fdc (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $1dec (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $1a78 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $9c4 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $182c (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $20e0 (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $1a4c (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $1b6c (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $22fc (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $16ac (TDataConnectThread):
+76f17094 +000 ntdll.dll                      KiFastSystemCallRet
+76f16a02 +00a ntdll.dll                      NtWaitForMultipleObjects
+75316a30 +000 KERNELBASE.dll                 WaitForMultipleObjectsEx
+757cbd19 +089 kernel32.dll                   WaitForMultipleObjectsEx
+757cbd87 +013 kernel32.dll                   WaitForMultipleObjects
+006d4434 +168 Banco.exe      RpCon           TDataConnectThread.Execute
+0044f81f +02b Banco.exe      madExcept       HookedTThreadExecute
+00479eb4 +034 Banco.exe      Classes         ThreadProc
+00405d28 +028 Banco.exe      System    55 +0 ThreadWrapper
+0044f701 +00d Banco.exe      madExcept       CallThreadProcSafe
+0044f76b +037 Banco.exe      madExcept       ThreadExceptFrame
+757ced6a +010 kernel32.dll                   BaseThreadInitThunk
+>> created by main thread ($a44) at:
+006d4e31 +029 Banco.exe      RpCon           TRvCustomConnection.SetRTVisible
+
+thread $143c: <priority:2>
+76f17094 +00 ntdll.dll              KiFastSystemCallRet
+759018d4 +3b USER32.dll             GetMessageA
+0044f701 +0d Banco.exe    madExcept CallThreadProcSafe
+0044f76b +37 Banco.exe    madExcept ThreadExceptFrame
+757ced6a +10 kernel32.dll           BaseThreadInitThunk
+>> created by main thread ($a44) at:
+72506c8b +00 winmm.dll
+
+thread $24f0:
+76f17094 +00 ntdll.dll     KiFastSystemCallRet
+76f16a32 +0a ntdll.dll     NtWaitForWorkViaWorkerFactory
+757ced6a +10 kernel32.dll  BaseThreadInitThunk
+
+thread $18d4:
+76f17094 +0000 ntdll.dll       KiFastSystemCallRet
+76f16a02 +000a ntdll.dll       NtWaitForMultipleObjects
+75316a30 +0000 KERNELBASE.dll  WaitForMultipleObjectsEx
+757cbd19 +0089 kernel32.dll    WaitForMultipleObjectsEx
+759062f3 +7f8a USER32.dll      MsgWaitForMultipleObjectsEx
+759037f2 +001a USER32.dll      MsgWaitForMultipleObjects
+757ced6a +0010 kernel32.dll    BaseThreadInitThunk
+
+modules:
+00400000 Banco.exe            1.5.1.15           C:\Desarrollo\Banco\Ejecutable
+060d0000 OLEDB32R.DLL         6.1.7600.16385     C:\Program Files\Common Files\System\Ole DB
+060f0000 comsvcs.dll          2001.12.8530.16385 C:\Windows\system32
+06230000 MSDATL3.dll          6.1.7600.16385     C:\Program Files\Common Files\System\Ole DB
+06630000 odbccp32.dll         6.1.7601.17632     C:\Windows\system32
+08ab0000 ttyui.dll            0.3.7600.16385     C:\Windows\system32\spool\DRIVERS\W32X86\3
+08ae0000 unires.dll           0.3.7601.17514     C:\Windows\system32\spool\DRIVERS\W32X86\3
+08de0000 DBNETLIB.DLL         6.1.7600.16385     C:\Windows\system32
+142d0000 msadce.dll           6.1.7601.17514     C:\Program Files\Common Files\System\msadc
+15ae0000 msdasql.dll          6.1.7601.17514     C:\Program Files\Common Files\System\Ole DB
+1b2d0000 oledb32.dll          6.1.7601.17514     C:\Program Files\Common Files\System\Ole DB
+1ba70000 sqloledb.dll         6.1.7601.17514     C:\Program Files\Common Files\System\Ole DB
+1d4a0000 msado15.dll          6.1.7601.17514     C:\Program Files\Common Files\System\ado
+5cda0000 UNIDRV.DLL           0.3.7601.17514     C:\Windows\system32\spool\DRIVERS\W32X86\3
+61df0000 CWBSOMRI.DLL         12.0.0.0           C:\Program Files\IBM\Client Access\MRI2931
+62050000 cwbcomsg.dll                            C:\Program Files\IBM\Client Access\MRI2931
+620f0000 cwbodmsg.dll         12.0.0.0           C:\Program Files\IBM\Client Access\MRI2931
+63ae0000 cwbunssl.dll         12.0.0.0           C:\Windows\system32
+63b00000 cwbunpls.dll         12.0.0.0           C:\Windows\system32
+63b10000 CWBUNPLA.dll         12.0.0.0           C:\Windows\system32
+63c90000 cwbsv.dll                               C:\Windows\system32
+63e20000 cwbsof.dll           12.0.0.0           C:\Windows\system32
+63ed0000 cwbrw.dll                               C:\Windows\system32
+63f10000 cwbrc.dll            12.0.0.0           C:\Windows\system32
+63fb0000 cwbnl.dll                               C:\Windows\system32
+64120000 cwbcore.dll          12.0.0.0           C:\Windows\system32
+64240000 cwbco.dll                               C:\Windows\system32
+64250000 cwbbsspi.dll         12.0.0.0           C:\Windows\system32
+64270000 cwbbspc.dll          12.0.0.0           C:\Windows\system32
+642b0000 cwbad1.dll           12.0.0.0           C:\Windows\system32
+642c0000 cwbad.dll                               C:\Windows\system32
+64810000 cwbodbc.dll          12.0.0.0           C:\Windows\system32
+66770000 UNIDRVUI.DLL         0.3.7601.17514     C:\Windows\system32\spool\DRIVERS\W32X86\3
+66a50000 MSVCP80.dll          8.0.50727.6195     C:\Windows\WinSxS\x86_microsoft.vc80.crt_1fc8b3b9a1e18e3b_8.0.50727.6195_none_d09154e044272b9a
+66ae0000 MFC80U.DLL           8.0.50727.6195     C:\Windows\WinSxS\x86_microsoft.vc80.mfc_1fc8b3b9a1e18e3b_8.0.50727.6195_none_cbf5e994470a1a8f
+69310000 olepro32.dll         6.1.7601.17514     C:\Windows\system32
+696d0000 winspool.drv         6.1.7601.17514     C:\Windows\system32
+69730000 MSDASQLR.DLL         6.1.7600.16385     C:\Program Files\Common Files\System\Ole DB
+69740000 MSDART.DLL           6.1.7600.16385     C:\Windows\system32
+69840000 msadcer.dll          6.1.7600.16385     C:\Program Files\Common Files\System\msadc
+6a060000 security.dll         6.1.7600.16385     C:\Windows\system32
+6be50000 SHFOLDER.dll         6.1.7600.16385     C:\Windows\system32
+6caa0000 odbcint.dll          6.1.7600.16385     C:\Windows\system32
+6cae0000 ODBC32.dll           6.1.7601.17514     C:\Windows\system32
+6e870000 MSVCR80.dll          8.0.50727.6195     C:\Windows\WinSxS\x86_microsoft.vc80.crt_1fc8b3b9a1e18e3b_8.0.50727.6195_none_d09154e044272b9a
+6f820000 ntdsapi.dll          6.1.7600.16385     C:\Windows\system32
+70340000 rasadhlp.dll         6.1.7600.16385     C:\Windows\system32
+70350000 WLIDNSP.DLL          7.250.4232.0       C:\Program Files\Common Files\Microsoft Shared\Windows Live
+712d0000 wsock32.dll          6.1.7600.16385     C:\Windows\system32
+71d00000 fwpuclnt.dll         6.1.7601.17514     C:\Windows\System32
+71d90000 WINNSI.DLL           6.1.7600.16385     C:\Windows\system32
+71df0000 IPHLPAPI.DLL         6.1.7601.17514     C:\Windows\system32
+72110000 ttyres.dll           6.1.7600.16385     C:\Windows\system32\spool\DRIVERS\W32X86\3
+72170000 tty.dll              0.3.7600.16385     C:\Windows\system32\spool\DRIVERS\W32X86\3
+72340000 SQLOLEDB.RLL         6.1.7600.16385     C:\Program Files\Common Files\System\Ole DB
+724e0000 ATL.DLL              3.5.2284.0         C:\Windows\system32
+72500000 winmm.dll            6.1.7601.17514     C:\Windows\system32
+728a0000 msimg32.dll          6.1.7600.16385     C:\Windows\system32
+72e80000 wkscli.dll           6.1.7601.17514     C:\Windows\system32
+72e90000 NETAPI32.dll         6.1.7601.17514     C:\Windows\system32
+73810000 dwmapi.dll           6.1.7600.16385     C:\Windows\system32
+73ac0000 gdiplus.dll          6.1.7601.17514     C:\Windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.7601.17514_none_72d18a4386696c80
+73da0000 uxtheme.dll          6.1.7600.16385     C:\Windows\system32
+73f70000 comctl32.dll         6.10.7601.17514    C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_41e6975e2bd6f2b2
+744e0000 version.dll          6.1.7600.16385     C:\Windows\system32
+745a0000 wshtcpip.dll         6.1.7600.16385     C:\Windows\System32
+74780000 bcryptprimitives.dll 6.1.7600.16385     C:\Windows\system32
+74840000 rsaenh.dll           6.1.7600.16385     C:\Windows\system32
+748b0000 schannel.DLL         6.1.7601.17725     C:\Windows\system32
+749d0000 DNSAPI.dll           6.1.7601.17570     C:\Windows\system32
+74a20000 msv1_0.DLL           6.1.7601.17514     C:\Windows\system32
+74a70000 credssp.dll          6.1.7601.17514     C:\Windows\system32
+74a80000 netutils.dll         6.1.7601.17514     C:\Windows\system32
+74a90000 mswsock.dll          6.1.7601.17514     C:\Windows\system32
+74ad0000 CRYPTSP.dll          6.1.7600.16385     C:\Windows\system32
+74bd0000 bcrypt.dll           6.1.7600.16385     C:\Windows\system32
+74bf0000 ncrypt.dll           6.1.7600.16385     C:\Windows\system32
+74c60000 wship6.dll           6.1.7600.16385     C:\Windows\System32
+74cd0000 cryptdll.dll         6.1.7600.16385     C:\Windows\system32
+74da0000 srvcli.dll           6.1.7601.17514     C:\Windows\system32
+74f20000 SECUR32.DLL          6.1.7601.17725     C:\Windows\system32
+74f40000 SspiCli.dll          6.1.7601.17725     C:\Windows\system32
+74f60000 CRYPTBASE.dll        6.1.7600.16385     C:\Windows\system32
+75050000 RpcRtRemote.dll      6.1.7601.17514     C:\Windows\system32
+75060000 profapi.dll          6.1.7600.16385     C:\Windows\system32
+750d0000 MSASN1.dll           6.1.7601.17514     C:\Windows\system32
+75130000 CRYPT32.dll          6.1.7601.17514     C:\Windows\system32
+75250000 WINTRUST.dll         6.1.7601.17514     C:\Windows\system32
+75310000 KERNELBASE.dll       6.1.7601.17651     C:\Windows\system32
+753c0000 advapi32.dll         6.1.7601.17514     C:\Windows\system32
+75490000 WS2_32.dll           6.1.7601.17514     C:\Windows\system32
+755f0000 CLBCatQ.DLL          2001.12.8530.16385 C:\Windows\system32
+75680000 RPCRT4.dll           6.1.7601.17514     C:\Windows\system32
+75730000 GDI32.dll            6.1.7601.17514     C:\Windows\system32
+75780000 kernel32.dll         6.1.7601.17651     C:\Windows\system32
+75860000 sechost.dll          6.1.7600.16385     C:\Windows\SYSTEM32
+75880000 SHLWAPI.dll          6.1.7601.17514     C:\Windows\system32
+758f0000 USER32.dll           6.1.7601.17514     C:\Windows\system32
+759c0000 shell32.dll          6.1.7601.17755     C:\Windows\system32
+767d0000 oleaut32.dll         6.1.7601.17676     C:\Windows\system32
+76860000 msvcrt.dll           7.0.7601.17744     C:\Windows\system32
+76910000 MSCTF.dll            6.1.7600.16385     C:\Windows\system32
+76b50000 comdlg32.dll         6.1.7601.17514     C:\Windows\system32
+76bd0000 ole32.dll            6.1.7601.17514     C:\Windows\system32
+76ed0000 ntdll.dll            6.1.7601.17725     C:\Windows\SYSTEM32
+77010000 NSI.dll              6.1.7600.16385     C:\Windows\system32
+77020000 LPK.dll              6.1.7600.16385     C:\Windows\system32
+77030000 PSAPI.DLL            6.1.7600.16385     C:\Windows\system32
+77040000 imm32.dll            6.1.7601.17514     C:\Windows\system32
+77060000 USP10.dll            1.626.7601.17514   C:\Windows\system32
+
+processes:
+0000 Idle                       0
+0004 System                     0
+01a4 smss.exe                   0
+0230 csrss.exe                  0
+0264 csrss.exe                  1
+026c wininit.exe                0
+029c winlogon.exe               1
+02cc services.exe               0
+02d4 lsass.exe                  0
+02dc lsm.exe                    0
+0348 svchost.exe                0
+03a4 svchost.exe                0
+0408 svchost.exe                0
+0420 iSafeSvc.exe               0
+0498 iSafeSvc2.exe              0
+04d8 svchost.exe                0
+04f8 svchost.exe                0
+05c4 svchost.exe                0
+068c svchost.exe                0
+078c qkseeSvc.exe               0
+023c spoolsv.exe                0
+01e4 svchost.exe                0
+0700 svchost.exe                0
+06e8 atashost.exe               0
+074c cktSvc.exe                 0
+0878 ContentProtector.exe       0
+08a4 ContentProtectorUpdate.exe 0
+08d0 svchost.exe                0
+0a38 inetinfo.exe               0
+0a64 klnagent.exe               0
+0b80 mdm.exe                    0
+0c54 taskhost.exe               1 normal C:\Windows\system32
+0c90 Dwm.exe                    1 high   C:\Windows\system32
+0ca8 Explorer.EXE               1 normal C:\Windows
+0cd4 iSafeTray.exe              1 normal C:\Program Files\Elex-tech\YAC
+0f28 LenovoFSC.exe              1 normal C:\Program Files\Lenovo\FanSpeedControl
+0fe8 ICO.exe                    1 normal C:\Program Files\Lenovo\Lenovo Mouse Suite
+0a94 igfxsrvc.exe               1 normal C:\Windows\system32
+0a5c hkcmd.exe                  1 normal C:\Windows\System32
+0c28 igfxpers.exe               1 normal C:\Windows\System32
+0cc0 rundll32.exe               1 normal C:\Windows\System32
+0d1c SCHTASK.EXE                1 normal C:\Program Files\ThinkPad\Utilities
+0d04 MCPLaunch.exe              1 idle   C:\Program Files\Lenovo\Message Center Plus
+01d0 sqlservr.exe               0
+0ea8 hppfaxprintersrv.exe       1 normal C:\Program Files\HP\HP LaserJet Professional CM1410 series\Fax Driver
+0e94 PWRISOVM.EXE               1 normal C:\Program Files\PowerISO
+0950 avastui.exe                1 normal C:\Program Files\AVAST Software\Avast
+0a54 msmdsrv.exe                0
+0dc4 soffice.exe                1 normal C:\Program Files\OpenOffice.org 3\program
+0eb4 PelService.exe             0
+0d74 PWMDBSVC.exe               0
+0f54 soffice.bin                1 normal C:\Program Files\OpenOffice.org 3\program
+1188 sftvsa.exe                 0
+11b8 snmp.exe                   0
+11dc FSRremoS.EXE               1 normal C:\Program Files\Lenovo\Lenovo Mouse Suite
+11e4 sqlwriter.exe              0
+1208 svchost.exe                0
+1240 TData.exe                  0
+129c PelElvDm.exe               1
+12f8 TeamViewer_Service.exe     0
+1348 tvnserver.exe              0
+13ac UncheckitSvc.exe           0
+141c svchost.exe                0
+1434 uncheckitBsn.exe           1 normal C:\Program Files\Uncheckit
+14a0 winvnc4.exe                0
+14c4 winvnc4.exe                1
+1504 WLIDSVC.EXE                0
+1570 WLIDSVCM.EXE               0
+1578 CcmExec.exe                0
+1654 sftlist.exe                0
+16e8 unsecapp.exe               1 normal C:\Windows\system32\wbem
+1798 WmiPrvSE.exe               0
+1314 CVHSVC.EXE                 0
+10f4 SearchIndexer.exe          0
+104c svchost.exe                0
+19c4 WmiPrvSE.exe               0
+1b9c TeamViewer.exe             1 normal C:\Program Files\TeamViewer
+1c98 tv_w32.exe                 1
+1d48 mobsync.exe                1 normal C:\Windows\System32
+11c4 vapm.exe                   0
+1b74 svchost.exe                0
+1c28 unsecapp.exe               0
+1d6c tvt_reg_monitor_svc.exe    0
+12dc protect.exe                0
+11b0 WmiPrvSE.exe               0
+1090 SMSCliUI.exe               1 normal C:\Windows\system32\CCM
+1dc8 rrservice.exe              0
+1ed4 scheduler_proxy.exe        1 normal C:\Program Files\Common Files\Lenovo\Scheduler
+1bbc Ssms.exe                   1 normal C:\Program Files\Microsoft SQL Server\110\Tools\Binn\ManagementStudio
+1124 taskhost.exe               1 normal C:\Windows\system32
+1fd4 ctfmon.exe                 1 normal C:\Windows\system32
+09bc WFini.exe                  0
+1aec SSFK.exe                   0
+0bb0 OSPPSVC.EXE                0
+26c4 bds.exe                    1 normal C:\Program Files\Borland\BDS\4.0\Bin
+2734 AvastSvc.exe               0
+20b0 winzipersvc.exe            0
+0de8 notepad++.exe              1 normal C:\Program Files\Notepad++
+02a8 pcsws.exe                  1 normal C:\Program Files\IBM\Client Access\Emulator
+0970 pcscm.exe                  1 normal C:\Program Files\IBM\Client Access\Emulator
+21ac WUDFHost.exe               0
+26a4 csrss.exe                  2
+2794 winlogon.exe               2
+2004 taskhost.exe               2 normal C:\Windows\system32
+2060 Dwm.exe                    2 high   C:\Windows\system32
+23b4 Explorer.EXE               2 normal C:\Windows
+0ca0 iSafeTray.exe              2 normal C:\Program Files\Elex-tech\YAC
+1034 LenovoFSC.exe              2 normal C:\Program Files\Lenovo\FanSpeedControl
+1980 ICO.exe                    2 normal C:\Program Files\Lenovo\Lenovo Mouse Suite
+0764 igfxtray.exe               2 normal C:\Windows\System32
+27a0 hkcmd.exe                  2 normal C:\Windows\System32
+1f88 igfxsrvc.exe               2
+00c8 igfxpers.exe               2 normal C:\Windows\System32
+1320 rundll32.exe               2 normal C:\Windows\System32
+265c MCPLaunch.exe              2 idle   C:\Program Files\Lenovo\Message Center Plus
+258c SCHTASK.EXE                2 normal C:\Program Files\ThinkPad\Utilities
+2518 tvnserver.exe              2 normal C:\Program Files\TightVNC
+151c HPTLBXFX.exe               2 normal C:\Program Files\HP\ToolboxFX\bin
+2410 hppfaxprintersrv.exe       2 normal C:\Program Files\HP\HP LaserJet Professional CM1410 series\Fax Driver
+0504 PWRISOVM.EXE               2 normal C:\Program Files\PowerISO
+2364 avastui.exe                2 normal C:\Program Files\AVAST Software\Avast
+20fc TeamViewer.exe             2 normal C:\Program Files\TeamViewer
+2110 unsecapp.exe               2
+1b24 tv_w32.exe                 2
+2120 devenv.exe                 2 normal C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE
+13c8 FSRremoS.EXE               2 normal C:\Program Files\Lenovo\Lenovo Mouse Suite
+09a4 PelElvDm.exe               2
+1a74 OUTLOOK.EXE                1 normal C:\Program Files\Microsoft Office\Office14
+0968 OSE.EXE                    0
+21a0 Banco.exe                  1 normal C:\Desarrollo\Banco\Ejecutable
+19a0 audiodg.exe                0
+
+hardware:
++ Batteries
+  - Batería compuesta de Microsoft
++ Computer
+  - Equipo basado en ACPI x86
++ Disk drives
+  - Kingston DataTraveler 2.0 USB Device
+  - WDC WD3200AAJS-08L7A0 ATA Device
+  - ZTE MMC Storage USB Device
++ Display adapters
+  - Intel(R) G41 Express Chipset (driver 8.15.10.2040)
+  - LogMeIn Mirror Driver (driver 7.1.542.0)
+  - VNC Mirror Driver (driver 1.8.0.0)
++ DVD/CD-ROM drives
+  - PLDS DVD-RW DH16ABSH ATA Device
+  - ZTE USB SCSI CD-ROM USB Device
++ Human Interface Devices
+  - Dispositivo de entrada USB
+  - Dispositivo de entrada USB
++ IDE ATA/ATAPI controllers
+  - ATA Channel 0
+  - ATA Channel 0
+  - ATA Channel 1
+  - ATA Channel 1
+  - Controladora de almacenamiento ATA serie Intel(R) 82801GB/GR/GH (familia ICH7) - 27C0
+  - Controladoras de almacenamiento Ultra ATA Intel(R) 82801G (familia ICH7) - 27DF
++ Keyboards
+  - Dispositivo de teclado HID
++ Mice and other pointing devices
+  - Mouse compatible con HID
++ Monitors
+  - Monitor PnP genérico
++ Network adapters
+  - Generic Marvell Yukon 88E8057 PCI-E Gigabit Ethernet Controller #2 (driver 11.10.5.3)
+  - TeamViewer VPN Adapter (driver 2.10.0.0)
++ Portable Devices
+  - HGV
+  - I:\
++ Ports (COM & LPT)
+  - Puerto de comunicaciones (COM1)
++ Processors
+  - Pentium(R) Dual-Core  CPU      E5500  @ 2.80GHz
+  - Pentium(R) Dual-Core  CPU      E5500  @ 2.80GHz
++ SM Driver
+  - SM bios service (driver 6.1.1015.0)
++ Sound, video and game controllers
+  - Realtek High Definition Audio (driver 6.0.1.6019)
++ Storage volume shadow copies
+  - Instantánea de volumen genérico
+  - Instantánea de volumen genérico
+  - Instantánea de volumen genérico
+  - Instantánea de volumen genérico
++ System devices
+  - Administrador de volúmenes
+  - Altavoz del sistema
+  - Archivar como controlador de volumen
+  - Botón de característica fija ACPI
+  - Botón de encendido ACPI
+  - Bus PCI
+  - Controlador BIOS de Microsoft System Management
+  - Controlador de enumerador de unidades virtuales de Microsoft
+  - Controlador de mouse de Terminal Server
+  - Controlador de teclado de Terminal Server
+  - Controladora de acceso directo a memoria
+  - Controladora de High Definition Audio
+  - Controladora de interfaz LPC de Intel(R) 82801GB/GR (familia ICH7) - 27B8
+  - Controladora de procesador del chipset Intel(R) 4 Series a E/S - 2E30
+  - Controladora programable de interrupciones
+  - Controladora SMBus de Intel(R) 82801G (familia ICH7) - 27DA
+  - Cronómetro del sistema
+  - Dispositivo concentrador de firmware Intel(R) 82802
+  - Enumerador de bus compuesto
+  - Enumerador de bus raíz de UMBus
+  - Enumerador de dispositivos de software Plug and Play
+  - Enumerador de UMBus
+  - Enumerador de UMBus
+  - Lenovo ASD HWM Driver (driver 1.0.0.2)
+  - Procesador de datos numéricos
+  - Puente PCI Intel(R) 82801 - 244E
+  - Puerto raíz PCI Express de Intel(R) 82801G (familia ICH7) - 27D0
+  - Puerto raíz PCI Express de Intel(R) 82801G (familia ICH7) - 27D2
+  - Recursos de la placa base
+  - Recursos de la placa base
+  - Recursos de la placa base
+  - Recursos de la placa base
+  - Recursos de la placa base
+  - Remote Desktop Device Redirector Bus
+  - Sistema CMOS/reloj en tiempo real
+  - Sistema Microsoft compatible con ACPI
+  - Tarjeta de sistema
+  - Tarjeta de sistema
+  - Temporizador de eventos de alta precisión
++ Universal Serial Bus controllers
+  - Concentrador raíz USB
+  - Concentrador raíz USB
+  - Concentrador raíz USB
+  - Concentrador raíz USB
+  - Concentrador raíz USB
+  - Controlador de host mejorado USB2 Intel(R) 82801G (familia ICH7) - 27CC
+  - Controlador de host universal USB Intel(R) 82801G (familia ICH7) - 27C8
+  - Controlador de host universal USB Intel(R) 82801G (familia ICH7) - 27C9
+  - Controlador de host universal USB Intel(R) 82801G (familia ICH7) - 27CA
+  - Controlador de host universal USB Intel(R) 82801G (familia ICH7) - 27CB
+  - Dispositivo de almacenamiento USB
+  - Dispositivo de almacenamiento USB
+
+cpu registers:
+eax = 04568150
+ebx = 00000000
+ecx = 00000001
+edx = 00000000
+esi = 044f0c00
+edi = 04568150
+eip = 004bbb30
+esp = 0012fb20
+ebp = 0012fb88
+
+stack dump:
+0012fb20  01 00 00 00 50 81 56 04 - 00 0c 4f 04 50 81 56 04  ....P.V...O.P.V.
+0012fb30  e8 7b 8f 00 02 00 00 00 - 01 00 00 00 02 00 00 00  .{..............
+0012fb40  4b 73 8f 00 02 00 00 00 - c0 9e 57 04 41 c6 90 75  Ks........W.A..u
+0012fb50  fe c5 90 75 fd 50 da cc - 01 02 00 00 dc 97 40 00  ...u.P........@.
+0012fb60  d8 fd 12 00 24 00 00 00 - 00 00 00 00 90 d0 54 07  ....$.........T.
+0012fb70  d4 f4 46 00 00 00 00 00 - 90 d0 54 07 bf dc bb 00  ..F.......T.....
+0012fb80  02 00 00 00 00 0c 4f 04 - ac fb 12 00 ad 19 08 01  ......O.........
+0012fb90  a8 fd 12 00 c4 55 40 00 - ac fb 12 00 02 00 00 00  .....U@.........
+0012fba0  00 00 00 00 90 08 4f 04 - 00 00 00 00 00 fc 12 00  ......O.........
+0012fbb0  e1 1b bc 00 b8 fb 12 00 - 01 b5 46 00 00 00 00 00  ..........F.....
+0012fbc0  90 08 4f 04 4e 1c bc 00 - 00 00 00 00 90 08 4f 04  ..O.N.........O.
+0012fbd0  06 21 bc 00 90 08 4f 04 - 2c 20 bc 00 00 00 00 00  .!....O.,.......
+0012fbe0  00 fc 12 00 23 2d 90 75 - 0c 2d 90 75 12 00 00 00  ....#-.u.-.u....
+0012fbf0  0c 00 00 00 03 00 00 00 - 75 4f 33 00 0e 00 08 00  ........uO3.....
+0012fc00  24 fc 12 00 cb e3 4b 00 - 08 00 00 00 16 00 00 00  $.....K.........
+0012fc10  64 fe 12 00 d8 fd 12 00 - 90 08 4f 04 01 00 00 00  d.........O.....
+0012fc20  58 c9 4b 00 60 fd 12 00 - 19 e4 4b 00 00 00 00 00  X.K.`.....K.....
+0012fc30  90 08 4f 04 d8 fd 12 00 - ee dd 4b 00 64 fe 12 00  ..O.......K.d...
+0012fc40  01 02 00 00 90 08 4f 04 - 68 0d 17 00 1a 00 1b 00  ......O.h.......
+0012fc50  d8 36 aa 02 00 00 00 00 - 00 00 00 00 01 00 01 02  .6..............
+
+disassembling:
+[...]
+0108199a        pop     edx
+0108199b        cmp     edx, [eax+$18]
+0108199e        jnz     loc_10819af
+010819a0 2289   mov     eax, [ebx+$684]
+010819a6        mov     edx, esi
+010819a8      > call    -$78a6dd ($8f72d0)     ; LMDFormDisplay.TLMDFormDisplay.SetActiveFormIndex
+010819ad 2290   jmp     loc_10819b3
+010819af 2292   inc     esi
+010819b0 2285   dec     edi
+010819b1        jnz     loc_1081978
+010819b3 2294   mov     eax, [ebx+$680]
+[...]
+

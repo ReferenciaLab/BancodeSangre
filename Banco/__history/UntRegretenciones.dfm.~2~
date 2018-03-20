@@ -1,0 +1,52 @@
+inherited FrmregRetenciones: TFrmregRetenciones
+  Caption = 'Registrar Retenciones'
+  ClientHeight = 356
+  ExplicitHeight = 384
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited lcDialog: TdxLayoutControl
+    Height = 356
+    inherited btCancelar: TcxButton
+      Top = 320
+      TabOrder = 3
+      ExplicitTop = 320
+    end
+    inherited btAceptar: TcxButton
+      Top = 320
+      TabOrder = 2
+      ExplicitTop = 320
+    end
+    object cxTextEdit3: TcxTextEdit [2]
+      Left = 105
+      Top = 36
+      Style.BorderColor = clTeal
+      Style.BorderStyle = ebsSingle
+      Style.HotTrack = False
+      TabOrder = 0
+      Width = 121
+    end
+    object cxCurrencyEdit1: TcxCurrencyEdit [3]
+      Left = 105
+      Top = 63
+      Style.BorderColor = clTeal
+      Style.BorderStyle = ebsSingle
+      Style.HotTrack = False
+      TabOrder = 1
+      Width = 121
+    end
+    inherited lcDialogGroup_Root: TdxLayoutGroup
+      inherited lcDialogGroup1: TdxLayoutGroup
+        object lcDialogItem3: TdxLayoutItem
+          Caption = 'Numero Cheque'
+          Control = cxTextEdit3
+          ControlOptions.ShowBorder = False
+        end
+        object lcDialogItem1: TdxLayoutItem
+          Caption = 'Monto Cheque'
+          Control = cxCurrencyEdit1
+          ControlOptions.ShowBorder = False
+        end
+      end
+    end
+  end
+end

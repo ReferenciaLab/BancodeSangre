@@ -1,0 +1,66 @@
+unit Untbusca_donacion;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DB, ADODB, cxStyles, cxCustomData, cxGraphics, cxFilter, cxData,
+  cxDataStorage, cxEdit, cxDBData, Menus, cxLookAndFeelPainters,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, StdCtrls,
+  cxButtons, cxGridLevel, cxClasses, cxControls, cxGridCustomView, cxGrid,
+  cxContainer, cxTextEdit;
+
+type
+  TFrmbusca_donacion = class(TForm)
+    Dsdonacion: TDataSource;
+    Qdonaciones: TADOQuery;
+    Qry_donacion: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    btaceptar: TcxButton;
+    btcancelar: TcxButton;
+    QdonacionesDonacionID: TStringField;
+    QdonacionesMuestraNo: TStringField;
+    QdonacionesFecha: TDateTimeField;
+    QdonacionesPacienteID: TStringField;
+    QdonacionesNOMBRE: TStringField;
+    QdonacionesNOMBRE1: TStringField;
+    QdonacionesAPELLIDOS: TStringField;
+    QdonacionesTipoDonante: TWideStringField;
+    QdonacionesTipoSangre: TWideStringField;
+    QdonacionesDonanteActivo: TSmallintField;
+    Qry_donacionColumn1: TcxGridDBColumn;
+    Qry_donacionColumn2: TcxGridDBColumn;
+    Qry_donacionColumn3: TcxGridDBColumn;
+    Qry_donacionColumn4: TcxGridDBColumn;
+    Qry_donacionColumn5: TcxGridDBColumn;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    cxTextEdit1: TcxTextEdit;
+    cxTextEdit2: TcxTextEdit;
+    cxTextEdit3: TcxTextEdit;
+    cxButton1: TcxButton;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frmbusca_donacion: TFrmbusca_donacion;
+
+implementation
+
+uses ActionsDM, DataModule;
+
+{$R *.dfm}
+
+procedure TFrmbusca_donacion.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+Action:= caFree;
+end;
+
+end.

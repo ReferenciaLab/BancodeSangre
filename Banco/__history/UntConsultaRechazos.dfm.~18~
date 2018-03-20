@@ -1,0 +1,335 @@
+inherited FrmconsultaRechazos: TFrmconsultaRechazos
+  Caption = 'Consulta Donaciones Rechazadas'
+  ClientHeight = 474
+  ClientWidth = 718
+  ExplicitWidth = 734
+  ExplicitHeight = 512
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited lcDatos: TdxLayoutControl
+    Width = 693
+    Height = 441
+    ExplicitWidth = 693
+    ExplicitHeight = 441
+    inherited grConsulta: TcxGrid
+      Top = 98
+      Width = 510
+      Height = 219
+      TabOrder = 8
+      ExplicitTop = 98
+      ExplicitWidth = 510
+      ExplicitHeight = 219
+      inherited tvConsulta: TcxGridDBTableView
+        DataController.Summary.FooterSummaryItems = <
+          item
+            Kind = skCount
+            FieldName = 'DonacionID'
+            Column = tvConsultaColumn2
+          end
+          item
+            Format = 'Total  '
+            FieldName = 'DonacionID'
+            Column = tvConsultaColumn1
+          end>
+        object tvConsultaColumn1: TcxGridDBColumn
+          Caption = 'Paciente Codigo'
+          DataBinding.FieldName = 'PacienteID'
+        end
+        object tvConsultaColumn2: TcxGridDBColumn
+          Caption = 'Nombre'
+          DataBinding.FieldName = 'NOMBRE'
+          Options.Editing = False
+          Width = 310
+        end
+        object tvConsultaColumn3: TcxGridDBColumn
+          Caption = 'Fecha Donacion'
+          DataBinding.FieldName = 'Fecha'
+        end
+        object tvConsultaColumn4: TcxGridDBColumn
+          DataBinding.FieldName = 'Producto'
+          Width = 110
+        end
+        object tvConsultaColumn5: TcxGridDBColumn
+          Caption = 'Fecha Rechazo'
+          DataBinding.FieldName = 'FechaRechaza'
+          Width = 105
+        end
+        object tvConsultaColumn6: TcxGridDBColumn
+          Caption = 'Tipo Rechazo'
+          DataBinding.FieldName = 'Rechaso'
+          Width = 100
+        end
+        object tvConsultaColumn8: TcxGridDBColumn
+          Caption = 'Causa Rechazo'
+          DataBinding.FieldName = 'Causa'
+          Width = 150
+        end
+        object tvConsultaColumn7: TcxGridDBColumn
+          Caption = 'Usuario Realizo'
+          DataBinding.FieldName = 'UserIdRechaza'
+          Width = 100
+        end
+        object tvConsultaColumn9: TcxGridDBColumn
+          DataBinding.FieldName = 'TipoSangre'
+          Width = 100
+        end
+      end
+    end
+    inherited btBuscar: TcxButton
+      BiDiMode = bdRightToLeftNoAlign
+      OnClick = btBuscarClick
+    end
+    object cxDBMemo1: TcxDBMemo [5]
+      Left = 11
+      Top = 324
+      DataBinding.DataField = 'RechazoNota'
+      DataBinding.DataSource = dsDatos
+      ParentFont = False
+      Style.BorderColor = clTeal
+      Style.BorderStyle = ebsSingle
+      Style.Font.Charset = DEFAULT_CHARSET
+      Style.Font.Color = clWindowText
+      Style.Font.Height = -16
+      Style.Font.Name = 'Tahoma'
+      Style.Font.Style = [fsBold]
+      Style.HotTrack = False
+      Style.IsFontAssigned = True
+      TabOrder = 10
+      Height = 89
+      Width = 201
+    end
+    object cxComboBox1: TcxComboBox [6]
+      Left = 320
+      Top = 71
+      AutoSize = False
+      BeepOnEnter = False
+      Properties.Items.Strings = (
+        'Todos'
+        '"A"'
+        '"B"'
+        '"O"'
+        '"AB"')
+      Style.BorderColor = clTeal
+      Style.BorderStyle = ebsSingle
+      Style.HotTrack = False
+      Style.ButtonStyle = btsHotFlat
+      Style.PopupBorderStyle = epbsSingle
+      TabOrder = 6
+      Height = 21
+      Width = 336
+    end
+    object cxComboBox2: TcxComboBox [7]
+      Left = 83
+      Top = 71
+      Properties.Items.Strings = (
+        'Todos'
+        'Temporal'
+        'Permanente')
+      Style.BorderColor = clTeal
+      Style.BorderStyle = ebsSingle
+      Style.HotTrack = False
+      Style.ButtonStyle = btsHotFlat
+      Style.PopupBorderStyle = epbsSingle
+      TabOrder = 5
+      Width = 197
+    end
+    object cxComboBox3: TcxComboBox [8]
+      Left = 716
+      Top = 71
+      Properties.Items.Strings = (
+        'Todos'
+        'Positivo'
+        'Negativo')
+      Style.BorderColor = clTeal
+      Style.BorderStyle = ebsSingle
+      Style.HotTrack = False
+      Style.ButtonStyle = btsHotFlat
+      Style.PopupBorderStyle = epbsSingle
+      TabOrder = 7
+      Width = 121
+    end
+    object cxDBMemo2: TcxDBMemo [9]
+      Left = 11
+      Top = 211
+      DataBinding.DataField = 'RechazoNota'
+      DataBinding.DataSource = dsDatos
+      ParentFont = False
+      Style.BorderColor = clTeal
+      Style.BorderStyle = ebsSingle
+      Style.Font.Charset = DEFAULT_CHARSET
+      Style.Font.Color = clWindowText
+      Style.Font.Height = -16
+      Style.Font.Name = 'Tahoma'
+      Style.Font.Style = [fsBold]
+      Style.HotTrack = False
+      Style.IsFontAssigned = True
+      TabOrder = 9
+      Height = 89
+      Width = 754
+    end
+    object CheckBox1: TCheckBox [10]
+      Left = 416
+      Top = 36
+      Width = 97
+      Height = 17
+      Caption = 'Fecha Auditoria'
+      TabOrder = 4
+    end
+    inherited Group_Root: TdxLayoutGroup
+      inherited lgConsulta: TdxLayoutGroup
+        inherited lgParametros: TdxLayoutGroup
+          Visible = True
+          object lcDatosItem7: TdxLayoutItem
+            Caption = 'CheckBox1'
+            ShowCaption = False
+            Control = CheckBox1
+            ControlOptions.AutoColor = True
+            ControlOptions.ShowBorder = False
+          end
+        end
+        object lcDatosGroup1: TdxLayoutGroup [1]
+          ShowCaption = False
+          Hidden = True
+          LayoutDirection = ldHorizontal
+          ShowBorder = False
+          object lcDatosItem4: TdxLayoutItem
+            Caption = 'Tipo Rechazo'
+            Control = cxComboBox2
+            ControlOptions.ShowBorder = False
+          end
+          object lcDatosItem3: TdxLayoutItem
+            Caption = 'Grupo'
+            Control = cxComboBox1
+            ControlOptions.ShowBorder = False
+          end
+          object lcDatosItem5: TdxLayoutItem
+            Caption = 'Factor RH'
+            Control = cxComboBox3
+            ControlOptions.ShowBorder = False
+          end
+        end
+        object lcDatosItem6: TdxLayoutItem
+          Caption = 'Nota Rechazo'
+          CaptionOptions.Layout = clTop
+          Control = cxDBMemo2
+          ControlOptions.ShowBorder = False
+        end
+        object lcDatosItem2: TdxLayoutItem
+          Caption = 'Nota Auditoria'
+          CaptionOptions.Layout = clTop
+          Control = cxDBMemo1
+          ControlOptions.ShowBorder = False
+        end
+      end
+    end
+  end
+  inherited lcBotones: TdxLayoutControl
+    Left = 693
+    Width = 25
+    Height = 441
+    ExplicitLeft = 693
+    ExplicitWidth = 25
+    ExplicitHeight = 441
+  end
+  inherited pnCaption: TPanel
+    Width = 718
+    ExplicitWidth = 718
+  end
+  inherited dsDatos: TDataSource
+    DataSet = Qdatos
+    Left = 164
+    Top = 207
+  end
+  inherited dxPrintGrid: TdxComponentPrinter
+    inherited dxPrintGridLink: TdxGridReportLink
+      ReportDocument.CreationDate = 42425.445603287030000000
+      BuiltInReportLink = True
+    end
+  end
+  inherited pmCustom: TPopupMenu
+    Left = 580
+    Top = 152
+  end
+  inherited strView: TJvStrHolder
+    Top = 136
+  end
+  inherited pmFechas: TPopupMenu
+    Left = 384
+    Top = 201
+  end
+  inherited qrVistas: TABSQuery
+    Top = 136
+  end
+  object Qdatos: TADOQuery
+    Connection = DM.Database
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'select a.PacienteID, b.NOMBRE, a.DonacionID, a.MuestraNo, a.Fech' +
+        'a, a.UserIdRechaza, '
+      
+        '       a.FechaRechaza, a.RechazoNota, Producto = (select Product' +
+        'oDes from BSProductos where ProductoID = a.ProductoID), c.Causa,'
+      #9'   d.Rechaso, d.TipoSangre, d.RH'
+      'from BSDonacion a, PTCLIENTE b, BSCausasRechazo c, BSDonante D'
+      'where a.PacienteID = b.CLIENTEID'
+      'And a.CausaRechazoId = c.Id'
+      'And b.CLIENTEID = d.PacienteID'
+      'and a.DonacionStatus = '#39'Rechazado'#39)
+    Left = 248
+    Top = 168
+    object QdatosPacienteID: TStringField
+      FieldName = 'PacienteID'
+      Size = 10
+    end
+    object QdatosNOMBRE: TStringField
+      FieldName = 'NOMBRE'
+      ReadOnly = True
+      Size = 82
+    end
+    object QdatosDonacionID: TStringField
+      FieldName = 'DonacionID'
+    end
+    object QdatosMuestraNo: TStringField
+      FieldName = 'MuestraNo'
+    end
+    object QdatosFecha: TDateTimeField
+      FieldName = 'Fecha'
+    end
+    object QdatosUserIdRechaza: TStringField
+      FieldName = 'UserIdRechaza'
+    end
+    object QdatosFechaRechaza: TDateTimeField
+      FieldName = 'FechaRechaza'
+      DisplayFormat = 'dd/mm/yyyy'
+    end
+    object QdatosRechazoNota: TStringField
+      FieldName = 'RechazoNota'
+      Size = 1000
+    end
+    object QdatosProducto: TWideStringField
+      FieldName = 'Producto'
+      ReadOnly = True
+      FixedChar = True
+      Size = 30
+    end
+    object QdatosCausa: TStringField
+      FieldName = 'Causa'
+      Size = 50
+    end
+    object QdatosRechaso: TWideStringField
+      FieldName = 'Rechaso'
+    end
+    object QdatosTipoSangre: TWideStringField
+      FieldName = 'TipoSangre'
+      FixedChar = True
+      Size = 10
+    end
+    object QdatosRH: TWideStringField
+      FieldName = 'RH'
+      FixedChar = True
+      Size = 10
+    end
+  end
+end

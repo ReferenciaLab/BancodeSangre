@@ -1,0 +1,72 @@
+unit UntRegretenciones;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DialogModule, Menus, cxLookAndFeelPainters, dxLayoutControl,
+  StdCtrls, cxButtons, cxControls, cxCurrencyEdit, cxContainer, cxEdit,
+  cxTextEdit, DB, ADODB;
+
+type
+  TFrmregRetenciones = class(TfrmDialogModule)
+    cxTextEdit3: TcxTextEdit;
+    lcDialogItem3: TdxLayoutItem;
+    cxCurrencyEdit1: TcxCurrencyEdit;
+    lcDialogItem1: TdxLayoutItem;
+    cxTextEdit1: TcxTextEdit;
+    lcDialogItem2: TdxLayoutItem;
+    Qretenciones: TADOQuery;
+    QretencionesENTRADAID: TStringField;
+    QretencionesFECHA_FACTURA: TDateTimeField;
+    QretencionesMONTO_FACTURA: TFloatField;
+    QretencionesNUMERO_CHEQUE: TIntegerField;
+    QretencionesMONTO_CHEQUE: TFloatField;
+    QretencionesNOMBRE_INSTITUCION: TStringField;
+    QretencionesUSUARIO_CREA: TStringField;
+    QretencionesFECHA_CREA: TDateTimeField;
+    procedure btAceptarClick(Sender: TObject);
+    procedure btCancelarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmregRetenciones: TFrmregRetenciones;
+
+implementation
+
+uses DataModule, ADODB, DataFactura;
+
+{$R *.dfm}
+
+procedure TFrmregRetenciones.btAceptarClick(Sender: TObject);
+begin
+  inherited;
+
+  if (cxTextEdit3.Text <> '') and (cxCurrencyEdit1.Text <> '') then
+    Begin
+       Qretenciones.Insert;
+       QretencionesENTRADAID.Value := dmFactura.qrPendientesCobrosENTRADAID.Value;
+       QretencionesFECHA_FACTURA.Value :=
+       QretencionesMONTO_FACTURA.Value :=
+       QretencionesNUMERO_CHEQUE.Value :=
+       QretencionesMONTO_CHEQUE.value  :=
+       QretencionesNOMBRE_INSTITUCION.va
+    end
+    else
+    begin
+      ShowMessage('Digite el Numero y monto del Cheque');
+    end;
+
+end;
+
+procedure TFrmregRetenciones.btCancelarClick(Sender: TObject);
+begin
+  inherited;
+Close;
+end;
+
+end.

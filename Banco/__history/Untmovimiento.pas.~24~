@@ -1,0 +1,133 @@
+unit Untmovimiento;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, cxGraphics, StdCtrls, jpeg, ExtCtrls, DBCtrls, cxControls,
+  cxContainer, cxEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit, Grids, DBGrids,
+  Buttons, DB, ADODB, Sockets;
+
+type
+  TFrmmovimientos = class(TForm)
+    cxComboBox1: TcxComboBox;
+    Label1: TLabel;
+    GroupBox1: TGroupBox;
+    Label2: TLabel;
+    DBText1: TDBText;
+    Image1: TImage;
+    Edit1: TEdit;
+    DBGrid1: TDBGrid;
+    Panel1: TPanel;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    BitBtn3: TBitBtn;
+    Qetiquetas: TADOQuery;
+    DSetiquetas: TDataSource;
+    DBMemo1: TDBMemo;
+    DBText7: TDBText;
+    DBText6: TDBText;
+    Qmovimientos: TADOQuery;
+    DSmovimientos: TDataSource;
+    TcpClient1: TTcpClient;
+    Edit2: TEdit;
+    Label3: TLabel;
+    procedure Edit1KeyPress(Sender: TObject; var Key: Char);
+    procedure Edit2KeyPress(Sender: TObject; var Key: Char);
+    procedure BitBtn2Click(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frmmovimientos: TFrmmovimientos;
+
+implementation
+
+uses DataModule;
+
+{$R *.dfm}
+
+procedure TFrmmovimientos.BitBtn1Click(Sender: TObject);
+begin
+Close;
+end;
+
+procedure TFrmmovimientos.BitBtn2Click(Sender: TObject);
+begin
+Qetiquetas.Close;
+Qmovimientos.Close;
+Edit1.Clear;
+Edit1.SetFocus;
+end;
+
+procedure TFrmmovimientos.BitBtn3Click(Sender: TObject);
+begin
+With dm.Qutilitario do
+ Begin
+   Close;
+   Sql.Clear;
+   Sql.Add('INSERT INTO MOVIMIENTOS_PRODUCTOS(ISTBDONACION,MOVIMIENTO,FECHA,HORA,USUARIO,NOMBRE_EQUIPO,DIRECCION_IP)');
+   Sql.Add('VALUES(:PISTBDONACION,:PMOVIMIENTO,:PFECHA,:PHORA,:PUSUARIO,:PNOMBRE_EQUIPO,:PDIRECCION_IP)');
+   Parameters.ParamByName('PISTBDONACION').Value := DBText1.Caption;
+   Parameters.ParamByName('PMOVIMIENTO').Value := cxComboBox1.Text;
+   Parameters.ParamByName('PFECHA').Value := date;
+   Parameters.ParamByName('PHORA').Value := time;
+   Parameters.ParamByName('PUSUARIO').Value := DM.CurUser;
+   Parameters.ParamByName('PNOMBRE_EQUIPO').Value := TcpClient1.LocalHostName;
+   Parameters.ParamByName('PDIRECCION_IP').Value :=  TcpClient1.LocalHostAddr;
+   ExecSQL;
+ end;
+ if Qetiquetas.RecordCount > 0 then
+       Begin
+        Qmovimientos.close;
+        Qmovimientos.Parameters.ParamByName('PRODUCTO').Value := Qetiquetas.FieldByName('ISTBDONACION').Value;
+        Qmovimientos.open;
+       end;
+       BitBtn3.Enabled := False;
+
+end;
+
+procedure TFrmmovimientos.Edit1KeyPress(Sender: TObject; var Key: Char);
+begin
+if Key = #13 then
+ BEGIN
+   Edit2.SetFocus;
+ end;
+end;
+
+procedure TFrmmovimientos.Edit2KeyPress(Sender: TObject; var Key: Char);
+begin
+if Key = #13 then
+  Begin
+     if Edit1.Text <> '' then
+ Begin
+   With Qetiquetas do
+    begin
+      Close;
+      Sql.Clear;
+      Sql.Add('SELECT * FROM V_ETIQUETAS (NOLOCK)');
+      Sql.Add('WHERE ISTBDONACION ='+ #39+ Edit1.Text + #39);
+      Sql.Add('AND BARRA ='+ #39+ Edit2.Text + #39);
+      Open;
+    end;
+    if Qetiquetas.RecordCount > 0 then
+       Begin
+        Qmovimientos.close;
+        Qmovimientos.Parameters.ParamByName('PRODUCTO').Value := Qetiquetas.FieldByName('ISTBDONACION').Value;
+        Qmovimientos.open;
+        BitBtn3.Enabled := True;
+       end
+       else
+       ShowMessage('Esta Etiqueta no es Valida');
+ end;
+
+  end;
+
+end;
+
+end.

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<TgConfig Version="3" SubLevelDisabled="False">
+  <Option Name="namespaceFolder.BancoVenta" Type="System.String" Value="" IsBrowsable="False" />
+  <Option Name="namespaceFolder.PuntoVenta" Type="System.String" Value="" IsBrowsable="False" />
+</TgConfig>

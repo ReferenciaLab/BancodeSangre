@@ -1,0 +1,30 @@
+unit UntMenuProcesos;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, CustomModule, Menus, StdActns, ActnList, JvComponentBase,
+  JvFormPlacement, ExtCtrls, JvExControls, JvComponent, JvEnterTab,
+  cxLookAndFeelPainters, StdCtrls, cxButtons;
+
+type
+  TFrmmenuProcesos = class(TfrmCustomModule)
+    cxButton1: TcxButton;
+    cxButton2: TcxButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmmenuProcesos: TFrmmenuProcesos;
+
+implementation
+
+uses DataModule;
+
+{$R *.dfm}
+
+end.

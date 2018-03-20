@@ -1,0 +1,107 @@
+unit UntpreciosCategorias;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, cxControls, cxContainer, cxEdit, cxTextEdit, cxDBEdit,
+  cxGraphics, cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, DB,
+  cxDBData, cxCalendar, cxBlobEdit, dxLayoutControl, cxGridLevel,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxClasses,
+  cxGridCustomView, cxGrid, cxImage, cxDBLookupComboBox, ExtCtrls, DBCtrls,
+  cxImageComboBox, cxDropDownEdit, cxMaskEdit, cxLookupEdit, cxDBLookupEdit,
+  cxDBExtLookupComboBox, cxMemo, ADODB, cxGroupBox, cxCheckBox;
+
+type
+  TFrmpreciosCategorias = class(TForm)
+    cxGroupBox1: TcxGroupBox;
+    dsPreciosCategorias: TDataSource;
+    qrPreciosCategorias: TADOQuery;
+    qrPreciosCategoriasSECUENCIA: TAutoIncField;
+    qrPreciosCategoriasPRODUCTOID: TStringField;
+    qrPreciosCategoriasGRUPOCLIENTE: TStringField;
+    qrPreciosCategoriasTIPOCLIENTE: TStringField;
+    qrPreciosCategoriasPRECIO: TFloatField;
+    qrPreciosCategoriasESTATUS: TStringField;
+    Label1: TLabel;
+    cxDBTextEdit1: TcxDBTextEdit;
+    Label2: TLabel;
+    cxDBLookupComboBox1: TcxDBLookupComboBox;
+    QryProductos: TADOQuery;
+    QryProductosProductoID: TWideStringField;
+    QryProductosProductoDes: TWideStringField;
+    QryProductosPrecio: TBCDField;
+    QryProductosPrecioDolares: TBCDField;
+    QryProductosDias: TIntegerField;
+    QryProductosPermiteCambioPrecio: TBooleanField;
+    QryProductosCodigoAxapta: TStringField;
+    QryProductosCosto: TBCDField;
+    QryProductosExterior: TBooleanField;
+    QryProductosFacturarCabecera: TBooleanField;
+    QryProductosTipo: TBooleanField;
+    QryProductosNecesitaCruce: TBooleanField;
+    QryProductosServicio: TBooleanField;
+    QryProductosInicial: TBooleanField;
+    QryProductosAnticipo: TBooleanField;
+    QryProductosTiempoMesProximaDonacion: TIntegerField;
+    DSproductos: TDataSource;
+    cxDBLookupComboBox2: TcxDBLookupComboBox;
+    Label3: TLabel;
+    Label4: TLabel;
+    cxDBLookupComboBox3: TcxDBLookupComboBox;
+    cxDBTextEdit2: TcxDBTextEdit;
+    Label5: TLabel;
+    cxDBCheckBox1: TcxDBCheckBox;
+    QtipoCliente: TADOQuery;
+    QtipoClienteTIPOCLIENTE: TStringField;
+    QtipoClienteDESCRIPCION: TStringField;
+    QtipoClienteDATAAREAID: TStringField;
+    QtipoClienteRECID: TIntegerField;
+    QtipoClientemsrepl_tran_version: TGuidField;
+    DStipocliente: TDataSource;
+    ADOQuery1: TADOQuery;
+    DataSource1: TDataSource;
+    ADOQuery1GRUPOCLIENTE: TStringField;
+    ADOQuery1DESCRIPCION: TStringField;
+    ADOQuery1CODIGOAXAPTA: TStringField;
+    ADOQuery1COMENTARIO: TMemoField;
+    ADOQuery1DATAAREAID: TStringField;
+    ADOQuery1RECID: TIntegerField;
+    ADOQuery1msrepl_tran_version: TGuidField;
+    procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmpreciosCategorias: TFrmpreciosCategorias;
+
+implementation
+
+uses Main, DataModule;
+
+{$R *.dfm}
+
+procedure TFrmpreciosCategorias.Button1Click(Sender: TObject);
+begin
+Close;
+end;
+
+procedure TFrmpreciosCategorias.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+Action := caFree;
+end;
+
+procedure TFrmpreciosCategorias.FormCreate(Sender: TObject);
+begin
+qrPreciosCategorias.Open;
+QryProductos.Open;
+QtipoCliente.Open;
+end;
+
+end.

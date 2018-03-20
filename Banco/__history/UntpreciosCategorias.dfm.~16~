@@ -1,0 +1,323 @@
+object FrmpreciosCategorias: TFrmpreciosCategorias
+  Left = 0
+  Top = 0
+  Caption = 'Precios categorias'
+  ClientHeight = 482
+  ClientWidth = 760
+  Color = 16311249
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object cxGroupBox1: TcxGroupBox
+    Left = 0
+    Top = 0
+    Align = alTop
+    TabOrder = 0
+    Height = 193
+    Width = 760
+    object Label1: TLabel
+      Left = 16
+      Top = 32
+      Width = 33
+      Height = 13
+      Caption = 'Codigo'
+    end
+    object Label2: TLabel
+      Left = 16
+      Top = 113
+      Width = 43
+      Height = 13
+      Caption = 'Producto'
+    end
+    object Label3: TLabel
+      Left = 16
+      Top = 59
+      Width = 56
+      Height = 13
+      Caption = 'Tipo Cliente'
+    end
+    object Label4: TLabel
+      Left = 16
+      Top = 83
+      Width = 96
+      Height = 13
+      Caption = 'Empresa / categoria'
+    end
+    object Label5: TLabel
+      Left = 16
+      Top = 140
+      Width = 29
+      Height = 13
+      Caption = 'Precio'
+    end
+    object cxDBTextEdit1: TcxDBTextEdit
+      Left = 118
+      Top = 24
+      DataBinding.DataField = 'SECUENCIA'
+      DataBinding.DataSource = dsPreciosCategorias
+      Properties.ReadOnly = True
+      TabOrder = 0
+      Width = 58
+    end
+    object cxDBLookupComboBox1: TcxDBLookupComboBox
+      Left = 118
+      Top = 105
+      DataBinding.DataField = 'PRODUCTOID'
+      DataBinding.DataSource = dsPreciosCategorias
+      Properties.KeyFieldNames = 'ProductoID'
+      Properties.ListColumns = <
+        item
+          FieldName = 'ProductoDes'
+        end>
+      Properties.ListSource = DSproductos
+      TabOrder = 1
+      Width = 258
+    end
+    object cxDBLookupComboBox2: TcxDBLookupComboBox
+      Left = 118
+      Top = 51
+      DataBinding.DataField = 'TIPOCLIENTE'
+      DataBinding.DataSource = dsPreciosCategorias
+      Properties.KeyFieldNames = 'TIPOCLIENTE'
+      Properties.ListColumns = <
+        item
+          FieldName = 'DESCRIPCION'
+        end>
+      Properties.ListSource = DStipocliente
+      TabOrder = 2
+      Width = 258
+    end
+    object cxDBLookupComboBox3: TcxDBLookupComboBox
+      Left = 118
+      Top = 78
+      DataBinding.DataField = 'GRUPOCLIENTE'
+      DataBinding.DataSource = dsPreciosCategorias
+      Properties.KeyFieldNames = 'GRUPOCLIENTE'
+      Properties.ListColumns = <
+        item
+          FieldName = 'DESCRIPCION'
+        end>
+      Properties.ListSource = DSgrupoclientes
+      TabOrder = 3
+      Width = 258
+    end
+    object cxDBTextEdit2: TcxDBTextEdit
+      Left = 118
+      Top = 132
+      DataBinding.DataField = 'PRECIO'
+      DataBinding.DataSource = dsPreciosCategorias
+      Properties.ReadOnly = True
+      TabOrder = 4
+      Width = 58
+    end
+    object cxDBCheckBox1: TcxDBCheckBox
+      Left = 422
+      Top = 24
+      Caption = 'Activo'
+      DataBinding.DataField = 'ESTATUS'
+      DataBinding.DataSource = dsPreciosCategorias
+      Properties.ValueChecked = 'A'
+      Properties.ValueUnchecked = 'I'
+      TabOrder = 5
+      Width = 75
+    end
+  end
+  object cxDBNavigator1: TcxDBNavigator
+    Left = 2
+    Top = 199
+    Width = 750
+    Height = 58
+    DataSource = dsPreciosCategorias
+    TabOrder = 1
+  end
+  object dsPreciosCategorias: TDataSource
+    DataSet = qrPreciosCategorias
+    Left = 464
+    Top = 296
+  end
+  object qrPreciosCategorias: TADOQuery
+    Connection = DM.Database
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT * FROM PTPRECIOSCATEGORIAS')
+    Left = 584
+    Top = 112
+    object qrPreciosCategoriasSECUENCIA: TAutoIncField
+      FieldName = 'SECUENCIA'
+      ReadOnly = True
+    end
+    object qrPreciosCategoriasPRODUCTOID: TStringField
+      FieldName = 'PRODUCTOID'
+      Size = 10
+    end
+    object qrPreciosCategoriasGRUPOCLIENTE: TStringField
+      FieldName = 'GRUPOCLIENTE'
+      Size = 5
+    end
+    object qrPreciosCategoriasTIPOCLIENTE: TStringField
+      FieldName = 'TIPOCLIENTE'
+      Size = 5
+    end
+    object qrPreciosCategoriasPRECIO: TFloatField
+      FieldName = 'PRECIO'
+      DisplayFormat = '###,###'
+    end
+    object qrPreciosCategoriasESTATUS: TStringField
+      FieldName = 'ESTATUS'
+      Size = 1
+    end
+  end
+  object QryProductos: TADOQuery
+    Connection = DM.Database
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT * FROM BSProductos')
+    Left = 472
+    Top = 88
+    object QryProductosProductoID: TWideStringField
+      FieldName = 'ProductoID'
+      FixedChar = True
+      Size = 10
+    end
+    object QryProductosProductoDes: TWideStringField
+      FieldName = 'ProductoDes'
+      FixedChar = True
+      Size = 30
+    end
+    object QryProductosPrecio: TBCDField
+      FieldName = 'Precio'
+      Precision = 10
+    end
+    object QryProductosPrecioDolares: TBCDField
+      FieldName = 'PrecioDolares'
+      Precision = 10
+    end
+    object QryProductosDias: TIntegerField
+      FieldName = 'Dias'
+    end
+    object QryProductosPermiteCambioPrecio: TBooleanField
+      FieldName = 'PermiteCambioPrecio'
+    end
+    object QryProductosCodigoAxapta: TStringField
+      FieldName = 'CodigoAxapta'
+    end
+    object QryProductosCosto: TBCDField
+      FieldName = 'Costo'
+      Precision = 10
+    end
+    object QryProductosExterior: TBooleanField
+      FieldName = 'Exterior'
+    end
+    object QryProductosFacturarCabecera: TBooleanField
+      FieldName = 'FacturarCabecera'
+    end
+    object QryProductosTipo: TBooleanField
+      FieldName = 'Tipo'
+    end
+    object QryProductosNecesitaCruce: TBooleanField
+      FieldName = 'NecesitaCruce'
+    end
+    object QryProductosServicio: TBooleanField
+      FieldName = 'Servicio'
+    end
+    object QryProductosInicial: TBooleanField
+      FieldName = 'Inicial'
+    end
+    object QryProductosAnticipo: TBooleanField
+      FieldName = 'Anticipo'
+    end
+    object QryProductosTiempoMesProximaDonacion: TIntegerField
+      FieldName = 'TiempoMesProximaDonacion'
+    end
+  end
+  object DSproductos: TDataSource
+    DataSet = QryProductos
+    Left = 296
+    Top = 256
+  end
+  object QtipoCliente: TADOQuery
+    Connection = DM.Database
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT * FROM PTTIPOCLIENTE  ')
+    Left = 96
+    Top = 280
+    object QtipoClienteTIPOCLIENTE: TStringField
+      FieldName = 'TIPOCLIENTE'
+      Size = 5
+    end
+    object QtipoClienteDESCRIPCION: TStringField
+      FieldName = 'DESCRIPCION'
+      Size = 50
+    end
+    object QtipoClienteDATAAREAID: TStringField
+      FieldName = 'DATAAREAID'
+      Size = 3
+    end
+    object QtipoClienteRECID: TIntegerField
+      FieldName = 'RECID'
+    end
+    object QtipoClientemsrepl_tran_version: TGuidField
+      FieldName = 'msrepl_tran_version'
+      FixedChar = True
+      Size = 38
+    end
+  end
+  object DStipocliente: TDataSource
+    DataSet = QtipoCliente
+    Left = 288
+    Top = 304
+  end
+  object Qgrupoclientes: TADOQuery
+    Connection = DM.Database
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT * FROM PTGRUPOCLIENTE')
+    Left = 376
+    Top = 320
+    object QgrupoclientesGRUPOCLIENTE: TStringField
+      FieldName = 'GRUPOCLIENTE'
+      Size = 10
+    end
+    object QgrupoclientesDESCRIPCION: TStringField
+      FieldName = 'DESCRIPCION'
+      Size = 50
+    end
+    object QgrupoclientesCODIGOAXAPTA: TStringField
+      FieldName = 'CODIGOAXAPTA'
+      Size = 10
+    end
+    object QgrupoclientesCOMENTARIO: TMemoField
+      FieldName = 'COMENTARIO'
+      BlobType = ftMemo
+    end
+    object QgrupoclientesDATAAREAID: TStringField
+      FieldName = 'DATAAREAID'
+      Size = 3
+    end
+    object QgrupoclientesRECID: TIntegerField
+      FieldName = 'RECID'
+    end
+    object Qgrupoclientesmsrepl_tran_version: TGuidField
+      FieldName = 'msrepl_tran_version'
+      FixedChar = True
+      Size = 38
+    end
+  end
+  object DSgrupoclientes: TDataSource
+    DataSet = Qgrupoclientes
+    Left = 432
+    Top = 320
+  end
+end

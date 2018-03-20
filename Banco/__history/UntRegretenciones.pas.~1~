@@ -1,0 +1,25 @@
+unit UntRegretenciones;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DialogModule, Menus, cxLookAndFeelPainters, dxLayoutControl,
+  StdCtrls, cxButtons, cxControls;
+
+type
+  TFrmregRetenciones = class(TfrmDialogModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmregRetenciones: TFrmregRetenciones;
+
+implementation
+
+{$R *.dfm}
+
+end.

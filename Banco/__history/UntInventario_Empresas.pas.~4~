@@ -1,0 +1,46 @@
+unit UntInventario_Empresas;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, DB, Mask, DBCtrls, ADODB;
+
+type
+  TFrmInventario_Empresas = class(Tform)
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
+    Qinv_empresas: TADOQuery;
+    Qinv_empresasINV_CODIGO: TAutoIncField;
+    Qinv_empresasINV_EMPRESA: TStringField;
+    Qinv_empresasINV_FECHA_COLECTA: TDateTimeField;
+    Qinv_empresasINV_CANTIDAD: TIntegerField;
+    Qinv_empresasINV_DISPONIBLE: TIntegerField;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    DataSource1: TDataSource;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
+    Label4: TLabel;
+    DBEdit4: TDBEdit;
+    Label5: TLabel;
+    DBEdit5: TDBEdit;
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmInventario_Empresas: TFrmInventario_Empresas;
+
+implementation
+
+uses DataModule;
+
+{$R *.dfm}
+
+end.

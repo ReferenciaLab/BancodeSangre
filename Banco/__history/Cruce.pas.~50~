@@ -1,0 +1,739 @@
+unit Cruce;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, CustomModule, Menus, StdActns, ActnList, JvComponentBase,
+  JvFormPlacement, ExtCtrls, JvExControls, JvComponent, JvEnterTab,
+  dxLayoutControl, cxControls, cxLookAndFeelPainters, cxStyles, cxCustomData,
+  cxGraphics, cxFilter, cxData, cxDataStorage, cxEdit, DB, cxDBData,
+  cxGridLevel, cxClasses, cxGridCustomView, cxGridCustomTableView,
+  cxGridTableView, cxGridDBTableView, cxGrid, StdCtrls, cxButtons, cxContainer,
+  cxTextEdit, cxDBEdit, ADODB, cxBlobEdit, cxPC, Mask, DBCtrls, cxMaskEdit,
+  cxDropDownEdit, ppCtrls, ppVar, ppPrnabl, ppClass, ppBands, ppCache, ppProd,
+  ppReport, ppComm, ppRelatv, ppDB, ppDBPipe, ppDBBDE;
+
+type
+  TfrmCruce = class(TfrmCustomModule)
+    dxLayoutControl1Group_Root: TdxLayoutGroup;
+    dxLayoutControl1: TdxLayoutControl;
+    dxLayoutControl1Group1: TdxLayoutGroup;
+    cxDBTextEdit1: TcxDBTextEdit;
+    dxLayoutControl1Item5: TdxLayoutItem;
+    cxDBTextEdit2: TcxDBTextEdit;
+    dxLayoutControl1Item1: TdxLayoutItem;
+    cxDBTextEdit3: TcxDBTextEdit;
+    dxLayoutControl1Item2: TdxLayoutItem;
+    cxDBTextEdit4: TcxDBTextEdit;
+    dxLayoutControl1Item3: TdxLayoutItem;
+    dxLayoutControl1Group3: TdxLayoutGroup;
+    cxButton1: TcxButton;
+    dxLayoutControl1Item4: TdxLayoutItem;
+    cxButton2: TcxButton;
+    dxLayoutControl1Item9: TdxLayoutItem;
+    cxButton3: TcxButton;
+    dxLayoutControl1Item10: TdxLayoutItem;
+    AtcNuevo: TAction;
+    Adicionar: TAction;
+    Eliminar: TAction;
+    dxLayoutControl1Group6: TdxLayoutGroup;
+    qrEntradaPaciente: TADOQuery;
+    qrEntradaPacienteENTRADAID: TStringField;
+    qrEntradaPacienteFECHA: TDateTimeField;
+    qrEntradaPacienteHORAENTRADA: TStringField;
+    qrEntradaPacientePACIENTEID: TStringField;
+    qrEntradaPacienteCLIENTEID: TStringField;
+    qrEntradaPacienteDOCTORID: TStringField;
+    qrEntradaPacientePOLIZAID: TStringField;
+    qrEntradaPacienteENCLINICA: TIntegerField;
+    qrEntradaPacienteRECORDCLINICA: TStringField;
+    qrEntradaPacienteNUMEROHABITACION: TStringField;
+    qrEntradaPacienteFECHAENTRADA: TDateTimeField;
+    qrEntradaPacienteFECHADEALTA: TDateTimeField;
+    qrEntradaPacienteRESULTADOPACIENTE: TIntegerField;
+    qrEntradaPacienteRESULTADODOCTOR: TIntegerField;
+    qrEntradaPacienteFECHAPROMETIDA: TDateTimeField;
+    qrEntradaPacienteHORAPROMETIDA: TStringField;
+    qrEntradaPacienteFLEBOTOMISTAID: TStringField;
+    qrEntradaPacienteNOTA: TStringField;
+    qrEntradaPacientePROYECTOID: TStringField;
+    qrEntradaPacienteRECORDID: TIntegerField;
+    qrEntradaPacienteBRUTO: TBCDField;
+    qrEntradaPacienteDESCUENTO: TBCDField;
+    qrEntradaPacienteSUBTOTAL: TBCDField;
+    qrEntradaPacienteNETO: TBCDField;
+    qrEntradaPacienteNOMBREPACIENTE: TStringField;
+    qrEntradaPacienteDIRECCION: TStringField;
+    qrEntradaPacienteTELEFONOS: TStringField;
+    qrEntradaPacienteTELEFONO2: TStringField;
+    qrEntradaPacienteEMAIL: TStringField;
+    qrEntradaPacienteCLIENTENOMBRE: TStringField;
+    qrEntradaPacienteSUCURSALID: TStringField;
+    qrEntradaPacienteUSERID: TStringField;
+    qrEntradaPacienteCOBROID: TStringField;
+    qrEntradaPacienteTOTALPAGADO: TBCDField;
+    qrEntradaPacientePRIORIDAD: TIntegerField;
+    qrEntradaPacienteFAX: TStringField;
+    qrEntradaPacienteTIPODOCUMENTO: TIntegerField;
+    qrEntradaPacienteCOBERTURAPORC: TBCDField;
+    qrEntradaPacienteCOBERTURASEGURO: TBCDField;
+    qrEntradaPacienteCOBERTURAVALOR: TBCDField;
+    qrEntradaPacienteDESCUENTOPORC: TBCDField;
+    qrEntradaPacienteDESCUENTOVALOR: TBCDField;
+    qrEntradaPacienteDESCUENTOBONO: TBCDField;
+    qrEntradaPacienteORIGEN: TStringField;
+    qrEntradaPacienteAPROBACIONNO: TStringField;
+    qrEntradaPacienteAPROBACIONPOR: TStringField;
+    qrEntradaPacienteCOBERTURARECHAZADA: TIntegerField;
+    qrEntradaPacienteCOBERTURACONFIRMADA: TIntegerField;
+    qrEntradaPacienteFECHAASEGURADORA: TDateTimeField;
+    qrEntradaPacienteMUESTRANO: TStringField;
+    qrEntradaPacienteMONEDAID: TStringField;
+    qrEntradaPacienteCOBERTURAEXPPORC: TIntegerField;
+    qrEntradaPacienteEDADPACIENTE: TIntegerField;
+    qrEntradaPacienteSEXO: TIntegerField;
+    qrEntradaPacienteNOMBREDOCTOR: TStringField;
+    qrEntradaPacientePUBLICARINTERNET: TIntegerField;
+    qrEntradaPacienteCARNET: TStringField;
+    qrEntradaPacientePUBLICARINTERNETDOCTOR: TIntegerField;
+    qrEntradaPacienteCUADREGLOBAL: TStringField;
+    qrEntradaPacienteCUADREUSUARIO: TStringField;
+    qrEntradaPacienteDESCAUTORIZADOPOR: TStringField;
+    qrEntradaPacienteGASTOSVARIOS: TBCDField;
+    qrEntradaPacienteNOAS400: TIntegerField;
+    qrEntradaPacienteNOAXAPTA: TIntegerField;
+    qrEntradaPacienteNOFACTURA: TIntegerField;
+    qrEntradaPacienteFACTEXTERIOR: TIntegerField;
+    qrEntradaPacienteHOLD: TIntegerField;
+    qrEntradaPacienteREPMUESTRA: TIntegerField;
+    qrEntradaPacienteENTRADAIDANT: TStringField;
+    qrEntradaPacienteTIPOENTRADA: TStringField;
+    qrEntradaPacienteFORMADEPAGO: TStringField;
+    qrEntradaPacienteDESCUENTOCARD: TStringField;
+    qrEntradaPacienteDESCUENTOTEXTO: TStringField;
+    qrEntradaPacienteACUERDOPROPIO: TIntegerField;
+    qrEntradaPacienteCLIENTEPADRE: TStringField;
+    qrEntradaPacienteDESCUENTOPLANID: TStringField;
+    qrEntradaPacienteFECHAREGISTRO: TDateTimeField;
+    qrEntradaPacienteHORAREGISTRO: TStringField;
+    qrEntradaPacienteTASA: TBCDField;
+    qrEntradaPacienteESTATUS: TIntegerField;
+    qrEntradaPacienteTIPOCLIENTEAS400: TIntegerField;
+    qrEntradaPacienteCLASECREDITO: TStringField;
+    qrEntradaPacienteCARNETNUMERO: TStringField;
+    qrEntradaPacienteCLIENTEPADREAXAPTA: TStringField;
+    qrEntradaPacientePACIENTEIDAXAPTA: TStringField;
+    qrEntradaPacienteCLIENTEIDAXAPTA: TStringField;
+    qrEntradaPacienteDOCTORIDAXAPTA: TStringField;
+    qrEntradaPacienteDATAAREAID: TStringField;
+    qrEntradaPacienteRECID: TIntegerField;
+    dsEntradaPaciente: TDataSource;
+    qrEntradaPacienteDetalle: TADOQuery;
+    qrEntradaPacienteDetallePRUEBAID: TStringField;
+    qrEntradaPacienteDetalleCOMBOPRUEBAID: TStringField;
+    qrEntradaPacienteDetalleCODIGOAUTORIZACION: TStringField;
+    qrEntradaPacienteDetalleDESCRIPCION: TStringField;
+    qrEntradaPacienteDetalleCODIGOCUPID: TStringField;
+    qrEntradaPacienteDetalleMUESTRAANT: TStringField;
+    qrEntradaPacienteDetalleCOBERTURAAPLICA: TIntegerField;
+    qrEntradaPacienteDetalleDESCRIPCIONCUP: TStringField;
+    qrEntradaPacienteDetalleREFRECID: TIntegerField;
+    qrEntradaPacienteDetalleSECUENCIA: TIntegerField;
+    qrEntradaPacienteDetalleFLEBOTOMISTAID: TStringField;
+    qrEntradaPacienteDetalleCOMENTARIOMUESTRA: TStringField;
+    qrEntradaPacienteDetalleUNIDADMUESTRA: TStringField;
+    qrEntradaPacienteDetalleSECUENCIAACT: TIntegerField;
+    qrEntradaPacienteDetallePRECIO: TBCDField;
+    qrEntradaPacienteDetalleDESCUENTO: TBCDField;
+    qrEntradaPacienteDetalleDESCUENTOEXTRA: TBCDField;
+    qrEntradaPacienteDetalleTOTALLINEA: TBCDField;
+    qrEntradaPacienteDetalleCOMENTARIO: TStringField;
+    qrEntradaPacienteDetalleTIPOPRUEBA: TStringField;
+    qrEntradaPacienteDetalleTIPOAS400: TStringField;
+    qrEntradaPacienteDetalleCODIGOAS400: TStringField;
+    qrEntradaPacienteDetalleMEDIOAS400: TStringField;
+    qrEntradaPacienteDetalleDESCPCT: TBCDField;
+    qrEntradaPacienteDetalleCOBERTURAESPECIAL: TBCDField;
+    qrEntradaPacienteDetalleCOBERTURAESPECIALPORC: TBCDField;
+    qrEntradaPacienteDetalleCOBERTURAAPLICADA: TBCDField;
+    qrEntradaPacienteDetalleDESCUENTOAPLICADO: TBCDField;
+    qrEntradaPacienteDetalleDESCUENTOLINEAAPLICADO: TBCDField;
+    qrEntradaPacienteDetalleFACTURAR: TIntegerField;
+    qrEntradaPacienteDetalleSELECCIONAR: TIntegerField;
+    qrEntradaPacienteDetalleMUESTRANO: TStringField;
+    qrEntradaPacienteDetalleCOBERTURAEXPPORC: TIntegerField;
+    qrEntradaPacienteDetalleURGENTE: TIntegerField;
+    qrEntradaPacienteDetalleREPMUESTRA: TIntegerField;
+    qrEntradaPacienteDetalleFECHAENTREGA: TDateTimeField;
+    qrEntradaPacienteDetalleHORAENTREGA: TStringField;
+    qrEntradaPacienteDetalleESTATUS: TStringField;
+    qrEntradaPacienteDetalleDATAAREAID: TStringField;
+    qrEntradaPacienteDetalleRECID: TIntegerField;
+    qrEntradaPacienteDetallePermitirBorrar: TBooleanField;
+    dsEntradaPacienteDetalle: TDataSource;
+    dsPruebas: TDataSource;
+    qrPruebas: TADOQuery;
+    qrPruebasPruebaID: TStringField;
+    qrPruebasalias: TStringField;
+    qrPruebasDescripcion: TStringField;
+    qrPruebasPRECIO: TBCDField;
+    qrPruebasCOSTO: TBCDField;
+    qrPruebasCODIGOIDAS400: TStringField;
+    Pruebas: TAction;
+    dxLayoutControl1Item7: TdxLayoutItem;
+    GridPruebas: TcxGrid;
+    GridPruebasEntradasPacienteDet: TcxGridDBTableView;
+    GridPruebasEntradasPacienteDetPruebaID: TcxGridDBColumn;
+    GridPruebasEntradasPacienteDetDescripcion: TcxGridDBColumn;
+    GridPruebasEntradasPacienteDetMuestraNo: TcxGridDBColumn;
+    GridPruebasEntradasPacienteDetComentario: TcxGridDBColumn;
+    GridPruebasLevel1: TcxGridLevel;
+    cxButton4: TcxButton;
+    dxLayoutControl1Item8: TdxLayoutItem;
+    cxButton5: TcxButton;
+    dxLayoutControl1Item11: TdxLayoutItem;
+    dxLayoutControl1Group7: TdxLayoutGroup;
+    cxButton6: TcxButton;
+    dxLayoutControl1Item12: TdxLayoutItem;
+    cxButton7: TcxButton;
+    dxLayoutControl1Item13: TdxLayoutItem;
+    Etiquetas: TAction;
+    cxDBTextEdit5: TcxDBTextEdit;
+    dxLayoutControl1Item14: TdxLayoutItem;
+    dxLayoutControl1Group8: TdxLayoutGroup;
+    qrEntradaPacienteNoAsCorto: TStringField;
+    tbCruce: TADOTable;
+    dsCruce: TDataSource;
+    tbCruceId: TLargeintField;
+    tbCruceMuestraId: TStringField;
+    tbCruceProductoId: TStringField;
+    tbCruceFecha: TDateTimeField;
+    tbCruceReceptorId: TStringField;
+    tbCruceDonanteId: TStringField;
+    tbCruceCompatible: TBooleanField;
+    ActToAS: TAction;
+    actCaja: TAction;
+    dxLayoutControl1Group9: TdxLayoutGroup;
+    dxLayoutControl1Group4: TdxLayoutGroup;
+    qrEntradaPacienteDetalleResultado: TStringField;
+    GridPruebasEntradasPacienteDetResultado: TcxGridDBColumn;
+    cxButton8: TcxButton;
+    dxLayoutControl1Item15: TdxLayoutItem;
+    cxButton9: TcxButton;
+    dxLayoutControl1Item16: TdxLayoutItem;
+    ActBorrar: TAction;
+    dxLayoutControl1Group2: TdxLayoutGroup;
+    qrSQLEncabezado: TADOQuery;
+    qrSQLEncabezadoMuestra: TStringField;
+    qrSQLEncabezadoNOMBRE: TStringField;
+    qrSQLEncabezadoHora: TStringField;
+    qrSQLEncabezadoDIRECCION: TStringField;
+    qrSQLEncabezadoEdad: TIntegerField;
+    qrSQLEncabezadoFechaNacimiento: TDateTimeField;
+    qrSQLEncabezadoTelefono: TStringField;
+    qrSQLEncabezadoCategoria: TStringField;
+    qrSQLEncabezadoFechaEntrada: TDateTimeField;
+    qrSQLEncabezadoUSERID: TStringField;
+    qrSQLEncabezadoSEXO: TIntegerField;
+    qrSQLEncabezadoCedula: TStringField;
+    qrSQLEncabezadoSUCURSALID: TStringField;
+    qrSQLEncabezadoDoctorId: TStringField;
+    qrSQLEncabezadoDoctor: TStringField;
+    qrSQLEncabezadoCliente: TStringField;
+    qrSQLEncabezadoFacturado: TIntegerField;
+    qrSQLEncabezadoPagado: TIntegerField;
+    qrSQLEncabezadoResto: TIntegerField;
+    qrSQLEncabezadoTipResPaciente: TIntegerField;
+    qrSQLEncabezadoInternet: TIntegerField;
+    qrSQLEncabezadoTipResDoctor: TIntegerField;
+    qrSQLEncabezadoInternetDoctor: TIntegerField;
+    qrSQLEncabezadoTipResCliente: TIntegerField;
+    qrSQLEncabezadoInternetCliente: TIntegerField;
+    qrSQLEncabezadoComentario: TStringField;
+    Label1: TLabel;
+    DataSource1: TDataSource;
+    cxDBTextEdit6: TcxDBTextEdit;
+    dxLayoutControl1Item6: TdxLayoutItem;
+    cxDBTextEdit7: TcxDBTextEdit;
+    dxLayoutControl1Item17: TdxLayoutItem;
+    cxDBTextEdit10: TcxDBTextEdit;
+    dxLayoutControl1Item20: TdxLayoutItem;
+    dxLayoutControl1Group11: TdxLayoutGroup;
+    cxDBTextEdit11: TcxDBTextEdit;
+    dxLayoutControl1Item19: TdxLayoutItem;
+    dxLayoutControl1Group10: TdxLayoutGroup;
+    dxLayoutControl1Group12: TdxLayoutGroup;
+    cxButton10: TcxButton;
+    dxLayoutControl1Item21: TdxLayoutItem;
+    DSdatosdonacion: TDataSource;
+    Qdatosdonacion: TADOQuery;
+    QdatosdonacionDonacionID: TStringField;
+    QdatosdonacionMuestraNo: TStringField;
+    QdatosdonacionFecha: TDateTimeField;
+    QdatosdonacionPacienteID: TStringField;
+    QdatosdonacionNOMBRE: TStringField;
+    QdatosdonacionNOMBRE1: TStringField;
+    QdatosdonacionAPELLIDOS: TStringField;
+    QdatosdonacionTipoDonante: TWideStringField;
+    QdatosdonacionTipoSangre: TWideStringField;
+    QdatosdonacionDonanteActivo: TSmallintField;
+    tbConfig: TADOTable;
+    tbConfigSendToAs400: TBooleanField;
+    qrASEncabezado: TADOQuery;
+    qrASEncabezadoIN3MUE: TBCDField;
+    qrASEncabezadoIN3NOM: TStringField;
+    qrASEncabezadoIN3HOR: TIntegerField;
+    qrASEncabezadoIN3DIR: TStringField;
+    qrASEncabezadoIN3EDA: TIntegerField;
+    qrASEncabezadoIN3NAC: TIntegerField;
+    qrASEncabezadoIN3TEL: TStringField;
+    qrASEncabezadoIN3CAT: TStringField;
+    qrASEncabezadoIN3FEC: TIntegerField;
+    qrASEncabezadoIN3USU: TStringField;
+    qrASEncabezadoIN3SEX: TStringField;
+    qrASEncabezadoIN3CED: TBCDField;
+    qrASEncabezadoIN3SUC: TIntegerField;
+    qrASEncabezadoIN3CDO: TIntegerField;
+    qrASEncabezadoIN3DOC: TStringField;
+    qrASEncabezadoIN3CLI: TBCDField;
+    qrASEncabezadoIN3FAC: TBCDField;
+    qrASEncabezadoIN3PAG: TBCDField;
+    qrASEncabezadoIN3RES: TBCDField;
+    qrASEncabezadoIN3EPA: TIntegerField;
+    qrASEncabezadoIN3IPA: TIntegerField;
+    qrASEncabezadoIN3EDO: TIntegerField;
+    qrASEncabezadoIN3IDO: TIntegerField;
+    qrASEncabezadoIN3RCL: TIntegerField;
+    qrASEncabezadoIN3ICL: TIntegerField;
+    qrASEncabezadoIN3COM: TStringField;
+    qrASEncabezadoIN3ABR: TIntegerField;
+    qrASEncabezadoIN3REL: TBCDField;
+    qrASEncabezadoIN3REF: TStringField;
+    qrASDetalle: TADOQuery;
+    qrASDetalleIN4MUE: TBCDField;
+    qrASDetalleIN4COD: TIntegerField;
+    qrASDetalleIN4NOM: TStringField;
+    qrASDetalleIN4STS: TStringField;
+    qrASDetalleIN4DEP: TIntegerField;
+    qrASDetalleIN4FEC: TIntegerField;
+    qrASDetalleIN4HOR: TIntegerField;
+    qrASDetalleIN4USU: TStringField;
+    qrASDetalleIN4COM: TStringField;
+    qrASDetalleIN4PET: TIntegerField;
+    qrASDetalleIN4ANT: TBCDField;
+    qrASDetalleIN4TIP: TStringField;
+    qrASDetalleIN4VAL: TBCDField;
+    qrASDetalleIN4ACT: TStringField;
+    dxLayoutControl1Group5: TdxLayoutGroup;
+    qrEntradaPacienteMuestraNoAS: TStringField;
+    qrEntradaPacienteRESULTADO_CRUCE: TStringField;
+    cxDBComboBox1: TcxDBComboBox;
+    dxLayoutControl1Item23: TdxLayoutItem;
+    cxButton11: TcxButton;
+    dxLayoutControl1Item18: TdxLayoutItem;
+    dxLayoutControl1Group13: TdxLayoutGroup;
+    Acutali: TcxButton;
+    dxLayoutControl1Item22: TdxLayoutItem;
+    ppPaciente: TppBDEPipeline;
+    ppReport1: TppReport;
+    ppHeaderBand1: TppHeaderBand;
+    ppDetailBand1: TppDetailBand;
+    ppFooterBand1: TppFooterBand;
+    ppImage1: TppImage;
+    ppLabel1: TppLabel;
+    ppLabel2: TppLabel;
+    ppLabel3: TppLabel;
+    ppSystemVariable1: TppSystemVariable;
+    ppSystemVariable2: TppSystemVariable;
+    ppSystemVariable3: TppSystemVariable;
+    ppLine1: TppLine;
+    ppLabel4: TppLabel;
+    cxButton12: TcxButton;
+    ppShape1: TppShape;
+    ppShape2: TppShape;
+    ppLabel5: TppLabel;
+    ppLabel6: TppLabel;
+    ppLabel7: TppLabel;
+    ppLabel8: TppLabel;
+    ppLabel9: TppLabel;
+    ppDBText1: TppDBText;
+    ppDBText2: TppDBText;
+    ppDBText3: TppDBText;
+    ppDBText4: TppDBText;
+    ppDBText5: TppDBText;
+    ppDBText6: TppDBText;
+    ppShape3: TppShape;
+    ppShape4: TppShape;
+    ppLabel10: TppLabel;
+    ppLabel11: TppLabel;
+    ppLabel13: TppLabel;
+    ppLabel14: TppLabel;
+    ppDBText7: TppDBText;
+    ppDBText10: TppDBText;
+    ppDBText12: TppDBText;
+    ppShape5: TppShape;
+    ppLabel15: TppLabel;
+    ppLabel16: TppLabel;
+    ppLabel17: TppLabel;
+    ppLabel18: TppLabel;
+    ppPruebas: TppBDEPipeline;
+    ppDBText8: TppDBText;
+    ppDBText11: TppDBText;
+    ppDBText13: TppDBText;
+    ppDonacion: TppBDEPipeline;
+    ppLabel19: TppLabel;
+    ppVariable1: TppVariable;
+    ppLabel20: TppLabel;
+    ppDBText14: TppDBText;
+    procedure ppHeaderBand1BeforePrint(Sender: TObject);
+    procedure cxButton12Click(Sender: TObject);
+    procedure cxButton11Click(Sender: TObject);
+    procedure cxButton8Click(Sender: TObject);
+    procedure ActualizarClick(Sender: TObject);
+    procedure cxButton10Click(Sender: TObject);
+    procedure actCajaExecute(Sender: TObject);
+    procedure AdicionarExecute(Sender: TObject);
+    procedure ActToASExecute(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure EtiquetasExecute(Sender: TObject);
+    procedure PruebasExecute(Sender: TObject);
+    procedure AtcNuevoExecute(Sender: TObject);
+  private
+    { Private declarations }
+    var Secuencia: Int64;
+  public
+    { Public declarations }
+    procedure Abrir(EntradaId: String);
+    
+  end;
+
+var
+  frmCruce: TfrmCruce;
+
+implementation
+
+uses DataBanco, DataModule, Main, BancoVenta, DialogConsultaDonaciones,
+  Untbusca_donacion, UInterfaseAs;
+
+{$R *.dfm}
+
+procedure TfrmCruce.Abrir;
+begin
+
+    qrEntradaPaciente.Close;
+    qrEntradaPaciente.Parameters[0].Value:= DMB.EntradaCruceId;
+    qrEntradaPaciente.Open;
+
+    qrEntradaPacienteDetalle.Close;
+    qrEntradaPacienteDetalle.Parameters[0].Value:= qrEntradaPacienteMuestraNo.Value;
+    qrEntradaPacienteDetalle.Open;
+   With dm.Qutilitario do
+     Begin
+       Close;
+       Sql.Clear;
+       Sql.Add('SELECT DONACIONID FROM BSDONACION');
+       Sql.Add('WHERE CRUCE ='+ #39+DMB.EntradaCruceId+#39);
+       Open;
+     end;
+     dm.Qdatosdonacion.close;
+     dm.Qdatosdonacion.Parameters.ParamByName('NUMERO').Value:= dm.Qutilitario.fieldbyname('DONACIONID').Value;
+     dm.Qdatosdonacion.Open;
+
+end;
+
+procedure TfrmCruce.actCajaExecute(Sender: TObject);
+begin
+  inherited;
+
+  //Adicionar el cruce a caja para cobrarsele el precio
+  //Por defecto 800.00 pesos
+
+  BV.AddAVenta(qrEntradaPacienteCLIENTEID.Value, '', '');
+  BV.AddADetVenta('CRS', '');
+
+end;
+
+procedure TfrmCruce.ActToASExecute(Sender: TObject);
+begin
+  inherited;
+
+   InterfaseAS.Enviar_Cruce := True;
+   DMB.Enviar_Cruce := True;
+   DMB.MandarPruebaAS400(qrEntradaPacienteNoAsCorto.Value);
+ {
+   With dm.Qutilitario do
+    begin
+      Close;
+      Sql.Clear;
+      Sql.Add('INSERT INTO BSCRUCE(MuestraId,ProductoId,Fecha,ReceptorId,DonanteId,Usuariodig)');
+      Sql.Add('VALUES(:PMuestraId,:PProductoId,:PFecha,:PReceptorId,:PDonanteId,:PUsuariodig)');
+      Parameters.ParamByName('PMuestraId').Value:= qrEntradaPacienteNoAsCorto.Value;
+      Parameters.ParamByName('PProductoId').Value:= '';
+      Parameters.ParamByName('PFecha').Value:= date;
+      Parameters.ParamByName('PReceptorId').Value:= qrEntradaPacientePACIENTEID.Value;
+      Parameters.ParamByName('PDonanteId').Value:=  QdatosdonacionPacienteID.Value;
+      Parameters.ParamByName('PUsuariodig').Value:= dm.CurUser;
+      ExecSQL;
+    end;
+
+  qrPruebas.First;
+  while not qrPruebas.eof  do
+    Begin
+      With dm.Qutilitario do
+        begin
+         Close;
+         Sql.Clear;
+         Sql.Add('INSERT INTO BSCRUCEDETALLE(MuestraId,PRUEBAID,DESCRIPCION,ALIAS)');
+         Sql.Add('VALUES(:PMuestraId,:PPRUEBAID,:PDESCRIPCION,:PALIAS)');
+         Parameters.ParamByName('PMuestraId').Value:= qrEntradaPacienteNoAsCorto.Value;
+         Parameters.ParamByName('PPRUEBAID').Value:= qrPruebasPruebaID.Value;
+         Parameters.ParamByName('PDESCRIPCION').Value:= qrPruebasDescripcion.Value;
+         Parameters.ParamByName('PALIAS').Value:= qrPruebasalias.Value;
+         ExecSQL;
+         qrPruebas.Next;
+       end;
+    end;
+
+   With dm.Qutilitario do
+        begin
+         Close;
+         Sql.Clear;
+         Sql.Add('UPDATE BSDONACION SET CRUCE =:CRUCE');
+         Sql.Add('WHERE DONACIONID =:DONACION');
+         Parameters.ParamByName('CRUCE').Value:= qrEntradaPacienteENTRADAID.Value;
+         Parameters.ParamByName('DONACION').Value:= cxDBTextEdit6.Text;
+         ExecSQL;
+        end;
+  }
+    qrPruebas.Close;
+
+end;
+
+procedure TfrmCruce.ActualizarClick(Sender: TObject);
+begin
+  inherited;
+
+ qrEntradaPacienteDetalle.First;
+
+ while not  qrEntradaPacienteDetalle.eof do
+  begin
+    //*************** BUSCANDO EL RESULTADO DE LA PRUEBA **************
+
+     if qrEntradaPacienteDetalleCODIGOAS400.Value = '361' then    //********* BUSCAR RESULTADO DE LA PRUEBA TDQ
+      begin
+        With InterfaseAS.qrASResult do
+          Begin
+           Close;
+           Parameters.ParamByName('Muestra').Value:= qrEntradaPacienteMuestraNoAS.Value;
+           Parameters.ParamByName('Codigo').Value:= qrEntradaPacienteDetalleCODIGOAS400.Value;
+           Open;
+           //*************** ACTUALIZANDO LA PRUEBA CON EL RESULTADO
+           if InterfaseAS.qrASResult.RecordCount > 0 then
+             begin
+               With dm.Qutilitario do
+                 begin
+                  Close;
+                  Sql.Clear;
+                  Sql.Add('UPDATE PTEntradaPacienteDetalle SET RESULTADO =:VALOR');
+                  Sql.Add('WHERE MUESTRANO ='+#39+qrEntradaPacienteDetalleMUESTRANO.Value+#39);
+                  Sql.Add('AND PRUEBAID ='+#39+qrEntradaPacienteDetallePRUEBAID.Value+#39);
+                  Parameters.ParamByName('VALOR').Value := InterfaseAS.qrASResult.FieldByName('L49RES').Value;
+                  ExecSQL;
+                 end;
+            end;
+         end; //********* FIN PRUEBA TDQ ***********************************************
+      End;
+      
+       if qrEntradaPacienteDetalleCODIGOAS400.Value = '314' then //***** PRUEBA DE TIPIFICACION ************
+          Begin
+             With InterfaseAS.qrGetTipificacion do
+              Begin
+               Close;
+               Parameters.ParamByName('Muestra').Value:= qrEntradaPacienteMuestraNoAS.Value;
+               Open;
+           //*************** ACTUALIZANDO LA PRUEBA CON EL RESULTADO
+           if InterfaseAS.qrGetTipificacion.RecordCount > 0 then
+             begin
+               With dm.Qutilitario do
+                 begin
+                  Close;
+                  Sql.Clear;
+                  Sql.Add('UPDATE PTEntradaPacienteDetalle SET RESULTADO =:VALOR');
+                  Sql.Add('WHERE MUESTRANO ='+#39+qrEntradaPacienteDetalleMUESTRANO.Value+#39);
+                  Sql.Add('AND PRUEBAID ='+#39+qrEntradaPacienteDetallePRUEBAID.Value+#39);
+                  Parameters.ParamByName('VALOR').Value := Trim(InterfaseAS.qrGetTipificacion.FieldByName('L57GRU').Value)+' '+Trim(InterfaseAS.qrGetTipificacion.FieldByName('L57FAC').Value);
+                  ExecSQL;
+                 end;
+              eND;
+          end;
+        End;
+
+        qrEntradaPacienteDetalle.Next;
+ END;
+ qrEntradaPacienteDetalle.Refresh;
+end;
+
+
+procedure TfrmCruce.AdicionarExecute(Sender: TObject);
+begin
+  inherited;
+
+  dsEntradaPacienteDetalle.DataSet.Insert;
+    qrEntradaPacienteDetalleRefRecid.Value:= qrEntradaPacienteRecid.Value;
+    Secuencia:= Secuencia + 1;
+    qrEntradaPacienteDetalleSecuencia.Value:= Secuencia;
+    qrEntradaPacienteDetalleMuestraNo.Value:= qrEntradaPacienteMuestraNo.Value;
+    qrEntradaPacienteDetallePruebaID.Value:=  '00000443';
+    qrEntradaPacienteDetalleDescripcion.Value:= 'CRUCE SANGUINEO';
+    qrEntradaPacienteDetalleDATAAREAID.Value:= DMB.AreaId;
+    qrEntradaPacienteDetalleRECID.Value:= qrEntradaPacienteRECID.Value;
+    qrEntradaPacienteDetallePrecio.Value := 330;
+    qrEntradaPacienteDetalleCODIGOAS400.Value:= '775';
+    qrEntradaPacienteDetallePermitirBorrar.Value:= true;
+  dsEntradaPacienteDetalle.DataSet.Post;
+
+end;
+
+procedure TfrmCruce.AtcNuevoExecute(Sender: TObject);
+var
+  //EntradaId: String;
+  PacienteId: String;
+
+begin
+  inherited;
+
+  PacienteId:= DMB.BuscarPaciente;
+
+  if (pacienteId <> '') then
+    begin
+      DMB.EntradaCruceId:= DMB.NuevoCruce(PacienteId);
+    end
+  else
+    begin
+      DM.Warning(' Es necesario seleccionar un paciente para el Cruce.');
+      exit;
+    end;
+
+    qrEntradaPaciente.Close;
+    qrEntradaPaciente.Parameters[0].Value:= DMB.EntradaCruceId;
+    qrEntradaPaciente.Open;
+
+    qrEntradaPacienteDetalle.Close;
+    qrEntradaPacienteDetalle.Parameters[0].Value:= qrEntradaPacienteMuestraNo.Value;
+    qrEntradaPacienteDetalle.Open;
+
+    With dm.Qutilitario do
+     Begin
+       Close;
+       Sql.Clear;
+       Sql.Add('SELECT DONACIONID FROM BSDONACION');
+       Sql.Add('WHERE CRUCE ='+ #39+DMB.EntradaCruceId+#39);
+       Open;
+     end;
+     dm.Qdatosdonacion.close;
+     dm.Qdatosdonacion.Parameters.ParamByName('NUMERO').Value:= dm.Qutilitario.fieldbyname('DONACIONID').Value;
+     dm.Qdatosdonacion.Open;
+
+
+end;
+
+procedure TfrmCruce.cxButton10Click(Sender: TObject);
+begin
+  inherited;
+
+  Application.CreateForm(TFrmbusca_donacion,Frmbusca_donacion);
+  Frmbusca_donacion.showmodal;
+
+  end;
+
+procedure TfrmCruce.cxButton11Click(Sender: TObject);
+begin
+  inherited;
+if qrEntradaPaciente.State = dsedit then
+   qrEntradaPaciente.Post;
+end;
+
+procedure TfrmCruce.cxButton12Click(Sender: TObject);
+begin
+  inherited;
+ppReport1.Print;
+end;
+
+procedure TfrmCruce.cxButton8Click(Sender: TObject);
+begin
+  inherited;
+qrEntradaPaciente.Edit;
+end;
+
+procedure TfrmCruce.EtiquetasExecute(Sender: TObject);
+begin
+  inherited;
+
+  DMB.PruebaActual:= self.qrEntradaPacienteRECID.Value;
+  frmMain.LanzaVentana(6014);
+
+end;
+
+procedure TfrmCruce.FormCreate(Sender: TObject);
+begin
+  inherited;
+
+  if (DMB.EntradaCruceId = '') then
+    AtcNuevoExecute(Sender)
+  else
+    Abrir(DMB.EntradaCruceId);
+
+end;
+
+procedure TfrmCruce.ppHeaderBand1BeforePrint(Sender: TObject);
+begin
+  inherited;
+  ppVariable1.Value := DM.CurUser;
+end;
+
+procedure TfrmCruce.PruebasExecute(Sender: TObject);
+begin
+  inherited;
+
+  Secuencia:= 1;
+  qrPruebas.Open;
+  //qrResultados.Open;
+  while not dsPruebas.DataSet.Eof do
+    begin
+      if DMB.ExistePrueba(qrEntradaPacienteMuestraNo.Value, qrPruebasPruebaID.Value) then
+        DM.Info('Prueba Existente para la muestra')
+      else
+        begin
+
+          dsEntradaPacienteDetalle.DataSet.Insert;
+            qrEntradaPacienteDetalleRefRecid.Value:= qrEntradaPacienteRecid.Value;
+            Secuencia:= Secuencia + 1;
+            qrEntradaPacienteDetalleSecuencia.Value:= Secuencia;
+            qrEntradaPacienteDetalleMuestraNo.Value:= qrEntradaPacienteMuestraNo.Value;
+            qrEntradaPacienteDetallePruebaID.Value:= qrPruebasPruebaID.Value;
+            qrEntradaPacienteDetalleDescripcion.Value:= qrPruebasDescripcion.Value;
+            qrEntradaPacienteDetalleDATAAREAID.Value:= DMB.AreaId;
+            qrEntradaPacienteDetalleRECID.Value:= qrEntradaPacienteRECID.Value;
+            qrEntradaPacienteDetallePrecio.Value := qrPruebasPrecio.Value;
+            qrEntradaPacienteDetalleCODIGOAS400.Value:= qrPruebasCODIGOIDAS400.Value;
+            qrEntradaPacienteDetallePermitirBorrar.Value:= false;
+          dsEntradaPacienteDetalle.DataSet.Post;
+
+        end;
+
+      dsPruebas.DataSet.Next;
+    end;
+
+   // qrPruebas.Close;
+    qrEntradaPacienteDetalle.Close;
+    qrEntradaPacienteDetalle.Open;
+
+    //frmMain.ImprimirLabel(qrEntradaPacienteEntredaID.AsString);
+
+    //DMB.MandarPruebaAS400(qrEntradaPacienteMuestraNo.Value);
+
+end;
+
+
+end.

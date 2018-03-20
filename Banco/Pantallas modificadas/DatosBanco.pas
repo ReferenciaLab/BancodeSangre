@@ -1,0 +1,2216 @@
+unit DatosBanco;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, CustomModule, Menus, StdActns, ActnList, JvComponentBase,
+  JvFormPlacement, ExtCtrls, JvExControls, JvComponent, JvEnterTab, cxStyles,
+  cxCustomData, cxGraphics, cxFilter, cxData, cxDataStorage, cxEdit, DB,
+  cxDBData, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
+  cxGridLevel, cxClasses, cxControls, cxGridCustomView, dxLayoutControl, cxGrid,
+  ADODB, cxContainer, cxTextEdit, cxMaskEdit, cxDropDownEdit, cxCalendar,
+  cxLookAndFeelPainters, StdCtrls, cxButtons, cxPC, cxDBEdit, cxCheckBox,
+  cxLabel, cxMemo, cxSpinEdit, cxTimeEdit, cxGroupBox, cxBlobEdit, ppComm,
+  ppRelatv, ppDB, ppDBPipe, DBCtrls, ppCtrls, ppStrtch, ppMemo, ppBands,
+  myChkBox, ppVar, ppPrnabl, ppClass, ppCache, ppProd, ppReport, ppParameter,
+  DBActns, cxGridCardView, cxGridDBCardView, Mask, DateUtils, ppBarCode2D,
+  ppDBBDE, ppBarCod;
+
+type
+  TfrmBanco = class(TfrmCustomModule)
+    qrDonaciones: TADOQuery;
+    dsDatos: TDataSource;
+    dsPaciente: TDataSource;
+    dsDonacion: TDataSource;
+    dsDonante: TDataSource;
+    qrPaciente: TADOQuery;
+    qrDonacionkk: TADOQuery;
+    qrDonante: TADOQuery;
+    qrDonacionkkDonacionID: TStringField;
+    qrDonacionkkFecha: TDateTimeField;
+    qrDonacionkkPacienteID: TStringField;
+    qrDonacionkkNotaEntrevista: TMemoField;
+    qrDonacionkkDonacionStatus: TWideStringField;
+    qrDonacionkkDonacionTipo: TStringField;
+    qrDonacionkkComentario: TMemoField;
+    qrDonacionkkCantidadRecogida: TBCDField;
+    qrDonacionkkTemperatura: TBCDField;
+    qrDonacionkkPeso: TBCDField;
+    qrDonacionkkPulsoMinimo: TBCDField;
+    qrDonacionkkPulsoEstado: TStringField;
+    qrDonacionkkTensionArteriar: TStringField;
+    qrDonacionkkHoraInicio: TDateTimeField;
+    qrDonacionkkHoraFin: TDateTimeField;
+    qrDonacionkkDirigidoNombre: TStringField;
+    qrDonacionkkHospital: TStringField;
+    qrDonacionkkFechaTranfusion: TDateTimeField;
+    qrDonacionkkMedico: TStringField;
+    qrDonacionkkTelefono: TStringField;
+    qrDonacionkkTelefono2: TStringField;
+    qrDonacionkkDireccionMedico: TMemoField;
+    qrEntradaPaciente: TADOQuery;
+    qrEntradaPacienteDetalle: TADOQuery;
+    dsEntradaPacienteDetalle: TDataSource;
+    dsEntradaPaciente: TDataSource;
+    ppEntradaPaciente: TppDBPipeline;
+    ppEntradaPacienteDetalle: TppDBPipeline;
+    Action1: TAction;
+    dsPruebas: TDataSource;
+    qrDonacionkkPagina: TSmallintField;
+    qrDonacionkkTipoFundaID: TWideStringField;
+    qrDonacionkkHemoglobina: TStringField;
+    qrDonacionkkHematocito: TStringField;
+    qrDonacionkkGlobulosBlancos: TStringField;
+    qrDonacionkkPlaquetas: TStringField;
+    qrDonacionkkNotasCuestionario: TMemoField;
+    qrProductos: TADOQuery;
+    dsProductos: TDataSource;
+    qrDonacionkkProductoID: TWideStringField;
+    ActCancel: TAction;
+    dsHemograma: TDataSource;
+    qrDonacionkkReservado: TBooleanField;
+    qrResultados: TADOQuery;
+    dsResultados: TDataSource;
+    qrResultadosMuestraNo: TStringField;
+    qrResultadosPruebaId: TStringField;
+    qrResultadosResultado: TStringField;
+    qrResultadosDescripcion: TStringField;
+    qrDoctor: TADOQuery;
+    qrDoctorDoctorID: TStringField;
+    qrDoctorNombre: TStringField;
+    dsDoctor: TDataSource;
+    ActActualizar: TAction;
+    ActNueva: TAction;
+    ActBorrar: TAction;
+    ppImpDatos: TppReport;
+    ppHeaderBand2: TppHeaderBand;
+    ppDBText26: TppDBText;
+    ppDBText27: TppDBText;
+    ppDBText28: TppDBText;
+    ppDBText29: TppDBText;
+    ppSystemVariable3: TppSystemVariable;
+    ppSystemVariable4: TppSystemVariable;
+    ppLabel5: TppLabel;
+    ppLabel25: TppLabel;
+    ppLabel26: TppLabel;
+    ppLabel27: TppLabel;
+    ppDBText30: TppDBText;
+    ppDBText31: TppDBText;
+    ppLabel28: TppLabel;
+    ppDBText32: TppDBText;
+    ppLabel29: TppLabel;
+    ppLabel33: TppLabel;
+    ppDBText37: TppDBText;
+    ppLabel35: TppLabel;
+    ppDetailBand2: TppDetailBand;
+    ppFooterBand2: TppFooterBand;
+    ppDBMemo2: TppDBMemo;
+    qrDatosDonante: TADOQuery;
+    dsDatosDonante: TDataSource;
+    qrReceptor: TADOQuery;
+    dsReceptor: TDataSource;
+    qrReceptorClienteID: TStringField;
+    qrReceptorNombre: TStringField;
+    ActActualizarHemograma: TAction;
+    ActImprimir: TAction;
+    ppParameterList1: TppParameterList;
+    ppShape2: TppShape;
+    ppLabel1: TppLabel;
+    ppDBText1: TppDBText;
+    ppLabel2: TppLabel;
+    ppDBText2: TppDBText;
+    ppLabel3: TppLabel;
+    ppDBText3: TppDBText;
+    ppLabel4: TppLabel;
+    ppDBText4: TppDBText;
+    qrDonacionesDonacionID: TStringField;
+    qrDonacionesMuestraNoAS: TStringField;
+    qrDonacionesFecha: TDateTimeField;
+    qrDonacionesPacienteID: TStringField;
+    qrDonacionesIdentificacion: TStringField;
+    qrDonacionesNombre: TStringField;
+    qrDonacionesDireccion: TStringField;
+    qrDonacionesTelefono: TStringField;
+    qrDonacionesemail: TStringField;
+    qrDonacionesFechaNacimiento: TDateTimeField;
+    qrDonacionesSexo: TIntegerField;
+    qrDonacionesCiudadID: TStringField;
+    qrDonacionesNotaEntrevista: TMemoField;
+    qrDonacionesDonacionStatus: TWideStringField;
+    qrPacienteCLIENTEID: TStringField;
+    qrPacienteNOMBRE: TStringField;
+    qrPacienteCONTACTO: TStringField;
+    qrPacienteTELEFONO: TStringField;
+    qrPacienteFAX: TStringField;
+    qrPacienteGRUPOCLIENTE: TStringField;
+    qrPacienteINCLUIRPRECIOTICKET: TIntegerField;
+    qrPacienteAUTOCONFIRMAR: TIntegerField;
+    qrPacienteEMPLEADOID: TStringField;
+    qrPacienteCODIGOAXAPTA: TStringField;
+    qrPacienteEMAIL: TStringField;
+    qrPacienteDIRECCIONWEB: TStringField;
+    qrPacienteTELEFONO2: TStringField;
+    qrPacienteMONEDAID: TStringField;
+    qrPacienteIDENTIFICACION: TStringField;
+    qrPacienteORIGEN: TIntegerField;
+    qrPacienteDIRECCION: TStringField;
+    qrPacienteCIUDADID: TStringField;
+    qrPacientePRUEBASPORDIA: TIntegerField;
+    qrPacienteCOBERTURAPORC: TBCDField;
+    qrPacientePRINCIPAL: TStringField;
+    qrPacienteENVIORESULTADO: TIntegerField;
+    qrPacientePUBLICARINTERNET: TIntegerField;
+    qrPacienteFECHANACIMIENTO: TDateTimeField;
+    qrPacienteSEGURO: TStringField;
+    qrPacienteCARNETNUMERO: TStringField;
+    qrPacientePOLIZA: TStringField;
+    qrPacienteCOBRARDIFERENCIA: TIntegerField;
+    qrPacienteENVIARFAX: TIntegerField;
+    qrPacienteACTIVARDESCUENTOS: TIntegerField;
+    qrPacienteUSARALIASNOMBRE: TIntegerField;
+    qrPacienteUSARALIASPRUEBAS: TIntegerField;
+    qrPacienteSIEMPREINTERNET: TIntegerField;
+    qrPacienteIMPRIMIRALIASNOMBRE: TIntegerField;
+    qrPacienteIMPRIMIRALIASPRUEBA: TIntegerField;
+    qrPacienteIMPRIMIRSOLOTOTALES: TIntegerField;
+    qrPacienteIMPRIMIRALIASRESULTADOS: TIntegerField;
+    qrPacienteUSARACUERDOPROPIO: TIntegerField;
+    qrPacienteALIAS: TStringField;
+    qrPacienteQUIENPAGA: TStringField;
+    qrPacienteTIPOCLIENTE: TStringField;
+    qrPacienteENTREGARRESULTADOS: TStringField;
+    qrPacienteTEXTOREFERENCIA: TStringField;
+    qrPacienteSIEMPREIMPRIMIR: TIntegerField;
+    qrPacienteTIPOSANGRE: TStringField;
+    qrPacientePACIENTECIAID: TStringField;
+    qrPacienteSECTOR: TStringField;
+    qrPacienteUSUARIOINTERNET: TStringField;
+    qrPacienteCLAVEINTERNET: TStringField;
+    qrPacienteTIPOINTERNET: TStringField;
+    qrPacienteCLASECREDITO: TStringField;
+    qrPacienteDOCTORID: TStringField;
+    qrPacienteDATAAREAID: TStringField;
+    qrPacienteRECID: TIntegerField;
+    qrPacientemsrepl_tran_version: TGuidField;
+    qrPacienteSEXO: TIntegerField;
+    qrPacienteESTATUS: TIntegerField;
+    qrPacienteTIPOCLIENTEAS400: TIntegerField;
+    qrDonantePacienteID: TStringField;
+    qrDonanteTipoDonante: TWideStringField;
+    qrDonanteEstado: TWideStringField;
+    qrDonanteRechaso: TWideStringField;
+    qrDonanteDonanteActivo: TSmallintField;
+    qrDonanteTipoSangre: TWideStringField;
+    qrDonanteRH: TWideStringField;
+    qrDonanteUltimaDonacionId: TStringField;
+    qrDonanteFechaUltimaDon: TDateTimeField;
+    qrEntradaPacienteENTRADAID: TStringField;
+    qrEntradaPacienteFECHA: TDateTimeField;
+    qrEntradaPacienteHORAENTRADA: TStringField;
+    qrEntradaPacientePACIENTEID: TStringField;
+    qrEntradaPacienteCLIENTEID: TStringField;
+    qrEntradaPacienteDOCTORID: TStringField;
+    qrEntradaPacientePOLIZAID: TStringField;
+    qrEntradaPacienteENCLINICA: TIntegerField;
+    qrEntradaPacienteRECORDCLINICA: TStringField;
+    qrEntradaPacienteNUMEROHABITACION: TStringField;
+    qrEntradaPacienteFECHAENTRADA: TDateTimeField;
+    qrEntradaPacienteFECHADEALTA: TDateTimeField;
+    qrEntradaPacienteRESULTADOPACIENTE: TIntegerField;
+    qrEntradaPacienteRESULTADODOCTOR: TIntegerField;
+    qrEntradaPacienteFECHAPROMETIDA: TDateTimeField;
+    qrEntradaPacienteHORAPROMETIDA: TStringField;
+    qrEntradaPacienteFLEBOTOMISTAID: TStringField;
+    qrEntradaPacienteNOTA: TStringField;
+    qrEntradaPacientePROYECTOID: TStringField;
+    qrEntradaPacienteRECORDID: TIntegerField;
+    qrEntradaPacienteBRUTO: TBCDField;
+    qrEntradaPacienteDESCUENTO: TBCDField;
+    qrEntradaPacienteSUBTOTAL: TBCDField;
+    qrEntradaPacienteNETO: TBCDField;
+    qrEntradaPacienteNOMBREPACIENTE: TStringField;
+    qrEntradaPacienteDIRECCION: TStringField;
+    qrEntradaPacienteTELEFONOS: TStringField;
+    qrEntradaPacienteTELEFONO2: TStringField;
+    qrEntradaPacienteEMAIL: TStringField;
+    qrEntradaPacienteCLIENTENOMBRE: TStringField;
+    qrEntradaPacienteSUCURSALID: TStringField;
+    qrEntradaPacienteUSERID: TStringField;
+    qrEntradaPacienteCOBROID: TStringField;
+    qrEntradaPacienteTOTALPAGADO: TBCDField;
+    qrEntradaPacientePRIORIDAD: TIntegerField;
+    qrEntradaPacienteFAX: TStringField;
+    qrEntradaPacienteTIPODOCUMENTO: TIntegerField;
+    qrEntradaPacienteCOBERTURAPORC: TBCDField;
+    qrEntradaPacienteCOBERTURASEGURO: TBCDField;
+    qrEntradaPacienteCOBERTURAVALOR: TBCDField;
+    qrEntradaPacienteDESCUENTOPORC: TBCDField;
+    qrEntradaPacienteDESCUENTOVALOR: TBCDField;
+    qrEntradaPacienteDESCUENTOBONO: TBCDField;
+    qrEntradaPacienteORIGEN: TStringField;
+    qrEntradaPacienteAPROBACIONNO: TStringField;
+    qrEntradaPacienteAPROBACIONPOR: TStringField;
+    qrEntradaPacienteCOBERTURARECHAZADA: TIntegerField;
+    qrEntradaPacienteCOBERTURACONFIRMADA: TIntegerField;
+    qrEntradaPacienteFECHAASEGURADORA: TDateTimeField;
+    qrEntradaPacienteMUESTRANO: TStringField;
+    qrEntradaPacienteMONEDAID: TStringField;
+    qrEntradaPacienteCOBERTURAEXPPORC: TIntegerField;
+    qrEntradaPacienteEDADPACIENTE: TIntegerField;
+    qrEntradaPacienteSEXO: TIntegerField;
+    qrEntradaPacienteNOMBREDOCTOR: TStringField;
+    qrEntradaPacientePUBLICARINTERNET: TIntegerField;
+    qrEntradaPacienteCARNET: TStringField;
+    qrEntradaPacientePUBLICARINTERNETDOCTOR: TIntegerField;
+    qrEntradaPacienteCUADREGLOBAL: TStringField;
+    qrEntradaPacienteCUADREUSUARIO: TStringField;
+    qrEntradaPacienteDESCAUTORIZADOPOR: TStringField;
+    qrEntradaPacienteGASTOSVARIOS: TBCDField;
+    qrEntradaPacienteNOAS400: TIntegerField;
+    qrEntradaPacienteNOAXAPTA: TIntegerField;
+    qrEntradaPacienteNOFACTURA: TIntegerField;
+    qrEntradaPacienteFACTEXTERIOR: TIntegerField;
+    qrEntradaPacienteHOLD: TIntegerField;
+    qrEntradaPacienteREPMUESTRA: TIntegerField;
+    qrEntradaPacienteENTRADAIDANT: TStringField;
+    qrEntradaPacienteTIPOENTRADA: TStringField;
+    qrEntradaPacienteFORMADEPAGO: TStringField;
+    qrEntradaPacienteDESCUENTOCARD: TStringField;
+    qrEntradaPacienteDESCUENTOTEXTO: TStringField;
+    qrEntradaPacienteACUERDOPROPIO: TIntegerField;
+    qrEntradaPacienteCLIENTEPADRE: TStringField;
+    qrEntradaPacienteDESCUENTOPLANID: TStringField;
+    qrEntradaPacienteFECHAREGISTRO: TDateTimeField;
+    qrEntradaPacienteHORAREGISTRO: TStringField;
+    qrEntradaPacienteTASA: TBCDField;
+    qrEntradaPacienteESTATUS: TIntegerField;
+    qrEntradaPacienteTIPOCLIENTEAS400: TIntegerField;
+    qrEntradaPacienteCLASECREDITO: TStringField;
+    qrEntradaPacienteCARNETNUMERO: TStringField;
+    qrEntradaPacienteCLIENTEPADREAXAPTA: TStringField;
+    qrEntradaPacientePACIENTEIDAXAPTA: TStringField;
+    qrEntradaPacienteCLIENTEIDAXAPTA: TStringField;
+    qrEntradaPacienteDOCTORIDAXAPTA: TStringField;
+    qrEntradaPacienteDATAAREAID: TStringField;
+    qrEntradaPacienteRECID: TIntegerField;
+    qrEntradaPacienteDetallePRUEBAID: TStringField;
+    qrEntradaPacienteDetalleCOMBOPRUEBAID: TStringField;
+    qrEntradaPacienteDetalleCODIGOAUTORIZACION: TStringField;
+    qrEntradaPacienteDetalleDESCRIPCION: TStringField;
+    qrEntradaPacienteDetalleCODIGOCUPID: TStringField;
+    qrEntradaPacienteDetalleMUESTRAANT: TStringField;
+    qrEntradaPacienteDetalleCOBERTURAAPLICA: TIntegerField;
+    qrEntradaPacienteDetalleDESCRIPCIONCUP: TStringField;
+    qrEntradaPacienteDetalleREFRECID: TIntegerField;
+    qrEntradaPacienteDetalleSECUENCIA: TIntegerField;
+    qrEntradaPacienteDetalleFLEBOTOMISTAID: TStringField;
+    qrEntradaPacienteDetalleCOMENTARIOMUESTRA: TStringField;
+    qrEntradaPacienteDetalleUNIDADMUESTRA: TStringField;
+    qrEntradaPacienteDetalleSECUENCIAACT: TIntegerField;
+    qrEntradaPacienteDetallePRECIO: TBCDField;
+    qrEntradaPacienteDetalleDESCUENTO: TBCDField;
+    qrEntradaPacienteDetalleDESCUENTOEXTRA: TBCDField;
+    qrEntradaPacienteDetalleTOTALLINEA: TBCDField;
+    qrEntradaPacienteDetalleCOMENTARIO: TStringField;
+    qrEntradaPacienteDetalleTIPOPRUEBA: TStringField;
+    qrEntradaPacienteDetalleTIPOAS400: TStringField;
+    qrEntradaPacienteDetalleCODIGOAS400: TStringField;
+    qrEntradaPacienteDetalleMEDIOAS400: TStringField;
+    qrEntradaPacienteDetalleDESCPCT: TBCDField;
+    qrEntradaPacienteDetalleCOBERTURAESPECIAL: TBCDField;
+    qrEntradaPacienteDetalleCOBERTURAESPECIALPORC: TBCDField;
+    qrEntradaPacienteDetalleCOBERTURAAPLICADA: TBCDField;
+    qrEntradaPacienteDetalleDESCUENTOAPLICADO: TBCDField;
+    qrEntradaPacienteDetalleDESCUENTOLINEAAPLICADO: TBCDField;
+    qrEntradaPacienteDetalleFACTURAR: TIntegerField;
+    qrEntradaPacienteDetalleSELECCIONAR: TIntegerField;
+    qrEntradaPacienteDetalleMUESTRANO: TStringField;
+    qrEntradaPacienteDetalleCOBERTURAEXPPORC: TIntegerField;
+    qrEntradaPacienteDetalleURGENTE: TIntegerField;
+    qrEntradaPacienteDetalleREPMUESTRA: TIntegerField;
+    qrEntradaPacienteDetalleFECHAENTREGA: TDateTimeField;
+    qrEntradaPacienteDetalleHORAENTREGA: TStringField;
+    qrEntradaPacienteDetalleESTATUS: TStringField;
+    qrEntradaPacienteDetalleDATAAREAID: TStringField;
+    qrEntradaPacienteDetalleRECID: TIntegerField;
+    qrDatosDonantePacienteID: TStringField;
+    qrDatosDonanteTipoDonante: TWideStringField;
+    qrDatosDonanteEstado: TWideStringField;
+    qrDatosDonanteRechaso: TWideStringField;
+    qrDatosDonanteDonanteActivo: TSmallintField;
+    qrDatosDonanteTipoSangre: TWideStringField;
+    qrDatosDonanteRH: TWideStringField;
+    qrDatosDonanteFechaUltimaDon: TDateTimeField;
+    qrDatosDonanteNombre: TStringField;
+    qrDatosDonanteContacto: TStringField;
+    qrDatosDonanteTelefono: TStringField;
+    qrDatosDonanteTelefono2: TStringField;
+    qrDatosDonanteDireccion: TStringField;
+    qrDatosDonanteSexo: TIntegerField;
+    qrDatosDonanteUltimaDonacionId: TStringField;
+    ActAddPrueba: TAction;
+    qrSecuencia: TADOQuery;
+    qrSecuenciaUltima: TIntegerField;
+    qrOtrasPruebas: TADOQuery;
+    qrOtrasPruebasPRUEBAID: TStringField;
+    qrOtrasPruebasALIAS: TStringField;
+    qrOtrasPruebasDESCRIPCION: TStringField;
+    DataSetDelete1: TDataSetDelete;
+    Label1: TLabel;
+    ActDetalle: TAction;
+    qrOtrasPruebasPRECIO: TBCDField;
+    qrOtrasPruebasCOSTO: TBCDField;
+    qrOtrasPruebasCODIGOIDAS400: TStringField;
+    qrHemograma: TADOQuery;
+    qrHemogramaDonacionID: TStringField;
+    qrHemogramaMuestraNo: TStringField;
+    qrHemogramaHemoglobina: TStringField;
+    qrHemogramaHematocito: TStringField;
+    qrHemogramaGlobulosBlancos: TStringField;
+    qrHemogramaPlaquetas: TStringField;
+    qrHemogramaMuestraNoAS: TStringField;
+    qrHemogramaUsuarioAS: TStringField;
+    tbHistoria: TADOTable;
+    dsHistoria: TDataSource;
+    tbHistoriaDonacionID: TStringField;
+    tbHistoriaFecha: TDateTimeField;
+    tbHistoriaPacienteID: TStringField;
+    tbHistoriaDonacionStatus: TWideStringField;
+    tbHistoriaComentario: TMemoField;
+    qrDonacionkkMuestraNo: TStringField;
+    qrDonacionkkMuestraNoAS: TStringField;
+    qrDonacionkkDirigidoPacienteId: TStringField;
+    qrDonacionkkUsuarioAS: TStringField;
+    qrDonacionkkDisponible: TBooleanField;
+    qrDonacionkkDoctorId: TStringField;
+    qrDonacionkkUserIdCuestionario: TStringField;
+    qrDonacionkkUserIdMuestra: TStringField;
+    qrDonacionkkUserIdHemograma: TStringField;
+    ActPruebas: TAction;
+    qrUser: TADOQuery;
+    dsUser: TDataSource;
+    qrUserUserId: TStringField;
+    qrUserNombre: TStringField;
+    qrHemogramaUserIdHemograma: TStringField;
+    Timer1: TTimer;
+    qrResumen: TADOQuery;
+    dsResumen: TDataSource;
+    qrResumenDonacionID: TStringField;
+    qrResumenMuestraNo: TStringField;
+    qrResumenMuestraNoAS: TStringField;
+    qrResumenNoAsCorto: TStringField;
+    qrResumenFecha: TDateTimeField;
+    qrResumenPacienteID: TStringField;
+    qrResumenNotaEntrevista: TMemoField;
+    qrResumenDonacionStatus: TWideStringField;
+    qrResumenDonacionTipo: TStringField;
+    qrResumenComentario: TMemoField;
+    qrResumenCantidadRecogida: TBCDField;
+    qrResumenTemperatura: TBCDField;
+    qrResumenPeso: TBCDField;
+    qrResumenPulsoMinimo: TBCDField;
+    qrResumenPulsoEstado: TStringField;
+    qrResumenTensionArteriar: TStringField;
+    qrResumenHoraInicio: TDateTimeField;
+    qrResumenHoraFin: TDateTimeField;
+    qrResumenDirigidoPacienteId: TStringField;
+    qrResumenDirigidoNombre: TStringField;
+    qrResumenHospital: TStringField;
+    qrResumenFechaTranfusion: TDateTimeField;
+    qrResumenMedico: TStringField;
+    qrResumenTelefono: TStringField;
+    qrResumenTelefono2: TStringField;
+    qrResumenDireccionMedico: TMemoField;
+    qrResumenPagina: TSmallintField;
+    qrResumenTipoFundaID: TWideStringField;
+    qrResumenHemoglobina: TStringField;
+    qrResumenHematocito: TStringField;
+    qrResumenGlobulosBlancos: TStringField;
+    qrResumenPlaquetas: TStringField;
+    qrResumenUsuarioAS: TStringField;
+    qrResumenNotasCuestionario: TMemoField;
+    qrResumenProductoID: TWideStringField;
+    qrResumenReservado: TBooleanField;
+    qrResumenDisponible: TBooleanField;
+    qrResumenDoctorId: TStringField;
+    qrResumenUserIdCuestionario: TStringField;
+    qrResumenUserIdMuestra: TStringField;
+    qrResumenUserIdHemograma: TStringField;
+    qrResumenIdentificacion: TStringField;
+    qrResumenNombre: TStringField;
+    qrResumenDireccion: TStringField;
+    qrResumenTelefono_1: TStringField;
+    qrResumenemail: TStringField;
+    qrResumenFechaNacimiento: TDateTimeField;
+    qrResumenSexo: TIntegerField;
+    qrResumenCiudadID: TStringField;
+    qrResumenNotaEntrevista_1: TMemoField;
+    qrResumenDonacionStatus_1: TWideStringField;
+    qrEntradaPacienteDetallePermitirBorrar: TBooleanField;
+    qrDonacionesCausaRechazoId: TIntegerField;
+    pcDatos: TcxPageControl;
+    tsDonacionesProceso: TcxTabSheet;
+    tsDetalleDonacion: TcxTabSheet;
+    dxLayoutControl1: TdxLayoutControl;
+    cxPageControl1: TcxPageControl;
+    cxTabSheet7: TcxTabSheet;
+    cxDBMemo3: TcxDBMemo;
+    cxButton6: TcxButton;
+    cxDBTextEdit18: TcxDBTextEdit;
+    cxButton17: TcxButton;
+    cxDBTextEdit19: TcxDBTextEdit;
+    cxDBTextEdit20: TcxDBTextEdit;
+    cxDBTextEdit21: TcxDBTextEdit;
+    cxDBTextEdit22: TcxDBTextEdit;
+    cxComboBox1: TcxComboBox;
+    cxLabel21: TcxLabel;
+    cxLabel24: TcxLabel;
+    cxLabel25: TcxLabel;
+    cxLabel26: TcxLabel;
+    cxLabel27: TcxLabel;
+    cxLabel30: TcxLabel;
+    cxComboBox2: TcxComboBox;
+    cxLabel12: TcxLabel;
+    cxLabel13: TcxLabel;
+    cxLabel11: TcxLabel;
+    cxButton7: TcxButton;
+    cxComboBox3: TcxComboBox;
+    cxTabSheet1: TcxTabSheet;
+    cxDBCheckBox1: TcxDBCheckBox;
+    cxDBComboBox2: TcxDBComboBox;
+    cxDBTextEdit3: TcxDBTextEdit;
+    cxDBTextEdit4: TcxDBTextEdit;
+    cxDBTextEdit5: TcxDBTextEdit;
+    cxDBComboBox1: TcxDBComboBox;
+    Panel1: TPanel;
+    cxDBTextEdit10: TcxDBTextEdit;
+    cxDBTextEdit11: TcxDBTextEdit;
+    cxDBTextEdit12: TcxDBTextEdit;
+    cxDBDateEdit1: TcxDBDateEdit;
+    cxButton12: TcxButton;
+    cxDBTextEdit6: TcxDBTextEdit;
+    cxButton13: TcxButton;
+    cxDBTextEdit7: TcxDBTextEdit;
+    cxLabel5: TcxLabel;
+    cxLabel6: TcxLabel;
+    cxLabel7: TcxLabel;
+    cxLabel8: TcxLabel;
+    cxLabel23: TcxLabel;
+    cxLabel42: TcxLabel;
+    cxButton3: TcxButton;
+    cxDBCheckBox2: TcxDBCheckBox;
+    DBLookupComboBox2: TDBLookupComboBox;
+    cxLabel22: TcxLabel;
+    cxLabel38: TcxLabel;
+    cxLabel39: TcxLabel;
+    cxLabel40: TcxLabel;
+    cxLabel41: TcxLabel;
+    cxDBTextEdit24: TcxDBTextEdit;
+    cxLabel16: TcxLabel;
+    cxTabSheet3: TcxTabSheet;
+    cxButton8: TcxButton;
+    GridPruebas: TcxGrid;
+    GridPruebasEntradasPacienteDet: TcxGridDBTableView;
+    GridPruebasEntradasPacienteDetPruebaID: TcxGridDBColumn;
+    GridPruebasEntradasPacienteDetDescripcion: TcxGridDBColumn;
+    GridPruebasEntradasPacienteDetMuestraNo: TcxGridDBColumn;
+    GridPruebasEntradasPacienteDetComentario: TcxGridDBColumn;
+    GridPruebasLevel1: TcxGridLevel;
+    cxButton4: TcxButton;
+    cxButton10: TcxButton;
+    cxButton20: TcxButton;
+    cxButton21: TcxButton;
+    cxTabSheet2: TcxTabSheet;
+    cxDBTextEdit14: TcxDBTextEdit;
+    cxDBTextEdit15: TcxDBTextEdit;
+    cxDBTextEdit16: TcxDBTextEdit;
+    cxDBTextEdit17: TcxDBTextEdit;
+    cxButton5: TcxButton;
+    cxDBCheckBox3: TcxDBCheckBox;
+    cxButton11: TcxButton;
+    cxDBTextEdit23: TcxDBTextEdit;
+    cxDBMemo4: TcxDBMemo;
+    cxLabel18: TcxLabel;
+    cxLabel17: TcxLabel;
+    cxLabel36: TcxLabel;
+    cxLabel19: TcxLabel;
+    cxLabel20: TcxLabel;
+    DBLookupComboBox3: TDBLookupComboBox;
+    cxLabel1: TcxLabel;
+    cxLabel28: TcxLabel;
+    cxLabel29: TcxLabel;
+    cxLabel31: TcxLabel;
+    cxLabel32: TcxLabel;
+    cxTabSheet4: TcxTabSheet;
+    cxDBTextEdit8: TcxDBTextEdit;
+    cxDBTimeEdit1: TcxDBTimeEdit;
+    cxDBTimeEdit2: TcxDBTimeEdit;
+    cxButton9: TcxButton;
+    DBLookupComboBox1: TDBLookupComboBox;
+    cxDBMemo5: TcxDBMemo;
+    cxLabel2: TcxLabel;
+    cxLabel3: TcxLabel;
+    cxLabel14: TcxLabel;
+    cxLabel15: TcxLabel;
+    cxLabel4: TcxLabel;
+    cxTabSheet5: TcxTabSheet;
+    cxDBMemo1: TcxDBMemo;
+    cxButton1: TcxButton;
+    cxButton18: TcxButton;
+    cxButton19: TcxButton;
+    cxLabel10: TcxLabel;
+    cxGrid2: TcxGrid;
+    cxGrid2DBCardView1: TcxGridDBCardView;
+    cxGrid2DBCardView1DonacionTipo: TcxGridDBCardViewRow;
+    cxGrid2DBCardView1Comentario: TcxGridDBCardViewRow;
+    cxGrid2DBCardView1Temperatura: TcxGridDBCardViewRow;
+    cxGrid2DBCardView1Peso: TcxGridDBCardViewRow;
+    cxGrid2DBCardView1PulsoMinimo: TcxGridDBCardViewRow;
+    cxGrid2DBCardView1TensionArteriar: TcxGridDBCardViewRow;
+    cxGrid2DBCardView1DirigidoNombre: TcxGridDBCardViewRow;
+    cxGrid2DBCardView1Hospital: TcxGridDBCardViewRow;
+    cxGrid2DBCardView1FechaTranfusion: TcxGridDBCardViewRow;
+    cxGrid2DBCardView1Medico: TcxGridDBCardViewRow;
+    cxGrid2DBCardView1Hemoglobina: TcxGridDBCardViewRow;
+    cxGrid2DBCardView1Hematocito: TcxGridDBCardViewRow;
+    cxGrid2DBCardView1GlobulosBlancos: TcxGridDBCardViewRow;
+    cxGrid2DBCardView1Plaquetas: TcxGridDBCardViewRow;
+    cxGrid2Level1: TcxGridLevel;
+    cxTabSheet6: TcxTabSheet;
+    cxDBComboBox4: TcxDBComboBox;
+    cxDBMemo2: TcxDBMemo;
+    cxButton2: TcxButton;
+    cxLabel9: TcxLabel;
+    Comentario: TcxLabel;
+    DBLookupComboBox4: TDBLookupComboBox;
+    cxLabel33: TcxLabel;
+    cxDBTextEdit1: TcxDBTextEdit;
+    cxDBTextEdit2: TcxDBTextEdit;
+    cxDBTextEdit9: TcxDBTextEdit;
+    cxDBTextEdit13: TcxDBTextEdit;
+    cxButton14: TcxButton;
+    cxButton15: TcxButton;
+    dxLayoutGroup3: TdxLayoutGroup;
+    dxLayoutControl1Group4: TdxLayoutGroup;
+    dxLayoutGroup1: TdxLayoutGroup;
+    dxLayoutControl1Item10: TdxLayoutItem;
+    dxLayoutControl1Item11: TdxLayoutItem;
+    dxLayoutControl1Item12: TdxLayoutItem;
+    dxLayoutControl1Item2: TdxLayoutItem;
+    dxLayoutControl1Item3: TdxLayoutItem;
+    dxLayoutControl1Group2: TdxLayoutGroup;
+    dxLayoutItem1: TdxLayoutItem;
+    dxLayoutControl1Group5: TdxLayoutGroup;
+    dxLayoutControl1Item4: TdxLayoutItem;
+    dxLayoutControl1Item5: TdxLayoutItem;
+    dxLayoutControl2: TdxLayoutControl;
+    cxGrid3: TcxGrid;
+    cxGridDBTableView2: TcxGridDBTableView;
+    cxGridDBColumn1: TcxGridDBColumn;
+    cxGridDBColumn2: TcxGridDBColumn;
+    cxGridDBColumn3: TcxGridDBColumn;
+    cxGridDBColumn4: TcxGridDBColumn;
+    cxGridDBColumn5: TcxGridDBColumn;
+    cxGridLevel2: TcxGridLevel;
+    cxButton39: TcxButton;
+    cxButton40: TcxButton;
+    dxLayoutGroup2: TdxLayoutGroup;
+    dxLayoutGroup6: TdxLayoutGroup;
+    dxLayoutItem7: TdxLayoutItem;
+    dxLayoutGroup7: TdxLayoutGroup;
+    dxLayoutItem8: TdxLayoutItem;
+    dxLayoutItem9: TdxLayoutItem;
+    cxGrid1: TcxGrid;
+    cxGridDBTableView1: TcxGridDBTableView;
+    cxGridDBTableView1Fecha: TcxGridDBColumn;
+    cxGridDBTableView1DonacionID: TcxGridDBColumn;
+    cxGridDBTableView1DonacionStatus: TcxGridDBColumn;
+    cxGridDBTableView1Comentario: TcxGridDBColumn;
+    cxGridLevel1: TcxGridLevel;
+    dgDatos: TcxGrid;
+    tvDatos: TcxGridDBTableView;
+    tvDatosDonacionID: TcxGridDBColumn;
+    tvDatosFecha: TcxGridDBColumn;
+    tvDatosNombre: TcxGridDBColumn;
+    tvDatosTelefono: TcxGridDBColumn;
+    tvDatosDonacionStatus: TcxGridDBColumn;
+    lvDatos: TcxGridLevel;
+    cxButton16: TcxButton;
+    cxButton22: TcxButton;
+    cxButton23: TcxButton;
+    dxLayoutControl2Item1: TdxLayoutItem;
+    cxButton24: TcxButton;
+    cxButton25: TcxButton;
+    cxButton26: TcxButton;
+    cxButton27: TcxButton;
+    cxButton28: TcxButton;
+    cxDBTextEdit25: TcxDBTextEdit;
+    cxLabel34: TcxLabel;
+    tbHistoriarechaso: TWideStringField;
+    tbHistoriatiposangre: TWideStringField;
+    tbHistoriarh: TWideStringField;
+    DBEdit1: TDBEdit;
+    dxLayoutControl1Item6: TdxLayoutItem;
+    cxGridDBTableView1rechaso: TcxGridDBColumn;
+    cxGridDBTableView1rechasonota: TcxGridDBColumn;
+    cxGridDBTableView1tiposangre: TcxGridDBColumn;
+    cxGridDBTableView1rh: TcxGridDBColumn;
+    cxGridDBTableView1Column1: TcxGridDBColumn;
+    cxGridDBTableView1Column2: TcxGridDBColumn;
+    tbHistoriaDoctorNombreAutoriza: TStringField;
+    tbHistoriaNotaAutoriza: TMemoField;
+    qrDonanteRechasoNota: TMemoField;
+    tbHistoriarechasonota: TMemoField;
+    qrDatosDonanteRechasoNota: TMemoField;
+    qrEntradaPacienteMuestraNoAS: TStringField;
+    cxCheckBox1: TcxCheckBox;
+    cxButton29: TcxButton;
+    qrHemogramaHemoglobina_rapida: TStringField;
+    cxDBTextEdit26: TcxDBTextEdit;
+    cxLabel35: TcxLabel;
+    Label2: TLabel;
+    cxLabel37: TcxLabel;
+    cxDBMemo6: TcxDBMemo;
+    cxButton30: TcxButton;
+    Label3: TLabel;
+    qrResultados1: TADOQuery;
+    qrResultados1MuestraNo: TStringField;
+    qrResultados1PruebaId: TStringField;
+    qrResultados1Resultado: TStringField;
+    qrResultados1MuestraNoAS: TStringField;
+    ppBDEPipeline1: TppBDEPipeline;
+    ppReport1: TppReport;
+    ppHeaderBand1: TppHeaderBand;
+    ppDetailBand1: TppDetailBand;
+    ppDBBarCode1: TppDBBarCode;
+    cxButton31: TcxButton;
+    procedure cxButton31Click(Sender: TObject);
+    procedure cxButton30Click(Sender: TObject);
+    procedure cxDBTextEdit26Exit(Sender: TObject);
+    procedure cxButton29Click(Sender: TObject);
+    procedure cxCheckBox1MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure cxDBTextEdit5KeyPress(Sender: TObject; var Key: Char);
+    procedure cxButton25Click(Sender: TObject);
+    procedure cxButton24Click(Sender: TObject);
+    procedure cxButton23Click(Sender: TObject);
+    procedure cxGridDBTableView2DblClick(Sender: TObject);
+    procedure cxButton16Click(Sender: TObject);
+    procedure qrEntradaPacienteDetalleBeforeDelete(DataSet: TDataSet);
+    procedure dsEntradaPacienteDetalleDataChange(Sender: TObject;
+      Field: TField);
+    procedure ActPruebasExecute(Sender: TObject);
+    procedure ActAddPruebaExecute(Sender: TObject);
+    procedure cxButton19Click(Sender: TObject);
+    procedure ActImprimirExecute(Sender: TObject);
+    procedure ActActualizarHemogramaExecute(Sender: TObject);
+    procedure cxTabSheet7Enter(Sender: TObject);
+    procedure cxComboBox1Click(Sender: TObject);
+    procedure cxDBTextEdit18PropertiesChange(Sender: TObject);
+    procedure cxButton17Click(Sender: TObject);
+    procedure ActNuevaExecute(Sender: TObject);
+    procedure ActActualizarExecute(Sender: TObject);
+    procedure cxDBTextEdit12PropertiesChange(Sender: TObject);
+    procedure cxButton13Click(Sender: TObject);
+    procedure cxButton12Click(Sender: TObject);
+    procedure cxButton10Click(Sender: TObject);
+    procedure cxDBTextEdit1PropertiesChange(Sender: TObject);
+    procedure cxButton7Click(Sender: TObject);
+    procedure cxButton6Click(Sender: TObject);
+    procedure cxPageControl1PageChanging(Sender: TObject; NewPage: TcxTabSheet;
+      var AllowChange: Boolean);
+    procedure cxButton5Click(Sender: TObject);
+    procedure Action1Execute(Sender: TObject);
+    procedure cxButton3Click(Sender: TObject);
+    procedure cxDBComboBox2Click(Sender: TObject);
+    procedure cxButton2Click(Sender: TObject);
+    procedure cxButton1Click(Sender: TObject);
+    procedure cxButton8Click(Sender: TObject);
+    procedure cxButton9Click(Sender: TObject);
+    procedure cxComboBox1PropertiesChange(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure ImprimirLabel(EntradaId: String);
+
+  private
+    function AutorizarDonacion(Msj: String; var vObservacion: WideString): boolean;
+    function ValidarPasoDonacion(vIdPaso, vCampo: String;vValor: Variant; var vMsg: String): Boolean;
+    { Private declarations }
+    function NuevaSecuencia: Integer;
+    procedure InsertarMaterialesPrueba;
+    function Buscar_Linea: Integer;
+    function ValidarHemograma: Boolean;
+  public
+    { Public declarations }
+
+    Function Puede_donar(producto : string; Paciente : string) : String;
+  end;
+
+var
+  frmBanco: TfrmBanco;
+
+implementation
+uses DataModule, DataBanco, DialogoTipoDonacion, DialogoEntrevista, Main,
+     BancoReportes, BancoVenta, DataPruebas, DialogConsultaDoctor,
+     DialogConsulta, Autorizacion, Untautorizar, UInterfaseAs;
+{$R *.dfm}
+
+function TfrmBanco.Buscar_Linea: Integer;
+Var
+ qfind : TADOQuery;
+begin
+ qfind := DM.NewQuery;
+
+ qfind.Close;
+ qfind.SQL.Text := 'SELECT MAX(LineaNo) FROM PTMaterialesFactura ';
+ qfind.Open;
+
+ result := qfind.Fields[0].AsInteger + 1;
+
+ FreeAndNil(qfind);
+end;
+
+function TfrmBanco.NuevaSecuencia: Integer;
+begin
+
+  qrSecuencia.Close;
+  qrSecuencia.parameters[0].Value := qrEntradaPacienteMuestraNo.Value;
+  qrSecuencia.Open;
+
+  NuevaSecuencia:= qrSecuenciaUltima.Value + 1;
+
+  qrSecuencia.Close;
+
+end;
+
+function TfrmBanco.Puede_donar(producto, Paciente: string): String;
+begin
+  With dm.Qutilitario do
+    begin
+      close;
+      sql.Clear;
+      sql.Add('SELECT dbo.TIEMPO_DONACION (:producto,:paciente) AS RESULTADO');
+      Parameters.ParamByName('producto').Value := producto;
+      Parameters.ParamByName('paciente').Value := Paciente;
+      Open;
+    end;
+    Result := 'SI';//dm.Qutilitario.fieldbyname('RESULTADO').value;
+
+end;
+
+procedure TfrmBanco.qrEntradaPacienteDetalleBeforeDelete(DataSet: TDataSet);
+begin
+  inherited;
+
+  if  not qrEntradaPacienteDetallePermitirBorrar.Value then
+    begin
+      dm.Warning('Esta prueba es obligatoria');
+      Abort;
+    end;
+
+end;
+
+procedure TfrmBanco.ActActualizarExecute(Sender: TObject);
+begin
+  inherited;
+
+  DMB.qrDonaciones.Close;
+  DMB.qrDonaciones.Open;
+
+  dsDonacion.Edit;
+
+end;
+
+procedure TfrmBanco.ActActualizarHemogramaExecute(Sender: TObject);
+var
+  Actual: String;
+begin
+  inherited;
+if cxCheckBox1.Checked = False then
+  begin
+  if (cxPageCOntrol1.ActivePage.Caption <> 'Hemograma') or
+     (DMB.qrDonacionesDonacionID.IsNull) then
+    exit;
+
+  Actual:= DMB.qrDonacionesMuestraNoAS.AsString;
+
+  if (trim(DMB.qrDonacionesMuestraNoAS.AsString) = '') then
+    exit;
+
+  qrHemograma.Close;
+
+  DMB.ActualizarHemograma(DMB.qrDonacionesMuestraNoAS.AsString);
+
+  qrHemograma.Parameters.ParamByName('DonacionId').Value:= DMB.qrDonacionesDonacionID.Value;
+  qrHemograma.Open;
+
+  DMB.qrDonaciones.Close;
+  DMB.qrDonaciones.Open;
+
+  while (Actual <> DMB.qrDonacionesMuestraNoAS.AsString) do
+    DMB.qrDonaciones.Next;
+
+  end;
+
+end;
+
+procedure TfrmBanco.ActAddPruebaExecute(Sender: TObject);
+var
+  Secuencia: Int64;
+  NewPrueba: String;
+begin
+  Secuencia:= NuevaSecuencia;
+  NewPrueba:= DMB.BuscarPrueba;
+  qrOtrasPruebas.Close;
+  qrOtrasPruebas.Parameters.ParamByName('PruebaId').Value:= Newprueba;
+  qrOtrasPruebas.Open;
+
+  qrResultados.Open;
+  while not qrOtrasPruebas.Eof do
+    begin
+
+      if DMB.ExistePrueba(qrEntradaPacienteMuestraNo.Value, qrOtrasPruebasPruebaID.Value) then
+        DM.Info('Prueba Existente para la muestra')
+      else
+        begin
+
+          dsEntradaPacienteDetalle.DataSet.Insert;
+            qrEntradaPacienteDetalleRefRecid.Value:= qrEntradaPacienteRecid.Value;
+            //Secuencia:= Secuencia + 1;
+            qrEntradaPacienteDetalleSecuencia.Value:= Secuencia;
+            qrEntradaPacienteDetalleMuestraNo.Value:= qrEntradaPacienteMuestraNo.Value;
+            qrEntradaPacienteDetallePruebaID.Value:= qrOtrasPruebasPruebaID.Value;
+            qrEntradaPacienteDetalleDescripcion.Value:= qrOtrasPruebasDescripcion.Value;
+            qrEntradaPacienteDetalleDATAAREAID.Value:= DMB.AreaId;
+            qrEntradaPacienteDetalleRECID.Value:= qrEntradaPacienteRECID.Value;
+            qrEntradaPacienteDetallePrecio.Value := qrOtrasPruebasPrecio.Value;
+            qrEntradaPacienteDetalleCODIGOAS400.Value:= qrOtrasPruebasCODIGOIDAS400.Value;
+
+          dsEntradaPacienteDetalle.DataSet.Post;
+
+        end;
+
+      qrOtrasPruebas.Next;
+    end;
+
+    qrOtrasPruebas.Close;
+    qrResultados.Close;
+    qrEntradaPacienteDetalle.Close;
+    qrEntradaPacienteDetalle.Open;
+
+    //frmMain.ImprimirLabel(qrEntradaPacienteEntredaID.AsString);
+
+    //DMB.MandarPruebaAS400(qrEntradaPacienteMuestraNo.Value);
+
+    ActPruebasExecute(Sender);
+
+end;
+
+procedure TfrmBanco.InsertarMaterialesPrueba;
+Var
+ qfind, qinsert : TADOQuery;
+begin
+ qfind := DM.NewQuery;
+ qfind.Close;
+ qfind.SQL.Text := 'SELECT * FROM PTMaterialesPrueba WHERE PruebaId = '+#39+qrEntradaPacienteDetallePruebaid.value+#39;
+ qfind.Open;
+
+ if (qfind.RecordCount > 0) then
+ begin
+   qinsert := DM.NewQuery;
+   qinsert.Close;
+
+   qinsert.SQL.Text := ' INSERT INTO PTMaterialesFactura '+
+                       ' (refrecid,refrecidline,MaterialId,Cantidad,pruebaid,LineaNo) '+
+                       ' VALUES (:0,:1,:2,:3,:4,:5) ';
+
+   while (not qfind.Eof) do
+   begin
+    qinsert.Parameters[0].Value := qrEntradaPacienteRecid.Value;
+    qinsert.Parameters[1].Value := qrEntradaPacienteDetalleSecuencia.value;
+    qinsert.Parameters[2].Value := qfind.FieldByName('MaterialId').AsString;
+    qinsert.Parameters[3].Value := qfind.FieldByName('Cantidad').AsFloat;
+    qinsert.Parameters[4].Value := qrEntradaPacienteDetallePruebaid.value;
+    qinsert.Parameters[5].Value := Buscar_Linea();
+    qinsert.ExecSQL;
+
+    qfind.Next;
+   end;
+
+   FreeAndNil(qinsert);
+ end;
+
+ FreeAndNil(qfind);
+end;
+
+
+procedure TfrmBanco.ActImprimirExecute(Sender: TObject);
+begin
+  inherited;
+
+    BSReportes.Donacion(DMB.qrDonacionesDonacionID.Value);
+    //ppImpDatos.DeviceType := '559155748'; //dtScreen;
+    //ppImpDatos.Print;
+
+end;
+
+procedure TfrmBanco.Action1Execute(Sender: TObject);
+var Secuencia: Int64;
+begin
+  inherited;
+  Try
+  Secuencia:= 1;
+  dmPruebas.Actualizar;
+  dmPruebas.qrPruebasDonantes.first;
+  qrResultados.Open;
+  while not dsPruebas.DataSet.Eof do
+    begin
+      if DMB.ExistePrueba(qrEntradaPacienteMuestraNo.Value, dmPruebas.qrPruebasPruebaID.Value) then
+        DM.Info('Prueba Existente para la muestra')
+      else
+        begin
+
+          dsEntradaPacienteDetalle.DataSet.Insert;
+            qrEntradaPacienteDetalleRefRecid.Value:= qrEntradaPacienteRecid.Value;
+            Secuencia:= Secuencia + 1;
+            qrEntradaPacienteDetalleSecuencia.Value:= Secuencia;
+            qrEntradaPacienteDetalleMuestraNo.Value:= qrEntradaPacienteMuestraNo.Value;
+            qrEntradaPacienteDetallePruebaID.Value:= dmPruebas.qrPruebasDonantesPruebaID.Value;
+            qrEntradaPacienteDetalleDescripcion.Value:= dmPruebas.qrPruebasDonantesDescripcion.Value;
+            qrEntradaPacienteDetalleDATAAREAID.Value:= DMB.AreaId;
+            qrEntradaPacienteDetalleRECID.Value:= qrEntradaPacienteRECID.Value;
+            qrEntradaPacienteDetallePrecio.Value := dmPruebas.qrPruebasDonantesPrecio.Value;
+            qrEntradaPacienteDetalleCODIGOAS400.Value:= dmPruebas.qrPruebasDonantesCODIGOIDAS400.Value;
+            qrEntradaPacienteDetallePermitirBorrar.Value:= false;
+          dsEntradaPacienteDetalle.DataSet.Post;
+
+        end;
+
+      dsPruebas.DataSet.Next;
+    end;
+
+    qrResultados.Close;
+    qrEntradaPacienteDetalle.Close;
+    qrEntradaPacienteDetalle.Open;
+
+    ActPruebasExecute(Sender);
+  Except
+  End;
+end;
+//end;
+
+procedure TfrmBanco.ActNuevaExecute(Sender: TObject);
+var
+  DonacionId: String;
+  PacienteId: String;
+  vUserRechazo: string;
+  vFechaRechazo: string;
+  vMsjRechazo: string;
+  vNotaRechazo:string;
+begin
+  inherited;
+
+  PacienteId:= DMB.BuscarPaciente;
+
+  if (Trim(pacienteId) = '') then
+  begin
+    DM.Mensaje('Debe seleccionar un paciente para este proceso. ', mb_Ok);
+    Exit;
+  end;
+
+  if dsDatos.DataSet.Locate('PacienteID', PacienteId, []) then
+  begin
+    DM.Mensaje('Este paciente ya esta en proceso de donación, favor de verificar!', mb_Ok);
+    exit;
+  end;
+
+  qrDonante.Close;
+  qrDonante.Parameters.ParamByName('PacienteID').Value:= PacienteId;
+  qrDonante.Open;
+
+  if ( qrDonanteRechaso.AsString <> '') then
+  begin
+    vMsjRechazo := '';
+    if not qrDonanteUltimaDonacionId.IsNull then
+    begin
+      with DM.NewQuery, sql do
+      begin
+        close;
+        clear;
+        add('select RechazoNota, UserIdRechaza, FechaRechaza from BSDonacion where DonacionID = '+qrDonanteUltimaDonacionId.AsString);
+        open;
+        vUserRechazo := FieldByName('UserIdRechaza').AsString;
+        vFechaRechazo:= FormatDateTime('dd/mm/yyyy hh:mm:ss AM/PM', FieldByName('FechaRechaza').AsDateTime);
+        vNotaRechazo := trim(FieldByName('RechazoNota').AsString);
+        if not IsEmpty then
+          vMsjRechazo := 'por el usuario '+vUserRechazo+', en fecha/hora'+vFechaRechazo;
+        Free;
+      end;
+    end;
+    if DM.Mensaje(PAnsiChar('Este Paciente ha sido rechazado '+Trim(vMsjRechazo)+'. La causa de dicho rechazo es:'+#13+
+                  Trim(vNotaRechazo)+#13+#13+
+                  'Desea continuar con la DONACION ? '), mb_yesno) = id_no then
+    begin
+      DMB.qrDonaciones.Close;
+      DMB.qrDonaciones.Open;
+      dsDonacion.Edit;
+      Exit;
+    end;
+  end;
+  if not qrDonanteUltimaDonacionId.IsNull then
+  begin
+    if not (dsDonante.State in [dsinsert,dsedit]) then
+      dsDonante.Edit;
+    qrDonanteUltimaDonacionId.Value := '';
+  end;
+  if (pacienteId <> '') then
+    DonacionId:= DMB.NuevaDonacion(PacienteId);
+
+  DMB.qrDonaciones.Close;
+  DMB.qrDonaciones.Open;
+
+  if not (dsDonante.State in [dsinsert,dsedit]) then
+    dsDonante.Edit;
+    
+  qrDonanteUltimaDonacionId.Value:= DMB.qrDonacionDonacionID.Value;
+  qrDonanteFechaUltimaDon.Value  := DMB.qrDonacionFecha.Value;
+  dsDonante.DataSet.Post;
+  
+  dsDonacion.Edit;
+  pcDatos.ActivePage := tsDetalleDonacion;
+end;
+
+procedure TfrmBanco.ActPruebasExecute(Sender: TObject);
+begin
+  inherited;
+
+  cxButton8.Enabled:= not qrEntradaPacienteDetalle.Eof;
+
+end;
+
+procedure TfrmBanco.cxButton10Click(Sender: TObject);
+begin
+  inherited;
+
+  DMB.PruebaActual:= self.qrEntradaPacienteRECID.Value;
+  frmMain.LanzaVentana(6014);
+
+end;
+
+procedure TfrmBanco.cxButton12Click(Sender: TObject);
+var
+  tmp: String;
+begin
+  inherited;
+
+  //frmMain.LanzaVentana(-6003);
+  tmp:= DMB.Buscarpaciente;
+
+  if (trim(tmp) = '') then exit;
+
+  if not(DMB.qrDonacion.State in [dsEdit, dsInsert] )  then
+    DMB.qrDonacion.Edit;
+
+  DMB.qrDonacionDirigidoPacienteId.Value:= tmp;
+
+  qrReceptor.Close;
+  qrReceptor.Parameters.ParamByName('PacienteId').Value:=
+    DMB.qrDonacionDirigidoPacienteId.Value;
+  qrReceptor.Open;
+
+  DMB.qrDonacionDirigidoNombre.Value:= qrReceptorNombre.Value;
+
+end;
+
+procedure TfrmBanco.cxButton13Click(Sender: TObject);
+var
+tmp: String;
+begin
+  inherited;
+
+  tmp:= DMB.BuscarDoctor;
+
+  if (trim(tmp) = '') then exit;
+
+  if not (DMB.qrDonacion.State in [dsEdit, dsinsert])  then
+    DMB.qrDonacion.Edit;
+
+  DMB.qrDonacionDoctorId.Value:= tmp;
+
+end;
+
+procedure TfrmBanco.cxButton16Click(Sender: TObject);
+begin
+  inherited;
+  if cxPageControl1.ActivePage = cxTabSheet7 then
+  begin
+    cxComboBox1.ItemIndex := -1;
+    cxComboBox2.ItemIndex := -1;
+  end;
+  if dsDonante.State in [dsinsert,dsedit] then
+    dsDonante.DataSet.Cancel;
+  if dsDonacion.State in [dsinsert,dsedit] then
+    dsDonacion.DataSet.Cancel;
+  DMB.qrDonaciones.Close;
+  DMB.qrDonaciones.Open;
+  pcDatos.ActivePage := tsDonacionesProceso;
+end;
+
+procedure TfrmBanco.cxButton17Click(Sender: TObject);
+var
+  DonacionId: String;
+  PacienteId: String;
+
+begin
+  inherited;
+  
+  PacienteId:= DMB.BuscarPaciente;
+
+  if (pacienteId <> '') then
+    begin
+      DonacionId:= DMB.NuevaDonacion(PacienteId);
+    end;
+
+end;
+
+procedure TfrmBanco.cxButton19Click(Sender: TObject);
+begin
+  inherited;
+
+    BSReportes.EtiquetaDonacion(DMB.qrDonacionesDonacionID.Value);   //Donacion(DMB.qrDonacionesDonacionID.Value);
+  //ImprimirLabel(DMB.qrDonacionesDonacionID.Value);
+
+end;
+
+procedure TfrmBanco.cxButton1Click(Sender: TObject);
+begin
+  inherited;
+
+  if not (dsDonacion.State in [dsinsert,dsedit]) then
+    dsDonacion.DataSet.Edit;
+  DMB.qrDonacionDonacionStatus.Value:= 'Pendiente';
+  DMB.qrDonacionFECHAMODIFICACION.value:= DM.SystemDate;
+  DMB.qrDonacionUSUARIOMOD.value :=  DM.CurUser;
+  DMB.qrDonacionPagina.Value:= cxPageControl1.ActivePageIndex;
+  dsDonacion.DataSet.Post;
+
+  if not (qrDonante.State in [dsinsert,dsedit]) then
+    qrDonante.Edit;
+
+  qrDonanteUltimaDonacionId.Value:= DMB.qrDonacionDonacionID.Value;
+  qrDonanteFechaUltimaDon.Value  := DMB.qrDonacionFecha.Value;
+
+  qrDonante.Post;
+
+  DMB.qrDonaciones.Close;
+  DMB.qrDonaciones.Open;
+
+  pcDatos.ActivePage := tsDonacionesProceso;  
+end;
+
+
+procedure TfrmBanco.cxButton23Click(Sender: TObject);
+begin
+  inherited;
+  if dsDatos.DataSet.IsEmpty then Exit;
+  if Trim(DMB.qrDonacionDonacionStatus.Value) = 'Pendiente' then
+    cxPageControl1.ActivePage := cxTabSheet7
+  else if Trim(DMB.qrDonacionDonacionStatus.Value) = 'Datos' then
+    cxPageControl1.ActivePage := cxTabSheet1
+  else if Trim(DMB.qrDonacionDonacionStatus.Value) = 'Muestra' then
+    cxPageControl1.ActivePage := cxTabSheet3
+  else if Trim(DMB.qrDonacionDonacionStatus.Value) = 'Hemograma' then
+    cxPageControl1.ActivePage := cxTabSheet2
+  else if Trim(DMB.qrDonacionDonacionStatus.Value) = 'Recoleccion' then
+    cxPageControl1.ActivePage := cxTabSheet4;
+  pcDatos.ActivePage := tsDetalleDonacion;
+end;
+
+procedure TfrmBanco.cxButton24Click(Sender: TObject);
+begin
+  inherited;
+  if dsEntradaPacienteDetalle.State in [dsinsert,dsedit] then
+    dsEntradaPacienteDetalle.DataSet.Cancel;
+  pcDatos.ActivePage := tsDonacionesProceso;
+end;
+
+procedure TfrmBanco.cxButton25Click(Sender: TObject);
+begin
+  inherited;
+  if dsHemograma.State in [dsinsert,dsedit] then
+    dsHemograma.DataSet.Cancel;
+  pcDatos.ActivePage := tsDonacionesProceso;
+end;
+
+procedure TfrmBanco.cxButton29Click(Sender: TObject);
+begin
+  inherited;
+if cxCheckBox1.Checked = false then
+   begin
+   cxCheckBox1.Checked := true;
+   qrHemograma.Edit;
+   cxDBTextEdit26.SetFocus;
+   end
+   else
+   cxCheckBox1.Checked := false;
+
+end;
+
+procedure TfrmBanco.cxButton2Click(Sender: TObject);
+begin
+  inherited;
+  if MessageDlg('Desea RECHAZAR esta donación ?', mtConfirmation, [mbYes,mbNo], 0) = mrNo then
+    exit;
+
+  dsDonante.Edit;
+  
+  if (dsDonante.State in [dsinsert,dsedit]) then
+  begin
+    qrDonanteRechasoNota.Value := DMB.qrDonacionRechazoNota.Value;
+    DMB.qrDonacionFECHAMODIFICACION.value:= DM.SystemDate;
+    DMB.qrDonacionUSUARIOMOD.value :=  DM.CurUser;
+    dsDonante.DataSet.Post;
+  end;
+
+  if Trim(dsDonante.DataSet.FieldByName('RechasoNota').AsString) = EmptyStr then
+  begin
+    DM.Warning('Debe de especificar la razon del rechazo!!');
+    cxDBMemo2.SetFocus;
+    Exit;
+  end;
+
+  if not (dsDonacion.State in [dsinsert,dsedit]) then
+    dsDonacion.DataSet.Edit;
+  DMB.qrDonacionDonacionStatus.Value:= 'Rechazado';
+  DMB.qrDonacionPagina.Value        := cxPageControl1.ActivePageIndex;
+  DMB.qrDonacionUserIdRechaza.Value := DM.CurUser;
+  DMB.qrDonacionFechaRechaza.Value  := Now;
+  dsDonacion.DataSet.Post;
+
+  DMB.RechazarPruebas(qrEntradaPacienteMuestraNo.Value);
+
+  DMB.qrDonaciones.Close;
+  DMB.qrDonaciones.Open;
+  pcDatos.ActivePage := tsDonacionesProceso;
+end;
+
+function TfrmBanco.ValidarPasoDonacion(vIdPaso,vCampo:String;vValor: Variant; var vMsg:String):Boolean;
+var
+  vAdoQ:TADOQuery;
+begin
+  Result := False;
+  vMsg   := '';
+  vAdoQ := TADOQuery.Create(nil);
+  vAdoQ.Connection := qrProductos.Connection;
+  vAdoQ.Close;
+  vAdoQ.SQL.Clear;
+  vAdoQ.SQL.Add('select IdPaso, Campo, ValorAceptableDesde, ValorAceptableHasta, MensajeError');
+  vAdoQ.SQL.Add('  from dbo.BSValidarRegistroDonacion');
+  vAdoQ.SQL.Add('where IdPaso = '+vIdPaso);
+  vAdoQ.SQL.Add('and Campo = '+QuotedStr(vCampo));
+  vAdoQ.Open;
+  if vAdoQ.IsEmpty then
+    Exit;
+  if vAdoQ.FieldByName('ValorAceptableHasta').IsNull then
+    Result := (vValor >= vAdoQ.FieldByName('ValorAceptableDesde').AsVariant)
+  else
+    Result := (vValor >= vAdoQ.FieldByName('ValorAceptableDesde').AsVariant) and (vValor <= vAdoQ.FieldByName('ValorAceptableHasta').AsVariant);
+  if not Result then
+    vMsg := vAdoQ.FieldByName('MensajeError').AsString;
+  vAdoQ.Free;
+end;
+
+function TfrmBanco.AutorizarDonacion(Msj:String;var vObservacion:WideString):boolean;
+begin
+  Result := False;
+  if MessageDlg(Msj+#13+'Desea autorizar esta donación por un DOCTOR ?', mtConfirmation, [mbYes,mbNo], 0) = mrNo then
+    exit;
+  with TfrmDialogConsultaDoctor.Create(nil) do
+  begin
+    Filtro                   := 'AutorizarDonacion = 1';
+    Run;
+    Free;
+  end;
+  if Trim(DMB.RetornarDoctor) <> EmptyStr then
+  begin
+    if MessageDlg('Seguro que esta donación está autorizada por el'+#13+
+                'Doctor '+DMB.NombreDoctor+' ?', mtConfirmation, [mbYes,mbNo], 0) = mrNo then Exit;
+    with TfrmAutorizacion.Create(nil) do
+    begin
+      NombreDocto := DMB.NombreDoctor;
+      TituloForma := 'Autorización de Donación(Observación)';
+      ShowModal;
+      Result := DoctorAceptado;
+      if not Result then Exit;
+      vObservacion := Observacion;
+      Free;
+    end;
+  end;
+end;
+
+procedure TfrmBanco.cxButton30Click(Sender: TObject);
+var
+  Actual,
+  Hepatitisc,
+  Anti_hbc,
+  vMsg: String;
+
+begin
+  inherited;
+
+  cxDBCheckBox3.Checked := True;
+  Actual:= DMB.qrDonacionesMuestraNoAS.AsString;
+  {
+  With qrResultados1 do
+    begin
+      Close;
+      Parameters.ParamByName('MUESTRA').Value := Actual;
+      Open;
+      if qrResultados1.RecordCount > 0  then
+       begin
+        while not  qrResultados1.eof do
+          begin
+           if qrResultados1PruebaId.AsString = '516' then
+              Anti_hbc :=  InterfaseAs.GetResult(qrResultados1MuestraNoAS.Value, qrResultados1PruebaId.AsString);
+           if qrResultados1PruebaId.AsString = '7' then
+              Hepatitisc := InterfaseAs.GetResult(qrResultados1MuestraNoAS.Value, qrResultados1PruebaId.AsString);
+
+           cxTextEdit1.Text := Anti_hbc;
+           cxTextEdit2.Text := Hepatitisc;
+           qrResultados1.next;
+          end;
+       end;
+    end;
+          }
+//if (Trim(Anti_hbc) = 'NEGATIVO')  AND (trim(Hepatitisc) = 'NEGATIVO') then
+
+ Begin
+   if dsDonante.State in [dsinsert,dsedit] then
+    dsDonante.DataSet.Post;
+
+   if not (dsDonacion.State in [dsinsert,dsedit]) then
+    dsDonacion.DataSet.Edit;
+    DMB.qrDonacionDonacionStatus.Value:= 'Recoleccion';
+    dsDonacion.DataSet.Post;
+
+   if not(DMB.qrDonacion.State in [dsinsert,dsedit]) then
+    DMB.qrDonacion.Edit;
+    DMB.qrDonacionPagina.Value:= cxPageControl1.ActivePageIndex + 1;
+    DMB.qrDonacion.Post;
+
+    cxPageControl1.ActivePageIndex:= DMB.qrDonacionPagina.Value;
+
+  if cxDBCheckBox3.Checked then
+     DMB.ActivarPruebas(qrEntradaPacienteMuestraNo.Value);
+
+  while (Actual <> DMB.qrDonacionesMuestraNoAS.AsString) do
+    DMB.qrDonaciones.Next;
+  end;
+ {
+ else
+
+ Begin
+   ShowMessage('NO SE PUEDE PROCESAR ESTA DONACION');
+ end;
+  }
+End;
+
+
+procedure TfrmBanco.cxButton31Click(Sender: TObject);
+begin
+  inherited;
+BSReportes.EtiquetaPequena_Bolsa(qrEntradaPacienteMuestraNoAS.Value);
+end;
+
+procedure TfrmBanco.cxButton3Click(Sender: TObject);
+var
+  Year, Month, Day: Word;
+  Year2, Month2, Day2: Word;
+  vMsg: String;
+  vObservacion: WideString;
+begin
+  inherited;
+
+if Puede_donar(dmb.qrDonacionProductoID.Value,dmb.qrDonacionPacienteID.Value) = 'SI' then
+  Begin  //**************** SI EL HA TRANSCURRIDO EL TIEMPO NECESARIO **********************
+       if (cxDBComboBox2.ItemIndex = 1) and (trim(DMB.qrDonacionDirigidoPacienteId.Value) = '') then
+  begin
+    //DM.Warning('Las donaciones dirigidas necesitan el receptor.');
+    //Exit;
+  end;
+if (trim(DBLookupComboBox2.Text) = 'PLAQUETA AFERESIS') and (trim(DMB.qrDonacionDirigidoPacienteId.Value) = '') then
+  begin
+    //DM.Warning('Las donaciones de plaquetas necesitan un receptor para la facturacion.');
+    //Exit;
+  end;
+  //Si no esta autorizada entonces realizar la validacion
+//Autologo Terapeutico
+  if not (cxDBComboBox2.ItemIndex in [2,3]) then
+  begin
+    if (Trim(dsDonacion.DataSet.FieldByName('DoctorIdAutoriza').AsString) = EmptyStr) then
+    begin
+      //---Validacion de los datos de la Donacion
+      if (not dsDatosDonante.DataSet.FieldByName('FechaUltimaDon').IsNull) and (not dsProductos.DataSet.FieldByName('TiempoMesProximaDonacion').IsNull) then
+      begin
+        DecodeDate(Date, Year, Month, Day);
+        DecodeDate(IncMonth(dsDatosDonante.DataSet.FieldByName('FechaUltimaDon').AsDateTime,dsProductos.DataSet.FieldByName('TiempoMesProximaDonacion').AsInteger), Year2, Month2, Day2);
+        if (IncMonth(dsDatosDonante.DataSet.FieldByName('FechaUltimaDon').AsDateTime,dsProductos.DataSet.FieldByName('TiempoMesProximaDonacion').AsInteger) > Date) then // and (Year = Year2)
+        begin
+     // DM.Warning('El Donante no ha cumplido el tiempo requerido para realizar otra donación.');
+          vMsg := 'El Donante no ha cumplido el tiempo requerido para realizar otra donación.';
+        end;
+      end;
+      ValidarPasoDonacion('1','Temperatura',dsDonacion.DataSet.FieldByName('Temperatura').AsVariant, vMsg);
+      if Trim(vMsg) = EmptyStr then
+        ValidarPasoDonacion('1','Peso',dsDonacion.DataSet.FieldByName('Peso').AsVariant, vMsg)
+      else if Trim(vMsg) = EmptyStr then
+        ValidarPasoDonacion('1','PresionArterial',dsDonacion.DataSet.FieldByName('TensionArteriar').AsVariant, vMsg)
+      else if Trim(vMsg) = EmptyStr then
+        ValidarPasoDonacion('1','PresionArterial2',dsDonacion.DataSet.FieldByName('TensionArteriar2').AsVariant, vMsg)
+      else if Trim(vMsg) = EmptyStr then
+        ValidarPasoDonacion('1','Pulso/minuto',dsDonacion.DataSet.FieldByName('PulsoMinimo').AsVariant, vMsg);
+    end;
+  end;
+  if Trim(vMsg) <> EmptyStr then
+    if not AutorizarDonacion(vMsg, vObservacion) then Exit;
+  //---Fin validacion de los datos de la Donacion
+
+  cxDBCheckBox2.Checked := True;
+
+  if not (dsDonacion.State in [dsinsert,dsedit]) then
+    dsDonacion.DataSet.Edit;
+  if (Trim(dsDonacion.DataSet.FieldByName('DoctorIdAutoriza').AsString) = EmptyStr) then
+  begin
+    DMB.qrDonacionDoctorIdAutoriza.Value    := DMB.RetornarDoctor;
+    DMB.qrDonacionObservacionAutoriza.Value := vObservacion;
+  end;
+  if dsDonante.State in [dsinsert,dsedit] then
+    dsDonante.DataSet.Post;
+
+  DMB.qrDonacionDonacionStatus.Value      := 'Muestra';
+  DMB.qrDonacionPagina.Value              := cxPageControl1.ActivePageIndex + 1;
+  DMB.qrDonacionFECHAMODIFICACION.value:= DM.SystemDate;
+  DMB.qrDonacionUSUARIOMOD.value :=  DM.CurUser;
+  dsDonacion.DataSet.Post;
+
+
+  DMB.RetornarDoctor := '';
+  DMB.NombreDoctor   := '';
+
+  cxPageControl1.ActivePageIndex:= DMB.qrDonacionPagina.Value;
+
+  if (cxDBComboBox2.ItemIndex = 4) AND (trim(DBLookupComboBox2.Text) = 'PLAQUETA AFERESIS')then  //Donante autologo
+    if DM.Mensaje('Desea enviar el anticipo de la Aferesis a caja? ', mb_yesno) = id_yes then
+      begin
+
+        BV.AddAVenta(
+          DMB.qrDonacionDirigidoPacienteId.AsString,
+          //qrEntradaPacientePacienteId.Value,   // En este caso debe ser el receptor
+          qrEntradaPacienteDOCTORID.Value,
+          qrEntradaPacienteFECHAPROMETIDA.AsString);
+
+        BV.AddADetVenta(
+            'DA',
+            DMB.qrDonacionesDonacionID.Value
+        );
+      end;
+if cxDBComboBox2.ItemIndex = 2 then  //Donante autologo
+    begin
+
+      BV.AddAVenta(
+        qrEntradaPacientePacienteId.Value,
+        qrEntradaPacienteDOCTORID.Value,
+        qrEntradaPacienteFECHAPROMETIDA.AsString);
+
+      BV.AddADetVenta(
+          'DA',
+          DMB.qrDonacionesDonacionID.Value
+      );
+
+    end;
+
+  if cxDBComboBox2.ItemIndex = 3 then  //Donante terapeutico
+    begin
+
+      BV.AddAVenta(
+        qrEntradaPacientePacienteId.Value,
+        qrEntradaPacienteDOCTORID.Value,
+        qrEntradaPacienteFECHAPROMETIDA.AsString);
+
+      BV.AddADetVenta('TP',DMB.qrDonacionesDonacionID.Value);
+
+    end;
+  pcDatos.ActivePage := tsDonacionesProceso;
+
+  end;  //*************************************  FIN SI HA TRANSCURRIDO EL TIEMPO NECESARIO  ******
+
+
+if Puede_donar(dmb.qrDonacionProductoID.Value,dmb.qrDonacionPacienteID.Value) = 'NO' then
+  Begin
+   if MessageDlg('Este Donante no puede donar no ha trascurrido tiempo suficiente desde la ultima donacion desea confirmarlo?',mtConfirmation,[mbyes,mbno],0) = mryes Then
+      begin
+       Application.CreateForm(TFrmautorizar,Frmautorizar);
+       Frmautorizar.ShowModal;
+     if dm.Autorizado = True then
+        begin //************************************************************************************************************
+         if (cxDBComboBox2.ItemIndex = 1) and (trim(DMB.qrDonacionDirigidoPacienteId.Value) = '') then
+          begin
+           DM.Warning('Las donaciones dirigidas necesitan el receptor.');
+           Exit;
+          end;
+         if (trim(DBLookupComboBox2.Text) = 'PLAQUETA AFERESIS') and (trim(DMB.qrDonacionDirigidoPacienteId.Value) = '') then
+          begin
+           DM.Warning('Las donaciones de plaquetas necesitan un receptor para la facturacion.');
+           Exit;
+          end;
+        //Si no esta autorizada entonces realizar la validacion
+        //Autologo Terapeutico
+          if not (cxDBComboBox2.ItemIndex in [2,3]) then
+           begin
+             if (Trim(dsDonacion.DataSet.FieldByName('DoctorIdAutoriza').AsString) = EmptyStr) then
+              begin
+       //---Validacion de los datos de la Donacion
+               if (not dsDatosDonante.DataSet.FieldByName('FechaUltimaDon').IsNull) and (not dsProductos.DataSet.FieldByName('TiempoMesProximaDonacion').IsNull) then
+                begin
+                DecodeDate(Date, Year, Month, Day);
+                DecodeDate(IncMonth(dsDatosDonante.DataSet.FieldByName('FechaUltimaDon').AsDateTime,dsProductos.DataSet.FieldByName('TiempoMesProximaDonacion').AsInteger), Year2, Month2, Day2);
+                if (IncMonth(dsDatosDonante.DataSet.FieldByName('FechaUltimaDon').AsDateTime,dsProductos.DataSet.FieldByName('TiempoMesProximaDonacion').AsInteger) > Date) then // and (Year = Year2)
+                begin
+    //      DM.Warning('El Donante no ha cumplido el tiempo requerido para realizar otra donación.');
+               vMsg := 'El Donante no ha cumplido el tiempo requerido para realizar otra donación.';
+              end;
+      end;
+      ValidarPasoDonacion('1','Temperatura',dsDonacion.DataSet.FieldByName('Temperatura').AsVariant, vMsg);
+      if Trim(vMsg) = EmptyStr then
+        ValidarPasoDonacion('1','Peso',dsDonacion.DataSet.FieldByName('Peso').AsVariant, vMsg)
+      else if Trim(vMsg) = EmptyStr then
+        ValidarPasoDonacion('1','PresionArterial',dsDonacion.DataSet.FieldByName('TensionArteriar').AsVariant, vMsg)
+      else if Trim(vMsg) = EmptyStr then
+        ValidarPasoDonacion('1','PresionArterial2',dsDonacion.DataSet.FieldByName('TensionArteriar2').AsVariant, vMsg)
+      else if Trim(vMsg) = EmptyStr then
+        ValidarPasoDonacion('1','Pulso/minuto',dsDonacion.DataSet.FieldByName('PulsoMinimo').AsVariant, vMsg);
+    end;
+  end;
+  if Trim(vMsg) <> EmptyStr then
+    if not AutorizarDonacion(vMsg, vObservacion) then Exit;
+  //---Fin validacion de los datos de la Donacion
+
+  cxDBCheckBox2.Checked := True;
+
+  if not (dsDonacion.State in [dsinsert,dsedit]) then
+    dsDonacion.DataSet.Edit;
+  if (Trim(dsDonacion.DataSet.FieldByName('DoctorIdAutoriza').AsString) = EmptyStr) then
+  begin
+    DMB.qrDonacionDoctorIdAutoriza.Value    := DMB.RetornarDoctor;
+    DMB.qrDonacionObservacionAutoriza.Value := vObservacion;
+  end;
+  if dsDonante.State in [dsinsert,dsedit] then
+    dsDonante.DataSet.Post;
+
+  DMB.qrDonacionDonacionStatus.Value      := 'Muestra';
+  DMB.qrDonacionPagina.Value              := cxPageControl1.ActivePageIndex + 1;
+  dsDonacion.DataSet.Post;
+
+  DMB.RetornarDoctor := '';
+  DMB.NombreDoctor   := '';
+
+  cxPageControl1.ActivePageIndex:= DMB.qrDonacionPagina.Value;
+
+  if (cxDBComboBox2.ItemIndex = 4) AND (trim(DBLookupComboBox2.Text) = 'PLAQUETA AFERESIS')then  //Donante autologo
+    if DM.Mensaje('Desea enviar el anticipo de la Aferesis a caja? ', mb_yesno) = id_yes then
+      begin
+
+        BV.AddAVenta(
+          DMB.qrDonacionDirigidoPacienteId.AsString,
+          //qrEntradaPacientePacienteId.Value,   // En este caso debe ser el receptor
+          qrEntradaPacienteDOCTORID.Value,
+          qrEntradaPacienteFECHAPROMETIDA.AsString);
+
+        BV.AddADetVenta(
+            'DA',
+            DMB.qrDonacionesDonacionID.Value
+        );
+      end;
+if cxDBComboBox2.ItemIndex = 2 then  //Donante autologo
+    begin
+
+      BV.AddAVenta(
+        qrEntradaPacientePacienteId.Value,
+        qrEntradaPacienteDOCTORID.Value,
+        qrEntradaPacienteFECHAPROMETIDA.AsString);
+
+      BV.AddADetVenta(
+          'DA',
+          DMB.qrDonacionesDonacionID.Value
+      );
+
+    end;
+
+  if cxDBComboBox2.ItemIndex = 3 then  //Donante terapeutico
+    begin
+
+      BV.AddAVenta(
+        qrEntradaPacientePacienteId.Value,
+        qrEntradaPacienteDOCTORID.Value,
+        qrEntradaPacienteFECHAPROMETIDA.AsString);
+
+      BV.AddADetVenta('TP',DMB.qrDonacionesDonacionID.Value);
+
+    end;
+  pcDatos.ActivePage := tsDonacionesProceso;
+
+
+        end //*************************************************************************************************************
+        else
+        exit;
+        //********************************************************************************************************************
+      end
+      else
+      Exit;
+  end;
+
+ {
+  if (cxDBComboBox2.ItemIndex = 1) and (trim(DMB.qrDonacionDirigidoPacienteId.Value) = '') then
+  begin
+    DM.Warning('Las donaciones dirigidas necesitan el receptor.');
+    Exit;
+  end;
+if (trim(DBLookupComboBox2.Text) = 'PLAQUETA AFERESIS') and (trim(DMB.qrDonacionDirigidoPacienteId.Value) = '') then
+  begin
+    DM.Warning('Las donaciones de plaquetas necesitan un receptor para la facturacion.');
+    Exit;
+  end;
+  //Si no esta autorizada entonces realizar la validacion
+//Autologo Terapeutico
+  if not (cxDBComboBox2.ItemIndex in [2,3]) then
+  begin
+    if (Trim(dsDonacion.DataSet.FieldByName('DoctorIdAutoriza').AsString) = EmptyStr) then
+    begin
+      //---Validacion de los datos de la Donacion
+      if (not dsDatosDonante.DataSet.FieldByName('FechaUltimaDon').IsNull) and (not dsProductos.DataSet.FieldByName('TiempoMesProximaDonacion').IsNull) then
+      begin
+        DecodeDate(Date, Year, Month, Day);
+        DecodeDate(IncMonth(dsDatosDonante.DataSet.FieldByName('FechaUltimaDon').AsDateTime,dsProductos.DataSet.FieldByName('TiempoMesProximaDonacion').AsInteger), Year2, Month2, Day2);
+        if (IncMonth(dsDatosDonante.DataSet.FieldByName('FechaUltimaDon').AsDateTime,dsProductos.DataSet.FieldByName('TiempoMesProximaDonacion').AsInteger) > Date) then // and (Year = Year2)
+        begin
+    //      DM.Warning('El Donante no ha cumplido el tiempo requerido para realizar otra donación.');
+          vMsg := 'El Donante no ha cumplido el tiempo requerido para realizar otra donación.';
+        end;
+      end;
+      ValidarPasoDonacion('1','Temperatura',dsDonacion.DataSet.FieldByName('Temperatura').AsVariant, vMsg);
+      if Trim(vMsg) = EmptyStr then
+        ValidarPasoDonacion('1','Peso',dsDonacion.DataSet.FieldByName('Peso').AsVariant, vMsg)
+      else if Trim(vMsg) = EmptyStr then
+        ValidarPasoDonacion('1','PresionArterial',dsDonacion.DataSet.FieldByName('TensionArteriar').AsVariant, vMsg)
+      else if Trim(vMsg) = EmptyStr then
+        ValidarPasoDonacion('1','PresionArterial2',dsDonacion.DataSet.FieldByName('TensionArteriar2').AsVariant, vMsg)
+      else if Trim(vMsg) = EmptyStr then
+        ValidarPasoDonacion('1','Pulso/minuto',dsDonacion.DataSet.FieldByName('PulsoMinimo').AsVariant, vMsg);
+    end;
+  end;
+  if Trim(vMsg) <> EmptyStr then
+    if not AutorizarDonacion(vMsg, vObservacion) then Exit;
+  //---Fin validacion de los datos de la Donacion
+
+  cxDBCheckBox2.Checked := True;
+
+  if not (dsDonacion.State in [dsinsert,dsedit]) then
+    dsDonacion.DataSet.Edit;
+  if (Trim(dsDonacion.DataSet.FieldByName('DoctorIdAutoriza').AsString) = EmptyStr) then
+  begin
+    DMB.qrDonacionDoctorIdAutoriza.Value    := DMB.RetornarDoctor;
+    DMB.qrDonacionObservacionAutoriza.Value := vObservacion;
+  end;
+  if dsDonante.State in [dsinsert,dsedit] then
+    dsDonante.DataSet.Post;
+
+  DMB.qrDonacionDonacionStatus.Value      := 'Muestra';
+  DMB.qrDonacionPagina.Value              := cxPageControl1.ActivePageIndex + 1;
+  dsDonacion.DataSet.Post;
+
+  DMB.RetornarDoctor := '';
+  DMB.NombreDoctor   := '';
+
+  cxPageControl1.ActivePageIndex:= DMB.qrDonacionPagina.Value;
+
+  if (cxDBComboBox2.ItemIndex = 4) AND (trim(DBLookupComboBox2.Text) = 'PLAQUETA AFERESIS')then  //Donante autologo
+    if DM.Mensaje('Desea enviar el anticipo de la Aferesis a caja? ', mb_yesno) = id_yes then
+      begin
+
+        BV.AddAVenta(
+          DMB.qrDonacionDirigidoPacienteId.AsString,
+          //qrEntradaPacientePacienteId.Value,   // En este caso debe ser el receptor
+          qrEntradaPacienteDOCTORID.Value,
+          qrEntradaPacienteFECHAPROMETIDA.AsString);
+
+        BV.AddADetVenta(
+            'DA',
+            DMB.qrDonacionesDonacionID.Value
+        );
+      end;
+if cxDBComboBox2.ItemIndex = 2 then  //Donante autologo
+    begin
+
+      BV.AddAVenta(
+        qrEntradaPacientePacienteId.Value,
+        qrEntradaPacienteDOCTORID.Value,
+        qrEntradaPacienteFECHAPROMETIDA.AsString);
+
+      BV.AddADetVenta(
+          'DA',
+          DMB.qrDonacionesDonacionID.Value
+      );
+
+    end;
+
+  if cxDBComboBox2.ItemIndex = 3 then  //Donante terapeutico
+    begin
+
+      BV.AddAVenta(
+        qrEntradaPacientePacienteId.Value,
+        qrEntradaPacienteDOCTORID.Value,
+        qrEntradaPacienteFECHAPROMETIDA.AsString);
+
+      BV.AddADetVenta('TP',DMB.qrDonacionesDonacionID.Value);
+
+    end;
+  pcDatos.ActivePage := tsDonacionesProceso;
+  }
+end;
+
+function TfrmBanco.ValidarHemograma;
+begin
+
+  ValidarHemograma:= (trim(qrHemogramaHemoglobina.AsString) <> '');
+  ValidarHemograma:= (trim(qrHemogramaHematocito.AsString) <> '');
+  ValidarHemograma:= (trim(qrHemogramaGlobulosBlancos.AsString) <> '');
+  ValidarHemograma:= (trim(qrHemogramaPlaquetas.AsString) <> '');
+  ValidarHemograma:= (trim(qrHemogramaUsuarioAS.AsString) <> '');
+
+end;
+
+procedure TfrmBanco.cxButton5Click(Sender: TObject);
+var
+  Actual,
+  vMsg: String;
+begin
+  inherited;
+if cxCheckBox1.Checked = false then
+  Begin
+  if not ValidarHemograma then
+    begin
+      DM.Warning('El hemograma no tiene resultados.');
+      Exit;
+    end;
+  //--Validacion del Hemograma
+  case dsDatosDonante.DataSet.FieldByName('Sexo').AsInteger of
+    1:
+    begin
+      if not ValidarPasoDonacion('3','HemoglobinaM',dsHemograma.DataSet.FieldByName('Hemoglobina').AsVariant, vMsg) then
+      begin
+        DM.Warning(vMsg);
+        Exit;
+      end;
+      if not ValidarPasoDonacion('3','HematocritosM',dsHemograma.DataSet.FieldByName('Hematocito').AsVariant, vMsg) then
+      begin
+        DM.Warning(vMsg);
+        Exit;
+      end;
+    end;
+    0:
+    begin
+      if not ValidarPasoDonacion('3','HemoglobinaM',dsHemograma.DataSet.FieldByName('Hemoglobina').AsVariant, vMsg) then
+      begin
+        DM.Warning(vMsg);
+        Exit;
+      end;
+      if not ValidarPasoDonacion('3','HematocritosF',dsHemograma.DataSet.FieldByName('Hematocito').AsVariant, vMsg) then
+      begin
+        DM.Warning(vMsg);
+        Exit;
+      end;
+    end;
+  end;
+  if not ValidarPasoDonacion('3','Globulos blancos',dsHemograma.DataSet.FieldByName('GlobulosBlancos').AsVariant, vMsg) then
+  begin
+    DM.Warning(vMsg);
+    Exit;
+  end;
+  if not ValidarPasoDonacion('3','Plaquetas',dsHemograma.DataSet.FieldByName('Plaquetas').AsVariant, vMsg) then
+  begin
+    DM.Warning(vMsg);
+    Exit;
+  end;
+  //--Fin validacion del Hemograma
+
+  end;
+
+
+  cxDBCheckBox3.Checked := True;
+
+  Actual:= DMB.qrDonacionesMuestraNoAS.AsString;
+
+  if dsDonante.State in [dsinsert,dsedit] then
+    BEGIN
+    DMB.qrDonacionFECHAMODIFICACION.value:= DM.SystemDate;
+    DMB.qrDonacionUSUARIOMOD.value :=  DM.CurUser;
+    dsDonante.DataSet.Post;
+    end;
+
+  if not (dsDonacion.State in [dsinsert,dsedit]) then
+    dsDonacion.DataSet.Edit;
+//  DMB.qrDonacionDonacionStatus.Value:= 'Hemograma';
+  DMB.qrDonacionDonacionStatus.Value:= 'Recoleccion';
+  dsDonacion.DataSet.Post;
+
+  if not(DMB.qrDonacion.State in [dsinsert,dsedit]) then
+    DMB.qrDonacion.Edit;
+    DMB.qrDonacionPagina.Value:= cxPageControl1.ActivePageIndex + 1;
+    DMB.qrDonacion.Post;
+
+  cxPageControl1.ActivePageIndex:= DMB.qrDonacionPagina.Value; //cxPageControl1.ActivePageIndex + 1;
+
+  if cxDBCheckBox3.Checked then
+     DMB.ActivarPruebahbc(qrEntradaPacienteMuestraNo.Value);
+while (Actual <> DMB.qrDonacionesMuestraNoAS.AsString) do
+     DMB.qrDonaciones.Next;
+end;
+
+procedure TfrmBanco.cxButton6Click(Sender: TObject);
+begin
+  inherited;
+
+  if Trim(qrDonanteUltimaDonacionId.Value) <> DMB.qrDonacionDonacionID.Value then
+    dsDonante.Edit;
+
+  if dsDonante.State in [dsinsert,dsedit] then
+  begin
+    {qrDonanteUltimaDonacionId.Value:= DMB.qrDonacionDonacionID.Value;
+    qrDonanteFechaUltimaDon.Value  := DMB.qrDonacionFecha.Value;}
+    dsDonante.DataSet.Post;
+  end;
+
+  if not (dsDonacion.State in [dsinsert,dsedit]) then
+    dsDonacion.DataSet.Edit;
+  DMB.qrDonacionDonacionStatus.Value:= 'Datos';
+  DMB.qrDonacionPagina.Value:= cxComboBox1.ItemIndex;
+  DMB.qrDonacionFECHAMODIFICACION.value:= DM.SystemDate;
+  DMB.qrDonacionUSUARIOMOD.value :=  DM.CurUser;
+  dsDonacion.DataSet.Post;
+
+//  DMB.qrDonaciones.Close;
+//  DMB.qrDonaciones.Open;
+
+  cxPageControl1.ActivePageIndex:= DMB.qrDonacionPagina.Value;
+
+end;
+
+procedure TfrmBanco.cxButton7Click(Sender: TObject);
+var Secuencia: Int64;
+begin
+  inherited;
+
+end;
+
+procedure TfrmBanco.cxButton8Click(Sender: TObject);
+begin
+  inherited;
+
+  if not (dsDonacion.State in [dsinsert,dsedit]) then
+    dsDonacion.DataSet.Edit;
+  DMB.qrDonacionDonacionStatus.Value:= 'Hemograma';
+  DMB.qrDonacionFECHAMODIFICACION.value:= DM.SystemDate;
+  DMB.qrDonacionUSUARIOMOD.value :=  DM.CurUser;
+  
+//  DMB.qrDonacionDonacionStatus.Value:= 'Recoleccion';
+  DMB.qrDonacionPagina.Value:= cxPageControl1.ActivePageIndex + 1;
+  dsDonacion.DataSet.Post;
+  DMB.MandarPruebaAS400(qrEntradaPacienteMuestraNoAS.Value);
+  cxPageControl1.ActivePageIndex:= DMB.qrDonacionPagina.Value;
+end;
+
+procedure TfrmBanco.cxButton9Click(Sender: TObject);
+begin
+  inherited;
+
+  if not (dsDonacion.State in [dsinsert,dsedit]) then
+    dsDonacion.DataSet.Edit;
+    DMB.qrDonacionDonacionStatus.Value:= 'Ok';
+    DMB.qrDonacionFECHAMODIFICACION.value:= DM.SystemDate;
+    DMB.qrDonacionUSUARIOMOD.value :=  DM.CurUser;
+    DMB.qrDonacionPagina.Value:= cxPageControl1.ActivePageIndex + 1;
+  dsDonacion.DataSet.Post;
+
+  BSReportes.EtiquetaDonacion(DMB.qrDonacionesDonacionID.Value);   //Donacion(DMB.qrDonacionesDonacionID.Value);
+  cxPageControl1.ActivePageIndex:= cxPageControl1.ActivePageIndex + 1;
+
+  if (DMB.qrDonacionProductoID.AsString = 'AF') then
+    if MessageDlg('Desea enviar el anticipo de aferesis a caja ?', mtConfirmation, [mbYes,mbNo], 0) = mrYes then
+      begin
+        BV.AddAVenta(
+          DMB.qrDonacionDirigidoPacienteId.Value,
+          qrEntradaPacienteDOCTORID.Value,
+          qrEntradaPacienteFECHAPROMETIDA.AsString);
+
+        BV.AddADetVenta(
+            'AAF',
+            DMB.qrDonacionesDonacionID.Value
+        );
+
+      end;
+
+
+end;
+
+procedure TfrmBanco.cxCheckBox1MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+  inherited;
+   if cxCheckBox1.Checked = True then
+    Begin
+      qrHemograma.Edit;
+      cxDBTextEdit26.SetFocus;
+    end;
+
+end;
+
+procedure TfrmBanco.cxComboBox1Click(Sender: TObject);
+begin
+  inherited;
+  cxButton6.Enabled:= (cxComboBox1.ItemIndex = 1) and (cxComboBox2.ItemIndex = 1);
+end;
+
+procedure TfrmBanco.cxComboBox1PropertiesChange(Sender: TObject);
+begin
+  inherited;
+
+  DMB.qrDonaciones.Close;
+//  DMB.qrDonaciones.Parameters.ParamByName('Estado').Value:= cxComboBox1.Text;
+  DMB.qrDonaciones.Open;
+
+end;
+
+procedure TfrmBanco.cxDBComboBox2Click(Sender: TObject);
+begin
+  inherited;
+
+  if Trim(DBLookupComboBox2.Text) = 'PLAQUETA AFERESIS' then
+  begin
+  Panel1.Visible:= (cxDBComboBox2.Text = 'Voluntario') or (cxDBComboBox2.Text = 'Autologo') or (cxDBComboBox2.Text = 'Terapeutico');
+  End;
+  DMB.qrDonacionReservado.Value:= cxDBComboBox2.Text = 'Dirigido';
+
+end;
+
+procedure TfrmBanco.cxDBTextEdit12PropertiesChange(Sender: TObject);
+begin
+  inherited;
+
+  if (trim(cxDBTextEdit12.Text) = '') then Exit;
+
+  qrDoctor.Close;
+  qrDoctor.Parameters.ParamByName('Doctorid').Value:= cxDBTextEdit12.Text;
+  qrDoctor.Open;
+
+end;
+
+procedure TfrmBanco.cxDBTextEdit18PropertiesChange(Sender: TObject);
+begin
+  inherited;
+
+  qrDatosDonante.Close;
+  qrDatosDonante.Parameters.ParamByName('PacienteId').Value:=
+    cxDBTextEdit18.Text;
+  qrDatosDonante.Open;
+
+end;
+
+procedure TfrmBanco.cxDBTextEdit1PropertiesChange(Sender: TObject);
+begin
+  inherited;
+
+  DMB.qrDonacion.Close;
+  DMB.qrDonacion.Parameters.ParamByName('DonacionID').Value:= DMB.qrDonacionesDonacionID.AsString;
+  DMB.qrDonacion.Open;
+
+  qrResumen.Close;
+  qrResumen.Parameters.ParamByName('DonacionID').Value:= DMB.qrDonacionesDonacionID.AsString;
+  qrResumen.Open;
+
+  qrDonante.Close;
+  qrDonante.Parameters.ParamByName('PacienteID').Value:= DMB.qrDonacionesPacienteID.AsString;
+  qrDonante.Open;
+
+  qrPaciente.Close;
+  qrPaciente.Parameters.ParamByName('PacienteID').Value:= DMB.qrDonacionesPacienteID.AsString;
+  qrPaciente.Open;
+
+  qrEntradaPaciente.Close;
+  qrEntradaPaciente.parameters[0].Value := DMB.qrDonacionesDonacionID.AsString;;
+  qrEntradaPaciente.Open;
+
+  qrEntradaPacienteDetalle.Close;
+  qrEntradaPacienteDetalle.parameters[0].Value := qrEntradaPacienteMuestraNo.Value;
+  qrEntradaPacienteDetalle.Open;
+
+  qrHemograma.Close;
+  qrHemograma.Parameters.ParamByName('DonacionId').Value:= DMB.qrDonacionesDonacionID.AsString;
+  qrHemograma.Open;
+
+  tbHistoria.Close;
+  tbHistoria.Open;
+
+  qrUser.Close;
+  qrUser.Open;
+
+  Panel1.Visible:= cxDBComboBox2.Text = 'Directo';
+  cxPageControl1.ActivePageIndex:= DMB.qrDonacionPagina.Value;
+  cxButton6.Enabled:= (cxComboBox1.ItemIndex = 1);
+
+end;
+
+procedure TfrmBanco.cxDBTextEdit26Exit(Sender: TObject);
+begin
+  inherited;
+if cxDBTextEdit26.Text = '' then
+   cxCheckBox1.Checked := False;
+
+end;
+
+procedure TfrmBanco.cxDBTextEdit5KeyPress(Sender: TObject; var Key: Char);
+begin
+  inherited;
+  if not (key in ['0'..'9',#8,#13]) then
+    key := #0;
+end;
+
+procedure TfrmBanco.cxGridDBTableView2DblClick(Sender: TObject);
+begin
+  inherited;
+  cxButton23Click(cxButton23);
+end;
+
+procedure TfrmBanco.cxPageControl1PageChanging(Sender: TObject;
+  NewPage: TcxTabSheet; var AllowChange: Boolean);
+begin
+  inherited;
+
+  if (NewPage.Caption = 'Rechazo') then
+    begin
+    AllowChange:= True;
+      Exit;
+    end;
+  Panel1.Visible:= (cxDBComboBox2.Text = 'Dirigido') or (cxDBComboBox2.Text = 'Autologo');
+
+  if (newPage.PageIndex = 0) then
+    begin
+      AllowChange:= True;
+      Exit;
+    end;
+
+  if (NewPage.PageIndex > DMB.qrDonacionPagina.Value)  then
+    AllowChange:= False;
+end;
+
+procedure TfrmBanco.cxTabSheet7Enter(Sender: TObject);
+begin
+  inherited;
+
+  if (DMB.qrDonacionPagina.Value > 0 ) then
+    cxComboBox1.ItemIndex:= 1
+  else
+    cxComboBox1.ItemIndex:= 0;
+
+  cxButton6.Enabled:= cxComboBox1.ItemIndex = 1;
+
+end;
+
+procedure TfrmBanco.dsEntradaPacienteDetalleDataChange(Sender: TObject;
+  Field: TField);
+begin
+  inherited;
+
+  ActPruebasExecute(Sender);
+
+end;
+
+procedure TfrmBanco.FormCreate(Sender: TObject);
+begin
+  inherited;
+
+  DMB.qrCausasRechaso.Close;
+  DMB.qrCausasRechaso.Open;
+
+  DMB.qrDonaciones.Close;
+  DMB.qrDonaciones.Open;
+
+  DMB.qrTipoBolsa.Close;
+  DMB.qrTipoBolsa.Open;
+
+  dsDonacion.Edit;
+
+  qrProductos.Close;
+  qrProductos.Open;
+
+  tbHistoria.Close;
+  tbHistoria.Open;
+
+  //--
+  pcDatos.HideTabs := True;
+  pcDatos.ActivePage := tsDonacionesProceso;
+end;
+
+procedure TfrmBanco.ImprimirLabel(EntradaId: String);
+var
+ qfind  : TADOQuery;
+ texto  : TextFile;
+ cadena : String;
+Const
+ LetraSec : array[1..27] of string = ('A','B','C','D','E','F','G','H','I','J','K','L','M','N',
+                                      'Ñ','O','P','Q','R','S','T','U','V','W','X','Y','Z');
+begin
+ qfind := DM.NewQuery;
+ qfind.Close;
+ qfind.SQL.Text := ' SELECT dbo.BSDonacion.DonacionID, dbo.BSDonante.TipoSangre, dbo.BSDonante.RH, dbo.BSDonacion.Fecha '+
+                   ' FROM dbo.BSDonacion INNER JOIN ' +
+                   ' dbo.BSDonante ON dbo.BSDonacion.PacienteID = dbo.BSDonante.PacienteID ' +
+                   ' WHERE DonacionId = '+ #39 + EntradaId + #39;
+ qfind.Open;
+
+ While Not qfind.Eof Do
+ begin
+  cadena := 'c:\Barcode';
+  assignfile(texto, cadena);
+  rewrite(texto);
+
+  writeln(texto,'N');
+  writeln(texto,'N');
+  writeln(texto,'q1200');
+  writeln(texto,'Q200,30+0');
+  writeln(texto,'S2');
+  writeln(texto,'D8');
+  writeln(texto,'ZT');
+  writeln(texto,'B235,15,0,3,2,6,98,B,"' + Qfind.FieldByName('DonacionId').AsString+'"');
+{ writeln(texto,'A415,110,0,1,1,1,N,"' + Qfind.FieldByName('DeptId').AsString+'"');
+  writeln(texto,'A230,130,0,2,1,1,N,"' + Qfind.FieldByName('Nombre').AsString+'"');
+  writeln(texto,'B500,130,0,3,2,3,50,N,"' + LetraSec[Qfind.FieldByName('Secuencia').AsInteger]+'"');
+  writeln(texto,'A590,0,1,1,1,1,N,"' + DM.CurUser+'*"');
+  writeln(texto,'A230,150,0,1,1,1,N,"' + Qfind.FieldByName('Descripcion').AsString+'"');}
+  writeln(texto,'P1');
+  system.closefile(texto);
+
+  cadena := 'c:\barcode.bat';
+  assignfile(texto, cadena);
+  rewrite(texto);
+  writeln(texto,'PRINT /d:lpt1 c:\barcode ');
+  system.closefile(texto);
+  //winexec('C:\barcode.bat',SW_SHOWNORMAL);
+  winexec('print /d:lpt1 c:\barcode ',SW_SHOWNORMAL);
+  //CreateProcess(NULL, "print /d:lpt1 c:\barcode ");
+  qfind.Next;
+
+ end;
+end;
+
+
+end.

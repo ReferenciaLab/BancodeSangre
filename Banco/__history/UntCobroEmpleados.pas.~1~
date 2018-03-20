@@ -1,0 +1,24 @@
+unit UntCobroEmpleados;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs;
+
+type
+  TFrmCobroEmpleados = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmCobroEmpleados: TFrmCobroEmpleados;
+
+implementation
+
+{$R *.dfm}
+
+end.

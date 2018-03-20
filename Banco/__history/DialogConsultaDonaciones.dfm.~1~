@@ -1,0 +1,114 @@
+inherited frmDialogConsultaDonaciones: TfrmDialogConsultaDonaciones
+  Caption = 'Consulta de Donaciones'
+  ClientHeight = 551
+  ClientWidth = 956
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  ExplicitWidth = 964
+  ExplicitHeight = 585
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited dxLayoutControl1: TdxLayoutControl
+    Width = 956
+    Height = 551
+    ExplicitWidth = 956
+    ExplicitHeight = 551
+    inherited edbuscarpor: TcxComboBox
+      Properties.Items.Strings = (
+        'Registro No.'
+        'Paciente'
+        'Nombre del Paciente'
+        'Cliente'
+        'Nombre del Cliente'
+        'Telefono')
+    end
+    inherited edbuscar: TcxTextEdit
+      RepositoryItem = DM.cxTextEdit
+      Properties.OnChange = edbuscarPropertiesChange
+    end
+    inherited cgDatos: TcxGrid
+      Width = 934
+      Height = 439
+      OnEnter = cgDatosEnter
+      OnExit = cgDatosExit
+      ExplicitWidth = 934
+      ExplicitHeight = 439
+      inherited dbDatos: TcxGridDBTableView
+        DataController.KeyFieldNames = 'ENTRADAID'
+        object dbDatosEntredaID: TcxGridDBColumn
+          Caption = 'Registro No.'
+          DataBinding.FieldName = 'ENTRADAID'
+          Width = 68
+        end
+        object dbDatosFecha: TcxGridDBColumn
+          DataBinding.FieldName = 'Fecha'
+          Width = 61
+        end
+        object dbDatosPacienteID: TcxGridDBColumn
+          Caption = 'Paciente'
+          DataBinding.FieldName = 'PacienteID'
+          Width = 76
+        end
+        object dbDatosNombrePaciente: TcxGridDBColumn
+          Caption = 'Nombre Paciente'
+          DataBinding.FieldName = 'NombrePaciente'
+          Width = 223
+        end
+        object dbDatosColumn2: TcxGridDBColumn
+          Caption = 'Telefono'
+          DataBinding.FieldName = 'Telefonos'
+        end
+        object dbDatosClienteID: TcxGridDBColumn
+          Caption = 'Cliente'
+          DataBinding.FieldName = 'ClienteID'
+          Width = 61
+        end
+        object dbDatosClienteNombre: TcxGridDBColumn
+          Caption = 'Nombre Cliente'
+          DataBinding.FieldName = 'ClienteNombre'
+          Width = 158
+        end
+        object dbDatosColumn1: TcxGridDBColumn
+          Caption = 'Moneda'
+          DataBinding.FieldName = 'MonedaID'
+          Width = 48
+        end
+        object dbDatosNeto: TcxGridDBColumn
+          DataBinding.FieldName = 'Neto'
+          Width = 82
+        end
+        object dbDatosTotalPagado: TcxGridDBColumn
+          Caption = 'Pagado'
+          DataBinding.FieldName = 'TotalPagado'
+          Width = 76
+        end
+        object dbDatosTotalPendiente: TcxGridDBColumn
+          Caption = 'Pendiente'
+          DataBinding.FieldName = 'TotalPendiente'
+          Width = 69
+        end
+        object dbDatosHold: TcxGridDBColumn
+          DataBinding.FieldName = 'Hold'
+          Width = 50
+        end
+      end
+    end
+    inherited btcancelar: TcxButton
+      Left = 870
+      Top = 515
+      ExplicitLeft = 870
+      ExplicitTop = 515
+    end
+    inherited btaceptar: TcxButton
+      Left = 789
+      Top = 515
+      ExplicitLeft = 789
+      ExplicitTop = 515
+    end
+  end
+  inherited dsDatos: TDataSource
+    DataSet = DMB.qrEntradaPacienteCons
+  end
+end

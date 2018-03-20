@@ -1,0 +1,577 @@
+inherited FrmAsignarFactura: TFrmAsignarFactura
+  Caption = 'Asignar Factura a Empresa'
+  ClientHeight = 800
+  ClientWidth = 1444
+  ExplicitWidth = 1460
+  ExplicitHeight = 838
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited JvEnterAsTab1: TJvEnterAsTab
+    Left = 600
+    Top = 252
+    ExplicitLeft = 600
+    ExplicitTop = 252
+  end
+  inherited pnCaption: TPanel
+    Width = 1444
+    ExplicitWidth = 499
+  end
+  object cxGroupBox1: TcxGroupBox [2]
+    Left = 0
+    Top = 33
+    Align = alTop
+    TabOrder = 1
+    ExplicitTop = 27
+    ExplicitWidth = 783
+    Height = 160
+    Width = 1444
+    object Label1: TLabel
+      Left = 12
+      Top = 30
+      Width = 49
+      Height = 13
+      Caption = 'Empresa'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 11
+      Top = 55
+      Width = 52
+      Height = 13
+      Caption = 'Asignado'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 6
+      Top = 94
+      Width = 58
+      Height = 13
+      Caption = 'Disponible'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object cxTextEdit1: TcxTextEdit
+      Left = 71
+      Top = 27
+      Properties.ReadOnly = True
+      TabOrder = 0
+      Width = 57
+    end
+    object cxButton1: TcxButton
+      Left = 129
+      Top = 27
+      Width = 32
+      Height = 21
+      TabOrder = 1
+      OnClick = cxButton1Click
+      Glyph.Data = {
+        F6060000424DF606000000000000360000002800000018000000180000000100
+        180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FF969190736E6EAF7D7EFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FF9792916C6C70174B82326089AF7B7BFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF8386863A79B11A81FF0D62
+        BC3B5F7FB07D7DFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF2698FF
+        3DB0FF349DFF1C7EF80C62BA395E7FB07B7DFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FF2996FF42ADFE349AFF1C7EF80C60B8405F7FB17D7BFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF2A96FE41AFFE349AFF1C7EF80C
+        5FB83E5F7EB07B7BFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF2A97
+        FE41AFFE349AFF1A7BF80B5FB744627FA97A7EFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FF2C98FE41ADFE349CFF197BF60C5EB62B587FFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF2D99FE41ADFE339CFF287FE7
+        3D607BFF00FFFF00FFFF00FF996964996964996964996964996964FF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF2D
+        9AFE4BB5FF8CBDEDAC9F966C565593665F996964DDCCABFFFFD9FFFFD9FFFFD7
+        E9D5B6996964996964FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFD1ADA5B68775CCAB8CFFFFD3FFFFD3FF
+        FFD0FFFFCFFFFFD0FFFFD3FFFFE2D4BAA4996964FF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF996B65D4AF8FFFEF
+        B0FBEDB8FFFFCFFFFFCEFFFFCFFFFFD7FFFFDCFFFFEAFFFFFFD3BBB8996964FF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        996964FFEAA6F2C78FFAEBB6FFFFD0FFFFCFFFFFD3FFFFE5FFFFF2FFFFFAFFFF
+        FCFFFFFE996964FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FF996964E6C9A0F6CA8BEEBA7FFBE7B4FFFFD0FFFFCFFFFFD7FFFFEB
+        FFFFFEFFFFFCFFFFF2FFFFE5D8C6A5996964FF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FF996964FFEFADF0BC7DEBB075F7DDA7FEFCCBFF
+        FFD1FFFFD5FFFFE6FFFFF6FFFFF6FFFFE6FFFFD7FFFFDA996964FF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF996964FFF0AFEFBA7BE9A5
+        6AF2C98FFCEFBCFFFFD1FFFFD3FFFFD9FFFFE1FFFFE2FFFFD9FFFFD3FFFFDA99
+        6964FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF996964
+        FFF2B2F3C484E99E63EDB57AF4D79FFCF4C2FFFFD1FFFFD3FFFFD3FFFFD3FFFF
+        D0FFFFCFFFFFD8996964FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FF996964E6C9A0FCDE9EEFBA7EEEB779EFC284F6DAA1FBF2BFFFFFCF
+        FFFFD1FFFFD0FFFFD0FFFFD1D9C6A5996964FF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FF996964FFFEC2FBEBCAF6D7ACF0C186EF
+        BF82F3CC95FAE3ADFCF0BCFBF4C1FEF6C4FFFFD4996964FF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF996964D7BB9EFFFF
+        FFFEF7EEF6D8ACEDB474E9A76BEDB478F0C48AF6D49CFFF4B6D3B799996964FF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FF996964CEB6AFFFFFFFFFF4CBF6CF90F0BC7DF2BF81F7CE90FFEDA9D4B1
+        93996964FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FF996964996964E1C9A0FFF7B5FFF2AFFFF2B1
+        E9CCA4996964996964FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF99696499
+        6964996964996964996964FF00FFFF00FFFF00FFFF00FFFF00FF}
+    end
+    object cxTextEdit2: TcxTextEdit
+      Left = 167
+      Top = 27
+      Properties.ReadOnly = True
+      TabOrder = 2
+      Width = 261
+    end
+    object cxTextEdit4: TcxTextEdit
+      Left = 70
+      Top = 86
+      ParentFont = False
+      Properties.ReadOnly = True
+      Style.Font.Charset = ANSI_CHARSET
+      Style.Font.Color = clBlue
+      Style.Font.Height = -19
+      Style.Font.Name = 'Tahoma'
+      Style.Font.Style = [fsBold]
+      Style.IsFontAssigned = True
+      TabOrder = 3
+      Width = 121
+    end
+    object cxTextEdit3: TcxTextEdit
+      Left = 70
+      Top = 54
+      ParentFont = False
+      Properties.ReadOnly = True
+      Style.Font.Charset = ANSI_CHARSET
+      Style.Font.Color = clBlue
+      Style.Font.Height = -19
+      Style.Font.Name = 'Tahoma'
+      Style.Font.Style = [fsBold]
+      Style.IsFontAssigned = True
+      TabOrder = 4
+      Width = 121
+    end
+    object cxButton2: TcxButton
+      Left = 1213
+      Top = 51
+      Width = 152
+      Height = 56
+      Caption = 'Refrescar'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 5
+    end
+    object cxButton3: TcxButton
+      Left = 894
+      Top = 51
+      Width = 152
+      Height = 56
+      Caption = 'Aplicar'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 6
+      OnClick = cxButton3Click
+    end
+    object cxButton4: TcxButton
+      Left = 1055
+      Top = 51
+      Width = 152
+      Height = 56
+      Caption = 'Reversar'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 7
+    end
+  end
+  object cxPageControl1: TcxPageControl [3]
+    Left = 0
+    Top = 193
+    Width = 1444
+    Height = 607
+    ActivePage = cxTabSheet1
+    Align = alClient
+    TabOrder = 2
+    ExplicitTop = 199
+    ExplicitWidth = 783
+    ExplicitHeight = 266
+    ClientRectBottom = 607
+    ClientRectRight = 1444
+    ClientRectTop = 24
+    object cxTabSheet1: TcxTabSheet
+      Caption = 'Facturas Disponibles'
+      ImageIndex = 0
+      ExplicitWidth = 783
+      ExplicitHeight = 242
+      object edbuscarpor: TcxComboBox
+        Left = 5
+        Top = 10
+        TabStop = False
+        Properties.DropDownListStyle = lsEditFixedList
+        Properties.DropDownSizeable = True
+        Properties.Items.Strings = (
+          'Registro No.'
+          'Paciente'
+          'Nombre del Paciente'
+          'Cliente'
+          'Nombre del Cliente'
+          'Telefono')
+        Style.BorderColor = clTeal
+        Style.BorderStyle = ebsSingle
+        Style.HotTrack = False
+        Style.ButtonStyle = btsHotFlat
+        Style.PopupBorderStyle = epbsSingle
+        TabOrder = 0
+        Text = 'Nombre del Paciente'
+        Width = 130
+      end
+      object edbuscar: TcxTextEdit
+        Left = 141
+        Top = 10
+        RepositoryItem = DM.cxTextEdit
+        Properties.CharCase = ecUpperCase
+        Properties.OnChange = edbuscarPropertiesChange
+        Style.BorderColor = clTeal
+        Style.BorderStyle = ebsSingle
+        Style.HotTrack = False
+        TabOrder = 1
+        Width = 300
+      end
+      object dgDatos: TcxGrid
+        Left = 0
+        Top = 39
+        Width = 1444
+        Height = 495
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 2
+        LookAndFeel.NativeStyle = True
+        object tvDatos: TcxGridDBTableView
+          NavigatorButtons.ConfirmDelete = False
+          NavigatorButtons.Insert.Visible = False
+          NavigatorButtons.Delete.Visible = False
+          NavigatorButtons.Edit.Visible = False
+          NavigatorButtons.Post.Visible = False
+          NavigatorButtons.Cancel.Visible = False
+          FilterBox.Visible = fvNever
+          DataController.DataModeController.SmartRefresh = True
+          DataController.DataSource = dsPendiente
+          DataController.DetailKeyFieldNames = 'ENTRADAID'
+          DataController.Filter.Active = True
+          DataController.Filter.AutoDataSetFilter = True
+          DataController.KeyFieldNames = 'ENTRADAID'
+          DataController.Summary.DefaultGroupSummaryItems = <>
+          DataController.Summary.FooterSummaryItems = <
+            item
+              Format = ',#0.#0'
+              Kind = skSum
+              Column = tvDatosNETO
+            end
+            item
+              Format = ',#0.#0'
+              Kind = skSum
+              Column = tvDatosTOTALPAGADO
+            end
+            item
+              Format = ',#0.#0'
+              Kind = skSum
+              Column = tvDatosTotalPendiente
+            end
+            item
+              Format = 'Totales ,#0'
+              Kind = skCount
+              Column = tvDatosENTRADAID
+            end>
+          DataController.Summary.SummaryGroups = <>
+          OptionsBehavior.IncSearch = True
+          OptionsCustomize.ColumnsQuickCustomization = True
+          OptionsData.CancelOnExit = False
+          OptionsData.Deleting = False
+          OptionsData.DeletingConfirmation = False
+          OptionsData.Editing = False
+          OptionsData.Inserting = False
+          OptionsSelection.CellSelect = False
+          OptionsSelection.MultiSelect = True
+          OptionsView.ColumnAutoWidth = True
+          OptionsView.Footer = True
+          OptionsView.GroupByBox = False
+          OptionsView.Indicator = True
+          object tvDatosENTRADAID: TcxGridDBColumn
+            Caption = 'Factura No'
+            DataBinding.FieldName = 'ENTRADAID'
+            Options.Filtering = False
+          end
+          object tvDatosFECHA: TcxGridDBColumn
+            Caption = 'Fecha'
+            DataBinding.FieldName = 'FECHA'
+            Options.Filtering = False
+          end
+          object tvDatosRECID: TcxGridDBColumn
+            DataBinding.FieldName = 'RECID'
+            Visible = False
+          end
+          object tvDatosPACIENTEID: TcxGridDBColumn
+            DataBinding.FieldName = 'PACIENTEID'
+            Visible = False
+          end
+          object tvDatosNOMBREPACIENTE: TcxGridDBColumn
+            Caption = 'Nombres del Paciente'
+            DataBinding.FieldName = 'NOMBREPACIENTE'
+            Options.Filtering = False
+          end
+          object tvDatosCLIENTEID: TcxGridDBColumn
+            DataBinding.FieldName = 'CLIENTEID'
+            Visible = False
+          end
+          object tvDatosCLIENTENOMBRE: TcxGridDBColumn
+            DataBinding.FieldName = 'CLIENTENOMBRE'
+            Visible = False
+          end
+          object tvDatosBRUTO: TcxGridDBColumn
+            DataBinding.FieldName = 'BRUTO'
+            Visible = False
+          end
+          object tvDatosDESCUENTO: TcxGridDBColumn
+            DataBinding.FieldName = 'DESCUENTO'
+            Visible = False
+          end
+          object tvDatosSUBTOTAL: TcxGridDBColumn
+            DataBinding.FieldName = 'SUBTOTAL'
+            Visible = False
+          end
+          object tvDatosNETO: TcxGridDBColumn
+            Caption = 'Neto'
+            DataBinding.FieldName = 'NETO'
+            HeaderAlignmentHorz = taRightJustify
+            Options.Filtering = False
+          end
+          object tvDatosTOTALPAGADO: TcxGridDBColumn
+            Caption = 'Total Pagado'
+            DataBinding.FieldName = 'TOTALPAGADO'
+            HeaderAlignmentHorz = taRightJustify
+            Options.Filtering = False
+          end
+          object tvDatosTotalPendiente: TcxGridDBColumn
+            Caption = 'Total Pendiente'
+            DataBinding.FieldName = 'TotalPendiente'
+            HeaderAlignmentHorz = taRightJustify
+            Options.Filtering = False
+          end
+        end
+        object lvDatos: TcxGridLevel
+          GridView = tvDatos
+        end
+      end
+    end
+    object cxTabSheet2: TcxTabSheet
+      Caption = 'Pendientes de Aplicar'
+      ImageIndex = 1
+      ExplicitWidth = 783
+      ExplicitHeight = 242
+      object cxGrid1: TcxGrid
+        Left = 0
+        Top = 39
+        Width = 1444
+        Height = 495
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        LookAndFeel.NativeStyle = True
+        object cxGridDBTableView1: TcxGridDBTableView
+          NavigatorButtons.ConfirmDelete = False
+          NavigatorButtons.Insert.Visible = False
+          NavigatorButtons.Delete.Visible = False
+          NavigatorButtons.Edit.Visible = False
+          NavigatorButtons.Post.Visible = False
+          NavigatorButtons.Cancel.Visible = False
+          FilterBox.Visible = fvNever
+          DataController.DataModeController.SmartRefresh = True
+          DataController.DataSource = dsDatos
+          DataController.DetailKeyFieldNames = 'ENTRADAID'
+          DataController.Filter.Active = True
+          DataController.Filter.AutoDataSetFilter = True
+          DataController.KeyFieldNames = 'ENTRADAID'
+          DataController.Summary.DefaultGroupSummaryItems = <>
+          DataController.Summary.FooterSummaryItems = <
+            item
+              Format = ',#0.#0'
+              Kind = skSum
+              Column = cxGridDBColumn11
+            end
+            item
+              Format = ',#0.#0'
+              Kind = skSum
+              Column = cxGridDBColumn12
+            end
+            item
+              Format = ',#0.#0'
+              Kind = skSum
+              Column = cxGridDBColumn13
+            end
+            item
+              Format = 'Totales ,#0'
+              Kind = skCount
+              Column = cxGridDBColumn1
+            end>
+          DataController.Summary.SummaryGroups = <>
+          OptionsBehavior.IncSearch = True
+          OptionsCustomize.ColumnsQuickCustomization = True
+          OptionsData.CancelOnExit = False
+          OptionsData.Deleting = False
+          OptionsData.DeletingConfirmation = False
+          OptionsData.Editing = False
+          OptionsData.Inserting = False
+          OptionsSelection.CellSelect = False
+          OptionsSelection.MultiSelect = True
+          OptionsView.ColumnAutoWidth = True
+          OptionsView.Footer = True
+          OptionsView.GroupByBox = False
+          OptionsView.Indicator = True
+          object cxGridDBColumn1: TcxGridDBColumn
+            Caption = 'Factura No'
+            DataBinding.FieldName = 'ENTRADAID'
+            Options.Filtering = False
+          end
+          object cxGridDBColumn2: TcxGridDBColumn
+            Caption = 'Fecha'
+            DataBinding.FieldName = 'FECHA'
+            Options.Filtering = False
+          end
+          object cxGridDBColumn3: TcxGridDBColumn
+            DataBinding.FieldName = 'RECID'
+            Visible = False
+          end
+          object cxGridDBColumn4: TcxGridDBColumn
+            DataBinding.FieldName = 'PACIENTEID'
+            Visible = False
+          end
+          object cxGridDBColumn5: TcxGridDBColumn
+            Caption = 'Nombres del Paciente'
+            DataBinding.FieldName = 'NOMBREPACIENTE'
+            Options.Filtering = False
+          end
+          object cxGridDBColumn6: TcxGridDBColumn
+            DataBinding.FieldName = 'CLIENTEID'
+            Visible = False
+          end
+          object cxGridDBColumn7: TcxGridDBColumn
+            DataBinding.FieldName = 'CLIENTENOMBRE'
+            Visible = False
+          end
+          object cxGridDBColumn8: TcxGridDBColumn
+            DataBinding.FieldName = 'BRUTO'
+            Visible = False
+          end
+          object cxGridDBColumn9: TcxGridDBColumn
+            DataBinding.FieldName = 'DESCUENTO'
+            Visible = False
+          end
+          object cxGridDBColumn10: TcxGridDBColumn
+            DataBinding.FieldName = 'SUBTOTAL'
+            Visible = False
+          end
+          object cxGridDBColumn11: TcxGridDBColumn
+            Caption = 'Neto'
+            DataBinding.FieldName = 'NETO'
+            HeaderAlignmentHorz = taRightJustify
+            Options.Filtering = False
+          end
+          object cxGridDBColumn12: TcxGridDBColumn
+            Caption = 'Total Pagado'
+            DataBinding.FieldName = 'TOTALPAGADO'
+            HeaderAlignmentHorz = taRightJustify
+            Options.Filtering = False
+          end
+          object cxGridDBColumn13: TcxGridDBColumn
+            Caption = 'Total Pendiente'
+            DataBinding.FieldName = 'TotalPendiente'
+            HeaderAlignmentHorz = taRightJustify
+            Options.Filtering = False
+          end
+        end
+        object cxGridLevel1: TcxGridLevel
+          GridView = cxGridDBTableView1
+        end
+      end
+    end
+    object cxTabSheet3: TcxTabSheet
+      Caption = 'Historial'
+      ImageIndex = 2
+      ExplicitWidth = 783
+      ExplicitHeight = 242
+    end
+  end
+  inherited formStorage: TJvFormStorage
+    Left = 416
+    Top = 282
+  end
+  inherited alEdit: TActionList
+    Left = 524
+    Top = 232
+  end
+  inherited pmCustom: TPopupMenu
+    Left = 476
+    Top = 364
+  end
+  object Search: TQrySearchDlgADO
+    AliasName = DM.Database
+    Left = 352
+    Top = 272
+  end
+  object dsDatos: TDataSource
+    AutoEdit = False
+    Left = 228
+    Top = 271
+  end
+  object dsPendiente: TDataSource
+    AutoEdit = False
+    DataSet = qrSeleccionados
+    Left = 188
+    Top = 359
+  end
+  object qrSeleccionados: TADOQuery
+    Connection = DM.Database
+    Parameters = <>
+    Left = 528
+    Top = 320
+  end
+end

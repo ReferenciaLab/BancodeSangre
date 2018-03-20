@@ -1,0 +1,10 @@
+inherited dmCliente: TdmCliente
+  OldCreateOrder = True
+  OnCreate = DataModuleCreate
+  inherited Tabla: TADOTable
+    TableName = 'PTCLIENTE'
+  end
+  inherited Datos: TDataSource
+    Left = 112
+  end
+end

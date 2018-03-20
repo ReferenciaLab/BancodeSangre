@@ -1,0 +1,56 @@
+unit UntRegretenciones;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DialogModule, Menus, cxLookAndFeelPainters, dxLayoutControl,
+  StdCtrls, cxButtons, cxControls, cxCurrencyEdit, cxContainer, cxEdit,
+  cxTextEdit;
+
+type
+  TFrmregRetenciones = class(TfrmDialogModule)
+    cxTextEdit3: TcxTextEdit;
+    lcDialogItem3: TdxLayoutItem;
+    cxCurrencyEdit1: TcxCurrencyEdit;
+    lcDialogItem1: TdxLayoutItem;
+    cxTextEdit1: TcxTextEdit;
+    lcDialogItem2: TdxLayoutItem;
+    procedure btAceptarClick(Sender: TObject);
+    procedure btCancelarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmregRetenciones: TFrmregRetenciones;
+
+implementation
+
+uses DataModule;
+
+{$R *.dfm}
+
+procedure TFrmregRetenciones.btAceptarClick(Sender: TObject);
+begin
+  inherited;
+
+  if (cxTextEdit3.Text <> '') and (cxCurrencyEdit1.Text <> '') then
+    Begin
+
+    end;
+  
+  //INSERT INTO  PAGOS_RETENCIONES(ENTRADAID, FECHA_FACTURA, MONTO_FACTURA, NUMERO_CHEQUE, MONTO_CHEQUE, NOMBRE_INSTITUCION, USUARIO_CREA, FECHA_CREA)
+//VALUES()
+
+end;
+
+procedure TFrmregRetenciones.btCancelarClick(Sender: TObject);
+begin
+  inherited;
+Close;
+end;
+
+end.

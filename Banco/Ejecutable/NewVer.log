@@ -1,0 +1,42 @@
+  FECHA      HORA      USUARIO            PROCESO        MENSAJE
+========== ======== =============== ==================== ====================================
+20/06/2011 19:14:25 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.0) No se pudo actualizar, No hay datos en la DB
+20/06/2011 19:15:30 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.0) No se pudo actualizar, No hay datos en la DB
+21/06/2011 10:02:52 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.0) No se pudo actualizar, No hay datos en la DB
+21/06/2011 10:27:57 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.0) No se pudo actualizar, No hay datos en la DB
+21/06/2011 10:34:35 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.0) No se pudo actualizar MD5 Erroneo
+21/06/2011 10:41:35 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.0) No se pudo actualizar
+21/06/2011 10:41:35 NEWVERSION     NEWVERSION           1.5.1.1 --> 1.5.1.0
+21/06/2011 10:43:36 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.0) No se pudo actualizar
+21/06/2011 10:43:36 NEWVERSION     NEWVERSION           1.5.1.1 --> 1.5.1.0
+21/06/2011 10:46:37 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.0) No se pudo actualizar
+21/06/2011 10:46:37 NEWVERSION     NEWVERSION           1.5.1.1 --> 1.5.1.0
+21/06/2011 10:53:14 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.0) No se pudo actualizar
+21/06/2011 10:53:14 NEWVERSION     NEWVERSION           1.5.1.1 --> 1.5.1.0
+21/06/2011 10:55:25 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.0) No se pudo actualizar
+21/06/2011 10:55:25 NEWVERSION     NEWVERSION           1.5.1.1 --> 1.5.1.0
+21/06/2011 11:02:09 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.0) No se pudo actualizar
+21/06/2011 11:02:09 NEWVERSION     NEWVERSION           1.5.1.1 --> 1.5.1.0
+21/06/2011 11:08:01 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.0) No se pudo actualizar
+21/06/2011 11:08:01 NEWVERSION     NEWVERSION           1.5.1.1 --> 1.5.1.0
+21/06/2011 11:13:11 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.0) No se pudo actualizar
+21/06/2011 11:13:11 NEWVERSION     NEWVERSION           1.5.1.1 --> 1.5.1.0
+21/06/2011 15:19:04 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.2) No se pudo actualizar, No hay datos en la DB
+21/06/2011 15:21:22 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.2) No se pudo actualizar, No hay datos en la DB
+21/06/2011 15:25:16 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.2) No se pudo actualizar, No hay datos en la DB
+21/06/2011 15:27:33 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.2) No se pudo actualizar, No hay datos en la DB
+21/06/2011 15:28:15 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.2) No se pudo actualizar, No hay datos en la DB
+21/06/2011 15:35:19 NEWVERSION     NEWVERSION           Versión BANCO(1.5.1.0) de la Aplicación Actualizada Exitosamente
+21/06/2011 15:35:36 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.1) No se pudo actualizar, No hay datos en la DB
+21/06/2011 15:35:56 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.1) No se pudo actualizar, No hay datos en la DB
+21/06/2011 15:38:45 NEWVERSION     NEWVERSION           Versión BANCO(1.5.1.0) de la Aplicación Actualizada Exitosamente
+21/06/2011 15:39:08 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.1) No se pudo actualizar, No hay datos en la DB
+21/06/2011 15:46:47 NEWVERSION     NEWVERSION           Versión BANCO(1.5.1.0) de la Aplicación Actualizada Exitosamente
+21/06/2011 15:47:02 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.1) No se pudo actualizar, No hay datos en la DB
+21/06/2011 15:47:14 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.1) No se pudo actualizar, No hay datos en la DB
+21/06/2011 15:52:42 NEWVERSION     NEWVERSION           Versión BANCO(1.5.1.0) de la Aplicación Actualizada Exitosamente
+21/06/2011 15:52:57 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.1) No se pudo actualizar, No hay datos en la DB
+21/06/2011 15:58:04 NEWVERSION     NEWVERSION           Versión BANCO(1.5.1.0) de la Aplicación Actualizada Exitosamente
+25/06/2011 12:04:30 NEWVERSION     NEWVERSION           Error--> Versión BANCO(1.5.1.0) No se pudo actualizar
+25/06/2011 12:04:30 NEWVERSION     NEWVERSION           1.5.1.1 --> 1.5.1.0
+14/07/2011 10:38:06 NEWVERSION     NEWVERSION           Versión BANCO(1.5.1.1) de la Aplicación Actualizada Exitosamente

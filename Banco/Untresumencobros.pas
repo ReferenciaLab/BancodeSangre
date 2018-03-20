@@ -1,0 +1,157 @@
+unit Untresumencobros;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, cxControls, cxContainer, cxEdit, cxTextEdit, cxMaskEdit,
+  cxDropDownEdit, cxCalendar, cxGraphics, cxDBEdit, StdCtrls, Menus,
+  cxLookAndFeelPainters, cxButtons, DB, ADODB, DBCtrls, Mask, ppDB, ppDBPipe,
+  ppDBBDE, ppComm, ppRelatv, ppProd, ppClass, ppReport, ppBands, ppCache,
+  ppCtrls, ppVar, jpeg, ppPrnabl;
+
+type
+  TFrmresumencobros = class(TForm)
+    cxDateEdit1: TcxDateEdit;
+    cxDateEdit2: TcxDateEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    cxButton1: TcxButton;
+    cxButton2: TcxButton;
+    DSsucursal: TDataSource;
+    TBsucursal: TADOTable;
+    TBsucursalNOMBRE: TStringField;
+    TBsucursalSUCURSALID: TStringField;
+    TBsucursalDIRECCION: TMemoField;
+    TBsucursalTELEFONO: TStringField;
+    TBsucursalFAX: TStringField;
+    TBsucursalCLIENTEID: TStringField;
+    TBsucursalGRUPOID: TStringField;
+    TBsucursalCLIENTE_UNO: TStringField;
+    TBsucursalCLIENTE_DOS: TStringField;
+    TBsucursalIMPRESIONES: TIntegerField;
+    TBsucursalDATAAREAID: TStringField;
+    TBsucursalRECID: TIntegerField;
+    TBsucursalmsrepl_tran_version: TGuidField;
+    TBsucursalDESSUCURSAL: TStringField;
+    DBLookupComboBox1: TDBLookupComboBox;
+    Qreporte: TADOQuery;
+    pReporte: TppReport;
+    ppBDEPipeline1: TppBDEPipeline;
+    DSreporte: TDataSource;
+    ppHeaderBand1: TppHeaderBand;
+    ppDetailBand1: TppDetailBand;
+    ppFooterBand1: TppFooterBand;
+    QreporteFecha: TDateTimeField;
+    QreporteCobroID: TStringField;
+    QreporteSucursalID: TStringField;
+    QreporteDescripcion: TStringField;
+    QreporteNUMERO: TStringField;
+    QreporteTotalCobrado: TBCDField;
+    QreporteTipoDoc: TStringField;
+    QreporteSUCURSAL: TStringField;
+    QreporteTARJETA: TBCDField;
+    QreporteEFECTIVO: TBCDField;
+    QreporteCHEQUE: TBCDField;
+    ppShape1: TppShape;
+    ppLabel1: TppLabel;
+    ppLabel2: TppLabel;
+    ppDBText1: TppDBText;
+    ppDBText2: TppDBText;
+    ppDBText3: TppDBText;
+    ppLabel3: TppLabel;
+    ppDBText4: TppDBText;
+    ppLabel4: TppLabel;
+    ppLabel5: TppLabel;
+    ppLabel6: TppLabel;
+    ppLabel7: TppLabel;
+    ppDBText5: TppDBText;
+    ppDBText6: TppDBText;
+    ppDBText7: TppDBText;
+    ppLine1: TppLine;
+    ppLabel8: TppLabel;
+    ppLabel9: TppLabel;
+    ppLabel10: TppLabel;
+    ppSystemVariable1: TppSystemVariable;
+    ppSystemVariable2: TppSystemVariable;
+    ppLabel11: TppLabel;
+    ppSystemVariable3: TppSystemVariable;
+    ppImage1: TppImage;
+    ppLabel12: TppLabel;
+    ppLabel13: TppLabel;
+    ppLabel14: TppLabel;
+    ppVariable1: TppVariable;
+    ppVariable2: TppVariable;
+    ppGroup1: TppGroup;
+    ppGroupHeaderBand1: TppGroupHeaderBand;
+    ppGroupFooterBand1: TppGroupFooterBand;
+    ppLine2: TppLine;
+    ppLabel15: TppLabel;
+    ppLine3: TppLine;
+    ppDBCalc1: TppDBCalc;
+    ppDBCalc2: TppDBCalc;
+    ppDBCalc3: TppDBCalc;
+    ppDBCalc4: TppDBCalc;
+    ppLabel16: TppLabel;
+    ppVariable3: TppVariable;
+    procedure ppHeaderBand1BeforePrint(Sender: TObject);
+    procedure cxButton1Click(Sender: TObject);
+    procedure cxButton2Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frmresumencobros: TFrmresumencobros;
+
+implementation
+
+uses DatosModule, DataModule;
+
+{$R *.dfm}
+
+procedure TFrmresumencobros.cxButton1Click(Sender: TObject);
+begin
+With Qreporte do
+ begin
+   Close;
+   Sql.Clear;
+   Sql.Add('SELECT * FROM V_COBROS');
+   Sql.Add('where SucursalID ='+ #39+ TBsucursalSUCURSALID.Value + #39);
+   Sql.Add('and fecha between :fecha1 and :fecha2 ');
+   Sql.Add('order by Tipodoc, Fecha');
+   Parameters.ParamByName('fecha1').Value := cxDateEdit1.Date;
+   Parameters.ParamByName('fecha2').Value := cxDateEdit2.Date;
+   //Sql.Add('');
+   Open;
+
+   if recordcount > 0 then
+     pReporte.Print
+     else
+     ShowMessage('Datos no encontrados');
+ end;
+end;
+
+procedure TFrmresumencobros.cxButton2Click(Sender: TObject);
+begin
+Close;
+end;
+
+procedure TFrmresumencobros.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+Action := caFree;
+end;
+
+procedure TFrmresumencobros.ppHeaderBand1BeforePrint(Sender: TObject);
+begin
+  ppVariable1.Value := cxDateEdit1.Text;
+  ppVariable2.Value := cxDateEdit2.Text;
+  ppVariable3.Value := DBLookupComboBox1.Text;
+end;
+
+end.
