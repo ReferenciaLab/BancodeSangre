@@ -1481,6 +1481,7 @@ type
     property  SystemDate : TDate read FSystemDate write FSystemDate;
     procedure SetCompanyOptions;//Created with Castalia Extract Method Refactoring
   public
+   prueba : string;
     Autorizado: boolean;
     CambiarPrecio: boolean;
     DescuentoTope: Real;

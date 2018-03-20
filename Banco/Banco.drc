@@ -20,7 +20,7 @@
 #define RzTabs_sRzCreateRegionError 63049
 #define RzTabs_sRzPageIndexOutOfRange 63050
 #define RzTabs_sRzInvalidVisibilityChange 63051
-#define acQBStrings_acQBErrorBadXMLTagNotFound 63056
+#define raSynEditTextBuffer_SListIndexOutOfBounds 63056
 #define RzShellConsts_SCancelButton 63057
 #define RzShellConsts_SOKButton 63058
 #define RzShellConsts_SCreateFolder 63059
@@ -36,614 +36,614 @@
 #define RzShellConsts_SBrowseForFolder 63069
 #define RzShellConsts_SShKey_SelectAll 63070
 #define RzShellConsts_SShKey_Delete 63071
-#define acQBStrings_acQBGCOr 63072
-#define acQBStrings_acQBSortTypeAscending 63073
-#define acQBStrings_acQBSortTypeDescending 63074
-#define acQBStrings_acQBMoveUp 63075
-#define acQBStrings_acQBMoveDown 63076
-#define acQBStrings_acQBRemoveItem 63077
-#define acQBStrings_acQBInsertEmtyItem 63078
-#define acQBStrings_acQBEditSubMenu 63079
-#define acQBStrings_acQBCut 63080
-#define acQBStrings_acQBCopy 63081
-#define acQBStrings_acQBPaste 63082
-#define acQBStrings_acQBSelectAll 63083
-#define acQBStrings_acQBAllObjects 63084
-#define acQBStrings_acQBErrorUnknownError 63085
-#define acQBStrings_acQBErrorExecQuery 63086
-#define acQBStrings_acQBErrorBadXML 63087
-#define acQBStrings_acQBInsertSubQuery 63088
-#define acQBStrings_acMoveBackward 63089
-#define acQBStrings_acMoveForward 63090
-#define acQBStrings_acAddObject 63091
-#define acQBStrings_acAddSubQuery 63092
-#define acQBStrings_acUnionSubMenu 63093
-#define acQBStrings_acABNewUnionSubQuery 63094
-#define acQBStrings_acQBEncloseWithBrackets 63095
-#define acQBStrings_acQBRemoveBrackets 63096
-#define acQBStrings_acQBGCSelect 63097
-#define acQBStrings_acQBGCExpression 63098
-#define acQBStrings_acQBGCAlias 63099
-#define acQBStrings_acQBGCSortType 63100
-#define acQBStrings_acQBGCSortOrder 63101
-#define acQBStrings_acQBGCGroupBy 63102
-#define acQBStrings_acQBGCCriteria 63103
-#define acQBStrings_acQBCantAssignObjAlias 63104
-#define acQBStrings_acQBNoSyntaxProvider 63105
-#define acQBStrings_acQBNoMetadataProvider 63106
-#define acQBStrings_acQBNoConnectionObject 63107
-#define acQBStrings_acQBDialectDontSupportUnions 63108
-#define acQBStrings_acQBDialectDontSupportUnionsInSubQueries 63109
-#define acQBStrings_acQBDialectDontSupportUnionsBrackets 63110
-#define acQBStrings_acQBDialectDontSupportUnionsBracketsInSubQuery 63111
-#define acQBStrings_acQBMetaProviderCantLoadMetadata 63112
-#define acQBStrings_acQBMetaProviderCantLoadMetadataForDatabase 63113
-#define acQBStrings_acQBRemove 63114
-#define acQBStrings_acQBEdit 63115
-#define acQBStrings_acQBSwitchToDerivedTable 63116
-#define acQBStrings_acQBAftofitHeight 63117
-#define acQBStrings_acQBAbout 63118
-#define acQBStrings_acQBMainQuery 63119
-#define MidConst_SNoCircularConnection 63120
-#define cxTLStrs_scxIndexOutOfBounds 63121
-#define cxTLStrs_scxInvalidStreamFormat 63122
-#define cxTLStrs_scxMultiSelectRequired 63123
-#define cxTLStrs_scxBands 63124
-#define cxTLStrs_scxCustomizeCaption 63125
-#define cxTLStrs_scxColumnsCaption 63126
-#define cxTLStrs_scxBandsCaption 63127
-#define cxTLStrs_scxOperationNotSupported 63128
-#define cxTLStrs_scxTreeListDeletingFocusedConfirmationText 63129
-#define cxTLStrs_scxTreeListDeletingConfirmationCaption 63130
-#define acQBStrings_acQBBadObjectName 63131
-#define acQBStrings_acQBBadSelectStatement 63132
-#define acQBStrings_acQBBadFromObjectExpression 63133
-#define acQBStrings_acQBUnexpectedTokenAt 63134
-#define acQBStrings_acQBCantSelectExpression 63135
-#define MidConst_SInvalidDataPacket 63136
-#define MidConst_SRefreshError 63137
-#define MidConst_SNoCircularReference 63138
-#define MidConst_SErrorLoadingMidas 63139
-#define MidConst_SNoConnectToBroker 63140
-#define MidConst_SNoParentConnection 63141
-#define MidConst_SInvalidOptParamType 63142
-#define MidConst_SConstraintFailed 63143
-#define MidConst_SField 63144
-#define MidConst_SRecConstFail 63145
-#define MidConst_SFieldConstFail 63146
-#define MidConst_SDefExprFail 63147
-#define MidConst_SNoEditsAllowed 63148
-#define MidConst_SNoDeletesAllowed 63149
-#define MidConst_SNoInsertsAllowed 63150
-#define MidConst_SConnectionMissing 63151
-#define TeeConst_TeeMsg_FunctionSubtract 63152
-#define TeeConst_TeeMsg_FunctionMultiply 63153
-#define TeeConst_TeeMsg_FunctionDivide 63154
-#define TeeConst_TeeMsg_FunctionHigh 63155
-#define TeeConst_TeeMsg_FunctionLow 63156
-#define TeeConst_TeeMsg_FunctionAverage 63157
-#define TeeConst_TeeMsg_DefaultFontName 63158
-#define TeeConst_TeeMsg_CheckPointerSize 63159
-#define TeeConst_TeeMsg_FunctionPeriod 63160
-#define TeeConst_TeeMsg_PieOther 63161
-#define TeeConst_TeeMsg_ValuesX 63162
-#define TeeConst_TeeMsg_ValuesY 63163
-#define TeeConst_TeeMsg_ValuesPie 63164
-#define TeeConst_TeeMsg_ValuesBar 63165
-#define TeeConst_TeeMsg_ValuesAngle 63166
-#define MidConst_SNoDataProvider 63167
-#define TeeConst_TeeMsg_GalleryHorizBar 63168
-#define TeeConst_TeeMsg_GalleryPie 63169
-#define TeeConst_TeeMsg_GalleryFastLine 63170
-#define TeeConst_TeeMsg_Rotation 63171
-#define TeeConst_TeeMsg_PieSample1 63172
-#define TeeConst_TeeMsg_PieSample2 63173
-#define TeeConst_TeeMsg_PieSample3 63174
-#define TeeConst_TeeMsg_PieSample4 63175
-#define TeeConst_TeeMsg_PieSample5 63176
-#define TeeConst_TeeMsg_PieSample6 63177
-#define TeeConst_TeeMsg_PieSample7 63178
-#define TeeConst_TeeMsg_PieSample8 63179
-#define TeeConst_TeeMsg_GalleryStandard 63180
-#define TeeConst_TeeMsg_GalleryFunctions 63181
-#define TeeConst_TeeMsg_DefaultFontSize 63182
-#define TeeConst_TeeMsg_FunctionAdd 63183
-#define TeeConst_TeeMsg_AxisMaxMin 63184
-#define TeeConst_TeeMsg_AxisLogBase 63185
-#define TeeConst_TeeMsg_MaxPointsPerPage 63186
-#define TeeConst_TeeMsg_3dPercent 63187
-#define TeeConst_TeeMsg_CircularSeries 63188
-#define TeeConst_TeeMsg_BarWidthPercent 63189
-#define TeeConst_TeeMsg_BarOffsetPercent 63190
-#define TeeConst_TeeMsg_DefaultPercentOf 63191
-#define TeeConst_TeeMsg_DefPercentFormat 63192
-#define TeeConst_TeeMsg_DefValueFormat 63193
-#define TeeConst_TeeMsg_AxisTitle 63194
-#define TeeConst_TeeMsg_AxisLabels 63195
-#define TeeConst_TeeMsg_GalleryLine 63196
-#define TeeConst_TeeMsg_GalleryPoint 63197
-#define TeeConst_TeeMsg_GalleryArea 63198
-#define TeeConst_TeeMsg_GalleryBar 63199
-#define DlgMensajes_SysMsgDlgIgnorar 63200
-#define DlgMensajes_SysMsgDlgTodo 63201
-#define DlgMensajes_SysMsgDlgNoATodo 63202
-#define DlgMensajes_SysMsgDlgSiATodo 63203
-#define TeeConst_TeeMsg_LegendTopPos 63204
-#define TeeConst_TeeMsg_LegendFirstValue 63205
-#define TeeConst_TeeMsg_LegendColorWidth 63206
-#define TeeConst_TeeMsg_SeriesSetDataSource 63207
-#define TeeConst_TeeMsg_SeriesInvDataSource 63208
-#define TeeConst_TeeMsg_FillSample 63209
-#define TeeConst_TeeMsg_Angle 63210
-#define TeeConst_TeeMsg_AxisLogDateTime 63211
-#define TeeConst_TeeMsg_AxisLogNotPositive 63212
-#define TeeConst_TeeMsg_AxisLabelSep 63213
-#define TeeConst_TeeMsg_AxisIncrementNeg 63214
-#define TeeConst_TeeMsg_AxisMinMax 63215
-#define cxExportStrs_scxInvalidStyleIndex 63216
-#define cxExportStrs_scxExportToExcel 63217
-#define cxExportStrs_scxWorkbookWrite 63218
-#define cxExportStrs_scxInvalidCellDimension 63219
-#define cxExportStrs_scxBoolTrue 63220
-#define DlgMensajes_SysMsgDlgAviso 63221
-#define DlgMensajes_SysMsgDlgError 63222
-#define DlgMensajes_SysMsgDlgInformacion 63223
-#define DlgMensajes_SysMsgDlgConfirma 63224
-#define DlgMensajes_SysMsgDlgSi 63225
-#define DlgMensajes_SysMsgDlgNo 63226
-#define DlgMensajes_SysMsgDlgOK 63227
-#define DlgMensajes_SysMsgDlgCancelar 63228
-#define DlgMensajes_SysMsgDlgAyuda 63229
-#define DlgMensajes_SysMsgDlgAbortar 63230
-#define DlgMensajes_SysMsgDlgReintentar 63231
-#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_CANCEL 63232
-#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_REFRESH 63233
-#define dxStatusBar_cxSTextPanelStyle 63234
-#define dxStatusBar_cxSContainerPanelStyle 63235
-#define dxStatusBar_cxSKeyboardStatePanelStyle 63236
-#define dxStatusBar_cxSStateIndicatorPanelStyle 63237
-#define cxExportStrs_scxUnsupportedExport 63238
-#define cxExportStrs_scxStyleManagerKill 63239
-#define cxExportStrs_scxExportToHtml 63240
-#define cxExportStrs_scxExportToXml 63241
-#define cxExportStrs_scxExportToText 63242
-#define cxExportStrs_scxIllegalWidth 63243
-#define cxExportStrs_scxInvalidColumnRowCount 63244
-#define cxExportStrs_scxIllegalHeight 63245
-#define cxExportStrs_scxInvalidColumnIndex 63246
-#define cxExportStrs_scxInvalidRowIndex 63247
-#define dxDockConsts_sdxManagerError 63248
-#define dxDockConsts_sdxAncestorError 63249
-#define dxsbstrs_DXSB_DEFAULTGROUP 63250
-#define dxsbstrs_DXSB_DEFAULTITEMCAPTION 63251
-#define dxsbstrs_DXSB_CANTDELETEGROUP 63252
-#define dxBarDBNavStrs_dxSBAR_DBNAVERROR1 63253
-#define dxBarDBNavStrs_dxSBAR_CATEGORYNAME 63254
-#define dxBarDBNavStrs_dxSBAR_DELETERECORD 63255
-#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_FIRST 63256
-#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_PRIOR 63257
-#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_NEXT 63258
-#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_LAST 63259
-#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_INSERT 63260
-#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_DELETE 63261
-#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_EDIT 63262
-#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_POST 63263
-#define RzDBStat_sRzCalcFields 63264
-#define RzDBStat_sRzFilter 63265
-#define dxDockConsts_sdxInvalidLayoutSiteDeleting 63266
-#define dxDockConsts_sdxInvalidFloatSiteDeleting 63267
-#define dxDockConsts_sdxInvalidFloatingDeleting 63268
-#define dxDockConsts_sdxInvalidParentAssigning 63269
-#define dxDockConsts_sdxInvalidOwner 63270
-#define dxDockConsts_sdxInvalidParent 63271
-#define dxDockConsts_sdxInvalidDockSiteParent 63272
-#define dxDockConsts_sdxInvalidFloatSiteParent 63273
-#define dxDockConsts_sdxInvalidPanelChild 63274
-#define dxDockConsts_sdxInvalidSiteChild 63275
-#define dxDockConsts_sdxInvaldZoneOwner 63276
-#define dxDockConsts_sdxInternalErrorAutoHide 63277
-#define dxDockConsts_sdxInternalErrorCreateLayout 63278
-#define dxDockConsts_sdxInternalErrorDestroyLayout 63279
-#define cxVGridConsts_cxSvgRTTICollectionAdd 63280
-#define cxVGridConsts_cxSvgRTTICollectionAddHint 63281
-#define cxVGridConsts_cxSvgRTTICollectionDelete 63282
-#define cxVGridConsts_cxSvgRTTICollectionDeleteHint 63283
-#define cxVGridConsts_cxSvgRTTICollectionSelectAll 63284
-#define cxVGridConsts_cxSvgRTTICollectionToolbar 63285
-#define cxVGridConsts_cxSvgRTTICollectionTextLabel 63286
-#define cxVGridConsts_cxSvgRTTICollectionMoveUp 63287
-#define cxVGridConsts_cxSvgRTTICollectionMoveUpHint 63288
-#define cxVGridConsts_cxSvgRTTICollectionMoveDown 63289
-#define cxVGridConsts_cxSvgRTTICollectionMoveDownHint 63290
-#define RzDBStat_sRzInactive 63291
-#define RzDBStat_sRzBrowse 63292
-#define RzDBStat_sRzEdit 63293
-#define RzDBStat_sRzInsert 63294
-#define RzDBStat_sRzSetKey 63295
-#define bdeconst_SLocalTransDirty 63296
-#define cxVGridConsts_cxSvgIndexError 63297
-#define cxVGridConsts_cxSvgInvalidRowClass 63298
-#define cxVGridConsts_cxSvgAssignRowsError 63299
-#define cxVGridConsts_cxSvgOKCaption 63300
-#define cxVGridConsts_cxSvgCancelCaption 63301
-#define cxVGridConsts_cxSvgCustomizeCaption 63302
-#define cxVGridConsts_cxSvgCustomizeCategoriesCaption 63303
-#define cxVGridConsts_cxSvgCustomizeDeleteCategory 63304
-#define cxVGridConsts_cxSvgCustomizeNewCategory 63305
-#define cxVGridConsts_cxSvgCustomizeRowsCaption 63306
-#define cxVGridConsts_cxSvgNewCategoryCaption 63307
-#define cxVGridConsts_cxSvgNewCategoryLabelCaption 63308
-#define cxVGridConsts_cxSvgRTTIInspectorEmptyGlyph 63309
-#define cxVGridConsts_cxSvgUnknown 63310
-#define cxVGridConsts_cxSvgRTTICollectionEditCaption 63311
-#define bdeconst_SSessionActive 63312
-#define bdeconst_SHandleError 63313
-#define bdeconst_SNoReferenceTableName 63314
-#define bdeconst_SEmptySQLStatement 63315
-#define bdeconst_SNoParameterValue 63316
-#define bdeconst_SLoginError 63317
-#define bdeconst_SInitError 63318
-#define bdeconst_SIDAPILangID 63319
-#define bdeconst_SBDEError 63320
-#define bdeconst_SIndexDoesNotExist 63321
-#define bdeconst_SNoTableName 63322
-#define bdeconst_SNoDataSetField 63323
-#define bdeconst_SNoCachedUpdates 63324
-#define bdeconst_SInvalidAliasName 63325
-#define bdeconst_SNoFieldAccess 63326
-#define bdeconst_SUntitled 63327
-#define OleConst_SCannotActivate 63328
-#define OleConst_SNoWindowHandle 63329
-#define OleConst_SInvalidLicense 63330
-#define OleConst_SNotLicensed 63331
-#define OleConst_sNoRunningObject 63332
-#define bdeconst_SAutoSessionExclusive 63333
-#define bdeconst_SAutoSessionExists 63334
-#define bdeconst_SAutoSessionActive 63335
-#define bdeconst_SDuplicateDatabaseName 63336
-#define bdeconst_SDuplicateSessionName 63337
-#define bdeconst_SInvalidSessionName 63338
-#define bdeconst_SDatabaseNameMissing 63339
-#define bdeconst_SSessionNameMissing 63340
-#define bdeconst_SDatabaseOpen 63341
-#define bdeconst_SDatabaseClosed 63342
-#define bdeconst_SDatabaseHandleSet 63343
-#define cxGridPopupMenuConsts_cxSGridAlignmentSubMenu 63344
-#define cxGridPopupMenuConsts_cxSGridAlignLeft 63345
-#define cxGridPopupMenuConsts_cxSGridAlignRight 63346
-#define cxGridPopupMenuConsts_cxSGridAlignCenter 63347
-#define cxGridPopupMenuConsts_cxSGridRemoveColumn 63348
-#define cxGridPopupMenuConsts_cxSGridFieldChooser 63349
-#define cxGridPopupMenuConsts_cxSGridBestFit 63350
-#define cxGridPopupMenuConsts_cxSGridBestFitAllColumns 63351
-#define cxGridPopupMenuConsts_cxSGridShowFooter 63352
-#define cxGridPopupMenuConsts_cxSGridShowGroupFooter 63353
-#define cxGridPopupMenuConsts_cxSGridSumMenuItem 63354
-#define cxGridPopupMenuConsts_cxSGridMinMenuItem 63355
-#define cxGridPopupMenuConsts_cxSGridMaxMenuItem 63356
-#define cxGridPopupMenuConsts_cxSGridCountMenuItem 63357
-#define cxGridPopupMenuConsts_cxSGridAvgMenuItem 63358
-#define cxGridPopupMenuConsts_cxSGridNoneMenuItem 63359
-#define dxExtCtrlsStrs_sdxPureColorFuchsia 63360
-#define dxExtCtrlsStrs_sdxPureColorCream 63361
-#define dxNavBarConsts_sdxNavigationPaneOverflowPanelCustomizeHint 63362
-#define dxNavBarConsts_sdxInvalideGroupControl 63363
-#define dxNavBarConsts_sdxCannotFindView 63364
-#define dxNavBarConsts_sdxViewAlreadyExists 63365
-#define dxNavBarConsts_sdxNavBarOffice11ShowMoreButtons 63366
-#define dxNavBarConsts_sdxNavBarOffice11ShowFewerButtons 63367
-#define dxNavBarConsts_sdxNavBarOffice11AddRemoveButtons 63368
-#define cxGridPopupMenuConsts_cxSGridNone 63369
-#define cxGridPopupMenuConsts_cxSGridSortColumnAsc 63370
-#define cxGridPopupMenuConsts_cxSGridSortColumnDesc 63371
-#define cxGridPopupMenuConsts_cxSGridClearSorting 63372
-#define cxGridPopupMenuConsts_cxSGridGroupByThisField 63373
-#define cxGridPopupMenuConsts_cxSGridRemoveThisGroupItem 63374
-#define cxGridPopupMenuConsts_cxSGridGroupByBox 63375
-#define dxExtCtrlsStrs_sdxPureColorLime 63376
-#define dxExtCtrlsStrs_sdxPureColorYellow 63377
-#define dxExtCtrlsStrs_sdxPureColorGreen 63378
-#define dxExtCtrlsStrs_sdxPureColorTeal 63379
-#define dxExtCtrlsStrs_sdxPureColorAqua 63380
-#define dxExtCtrlsStrs_sdxPureColorBlue 63381
-#define dxExtCtrlsStrs_sdxPureColorWhite 63382
-#define dxExtCtrlsStrs_sdxPureColorOlive 63383
-#define dxExtCtrlsStrs_sdxPureColorMoneyGreen 63384
-#define dxExtCtrlsStrs_sdxPureColorNavy 63385
-#define dxExtCtrlsStrs_sdxPureColorSkyBlue 63386
-#define dxExtCtrlsStrs_sdxPureColorGray 63387
-#define dxExtCtrlsStrs_sdxPureColorMedGray 63388
-#define dxExtCtrlsStrs_sdxPureColorSilver 63389
-#define dxExtCtrlsStrs_sdxPureColorMaroon 63390
-#define dxExtCtrlsStrs_sdxPureColorPurple 63391
-#define dxExtCtrlsStrs_sdxSysColorInactiveBorder 63392
-#define dxExtCtrlsStrs_sdxSysColorAppWorkSpace 63393
-#define dxExtCtrlsStrs_sdxSysColorHighLight 63394
-#define dxExtCtrlsStrs_sdxSysColorHighLighText 63395
-#define dxExtCtrlsStrs_sdxSysColorBtnFace 63396
-#define dxExtCtrlsStrs_sdxSysColorBtnShadow 63397
-#define dxExtCtrlsStrs_sdxSysColorGrayText 63398
-#define dxExtCtrlsStrs_sdxSysColorBtnText 63399
-#define dxExtCtrlsStrs_sdxSysColorInactiveCaptionText 63400
-#define dxExtCtrlsStrs_sdxSysColorBtnHighligh 63401
-#define dxExtCtrlsStrs_sdxSysColor3DDkShadow 63402
-#define dxExtCtrlsStrs_sdxSysColor3DLight 63403
-#define dxExtCtrlsStrs_sdxSysColorInfoText 63404
-#define dxExtCtrlsStrs_sdxSysColorInfoBk 63405
-#define dxExtCtrlsStrs_sdxPureColorBlack 63406
-#define dxExtCtrlsStrs_sdxPureColorRed 63407
-#define dxBarStrs_dxSBAR_MENUANIM3 63408
-#define dxBarStrs_dxSBAR_MENUANIM4 63409
-#define dxBarStrs_dxSBAR_MENUANIM5 63410
-#define dxExtCtrlsStrs_sdxAutoColorText 63411
-#define dxExtCtrlsStrs_sdxCustomColorText 63412
-#define dxExtCtrlsStrs_sdxSysColorScrollBar 63413
-#define dxExtCtrlsStrs_sdxSysColorBackground 63414
-#define dxExtCtrlsStrs_sdxSysColorActiveCaption 63415
-#define dxExtCtrlsStrs_sdxSysColorInactiveCaption 63416
-#define dxExtCtrlsStrs_sdxSysColorMenu 63417
-#define dxExtCtrlsStrs_sdxSysColorWindow 63418
-#define dxExtCtrlsStrs_sdxSysColorWindowFrame 63419
-#define dxExtCtrlsStrs_sdxSysColorMenuText 63420
-#define dxExtCtrlsStrs_sdxSysColorWindowText 63421
-#define dxExtCtrlsStrs_sdxSysColorCaptionText 63422
-#define dxExtCtrlsStrs_sdxSysColorActiveBorder 63423
-#define dxBarStrs_dxSBAR_TOOLBARADD 63424
-#define dxBarStrs_dxSBAR_TOOLBARRENAME 63425
-#define dxBarStrs_dxSBAR_CATEGORYNAME 63426
-#define dxBarStrs_dxSBAR_TOOLBARNAME 63427
-#define dxBarStrs_dxSBAR_MODIFY 63428
-#define dxBarStrs_dxSBAR_PERSMENUSANDTOOLBARS 63429
-#define dxBarStrs_dxSBAR_MENUSSHOWRECENTITEMS 63430
-#define dxBarStrs_dxSBAR_SHOWFULLMENUSAFTERDELAY 63431
-#define dxBarStrs_dxSBAR_RESETUSAGEDATA 63432
-#define dxBarStrs_dxSBAR_OTHEROPTIONS 63433
-#define dxBarStrs_dxSBAR_LARGEICONS 63434
-#define dxBarStrs_dxSBAR_HINTOPT1 63435
-#define dxBarStrs_dxSBAR_HINTOPT2 63436
-#define dxBarStrs_dxSBAR_MENUANIMATIONS 63437
-#define dxBarStrs_dxSBAR_MENUANIM1 63438
-#define dxBarStrs_dxSBAR_MENUANIM2 63439
-#define dxBarStrs_dxSBAR_TRESET 63440
-#define dxBarStrs_dxSBAR_CLOSE 63441
-#define dxBarStrs_dxSBAR_CAPTION 63442
-#define dxBarStrs_dxSBAR_CATEGORIES 63443
-#define dxBarStrs_dxSBAR_COMMANDS 63444
-#define dxBarStrs_dxSBAR_DESCRIPTION 63445
-#define dxBarStrs_dxSBAR_CUSTOMIZE 63446
-#define dxBarStrs_dxSBAR_ADDREMOVEBUTTONS 63447
-#define dxBarStrs_dxSBAR_MOREBUTTONS 63448
-#define dxBarStrs_dxSBAR_RESETTOOLBAR 63449
-#define dxBarStrs_dxSBAR_EXPAND 63450
-#define dxBarStrs_dxSBAR_DRAGTOMAKEMENUFLOAT 63451
-#define dxBarStrs_dxSBAR_TOOLBARNEWNAME 63452
-#define dxBarStrs_dxSBAR_CATEGORYADD 63453
-#define dxBarStrs_dxSBAR_CATEGORYINSERT 63454
-#define dxBarStrs_dxSBAR_CATEGORYRENAME 63455
-#define dxBarStrs_dxSBAR_CLEAR 63456
-#define dxBarStrs_dxSBAR_VISIBLE 63457
-#define dxBarStrs_dxSBAR_OK 63458
-#define dxBarStrs_dxSBAR_CANCEL 63459
-#define dxBarStrs_dxSBAR_SUBMENUEDITOR 63460
-#define dxBarStrs_dxSBAR_SUBMENUEDITORCAPTION 63461
-#define dxBarStrs_dxSBAR_INSERTEX 63462
-#define dxBarStrs_dxSBAR_MOVEUP 63463
-#define dxBarStrs_dxSBAR_MOVEDOWN 63464
-#define dxBarStrs_dxSBAR_TABSHEET1 63465
-#define dxBarStrs_dxSBAR_TABSHEET2 63466
-#define dxBarStrs_dxSBAR_TABSHEET3 63467
-#define dxBarStrs_dxSBAR_TOOLBARS 63468
-#define dxBarStrs_dxSBAR_TNEW 63469
-#define dxBarStrs_dxSBAR_TRENAME 63470
-#define dxBarStrs_dxSBAR_TDELETE 63471
-#define dxBarStrs_dxSBAR_CP_ADDITEM 63472
-#define dxBarStrs_dxSBAR_CP_DELETEBAR 63473
-#define dxBarStrs_dxSBAR_CP_RESET 63474
-#define dxBarStrs_dxSBAR_CP_DELETE 63475
-#define dxBarStrs_dxSBAR_CP_NAME 63476
-#define dxBarStrs_dxSBAR_CP_CAPTION 63477
-#define dxBarStrs_dxSBAR_CP_DEFAULTSTYLE 63478
-#define dxBarStrs_dxSBAR_CP_TEXTONLYALWAYS 63479
-#define dxBarStrs_dxSBAR_CP_TEXTONLYINMENUS 63480
-#define dxBarStrs_dxSBAR_CP_IMAGEANDTEXT 63481
-#define dxBarStrs_dxSBAR_CP_BEGINAGROUP 63482
-#define dxBarStrs_dxSBAR_CP_VISIBLE 63483
-#define dxBarStrs_dxSBAR_CP_MOSTRECENTLYUSED 63484
-#define dxBarStrs_dxSBAR_ADDEX 63485
-#define dxBarStrs_dxSBAR_RENAMEEX 63486
-#define dxBarStrs_dxSBAR_DELETE 63487
-#define dxBarStrs_dxSBAR_CANTASSIGNCONTROL 63488
-#define dxBarStrs_dxSBAR_WANTTORESETTOOLBAR 63489
-#define dxBarStrs_dxSBAR_WANTTORESETUSAGEDATA 63490
-#define dxBarStrs_dxSBAR_BARMANAGERMORETHENONE 63491
-#define dxBarStrs_dxSBAR_BARMANAGERBADOWNER 63492
-#define dxBarStrs_dxSBAR_NOBARMANAGERS 63493
-#define dxBarStrs_dxSBAR_WANTTODELETETOOLBAR 63494
-#define dxBarStrs_dxSBAR_WANTTODELETECATEGORY 63495
-#define dxBarStrs_dxSBAR_WANTTOCLEARCOMMANDS 63496
-#define dxBarStrs_dxSBAR_RECURSIVESUBITEMS 63497
-#define dxBarStrs_dxSBAR_COMMANDNAMECANNOTBEBLANK 63498
-#define dxBarStrs_dxSBAR_TOOLBAREXISTS 63499
-#define dxBarStrs_dxSBAR_RECURSIVEGROUPS 63500
-#define dxBarStrs_dxSBAR_DEFAULTCATEGORYNAME 63501
-#define dxBarStrs_dxSBAR_CP_ADDSUBITEM 63502
-#define dxBarStrs_dxSBAR_CP_ADDBUTTON 63503
-#define dxBarStrs_dxSBAR_COLOR_STR_8 63504
-#define dxBarStrs_dxSBAR_COLOR_STR_9 63505
-#define dxBarStrs_dxSBAR_COLOR_STR_10 63506
-#define dxBarStrs_dxSBAR_COLOR_STR_11 63507
-#define dxBarStrs_dxSBAR_COLOR_STR_12 63508
-#define dxBarStrs_dxSBAR_COLOR_STR_13 63509
-#define dxBarStrs_dxSBAR_COLOR_STR_14 63510
-#define dxBarStrs_dxSBAR_COLOR_STR_15 63511
-#define dxBarStrs_dxSBAR_COLORAUTOTEXT 63512
-#define dxBarStrs_dxSBAR_COLORCUSTOMTEXT 63513
-#define dxBarStrs_dxSBAR_DATETODAY 63514
-#define dxBarStrs_dxSBAR_DATECLEAR 63515
-#define dxBarStrs_dxSBAR_DATEDIALOGCAPTION 63516
-#define dxBarStrs_dxSBAR_TREEVIEWDIALOGCAPTION 63517
-#define dxBarStrs_dxSBAR_IMAGEDIALOGCAPTION 63518
-#define dxBarStrs_dxSBAR_PLACEFORCONTROL 63519
-#define raSynEditStrConst_raSYNS_ScrollInfoFmt 63520
-#define raSynEditStrConst_raSYNS_ScrollInfoFmtTop 63521
-#define raSynEditStrConst_raSYNS_EDuplicateShortcut 63522
-#define raSynEditStrConst_raSYNS_FilterPascal 63523
-#define raSynEditStrConst_raSYNS_LangPascal 63524
-#define raSynEditTextBuffer_SListIndexOutOfBounds 63525
-#define dxBarStrs_dxSBAR_DIALOGOK 63526
-#define dxBarStrs_dxSBAR_DIALOGCANCEL 63527
-#define dxBarStrs_dxSBAR_COLOR_STR_0 63528
-#define dxBarStrs_dxSBAR_COLOR_STR_1 63529
-#define dxBarStrs_dxSBAR_COLOR_STR_2 63530
-#define dxBarStrs_dxSBAR_COLOR_STR_3 63531
-#define dxBarStrs_dxSBAR_COLOR_STR_4 63532
-#define dxBarStrs_dxSBAR_COLOR_STR_5 63533
-#define dxBarStrs_dxSBAR_COLOR_STR_6 63534
-#define dxBarStrs_dxSBAR_COLOR_STR_7 63535
-#define ppJvInspector_sppJvAssertDataParent 63536
-#define ppJvInspector_sppJvAssertParent 63537
-#define ppJvInspector_sppJvAssertPropInfo 63538
-#define ppInspector_sJvInspDataNoSelectionController 63539
-#define raSynEditStrConst_raSYNS_AttrAssembler 63540
-#define raSynEditStrConst_raSYNS_AttrCharacter 63541
-#define raSynEditStrConst_raSYNS_AttrComment 63542
-#define raSynEditStrConst_raSYNS_AttrFloat 63543
-#define raSynEditStrConst_raSYNS_AttrHexadecimal 63544
-#define raSynEditStrConst_raSYNS_AttrIdentifier 63545
-#define raSynEditStrConst_raSYNS_AttrNumber 63546
-#define raSynEditStrConst_raSYNS_AttrPreprocessor 63547
-#define raSynEditStrConst_raSYNS_AttrReservedWord 63548
-#define raSynEditStrConst_raSYNS_AttrSpace 63549
-#define raSynEditStrConst_raSYNS_AttrString 63550
-#define raSynEditStrConst_raSYNS_AttrSymbol 63551
-#define ppJvInspector_sppJvInspItemUnassigned 63552
-#define ppJvInspector_sppJvInspItemNoValue 63553
-#define ppJvInspector_sppJvInspItemNotAChild 63554
-#define ppJvInspector_sppJvInspItemColNotFound 63555
-#define ppJvInspector_sppJvInspItemItemIsNotCol 63556
-#define ppJvInspector_sppJvInspItemInvalidPropValue 63557
-#define ppJvInspector_sppJvInspDataNoAccessAs 63558
-#define ppJvInspector_sppJvInspDataNotInit 63559
-#define ppJvInspector_sppJvInspDataNotAssigned 63560
-#define ppJvInspector_sppJvInspDataNoValue 63561
-#define ppJvInspector_sppJvInspDataStrTooLong 63562
-#define ppJvInspector_sppJvInspNoGenReg 63563
-#define ppJvInspector_sppJvInspPaintNotActive 63564
-#define ppJvInspector_sppJvInspPaintOnlyUsedOnce 63565
-#define ppJvInspector_sppJvAssertSetTopIndex 63566
-#define ppJvInspector_sppJvAssertInspectorPainter 63567
-#define ppJclResources_ppJclRsRTTIUnknownIdentifier 63568
-#define ppJclResources_ppJclRsRTTIOrdinal 63569
-#define ppJclResources_ppJclRsRTTITypeError 63570
-#define ppJclResources_ppJclRsRTTITypeInfoAt 63571
-#define ppJclResources_ppJclRsRTTIName 63572
-#define ppJclResources_ppJclRsRTTITypeKind 63573
-#define ppJclResources_ppJclRsRTTIOrdinalType 63574
-#define ppJclResources_ppJclRsRTTIMinValue 63575
-#define ppJclResources_ppJclRsRTTIMaxValue 63576
-#define ppJclResources_ppJclRsRTTINameList 63577
-#define ppJclResources_ppJclRsRTTIUnitName 63578
-#define ppJclResources_ppJclRsRTTIBasedOn 63579
-#define ppJclResources_ppJclRsRTTIFloatType 63580
-#define ppJvInspector_sppJvInspItemHasParent 63581
-#define ppJvInspector_sppJvInspItemValueException 63582
-#define ppJvInspector_sppJvInspItemUnInitialized 63583
-#define PymeConst_SNoPuedeEliminarLa 63584
-#define PymeConst_SEstaCarpetaNoEsta 63585
-#define PymeConst_SDeseaBorrarEstaCa 63586
-#define PymeConst_SExploradorDeConsul 63587
-#define PymeConst_SConsutlas 63588
-#define PymeConst_SExploradorDeReport 63589
-#define PymeConst_SReporte 63590
-#define PymeConst_SSeguroQueDeseaEli6 63591
-#define PymeConst_SSeguroQueDeseaEli7 63592
-#define PymeConst_SSeguroQueDeseaEli8 63593
-#define PymeConst_SSeguroQueDeseaEli9 63594
-#define PymeConst_SConexionExistosa 63595
-#define PymeConst_SImportacionDeDatos 63596
-#define PymeConst_SDatosAImportar 63597
-#define PymeConst_SGrabarCambiosConsulta 63598
-#define ppJclResources_ppJclRsRTTIValueOutOfRange 63599
-#define PymeConst_SErrorEnProcesoIn 63600
-#define PymeConst_SDebeEspecificarUn3 63601
-#define PymeConst_SDisenos 63602
-#define PymeConst_SUsarEsteDiseno 63603
-#define PymeConst_SNoSePuedeEliminar 63604
-#define PymeConst_SSeguroQueDeseaEli2 63605
-#define PymeConst_SNOTATodosLosDato 63606
-#define PymeConst_SCompilacionExitosa 63607
-#define PymeConst_SProceso 63608
-#define PymeConst_SGestionDeDocumento 63609
-#define PymeConst_SSeguroQueDeseaEli4 63610
-#define PymeConst_SNuevaConsulta 63611
-#define PymeConst_SNuevoReporte 63612
-#define PymeConst_SNuevoFolder 63613
-#define PymeConst_SNuevoFolder1 63614
-#define PymeConst_SNombreDelFolder 63615
-#define PymeConst_SExportandoCia 63616
-#define PymeConst_SIniFileNotFound 63617
-#define PymeConst_SAppFolderNoValido 63618
-#define PymeConst_SHayCambiosRealizad 63619
-#define PymeConst_SSeguroQueDeseaEli 63620
-#define PymeConst_SNoSePudoRestaurar 63621
-#define PymeConst_SNoSePudoRestaurar1 63622
-#define PymeConst_SLeyendoEstructuraD 63623
-#define PymeConst_SUsuarioClaveNoE 63624
-#define PymeConst_SEdicionProfesional 63625
-#define PymeConst_SEdicionEstandard 63626
-#define PymeConst_SUsuarios 63627
-#define PymeConst_SDiasRestantes 63628
-#define PymeConst_STasasDeCambio 63629
-#define PymeConst_SProcesoCompletado 63630
-#define PymeConst_SVistas 63631
-#define TXString_SPRNDeviceName 63632
-#define TXString_SPRNDefaultExt 63633
-#define TXString_SPRNDefaultExtFilter 63634
-#define TXString_SPRNDeviceDescription 63635
-#define ABSDecConst2_sProtectionCircular 63636
-#define ABSDecConst2_sStringFormatExists 63637
-#define ABSDecConst2_sInvalidStringFormat 63638
-#define ABSDecConst2_sInvalidFormatString 63639
-#define ABSDecConst2_sFMT_COPY 63640
-#define ABSDecConst2_sFMT_HEX 63641
-#define ABSDecConst2_sFMT_HEXL 63642
-#define ABSDecConst2_sFMT_MIME64 63643
-#define ABSDecConst2_sFMT_UU 63644
-#define ABSDecConst2_sFMT_XX 63645
-#define ABSDecConst2_sInvalidKeySize 63646
-#define ABSDecConst2_sNotInitialized 63647
-#define TXString_SXTMDeviceName 63648
-#define TXString_SXTMDefaultExt 63649
-#define TXString_SXTMDefaultExtFilter 63650
-#define TXString_SXTMDeviceDescription 63651
-#define TXString_SHTMDeviceName 63652
-#define TXString_SHTMDefaultExt 63653
-#define TXString_SHTMDefaultExtFilter 63654
-#define TXString_SHTMDeviceDescription 63655
-#define TXString_SRTFDeviceName 63656
-#define TXString_SRTFDefaultExt 63657
-#define TXString_SRTFDefaultExtFilter 63658
-#define TXString_SRTFDeviceDescription 63659
-#define TXString_SPDFDeviceName 63660
-#define TXString_SPDFDefaultExt 63661
-#define TXString_SPDFDefaultExtFilter 63662
-#define TXString_SPDFDeviceDescription 63663
-#define TXString_SWK1DeviceName 63664
-#define TXString_SWK1DefaultExt 63665
-#define TXString_SWK1DefaultExtFilter 63666
-#define TXString_SWK1DeviceDescription 63667
-#define TXString_SWQ1DeviceName 63668
-#define TXString_SWQ1DefaultExt 63669
-#define TXString_SWQ1DefaultExtFilter 63670
-#define TXString_SWQ1DeviceDescription 63671
-#define TXString_SXLSDeviceName 63672
-#define TXString_SXLSDefaultExt 63673
-#define TXString_SXLSDefaultExtFilter 63674
-#define TXString_SXLSDeviceDescription 63675
-#define TXString_SBMPDeviceName 63676
-#define TXString_SBMPDefaultExt 63677
-#define TXString_SBMPDefaultExtFilter 63678
-#define TXString_SBMPDeviceDescription 63679
+#define raSynEditStrConst_raSYNS_AttrCharacter 63072
+#define raSynEditStrConst_raSYNS_AttrComment 63073
+#define raSynEditStrConst_raSYNS_AttrFloat 63074
+#define raSynEditStrConst_raSYNS_AttrHexadecimal 63075
+#define raSynEditStrConst_raSYNS_AttrIdentifier 63076
+#define raSynEditStrConst_raSYNS_AttrNumber 63077
+#define raSynEditStrConst_raSYNS_AttrPreprocessor 63078
+#define raSynEditStrConst_raSYNS_AttrReservedWord 63079
+#define raSynEditStrConst_raSYNS_AttrSpace 63080
+#define raSynEditStrConst_raSYNS_AttrString 63081
+#define raSynEditStrConst_raSYNS_AttrSymbol 63082
+#define raSynEditStrConst_raSYNS_ScrollInfoFmt 63083
+#define raSynEditStrConst_raSYNS_ScrollInfoFmtTop 63084
+#define raSynEditStrConst_raSYNS_EDuplicateShortcut 63085
+#define raSynEditStrConst_raSYNS_FilterPascal 63086
+#define raSynEditStrConst_raSYNS_LangPascal 63087
+#define acQBStrings_acQBSortTypeDescending 63088
+#define acQBStrings_acQBMoveUp 63089
+#define acQBStrings_acQBMoveDown 63090
+#define acQBStrings_acQBRemoveItem 63091
+#define acQBStrings_acQBInsertEmtyItem 63092
+#define acQBStrings_acQBEditSubMenu 63093
+#define acQBStrings_acQBCut 63094
+#define acQBStrings_acQBCopy 63095
+#define acQBStrings_acQBPaste 63096
+#define acQBStrings_acQBSelectAll 63097
+#define acQBStrings_acQBAllObjects 63098
+#define acQBStrings_acQBErrorUnknownError 63099
+#define acQBStrings_acQBErrorExecQuery 63100
+#define acQBStrings_acQBErrorBadXML 63101
+#define acQBStrings_acQBErrorBadXMLTagNotFound 63102
+#define raSynEditStrConst_raSYNS_AttrAssembler 63103
+#define acQBStrings_acMoveForward 63104
+#define acQBStrings_acAddObject 63105
+#define acQBStrings_acAddSubQuery 63106
+#define acQBStrings_acUnionSubMenu 63107
+#define acQBStrings_acABNewUnionSubQuery 63108
+#define acQBStrings_acQBEncloseWithBrackets 63109
+#define acQBStrings_acQBRemoveBrackets 63110
+#define acQBStrings_acQBGCSelect 63111
+#define acQBStrings_acQBGCExpression 63112
+#define acQBStrings_acQBGCAlias 63113
+#define acQBStrings_acQBGCSortType 63114
+#define acQBStrings_acQBGCSortOrder 63115
+#define acQBStrings_acQBGCGroupBy 63116
+#define acQBStrings_acQBGCCriteria 63117
+#define acQBStrings_acQBGCOr 63118
+#define acQBStrings_acQBSortTypeAscending 63119
+#define acQBStrings_acQBNoMetadataProvider 63120
+#define acQBStrings_acQBNoConnectionObject 63121
+#define acQBStrings_acQBDialectDontSupportUnions 63122
+#define acQBStrings_acQBDialectDontSupportUnionsInSubQueries 63123
+#define acQBStrings_acQBDialectDontSupportUnionsBrackets 63124
+#define acQBStrings_acQBDialectDontSupportUnionsBracketsInSubQuery 63125
+#define acQBStrings_acQBMetaProviderCantLoadMetadata 63126
+#define acQBStrings_acQBMetaProviderCantLoadMetadataForDatabase 63127
+#define acQBStrings_acQBRemove 63128
+#define acQBStrings_acQBEdit 63129
+#define acQBStrings_acQBSwitchToDerivedTable 63130
+#define acQBStrings_acQBAftofitHeight 63131
+#define acQBStrings_acQBAbout 63132
+#define acQBStrings_acQBMainQuery 63133
+#define acQBStrings_acQBInsertSubQuery 63134
+#define acQBStrings_acMoveBackward 63135
+#define cxTLStrs_scxInvalidStreamFormat 63136
+#define cxTLStrs_scxMultiSelectRequired 63137
+#define cxTLStrs_scxBands 63138
+#define cxTLStrs_scxCustomizeCaption 63139
+#define cxTLStrs_scxColumnsCaption 63140
+#define cxTLStrs_scxBandsCaption 63141
+#define cxTLStrs_scxOperationNotSupported 63142
+#define cxTLStrs_scxTreeListDeletingFocusedConfirmationText 63143
+#define cxTLStrs_scxTreeListDeletingConfirmationCaption 63144
+#define acQBStrings_acQBBadObjectName 63145
+#define acQBStrings_acQBBadSelectStatement 63146
+#define acQBStrings_acQBBadFromObjectExpression 63147
+#define acQBStrings_acQBUnexpectedTokenAt 63148
+#define acQBStrings_acQBCantSelectExpression 63149
+#define acQBStrings_acQBCantAssignObjAlias 63150
+#define acQBStrings_acQBNoSyntaxProvider 63151
+#define MidConst_SNoCircularReference 63152
+#define MidConst_SErrorLoadingMidas 63153
+#define MidConst_SNoConnectToBroker 63154
+#define MidConst_SNoParentConnection 63155
+#define MidConst_SInvalidOptParamType 63156
+#define MidConst_SConstraintFailed 63157
+#define MidConst_SField 63158
+#define MidConst_SRecConstFail 63159
+#define MidConst_SFieldConstFail 63160
+#define MidConst_SDefExprFail 63161
+#define MidConst_SNoEditsAllowed 63162
+#define MidConst_SNoDeletesAllowed 63163
+#define MidConst_SNoInsertsAllowed 63164
+#define MidConst_SConnectionMissing 63165
+#define MidConst_SNoCircularConnection 63166
+#define cxTLStrs_scxIndexOutOfBounds 63167
+#define TeeConst_TeeMsg_FunctionDivide 63168
+#define TeeConst_TeeMsg_FunctionHigh 63169
+#define TeeConst_TeeMsg_FunctionLow 63170
+#define TeeConst_TeeMsg_FunctionAverage 63171
+#define TeeConst_TeeMsg_DefaultFontName 63172
+#define TeeConst_TeeMsg_CheckPointerSize 63173
+#define TeeConst_TeeMsg_FunctionPeriod 63174
+#define TeeConst_TeeMsg_PieOther 63175
+#define TeeConst_TeeMsg_ValuesX 63176
+#define TeeConst_TeeMsg_ValuesY 63177
+#define TeeConst_TeeMsg_ValuesPie 63178
+#define TeeConst_TeeMsg_ValuesBar 63179
+#define TeeConst_TeeMsg_ValuesAngle 63180
+#define MidConst_SNoDataProvider 63181
+#define MidConst_SInvalidDataPacket 63182
+#define MidConst_SRefreshError 63183
+#define TeeConst_TeeMsg_GalleryFastLine 63184
+#define TeeConst_TeeMsg_Rotation 63185
+#define TeeConst_TeeMsg_PieSample1 63186
+#define TeeConst_TeeMsg_PieSample2 63187
+#define TeeConst_TeeMsg_PieSample3 63188
+#define TeeConst_TeeMsg_PieSample4 63189
+#define TeeConst_TeeMsg_PieSample5 63190
+#define TeeConst_TeeMsg_PieSample6 63191
+#define TeeConst_TeeMsg_PieSample7 63192
+#define TeeConst_TeeMsg_PieSample8 63193
+#define TeeConst_TeeMsg_GalleryStandard 63194
+#define TeeConst_TeeMsg_GalleryFunctions 63195
+#define TeeConst_TeeMsg_DefaultFontSize 63196
+#define TeeConst_TeeMsg_FunctionAdd 63197
+#define TeeConst_TeeMsg_FunctionSubtract 63198
+#define TeeConst_TeeMsg_FunctionMultiply 63199
+#define TeeConst_TeeMsg_MaxPointsPerPage 63200
+#define TeeConst_TeeMsg_3dPercent 63201
+#define TeeConst_TeeMsg_CircularSeries 63202
+#define TeeConst_TeeMsg_BarWidthPercent 63203
+#define TeeConst_TeeMsg_BarOffsetPercent 63204
+#define TeeConst_TeeMsg_DefaultPercentOf 63205
+#define TeeConst_TeeMsg_DefPercentFormat 63206
+#define TeeConst_TeeMsg_DefValueFormat 63207
+#define TeeConst_TeeMsg_AxisTitle 63208
+#define TeeConst_TeeMsg_AxisLabels 63209
+#define TeeConst_TeeMsg_GalleryLine 63210
+#define TeeConst_TeeMsg_GalleryPoint 63211
+#define TeeConst_TeeMsg_GalleryArea 63212
+#define TeeConst_TeeMsg_GalleryBar 63213
+#define TeeConst_TeeMsg_GalleryHorizBar 63214
+#define TeeConst_TeeMsg_GalleryPie 63215
+#define DlgMensajes_SysMsgDlgNoATodo 63216
+#define DlgMensajes_SysMsgDlgSiATodo 63217
+#define TeeConst_TeeMsg_LegendTopPos 63218
+#define TeeConst_TeeMsg_LegendFirstValue 63219
+#define TeeConst_TeeMsg_LegendColorWidth 63220
+#define TeeConst_TeeMsg_SeriesSetDataSource 63221
+#define TeeConst_TeeMsg_SeriesInvDataSource 63222
+#define TeeConst_TeeMsg_FillSample 63223
+#define TeeConst_TeeMsg_Angle 63224
+#define TeeConst_TeeMsg_AxisLogDateTime 63225
+#define TeeConst_TeeMsg_AxisLogNotPositive 63226
+#define TeeConst_TeeMsg_AxisLabelSep 63227
+#define TeeConst_TeeMsg_AxisIncrementNeg 63228
+#define TeeConst_TeeMsg_AxisMinMax 63229
+#define TeeConst_TeeMsg_AxisMaxMin 63230
+#define TeeConst_TeeMsg_AxisLogBase 63231
+#define cxExportStrs_scxWorkbookWrite 63232
+#define cxExportStrs_scxInvalidCellDimension 63233
+#define cxExportStrs_scxBoolTrue 63234
+#define DlgMensajes_SysMsgDlgAviso 63235
+#define DlgMensajes_SysMsgDlgError 63236
+#define DlgMensajes_SysMsgDlgInformacion 63237
+#define DlgMensajes_SysMsgDlgConfirma 63238
+#define DlgMensajes_SysMsgDlgSi 63239
+#define DlgMensajes_SysMsgDlgNo 63240
+#define DlgMensajes_SysMsgDlgOK 63241
+#define DlgMensajes_SysMsgDlgCancelar 63242
+#define DlgMensajes_SysMsgDlgAyuda 63243
+#define DlgMensajes_SysMsgDlgAbortar 63244
+#define DlgMensajes_SysMsgDlgReintentar 63245
+#define DlgMensajes_SysMsgDlgIgnorar 63246
+#define DlgMensajes_SysMsgDlgTodo 63247
+#define ppJvInspector_sppJvAssertDataParent 63248
+#define ppJvInspector_sppJvAssertParent 63249
+#define ppJvInspector_sppJvAssertPropInfo 63250
+#define ppInspector_sJvInspDataNoSelectionController 63251
+#define cxExportStrs_scxUnsupportedExport 63252
+#define cxExportStrs_scxStyleManagerKill 63253
+#define cxExportStrs_scxExportToHtml 63254
+#define cxExportStrs_scxExportToXml 63255
+#define cxExportStrs_scxExportToText 63256
+#define cxExportStrs_scxIllegalWidth 63257
+#define cxExportStrs_scxInvalidColumnRowCount 63258
+#define cxExportStrs_scxIllegalHeight 63259
+#define cxExportStrs_scxInvalidColumnIndex 63260
+#define cxExportStrs_scxInvalidRowIndex 63261
+#define cxExportStrs_scxInvalidStyleIndex 63262
+#define cxExportStrs_scxExportToExcel 63263
+#define ppJvInspector_sppJvInspItemUnassigned 63264
+#define ppJvInspector_sppJvInspItemNoValue 63265
+#define ppJvInspector_sppJvInspItemNotAChild 63266
+#define ppJvInspector_sppJvInspItemColNotFound 63267
+#define ppJvInspector_sppJvInspItemItemIsNotCol 63268
+#define ppJvInspector_sppJvInspItemInvalidPropValue 63269
+#define ppJvInspector_sppJvInspDataNoAccessAs 63270
+#define ppJvInspector_sppJvInspDataNotInit 63271
+#define ppJvInspector_sppJvInspDataNotAssigned 63272
+#define ppJvInspector_sppJvInspDataNoValue 63273
+#define ppJvInspector_sppJvInspDataStrTooLong 63274
+#define ppJvInspector_sppJvInspNoGenReg 63275
+#define ppJvInspector_sppJvInspPaintNotActive 63276
+#define ppJvInspector_sppJvInspPaintOnlyUsedOnce 63277
+#define ppJvInspector_sppJvAssertSetTopIndex 63278
+#define ppJvInspector_sppJvAssertInspectorPainter 63279
+#define ppJclResources_ppJclRsRTTIUnknownIdentifier 63280
+#define ppJclResources_ppJclRsRTTIOrdinal 63281
+#define ppJclResources_ppJclRsRTTITypeError 63282
+#define ppJclResources_ppJclRsRTTITypeInfoAt 63283
+#define ppJclResources_ppJclRsRTTIName 63284
+#define ppJclResources_ppJclRsRTTITypeKind 63285
+#define ppJclResources_ppJclRsRTTIOrdinalType 63286
+#define ppJclResources_ppJclRsRTTIMinValue 63287
+#define ppJclResources_ppJclRsRTTIMaxValue 63288
+#define ppJclResources_ppJclRsRTTINameList 63289
+#define ppJclResources_ppJclRsRTTIUnitName 63290
+#define ppJclResources_ppJclRsRTTIBasedOn 63291
+#define ppJclResources_ppJclRsRTTIFloatType 63292
+#define ppJvInspector_sppJvInspItemHasParent 63293
+#define ppJvInspector_sppJvInspItemValueException 63294
+#define ppJvInspector_sppJvInspItemUnInitialized 63295
+#define dxBarDBNavStrs_dxSBAR_DELETERECORD 63296
+#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_FIRST 63297
+#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_PRIOR 63298
+#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_NEXT 63299
+#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_LAST 63300
+#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_INSERT 63301
+#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_DELETE 63302
+#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_EDIT 63303
+#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_POST 63304
+#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_CANCEL 63305
+#define dxBarDBNavStrs_dxSBAR_BTNCAPTION_REFRESH 63306
+#define dxStatusBar_cxSTextPanelStyle 63307
+#define dxStatusBar_cxSContainerPanelStyle 63308
+#define dxStatusBar_cxSKeyboardStatePanelStyle 63309
+#define dxStatusBar_cxSStateIndicatorPanelStyle 63310
+#define ppJclResources_ppJclRsRTTIValueOutOfRange 63311
+#define dxDockConsts_sdxInvalidParent 63312
+#define dxDockConsts_sdxInvalidDockSiteParent 63313
+#define dxDockConsts_sdxInvalidFloatSiteParent 63314
+#define dxDockConsts_sdxInvalidPanelChild 63315
+#define dxDockConsts_sdxInvalidSiteChild 63316
+#define dxDockConsts_sdxInvaldZoneOwner 63317
+#define dxDockConsts_sdxInternalErrorAutoHide 63318
+#define dxDockConsts_sdxInternalErrorCreateLayout 63319
+#define dxDockConsts_sdxInternalErrorDestroyLayout 63320
+#define dxDockConsts_sdxManagerError 63321
+#define dxDockConsts_sdxAncestorError 63322
+#define dxsbstrs_DXSB_DEFAULTGROUP 63323
+#define dxsbstrs_DXSB_DEFAULTITEMCAPTION 63324
+#define dxsbstrs_DXSB_CANTDELETEGROUP 63325
+#define dxBarDBNavStrs_dxSBAR_DBNAVERROR1 63326
+#define dxBarDBNavStrs_dxSBAR_CATEGORYNAME 63327
+#define cxVGridConsts_cxSvgRTTICollectionMoveUp 63328
+#define cxVGridConsts_cxSvgRTTICollectionMoveUpHint 63329
+#define cxVGridConsts_cxSvgRTTICollectionMoveDown 63330
+#define cxVGridConsts_cxSvgRTTICollectionMoveDownHint 63331
+#define RzDBStat_sRzInactive 63332
+#define RzDBStat_sRzBrowse 63333
+#define RzDBStat_sRzEdit 63334
+#define RzDBStat_sRzInsert 63335
+#define RzDBStat_sRzSetKey 63336
+#define RzDBStat_sRzCalcFields 63337
+#define RzDBStat_sRzFilter 63338
+#define dxDockConsts_sdxInvalidLayoutSiteDeleting 63339
+#define dxDockConsts_sdxInvalidFloatSiteDeleting 63340
+#define dxDockConsts_sdxInvalidFloatingDeleting 63341
+#define dxDockConsts_sdxInvalidParentAssigning 63342
+#define dxDockConsts_sdxInvalidOwner 63343
+#define cxVGridConsts_cxSvgCustomizeCategoriesCaption 63344
+#define cxVGridConsts_cxSvgCustomizeDeleteCategory 63345
+#define cxVGridConsts_cxSvgCustomizeNewCategory 63346
+#define cxVGridConsts_cxSvgCustomizeRowsCaption 63347
+#define cxVGridConsts_cxSvgNewCategoryCaption 63348
+#define cxVGridConsts_cxSvgNewCategoryLabelCaption 63349
+#define cxVGridConsts_cxSvgRTTIInspectorEmptyGlyph 63350
+#define cxVGridConsts_cxSvgUnknown 63351
+#define cxVGridConsts_cxSvgRTTICollectionEditCaption 63352
+#define cxVGridConsts_cxSvgRTTICollectionAdd 63353
+#define cxVGridConsts_cxSvgRTTICollectionAddHint 63354
+#define cxVGridConsts_cxSvgRTTICollectionDelete 63355
+#define cxVGridConsts_cxSvgRTTICollectionDeleteHint 63356
+#define cxVGridConsts_cxSvgRTTICollectionSelectAll 63357
+#define cxVGridConsts_cxSvgRTTICollectionToolbar 63358
+#define cxVGridConsts_cxSvgRTTICollectionTextLabel 63359
+#define bdeconst_SIDAPILangID 63360
+#define bdeconst_SBDEError 63361
+#define bdeconst_SIndexDoesNotExist 63362
+#define bdeconst_SNoTableName 63363
+#define bdeconst_SNoDataSetField 63364
+#define bdeconst_SNoCachedUpdates 63365
+#define bdeconst_SInvalidAliasName 63366
+#define bdeconst_SNoFieldAccess 63367
+#define bdeconst_SUntitled 63368
+#define bdeconst_SLocalTransDirty 63369
+#define cxVGridConsts_cxSvgIndexError 63370
+#define cxVGridConsts_cxSvgInvalidRowClass 63371
+#define cxVGridConsts_cxSvgAssignRowsError 63372
+#define cxVGridConsts_cxSvgOKCaption 63373
+#define cxVGridConsts_cxSvgCancelCaption 63374
+#define cxVGridConsts_cxSvgCustomizeCaption 63375
+#define bdeconst_SAutoSessionActive 63376
+#define bdeconst_SDuplicateDatabaseName 63377
+#define bdeconst_SDuplicateSessionName 63378
+#define bdeconst_SInvalidSessionName 63379
+#define bdeconst_SDatabaseNameMissing 63380
+#define bdeconst_SSessionNameMissing 63381
+#define bdeconst_SDatabaseOpen 63382
+#define bdeconst_SDatabaseClosed 63383
+#define bdeconst_SDatabaseHandleSet 63384
+#define bdeconst_SSessionActive 63385
+#define bdeconst_SHandleError 63386
+#define bdeconst_SNoReferenceTableName 63387
+#define bdeconst_SEmptySQLStatement 63388
+#define bdeconst_SNoParameterValue 63389
+#define bdeconst_SLoginError 63390
+#define bdeconst_SInitError 63391
+#define cxGridPopupMenuConsts_cxSGridBestFitAllColumns 63392
+#define cxGridPopupMenuConsts_cxSGridShowFooter 63393
+#define cxGridPopupMenuConsts_cxSGridShowGroupFooter 63394
+#define cxGridPopupMenuConsts_cxSGridSumMenuItem 63395
+#define cxGridPopupMenuConsts_cxSGridMinMenuItem 63396
+#define cxGridPopupMenuConsts_cxSGridMaxMenuItem 63397
+#define cxGridPopupMenuConsts_cxSGridCountMenuItem 63398
+#define cxGridPopupMenuConsts_cxSGridAvgMenuItem 63399
+#define cxGridPopupMenuConsts_cxSGridNoneMenuItem 63400
+#define OleConst_SCannotActivate 63401
+#define OleConst_SNoWindowHandle 63402
+#define OleConst_SInvalidLicense 63403
+#define OleConst_SNotLicensed 63404
+#define OleConst_sNoRunningObject 63405
+#define bdeconst_SAutoSessionExclusive 63406
+#define bdeconst_SAutoSessionExists 63407
+#define dxNavBarConsts_sdxNavBarOffice11ShowFewerButtons 63408
+#define dxNavBarConsts_sdxNavBarOffice11AddRemoveButtons 63409
+#define cxGridPopupMenuConsts_cxSGridNone 63410
+#define cxGridPopupMenuConsts_cxSGridSortColumnAsc 63411
+#define cxGridPopupMenuConsts_cxSGridSortColumnDesc 63412
+#define cxGridPopupMenuConsts_cxSGridClearSorting 63413
+#define cxGridPopupMenuConsts_cxSGridGroupByThisField 63414
+#define cxGridPopupMenuConsts_cxSGridRemoveThisGroupItem 63415
+#define cxGridPopupMenuConsts_cxSGridGroupByBox 63416
+#define cxGridPopupMenuConsts_cxSGridAlignmentSubMenu 63417
+#define cxGridPopupMenuConsts_cxSGridAlignLeft 63418
+#define cxGridPopupMenuConsts_cxSGridAlignRight 63419
+#define cxGridPopupMenuConsts_cxSGridAlignCenter 63420
+#define cxGridPopupMenuConsts_cxSGridRemoveColumn 63421
+#define cxGridPopupMenuConsts_cxSGridFieldChooser 63422
+#define cxGridPopupMenuConsts_cxSGridBestFit 63423
+#define dxExtCtrlsStrs_sdxPureColorOlive 63424
+#define dxExtCtrlsStrs_sdxPureColorMoneyGreen 63425
+#define dxExtCtrlsStrs_sdxPureColorNavy 63426
+#define dxExtCtrlsStrs_sdxPureColorSkyBlue 63427
+#define dxExtCtrlsStrs_sdxPureColorGray 63428
+#define dxExtCtrlsStrs_sdxPureColorMedGray 63429
+#define dxExtCtrlsStrs_sdxPureColorSilver 63430
+#define dxExtCtrlsStrs_sdxPureColorMaroon 63431
+#define dxExtCtrlsStrs_sdxPureColorPurple 63432
+#define dxExtCtrlsStrs_sdxPureColorFuchsia 63433
+#define dxExtCtrlsStrs_sdxPureColorCream 63434
+#define dxNavBarConsts_sdxNavigationPaneOverflowPanelCustomizeHint 63435
+#define dxNavBarConsts_sdxInvalideGroupControl 63436
+#define dxNavBarConsts_sdxCannotFindView 63437
+#define dxNavBarConsts_sdxViewAlreadyExists 63438
+#define dxNavBarConsts_sdxNavBarOffice11ShowMoreButtons 63439
+#define dxExtCtrlsStrs_sdxSysColorBtnText 63440
+#define dxExtCtrlsStrs_sdxSysColorInactiveCaptionText 63441
+#define dxExtCtrlsStrs_sdxSysColorBtnHighligh 63442
+#define dxExtCtrlsStrs_sdxSysColor3DDkShadow 63443
+#define dxExtCtrlsStrs_sdxSysColor3DLight 63444
+#define dxExtCtrlsStrs_sdxSysColorInfoText 63445
+#define dxExtCtrlsStrs_sdxSysColorInfoBk 63446
+#define dxExtCtrlsStrs_sdxPureColorBlack 63447
+#define dxExtCtrlsStrs_sdxPureColorRed 63448
+#define dxExtCtrlsStrs_sdxPureColorLime 63449
+#define dxExtCtrlsStrs_sdxPureColorYellow 63450
+#define dxExtCtrlsStrs_sdxPureColorGreen 63451
+#define dxExtCtrlsStrs_sdxPureColorTeal 63452
+#define dxExtCtrlsStrs_sdxPureColorAqua 63453
+#define dxExtCtrlsStrs_sdxPureColorBlue 63454
+#define dxExtCtrlsStrs_sdxPureColorWhite 63455
+#define dxExtCtrlsStrs_sdxSysColorActiveCaption 63456
+#define dxExtCtrlsStrs_sdxSysColorInactiveCaption 63457
+#define dxExtCtrlsStrs_sdxSysColorMenu 63458
+#define dxExtCtrlsStrs_sdxSysColorWindow 63459
+#define dxExtCtrlsStrs_sdxSysColorWindowFrame 63460
+#define dxExtCtrlsStrs_sdxSysColorMenuText 63461
+#define dxExtCtrlsStrs_sdxSysColorWindowText 63462
+#define dxExtCtrlsStrs_sdxSysColorCaptionText 63463
+#define dxExtCtrlsStrs_sdxSysColorActiveBorder 63464
+#define dxExtCtrlsStrs_sdxSysColorInactiveBorder 63465
+#define dxExtCtrlsStrs_sdxSysColorAppWorkSpace 63466
+#define dxExtCtrlsStrs_sdxSysColorHighLight 63467
+#define dxExtCtrlsStrs_sdxSysColorHighLighText 63468
+#define dxExtCtrlsStrs_sdxSysColorBtnFace 63469
+#define dxExtCtrlsStrs_sdxSysColorBtnShadow 63470
+#define dxExtCtrlsStrs_sdxSysColorGrayText 63471
+#define dxBarStrs_dxSBAR_SHOWFULLMENUSAFTERDELAY 63472
+#define dxBarStrs_dxSBAR_RESETUSAGEDATA 63473
+#define dxBarStrs_dxSBAR_OTHEROPTIONS 63474
+#define dxBarStrs_dxSBAR_LARGEICONS 63475
+#define dxBarStrs_dxSBAR_HINTOPT1 63476
+#define dxBarStrs_dxSBAR_HINTOPT2 63477
+#define dxBarStrs_dxSBAR_MENUANIMATIONS 63478
+#define dxBarStrs_dxSBAR_MENUANIM1 63479
+#define dxBarStrs_dxSBAR_MENUANIM2 63480
+#define dxBarStrs_dxSBAR_MENUANIM3 63481
+#define dxBarStrs_dxSBAR_MENUANIM4 63482
+#define dxBarStrs_dxSBAR_MENUANIM5 63483
+#define dxExtCtrlsStrs_sdxAutoColorText 63484
+#define dxExtCtrlsStrs_sdxCustomColorText 63485
+#define dxExtCtrlsStrs_sdxSysColorScrollBar 63486
+#define dxExtCtrlsStrs_sdxSysColorBackground 63487
+#define dxBarStrs_dxSBAR_ADDREMOVEBUTTONS 63488
+#define dxBarStrs_dxSBAR_MOREBUTTONS 63489
+#define dxBarStrs_dxSBAR_RESETTOOLBAR 63490
+#define dxBarStrs_dxSBAR_EXPAND 63491
+#define dxBarStrs_dxSBAR_DRAGTOMAKEMENUFLOAT 63492
+#define dxBarStrs_dxSBAR_TOOLBARNEWNAME 63493
+#define dxBarStrs_dxSBAR_CATEGORYADD 63494
+#define dxBarStrs_dxSBAR_CATEGORYINSERT 63495
+#define dxBarStrs_dxSBAR_CATEGORYRENAME 63496
+#define dxBarStrs_dxSBAR_TOOLBARADD 63497
+#define dxBarStrs_dxSBAR_TOOLBARRENAME 63498
+#define dxBarStrs_dxSBAR_CATEGORYNAME 63499
+#define dxBarStrs_dxSBAR_TOOLBARNAME 63500
+#define dxBarStrs_dxSBAR_MODIFY 63501
+#define dxBarStrs_dxSBAR_PERSMENUSANDTOOLBARS 63502
+#define dxBarStrs_dxSBAR_MENUSSHOWRECENTITEMS 63503
+#define dxBarStrs_dxSBAR_MOVEUP 63504
+#define dxBarStrs_dxSBAR_MOVEDOWN 63505
+#define dxBarStrs_dxSBAR_TABSHEET1 63506
+#define dxBarStrs_dxSBAR_TABSHEET2 63507
+#define dxBarStrs_dxSBAR_TABSHEET3 63508
+#define dxBarStrs_dxSBAR_TOOLBARS 63509
+#define dxBarStrs_dxSBAR_TNEW 63510
+#define dxBarStrs_dxSBAR_TRENAME 63511
+#define dxBarStrs_dxSBAR_TDELETE 63512
+#define dxBarStrs_dxSBAR_TRESET 63513
+#define dxBarStrs_dxSBAR_CLOSE 63514
+#define dxBarStrs_dxSBAR_CAPTION 63515
+#define dxBarStrs_dxSBAR_CATEGORIES 63516
+#define dxBarStrs_dxSBAR_COMMANDS 63517
+#define dxBarStrs_dxSBAR_DESCRIPTION 63518
+#define dxBarStrs_dxSBAR_CUSTOMIZE 63519
+#define dxBarStrs_dxSBAR_CP_TEXTONLYALWAYS 63520
+#define dxBarStrs_dxSBAR_CP_TEXTONLYINMENUS 63521
+#define dxBarStrs_dxSBAR_CP_IMAGEANDTEXT 63522
+#define dxBarStrs_dxSBAR_CP_BEGINAGROUP 63523
+#define dxBarStrs_dxSBAR_CP_VISIBLE 63524
+#define dxBarStrs_dxSBAR_CP_MOSTRECENTLYUSED 63525
+#define dxBarStrs_dxSBAR_ADDEX 63526
+#define dxBarStrs_dxSBAR_RENAMEEX 63527
+#define dxBarStrs_dxSBAR_DELETE 63528
+#define dxBarStrs_dxSBAR_CLEAR 63529
+#define dxBarStrs_dxSBAR_VISIBLE 63530
+#define dxBarStrs_dxSBAR_OK 63531
+#define dxBarStrs_dxSBAR_CANCEL 63532
+#define dxBarStrs_dxSBAR_SUBMENUEDITOR 63533
+#define dxBarStrs_dxSBAR_SUBMENUEDITORCAPTION 63534
+#define dxBarStrs_dxSBAR_INSERTEX 63535
+#define dxBarStrs_dxSBAR_WANTTODELETECATEGORY 63536
+#define dxBarStrs_dxSBAR_WANTTOCLEARCOMMANDS 63537
+#define dxBarStrs_dxSBAR_RECURSIVESUBITEMS 63538
+#define dxBarStrs_dxSBAR_COMMANDNAMECANNOTBEBLANK 63539
+#define dxBarStrs_dxSBAR_TOOLBAREXISTS 63540
+#define dxBarStrs_dxSBAR_RECURSIVEGROUPS 63541
+#define dxBarStrs_dxSBAR_DEFAULTCATEGORYNAME 63542
+#define dxBarStrs_dxSBAR_CP_ADDSUBITEM 63543
+#define dxBarStrs_dxSBAR_CP_ADDBUTTON 63544
+#define dxBarStrs_dxSBAR_CP_ADDITEM 63545
+#define dxBarStrs_dxSBAR_CP_DELETEBAR 63546
+#define dxBarStrs_dxSBAR_CP_RESET 63547
+#define dxBarStrs_dxSBAR_CP_DELETE 63548
+#define dxBarStrs_dxSBAR_CP_NAME 63549
+#define dxBarStrs_dxSBAR_CP_CAPTION 63550
+#define dxBarStrs_dxSBAR_CP_DEFAULTSTYLE 63551
+#define dxBarStrs_dxSBAR_COLOR_STR_15 63552
+#define dxBarStrs_dxSBAR_COLORAUTOTEXT 63553
+#define dxBarStrs_dxSBAR_COLORCUSTOMTEXT 63554
+#define dxBarStrs_dxSBAR_DATETODAY 63555
+#define dxBarStrs_dxSBAR_DATECLEAR 63556
+#define dxBarStrs_dxSBAR_DATEDIALOGCAPTION 63557
+#define dxBarStrs_dxSBAR_TREEVIEWDIALOGCAPTION 63558
+#define dxBarStrs_dxSBAR_IMAGEDIALOGCAPTION 63559
+#define dxBarStrs_dxSBAR_PLACEFORCONTROL 63560
+#define dxBarStrs_dxSBAR_CANTASSIGNCONTROL 63561
+#define dxBarStrs_dxSBAR_WANTTORESETTOOLBAR 63562
+#define dxBarStrs_dxSBAR_WANTTORESETUSAGEDATA 63563
+#define dxBarStrs_dxSBAR_BARMANAGERMORETHENONE 63564
+#define dxBarStrs_dxSBAR_BARMANAGERBADOWNER 63565
+#define dxBarStrs_dxSBAR_NOBARMANAGERS 63566
+#define dxBarStrs_dxSBAR_WANTTODELETETOOLBAR 63567
+#define dxBarStrs_dxSBAR_DIALOGCANCEL 63568
+#define dxBarStrs_dxSBAR_COLOR_STR_0 63569
+#define dxBarStrs_dxSBAR_COLOR_STR_1 63570
+#define dxBarStrs_dxSBAR_COLOR_STR_2 63571
+#define dxBarStrs_dxSBAR_COLOR_STR_3 63572
+#define dxBarStrs_dxSBAR_COLOR_STR_4 63573
+#define dxBarStrs_dxSBAR_COLOR_STR_5 63574
+#define dxBarStrs_dxSBAR_COLOR_STR_6 63575
+#define dxBarStrs_dxSBAR_COLOR_STR_7 63576
+#define dxBarStrs_dxSBAR_COLOR_STR_8 63577
+#define dxBarStrs_dxSBAR_COLOR_STR_9 63578
+#define dxBarStrs_dxSBAR_COLOR_STR_10 63579
+#define dxBarStrs_dxSBAR_COLOR_STR_11 63580
+#define dxBarStrs_dxSBAR_COLOR_STR_12 63581
+#define dxBarStrs_dxSBAR_COLOR_STR_13 63582
+#define dxBarStrs_dxSBAR_COLOR_STR_14 63583
+#define TXString_SHTMDefaultExt 63584
+#define TXString_SHTMDefaultExtFilter 63585
+#define TXString_SHTMDeviceDescription 63586
+#define TXString_SRTFDeviceName 63587
+#define TXString_SRTFDefaultExt 63588
+#define TXString_SRTFDefaultExtFilter 63589
+#define TXString_SRTFDeviceDescription 63590
+#define TXString_SPDFDeviceName 63591
+#define TXString_SPDFDefaultExt 63592
+#define TXString_SPDFDefaultExtFilter 63593
+#define TXString_SPDFDeviceDescription 63594
+#define TXString_SPRNDeviceName 63595
+#define TXString_SPRNDefaultExt 63596
+#define TXString_SPRNDefaultExtFilter 63597
+#define TXString_SPRNDeviceDescription 63598
+#define dxBarStrs_dxSBAR_DIALOGOK 63599
+#define TXString_SWQ1DefaultExt 63600
+#define TXString_SWQ1DefaultExtFilter 63601
+#define TXString_SWQ1DeviceDescription 63602
+#define TXString_SXLSDeviceName 63603
+#define TXString_SXLSDefaultExt 63604
+#define TXString_SXLSDefaultExtFilter 63605
+#define TXString_SXLSDeviceDescription 63606
+#define TXString_SBMPDeviceName 63607
+#define TXString_SBMPDefaultExt 63608
+#define TXString_SBMPDefaultExtFilter 63609
+#define TXString_SBMPDeviceDescription 63610
+#define TXString_SXTMDeviceName 63611
+#define TXString_SXTMDefaultExt 63612
+#define TXString_SXTMDefaultExtFilter 63613
+#define TXString_SXTMDeviceDescription 63614
+#define TXString_SHTMDeviceName 63615
+#define ABSDecConst2_sStringFormatExists 63616
+#define ABSDecConst2_sInvalidStringFormat 63617
+#define ABSDecConst2_sInvalidFormatString 63618
+#define ABSDecConst2_sFMT_COPY 63619
+#define ABSDecConst2_sFMT_HEX 63620
+#define ABSDecConst2_sFMT_HEXL 63621
+#define ABSDecConst2_sFMT_MIME64 63622
+#define ABSDecConst2_sFMT_UU 63623
+#define ABSDecConst2_sFMT_XX 63624
+#define ABSDecConst2_sInvalidKeySize 63625
+#define ABSDecConst2_sNotInitialized 63626
+#define TXString_SWK1DeviceName 63627
+#define TXString_SWK1DefaultExt 63628
+#define TXString_SWK1DefaultExtFilter 63629
+#define TXString_SWK1DeviceDescription 63630
+#define TXString_SWQ1DeviceName 63631
+#define PymeConst_SNoPuedeEliminarLa 63632
+#define PymeConst_SEstaCarpetaNoEsta 63633
+#define PymeConst_SDeseaBorrarEstaCa 63634
+#define PymeConst_SExploradorDeConsul 63635
+#define PymeConst_SConsutlas 63636
+#define PymeConst_SExploradorDeReport 63637
+#define PymeConst_SReporte 63638
+#define PymeConst_SSeguroQueDeseaEli6 63639
+#define PymeConst_SSeguroQueDeseaEli7 63640
+#define PymeConst_SSeguroQueDeseaEli8 63641
+#define PymeConst_SSeguroQueDeseaEli9 63642
+#define PymeConst_SConexionExistosa 63643
+#define PymeConst_SImportacionDeDatos 63644
+#define PymeConst_SDatosAImportar 63645
+#define PymeConst_SGrabarCambiosConsulta 63646
+#define ABSDecConst2_sProtectionCircular 63647
+#define PymeConst_SErrorEnProcesoIn 63648
+#define PymeConst_SDebeEspecificarUn3 63649
+#define PymeConst_SDisenos 63650
+#define PymeConst_SUsarEsteDiseno 63651
+#define PymeConst_SNoSePuedeEliminar 63652
+#define PymeConst_SSeguroQueDeseaEli2 63653
+#define PymeConst_SNOTATodosLosDato 63654
+#define PymeConst_SCompilacionExitosa 63655
+#define PymeConst_SProceso 63656
+#define PymeConst_SGestionDeDocumento 63657
+#define PymeConst_SSeguroQueDeseaEli4 63658
+#define PymeConst_SNuevaConsulta 63659
+#define PymeConst_SNuevoReporte 63660
+#define PymeConst_SNuevoFolder 63661
+#define PymeConst_SNuevoFolder1 63662
+#define PymeConst_SNombreDelFolder 63663
+#define PymeConst_SExportandoCia 63664
+#define PymeConst_SIniFileNotFound 63665
+#define PymeConst_SAppFolderNoValido 63666
+#define PymeConst_SHayCambiosRealizad 63667
+#define PymeConst_SSeguroQueDeseaEli 63668
+#define PymeConst_SNoSePudoRestaurar 63669
+#define PymeConst_SNoSePudoRestaurar1 63670
+#define PymeConst_SLeyendoEstructuraD 63671
+#define PymeConst_SUsuarioClaveNoE 63672
+#define PymeConst_SEdicionProfesional 63673
+#define PymeConst_SEdicionEstandard 63674
+#define PymeConst_SUsuarios 63675
+#define PymeConst_SDiasRestantes 63676
+#define PymeConst_STasasDeCambio 63677
+#define PymeConst_SProcesoCompletado 63678
+#define PymeConst_SVistas 63679
 #define JvResources_RsClHighlightText 63680
 #define JvResources_RsClBtnFace 63681
 #define JvResources_RsClBtnShadow 63682
@@ -2514,7 +2514,7 @@ BEGIN
 	RzTabs_sRzCreateRegionError,	"Error creating region"
 	RzTabs_sRzPageIndexOutOfRange,	"%d is an invalid PageIndex value. PageIndex must be between 0 and %d"
 	RzTabs_sRzInvalidVisibilityChange,	"You cannot change the Visible property of a page"
-	acQBStrings_acQBErrorBadXMLTagNotFound,	"Bad XML file: tag \"%s\" not found."
+	raSynEditTextBuffer_SListIndexOutOfBounds,	"Invalid stringlist index %d"
 	RzShellConsts_SCancelButton,	"Cancel"
 	RzShellConsts_SOKButton,	"OK"
 	RzShellConsts_SCreateFolder,	"Create Folder"
@@ -2530,8 +2530,22 @@ BEGIN
 	RzShellConsts_SBrowseForFolder,	"Browse for Folder"
 	RzShellConsts_SShKey_SelectAll,	"Ctrl+A"
 	RzShellConsts_SShKey_Delete,	"Del"
-	acQBStrings_acQBGCOr,	"Or..."
-	acQBStrings_acQBSortTypeAscending,	"Ascending"
+	raSynEditStrConst_raSYNS_AttrCharacter,	"Character"
+	raSynEditStrConst_raSYNS_AttrComment,	"Comment"
+	raSynEditStrConst_raSYNS_AttrFloat,	"Float"
+	raSynEditStrConst_raSYNS_AttrHexadecimal,	"Hexadecimal"
+	raSynEditStrConst_raSYNS_AttrIdentifier,	"Identifier"
+	raSynEditStrConst_raSYNS_AttrNumber,	"Number"
+	raSynEditStrConst_raSYNS_AttrPreprocessor,	"Preprocessor"
+	raSynEditStrConst_raSYNS_AttrReservedWord,	"Reserved word"
+	raSynEditStrConst_raSYNS_AttrSpace,	"Space"
+	raSynEditStrConst_raSYNS_AttrString,	"String"
+	raSynEditStrConst_raSYNS_AttrSymbol,	"Symbol"
+	raSynEditStrConst_raSYNS_ScrollInfoFmt,	"%d - %d"
+	raSynEditStrConst_raSYNS_ScrollInfoFmtTop,	"Top Line: %d"
+	raSynEditStrConst_raSYNS_EDuplicateShortcut,	"Shortcut already exists"
+	raSynEditStrConst_raSYNS_FilterPascal,	"Pascal Files (*.pas,*.dpr,*.dpk,*.inc)|*.pas;*.dpr;*.dpk;*.inc"
+	raSynEditStrConst_raSYNS_LangPascal,	"ObjectPascal"
 	acQBStrings_acQBSortTypeDescending,	"Descending"
 	acQBStrings_acQBMoveUp,	"Move Up"
 	acQBStrings_acQBMoveDown,	"Move Down"
@@ -2546,8 +2560,8 @@ BEGIN
 	acQBStrings_acQBErrorUnknownError,	"Unknown error"
 	acQBStrings_acQBErrorExecQuery,	"Error executing query:\r%s\rMessage:\r%s"
 	acQBStrings_acQBErrorBadXML,	"Error parsing XML: %s"
-	acQBStrings_acQBInsertSubQuery,	"Insert Sub-Query"
-	acQBStrings_acMoveBackward,	"Move Backward"
+	acQBStrings_acQBErrorBadXMLTagNotFound,	"Bad XML file: tag \"%s\" not found."
+	raSynEditStrConst_raSYNS_AttrAssembler,	"Assembler"
 	acQBStrings_acMoveForward,	"Move Forward"
 	acQBStrings_acAddObject,	"Add Object"
 	acQBStrings_acAddSubQuery,	"Add Derived Table"
@@ -2562,8 +2576,8 @@ BEGIN
 	acQBStrings_acQBGCSortOrder,	"Sort Order"
 	acQBStrings_acQBGCGroupBy,	"Group By"
 	acQBStrings_acQBGCCriteria,	"Criteria"
-	acQBStrings_acQBCantAssignObjAlias,	"Can't assign alias if astFromSource=nil!"
-	acQBStrings_acQBNoSyntaxProvider,	"No syntax provider!"
+	acQBStrings_acQBGCOr,	"Or..."
+	acQBStrings_acQBSortTypeAscending,	"Ascending"
 	acQBStrings_acQBNoMetadataProvider,	"No metadata provider!"
 	acQBStrings_acQBNoConnectionObject,	"No connection object (property %s not assigned)!"
 	acQBStrings_acQBDialectDontSupportUnions,	"This server don't support unions!"
@@ -2578,8 +2592,8 @@ BEGIN
 	acQBStrings_acQBAftofitHeight,	"Autofit Object Height"
 	acQBStrings_acQBAbout,	"About Active QueryBuilder..."
 	acQBStrings_acQBMainQuery,	"Main"
-	MidConst_SNoCircularConnection,	"Circular reference to Connection not allowed"
-	cxTLStrs_scxIndexOutOfBounds,	"Index %d out of bounds"
+	acQBStrings_acQBInsertSubQuery,	"Insert Sub-Query"
+	acQBStrings_acMoveBackward,	"Move Backward"
 	cxTLStrs_scxInvalidStreamFormat,	"Invalid stream format"
 	cxTLStrs_scxMultiSelectRequired,	"Multi select required"
 	cxTLStrs_scxBands,	"Bands..."
@@ -2594,8 +2608,8 @@ BEGIN
 	acQBStrings_acQBBadFromObjectExpression,	"Invalid FROM object expression"
 	acQBStrings_acQBUnexpectedTokenAt,	" Unexpected token \"%s\" at line %d, pos %d"
 	acQBStrings_acQBCantSelectExpression,	"Can't select this expression"
-	MidConst_SInvalidDataPacket,	"Invalid data packet"
-	MidConst_SRefreshError,	"Must apply updates before refreshing data"
+	acQBStrings_acQBCantAssignObjAlias,	"Can't assign alias if astFromSource=nil!"
+	acQBStrings_acQBNoSyntaxProvider,	"No syntax provider!"
 	MidConst_SNoCircularReference,	"Circular provider references not allowed"
 	MidConst_SErrorLoadingMidas,	"Error loading MIDAS.DLL"
 	MidConst_SNoConnectToBroker,	"Connection not allowed to TConnectionBroker"
@@ -2610,8 +2624,8 @@ BEGIN
 	MidConst_SNoDeletesAllowed,	"Deletes are not allowed"
 	MidConst_SNoInsertsAllowed,	"Inserts are not allowed"
 	MidConst_SConnectionMissing,	"Requires Connection before opening"
-	TeeConst_TeeMsg_FunctionSubtract,	"Subtract"
-	TeeConst_TeeMsg_FunctionMultiply,	"Multiply"
+	MidConst_SNoCircularConnection,	"Circular reference to Connection not allowed"
+	cxTLStrs_scxIndexOutOfBounds,	"Index %d out of bounds"
 	TeeConst_TeeMsg_FunctionDivide,	"Divide"
 	TeeConst_TeeMsg_FunctionHigh,	"High"
 	TeeConst_TeeMsg_FunctionLow,	"Low"
@@ -2626,8 +2640,8 @@ BEGIN
 	TeeConst_TeeMsg_ValuesBar,	"Bar"
 	TeeConst_TeeMsg_ValuesAngle,	"Angle"
 	MidConst_SNoDataProvider,	"Missing data provider or data packet"
-	TeeConst_TeeMsg_GalleryHorizBar,	"Horiz. Bar"
-	TeeConst_TeeMsg_GalleryPie,	"Pie"
+	MidConst_SInvalidDataPacket,	"Invalid data packet"
+	MidConst_SRefreshError,	"Must apply updates before refreshing data"
 	TeeConst_TeeMsg_GalleryFastLine,	"Fast Line"
 	TeeConst_TeeMsg_Rotation,	"Rotation"
 	TeeConst_TeeMsg_PieSample1,	"Cars"
@@ -2642,8 +2656,8 @@ BEGIN
 	TeeConst_TeeMsg_GalleryFunctions,	"Functions"
 	TeeConst_TeeMsg_DefaultFontSize,	"8"
 	TeeConst_TeeMsg_FunctionAdd,	"Add"
-	TeeConst_TeeMsg_AxisMaxMin,	"Axis Maximum Value must be >= Minimum"
-	TeeConst_TeeMsg_AxisLogBase,	"Axis Logarithmic Base should be >= 2"
+	TeeConst_TeeMsg_FunctionSubtract,	"Subtract"
+	TeeConst_TeeMsg_FunctionMultiply,	"Multiply"
 	TeeConst_TeeMsg_MaxPointsPerPage,	"MaxPointsPerPage must be >= 0"
 	TeeConst_TeeMsg_3dPercent,	"3D effect percent must be between %d and %d"
 	TeeConst_TeeMsg_CircularSeries,	"Circular Series dependences are not allowed"
@@ -2658,8 +2672,8 @@ BEGIN
 	TeeConst_TeeMsg_GalleryPoint,	"Point"
 	TeeConst_TeeMsg_GalleryArea,	"Area"
 	TeeConst_TeeMsg_GalleryBar,	"Bar"
-	DlgMensajes_SysMsgDlgIgnorar,	"&Ignorar"
-	DlgMensajes_SysMsgDlgTodo,	"&Todo"
+	TeeConst_TeeMsg_GalleryHorizBar,	"Horiz. Bar"
+	TeeConst_TeeMsg_GalleryPie,	"Pie"
 	DlgMensajes_SysMsgDlgNoATodo,	"N&o a Todo"
 	DlgMensajes_SysMsgDlgSiATodo,	"Si a &Todo"
 	TeeConst_TeeMsg_LegendTopPos,	"Top Legend Position must be between 0 and 100 %"
@@ -2674,8 +2688,8 @@ BEGIN
 	TeeConst_TeeMsg_AxisLabelSep,	"Labels Separation % must be greater than 0"
 	TeeConst_TeeMsg_AxisIncrementNeg,	"Axis increment must be >= 0"
 	TeeConst_TeeMsg_AxisMinMax,	"Axis Minimum Value must be <= Maximum"
-	cxExportStrs_scxInvalidStyleIndex,	"Invalid style index %d"
-	cxExportStrs_scxExportToExcel,	"Export to MS Excel (*.xls)"
+	TeeConst_TeeMsg_AxisMaxMin,	"Axis Maximum Value must be >= Minimum"
+	TeeConst_TeeMsg_AxisLogBase,	"Axis Logarithmic Base should be >= 2"
 	cxExportStrs_scxWorkbookWrite,	"Error write XLS file"
 	cxExportStrs_scxInvalidCellDimension,	"Invalid cell dimension"
 	cxExportStrs_scxBoolTrue,	"True"
@@ -2690,12 +2704,12 @@ BEGIN
 	DlgMensajes_SysMsgDlgAyuda,	"&Ayuda"
 	DlgMensajes_SysMsgDlgAbortar,	"&Abortar"
 	DlgMensajes_SysMsgDlgReintentar,	"&Reintentar"
-	dxBarDBNavStrs_dxSBAR_BTNCAPTION_CANCEL,	"Cancel"
-	dxBarDBNavStrs_dxSBAR_BTNCAPTION_REFRESH,	"Refresh"
-	dxStatusBar_cxSTextPanelStyle,	"Text Panel"
-	dxStatusBar_cxSContainerPanelStyle,	"Container Panel"
-	dxStatusBar_cxSKeyboardStatePanelStyle,	"Keyboard State Panel"
-	dxStatusBar_cxSStateIndicatorPanelStyle,	"State Indicator Panel"
+	DlgMensajes_SysMsgDlgIgnorar,	"&Ignorar"
+	DlgMensajes_SysMsgDlgTodo,	"&Todo"
+	ppJvInspector_sppJvAssertDataParent,	"TppJvInspectorSetMemberData.New: unexpected ADataParent = nil"
+	ppJvInspector_sppJvAssertParent,	"TppJvInspectorSetMemberData.New: unexpected AParent = nil"
+	ppJvInspector_sppJvAssertPropInfo,	"TppJvInspectorPropData.New: unexpected PropInfo = nil"
+	ppInspector_sJvInspDataNoSelectionController,	"TppInspectorSelectionData - SelectionController is nil"
 	cxExportStrs_scxUnsupportedExport,	"Unsupported export type: %1"
 	cxExportStrs_scxStyleManagerKill,	"The Style Manager is currently being used elsewhere and can not be released at this stage"
 	cxExportStrs_scxExportToHtml,	"Export to Web page (*.html)"
@@ -2706,310 +2720,8 @@ BEGIN
 	cxExportStrs_scxIllegalHeight,	"Illegal height of the row"
 	cxExportStrs_scxInvalidColumnIndex,	"The column index %d out of bounds"
 	cxExportStrs_scxInvalidRowIndex,	"The row index %d out of bounds"
-	dxDockConsts_sdxManagerError,	"You cannot have more than one TdxDockingManager instance on a Form."
-	dxDockConsts_sdxAncestorError,	"Docking and auto hiding operations are not available for controls declared in an ancestor form."
-	dxsbstrs_DXSB_DEFAULTGROUP,	"Default"
-	dxsbstrs_DXSB_DEFAULTITEMCAPTION,	"New Item"
-	dxsbstrs_DXSB_CANTDELETEGROUP,	"Can't delete the group. It has items."
-	dxBarDBNavStrs_dxSBAR_DBNAVERROR1,	"You already have an existing DBNavigator button with the same defined style"
-	dxBarDBNavStrs_dxSBAR_CATEGORYNAME,	"DB Navigator"
-	dxBarDBNavStrs_dxSBAR_DELETERECORD,	"Do you want to delete the current record?"
-	dxBarDBNavStrs_dxSBAR_BTNCAPTION_FIRST,	"First"
-	dxBarDBNavStrs_dxSBAR_BTNCAPTION_PRIOR,	"Prior"
-	dxBarDBNavStrs_dxSBAR_BTNCAPTION_NEXT,	"Next"
-	dxBarDBNavStrs_dxSBAR_BTNCAPTION_LAST,	"Last"
-	dxBarDBNavStrs_dxSBAR_BTNCAPTION_INSERT,	"Insert"
-	dxBarDBNavStrs_dxSBAR_BTNCAPTION_DELETE,	"Delete"
-	dxBarDBNavStrs_dxSBAR_BTNCAPTION_EDIT,	"Edit"
-	dxBarDBNavStrs_dxSBAR_BTNCAPTION_POST,	"Post"
-	RzDBStat_sRzCalcFields,	"Calculate"
-	RzDBStat_sRzFilter,	"Filter"
-	dxDockConsts_sdxInvalidLayoutSiteDeleting,	"You cannot delete a TdxLayoutDockSite."
-	dxDockConsts_sdxInvalidFloatSiteDeleting,	"You cannot delete a TdxFloatDockSite."
-	dxDockConsts_sdxInvalidFloatingDeleting,	"You cannot delete a TdxCustomDockSite in floating mode."
-	dxDockConsts_sdxInvalidParentAssigning,	"You cannot set the parent for this component."
-	dxDockConsts_sdxInvalidOwner,	"The Owner of the TdxCustomDockControl must be TCustomForm."
-	dxDockConsts_sdxInvalidParent,	"The Parent of the %s must be TdxCustomDockControl."
-	dxDockConsts_sdxInvalidDockSiteParent,	"The Parent of the TdxDockSite cannot be TdxCustomDockControl."
-	dxDockConsts_sdxInvalidFloatSiteParent,	"The Parent of the TdxFloatDockSite can only be TdxFloatForm."
-	dxDockConsts_sdxInvalidPanelChild,	"You cannot insert a TdxCustomDockControl into TdxDockPanel (%s is being inserted)."
-	dxDockConsts_sdxInvalidSiteChild,	"You can only insert a TdxCustomDockControl into TdxCustomDockSite (%s is being inserted)."
-	dxDockConsts_sdxInvaldZoneOwner,	"You cannot create a TdxZone without the owning TdxCustomDockControl."
-	dxDockConsts_sdxInternalErrorAutoHide,	"Internal error while autohide controls."
-	dxDockConsts_sdxInternalErrorCreateLayout,	"Internal error while creating a %s object layout."
-	dxDockConsts_sdxInternalErrorDestroyLayout,	"Internal error while destroying a %s object layout."
-	cxVGridConsts_cxSvgRTTICollectionAdd,	"&Add"
-	cxVGridConsts_cxSvgRTTICollectionAddHint,	"Add New"
-	cxVGridConsts_cxSvgRTTICollectionDelete,	"&Delete"
-	cxVGridConsts_cxSvgRTTICollectionDeleteHint,	"Delete Selected"
-	cxVGridConsts_cxSvgRTTICollectionSelectAll,	"&Select All"
-	cxVGridConsts_cxSvgRTTICollectionToolbar,	"&Toolbar"
-	cxVGridConsts_cxSvgRTTICollectionTextLabel,	"Text &Labels"
-	cxVGridConsts_cxSvgRTTICollectionMoveUp,	"Move &Up"
-	cxVGridConsts_cxSvgRTTICollectionMoveUpHint,	"Move Selected Up"
-	cxVGridConsts_cxSvgRTTICollectionMoveDown,	"Move Dow&n"
-	cxVGridConsts_cxSvgRTTICollectionMoveDownHint,	"Move Selected Down"
-	RzDBStat_sRzInactive,	"Inactive"
-	RzDBStat_sRzBrowse,	"Browse"
-	RzDBStat_sRzEdit,	"Edit"
-	RzDBStat_sRzInsert,	"Insert"
-	RzDBStat_sRzSetKey,	"Search"
-	bdeconst_SLocalTransDirty,	"The transaction isolation level must be dirty read for local databases"
-	cxVGridConsts_cxSvgIndexError,	"Index error"
-	cxVGridConsts_cxSvgInvalidRowClass,	"Can't create row"
-	cxVGridConsts_cxSvgAssignRowsError,	"Can't assign rows"
-	cxVGridConsts_cxSvgOKCaption,	"OK"
-	cxVGridConsts_cxSvgCancelCaption,	"Cancel"
-	cxVGridConsts_cxSvgCustomizeCaption,	"Customize"
-	cxVGridConsts_cxSvgCustomizeCategoriesCaption,	"Categories"
-	cxVGridConsts_cxSvgCustomizeDeleteCategory,	"&Delete"
-	cxVGridConsts_cxSvgCustomizeNewCategory,	"&New..."
-	cxVGridConsts_cxSvgCustomizeRowsCaption,	"Rows"
-	cxVGridConsts_cxSvgNewCategoryCaption,	"New Category"
-	cxVGridConsts_cxSvgNewCategoryLabelCaption,	"&Category:"
-	cxVGridConsts_cxSvgRTTIInspectorEmptyGlyph,	"(None)"
-	cxVGridConsts_cxSvgUnknown,	"(Unknown)"
-	cxVGridConsts_cxSvgRTTICollectionEditCaption,	"Editing %s%s%s"
-	bdeconst_SSessionActive,	"Cannot perform this operation on an active session"
-	bdeconst_SHandleError,	"Error creating cursor handle"
-	bdeconst_SNoReferenceTableName,	"ReferenceTableName not specified for field '%s'"
-	bdeconst_SEmptySQLStatement,	"No SQL statement available"
-	bdeconst_SNoParameterValue,	"No value for parameter '%s'"
-	bdeconst_SLoginError,	"Cannot connect to database '%s'"
-	bdeconst_SInitError,	"An error occurred while attempting to initialize the Borland Database Engine (error $%.4x)"
-	bdeconst_SIDAPILangID,	"0009"
-	bdeconst_SBDEError,	"BDE error $%.4x"
-	bdeconst_SIndexDoesNotExist,	"Index does not exist. Index: %s"
-	bdeconst_SNoTableName,	"Missing TableName property"
-	bdeconst_SNoDataSetField,	"Missing DataSetField property"
-	bdeconst_SNoCachedUpdates,	"Not in cached update mode"
-	bdeconst_SInvalidAliasName,	"Invalid alias name %s"
-	bdeconst_SNoFieldAccess,	"Cannot access field '%s' in a filter"
-	bdeconst_SUntitled,	"Untitled Application"
-	OleConst_SCannotActivate,	"OLE control activation failed"
-	OleConst_SNoWindowHandle,	"Could not obtain OLE control window handle"
-	OleConst_SInvalidLicense,	"License information for %s is invalid"
-	OleConst_SNotLicensed,	"License information for %s not found. You cannot use this control in design mode"
-	OleConst_sNoRunningObject,	"Unable to retrieve a pointer to a running object registered with OLE for %s/%s"
-	bdeconst_SAutoSessionExclusive,	"Cannot enable AutoSessionName property with more than one session on a form or data-module"
-	bdeconst_SAutoSessionExists,	"Cannot add a session to the form or data-module while session '%s' has AutoSessionName enabled"
-	bdeconst_SAutoSessionActive,	"Cannot modify SessionName while AutoSessionName is enabled"
-	bdeconst_SDuplicateDatabaseName,	"Duplicate database name '%s'"
-	bdeconst_SDuplicateSessionName,	"Duplicate session name '%s'"
-	bdeconst_SInvalidSessionName,	"Invalid session name %s"
-	bdeconst_SDatabaseNameMissing,	"Database name missing"
-	bdeconst_SSessionNameMissing,	"Session name missing"
-	bdeconst_SDatabaseOpen,	"Cannot perform this operation on an open database"
-	bdeconst_SDatabaseClosed,	"Cannot perform this operation on a closed database"
-	bdeconst_SDatabaseHandleSet,	"Database handle owned by a different session"
-	cxGridPopupMenuConsts_cxSGridAlignmentSubMenu,	"Alignment"
-	cxGridPopupMenuConsts_cxSGridAlignLeft,	"Align Left"
-	cxGridPopupMenuConsts_cxSGridAlignRight,	"Align Right"
-	cxGridPopupMenuConsts_cxSGridAlignCenter,	"Align Center"
-	cxGridPopupMenuConsts_cxSGridRemoveColumn,	"Remove This Column"
-	cxGridPopupMenuConsts_cxSGridFieldChooser,	"Field Chooser"
-	cxGridPopupMenuConsts_cxSGridBestFit,	"Best Fit"
-	cxGridPopupMenuConsts_cxSGridBestFitAllColumns,	"Best Fit (all columns)"
-	cxGridPopupMenuConsts_cxSGridShowFooter,	"Footer"
-	cxGridPopupMenuConsts_cxSGridShowGroupFooter,	"Group Footers"
-	cxGridPopupMenuConsts_cxSGridSumMenuItem,	"Sum"
-	cxGridPopupMenuConsts_cxSGridMinMenuItem,	"Min"
-	cxGridPopupMenuConsts_cxSGridMaxMenuItem,	"Max"
-	cxGridPopupMenuConsts_cxSGridCountMenuItem,	"Count"
-	cxGridPopupMenuConsts_cxSGridAvgMenuItem,	"Average"
-	cxGridPopupMenuConsts_cxSGridNoneMenuItem,	"None"
-	dxExtCtrlsStrs_sdxPureColorFuchsia,	"Fuchsia"
-	dxExtCtrlsStrs_sdxPureColorCream,	"Cream"
-	dxNavBarConsts_sdxNavigationPaneOverflowPanelCustomizeHint,	"Configure buttons"
-	dxNavBarConsts_sdxInvalideGroupControl,	"Invalid the TdxNavBarGroupControl parent or group."
-	dxNavBarConsts_sdxCannotFindView,	"Cannot find view with ID = %d."
-	dxNavBarConsts_sdxViewAlreadyExists,	"ID of view = %d is already exists."
-	dxNavBarConsts_sdxNavBarOffice11ShowMoreButtons,	"Show &More Buttons"
-	dxNavBarConsts_sdxNavBarOffice11ShowFewerButtons,	"Show &Fewer Buttons"
-	dxNavBarConsts_sdxNavBarOffice11AddRemoveButtons,	"&Add or Remove Buttons"
-	cxGridPopupMenuConsts_cxSGridNone,	"None"
-	cxGridPopupMenuConsts_cxSGridSortColumnAsc,	"Sort Ascending"
-	cxGridPopupMenuConsts_cxSGridSortColumnDesc,	"Sort Descending"
-	cxGridPopupMenuConsts_cxSGridClearSorting,	"Clear Sorting"
-	cxGridPopupMenuConsts_cxSGridGroupByThisField,	"Group By This Field"
-	cxGridPopupMenuConsts_cxSGridRemoveThisGroupItem,	"Remove from grouping"
-	cxGridPopupMenuConsts_cxSGridGroupByBox,	"Group By Box"
-	dxExtCtrlsStrs_sdxPureColorLime,	"Lime"
-	dxExtCtrlsStrs_sdxPureColorYellow,	"Yellow"
-	dxExtCtrlsStrs_sdxPureColorGreen,	"Green"
-	dxExtCtrlsStrs_sdxPureColorTeal,	"Teal"
-	dxExtCtrlsStrs_sdxPureColorAqua,	"Aqua"
-	dxExtCtrlsStrs_sdxPureColorBlue,	"Blue"
-	dxExtCtrlsStrs_sdxPureColorWhite,	"White"
-	dxExtCtrlsStrs_sdxPureColorOlive,	"Olive"
-	dxExtCtrlsStrs_sdxPureColorMoneyGreen,	"Money Green"
-	dxExtCtrlsStrs_sdxPureColorNavy,	"Navy"
-	dxExtCtrlsStrs_sdxPureColorSkyBlue,	"Sky Blue"
-	dxExtCtrlsStrs_sdxPureColorGray,	"Gray"
-	dxExtCtrlsStrs_sdxPureColorMedGray,	"Medium Gray"
-	dxExtCtrlsStrs_sdxPureColorSilver,	"Silver"
-	dxExtCtrlsStrs_sdxPureColorMaroon,	"Maroon"
-	dxExtCtrlsStrs_sdxPureColorPurple,	"Purple"
-	dxExtCtrlsStrs_sdxSysColorInactiveBorder,	"Inactive Border"
-	dxExtCtrlsStrs_sdxSysColorAppWorkSpace,	"App Workspace"
-	dxExtCtrlsStrs_sdxSysColorHighLight,	"Highlight"
-	dxExtCtrlsStrs_sdxSysColorHighLighText,	"Highlight Text"
-	dxExtCtrlsStrs_sdxSysColorBtnFace,	"Button Face"
-	dxExtCtrlsStrs_sdxSysColorBtnShadow,	"Button Shadow"
-	dxExtCtrlsStrs_sdxSysColorGrayText,	"Gray Text"
-	dxExtCtrlsStrs_sdxSysColorBtnText,	"Button Text"
-	dxExtCtrlsStrs_sdxSysColorInactiveCaptionText,	"Inactive Caption Text"
-	dxExtCtrlsStrs_sdxSysColorBtnHighligh,	"Button Highlight"
-	dxExtCtrlsStrs_sdxSysColor3DDkShadow,	"3DDk Shadow"
-	dxExtCtrlsStrs_sdxSysColor3DLight,	"3DLight"
-	dxExtCtrlsStrs_sdxSysColorInfoText,	"Info Text"
-	dxExtCtrlsStrs_sdxSysColorInfoBk,	"InfoBk"
-	dxExtCtrlsStrs_sdxPureColorBlack,	"Black"
-	dxExtCtrlsStrs_sdxPureColorRed,	"Red"
-	dxBarStrs_dxSBAR_MENUANIM3,	"Unfold"
-	dxBarStrs_dxSBAR_MENUANIM4,	"Slide"
-	dxBarStrs_dxSBAR_MENUANIM5,	"Fade"
-	dxExtCtrlsStrs_sdxAutoColorText,	"Auto"
-	dxExtCtrlsStrs_sdxCustomColorText,	"Custom..."
-	dxExtCtrlsStrs_sdxSysColorScrollBar,	"ScrollBar"
-	dxExtCtrlsStrs_sdxSysColorBackground,	"Background"
-	dxExtCtrlsStrs_sdxSysColorActiveCaption,	"Active Caption"
-	dxExtCtrlsStrs_sdxSysColorInactiveCaption,	"Inactive Caption"
-	dxExtCtrlsStrs_sdxSysColorMenu,	"Menu"
-	dxExtCtrlsStrs_sdxSysColorWindow,	"Window"
-	dxExtCtrlsStrs_sdxSysColorWindowFrame,	"Window Frame"
-	dxExtCtrlsStrs_sdxSysColorMenuText,	"Menu Text"
-	dxExtCtrlsStrs_sdxSysColorWindowText,	"Window Text"
-	dxExtCtrlsStrs_sdxSysColorCaptionText,	"Caption Text"
-	dxExtCtrlsStrs_sdxSysColorActiveBorder,	"Active Border"
-	dxBarStrs_dxSBAR_TOOLBARADD,	"Add Toolbar"
-	dxBarStrs_dxSBAR_TOOLBARRENAME,	"Rename Toolbar"
-	dxBarStrs_dxSBAR_CATEGORYNAME,	"&Category name:"
-	dxBarStrs_dxSBAR_TOOLBARNAME,	"&Toolbar name:"
-	dxBarStrs_dxSBAR_MODIFY,	"... modify"
-	dxBarStrs_dxSBAR_PERSMENUSANDTOOLBARS,	"Personalized Menus and Toolbars  "
-	dxBarStrs_dxSBAR_MENUSSHOWRECENTITEMS,	"Me&nus show recently used commands first"
-	dxBarStrs_dxSBAR_SHOWFULLMENUSAFTERDELAY,	"Show f&ull menus after a short delay"
-	dxBarStrs_dxSBAR_RESETUSAGEDATA,	"&Reset my usage data"
-	dxBarStrs_dxSBAR_OTHEROPTIONS,	"Other  "
-	dxBarStrs_dxSBAR_LARGEICONS,	"&Large icons"
-	dxBarStrs_dxSBAR_HINTOPT1,	"Show Tool&Tips on toolbars"
-	dxBarStrs_dxSBAR_HINTOPT2,	"Show s&hortcut keys in ToolTips"
-	dxBarStrs_dxSBAR_MENUANIMATIONS,	"&Menu animations:"
-	dxBarStrs_dxSBAR_MENUANIM1,	"(None)"
-	dxBarStrs_dxSBAR_MENUANIM2,	"Random"
-	dxBarStrs_dxSBAR_TRESET,	"&Reset..."
-	dxBarStrs_dxSBAR_CLOSE,	"Close"
-	dxBarStrs_dxSBAR_CAPTION,	"Customize"
-	dxBarStrs_dxSBAR_CATEGORIES,	"Cate&gories:"
-	dxBarStrs_dxSBAR_COMMANDS,	"Comman&ds:"
-	dxBarStrs_dxSBAR_DESCRIPTION,	"Description  "
-	dxBarStrs_dxSBAR_CUSTOMIZE,	"&Customize..."
-	dxBarStrs_dxSBAR_ADDREMOVEBUTTONS,	"&Add or Remove Buttons"
-	dxBarStrs_dxSBAR_MOREBUTTONS,	"More Buttons"
-	dxBarStrs_dxSBAR_RESETTOOLBAR,	"&Reset Toolbar"
-	dxBarStrs_dxSBAR_EXPAND,	"Expand (Ctrl-Down)"
-	dxBarStrs_dxSBAR_DRAGTOMAKEMENUFLOAT,	"Drag to make this menu float"
-	dxBarStrs_dxSBAR_TOOLBARNEWNAME,	"Custom "
-	dxBarStrs_dxSBAR_CATEGORYADD,	"Add Category"
-	dxBarStrs_dxSBAR_CATEGORYINSERT,	"Insert Category"
-	dxBarStrs_dxSBAR_CATEGORYRENAME,	"Rename Category"
-	dxBarStrs_dxSBAR_CLEAR,	"Clear"
-	dxBarStrs_dxSBAR_VISIBLE,	"Visible"
-	dxBarStrs_dxSBAR_OK,	"OK"
-	dxBarStrs_dxSBAR_CANCEL,	"Cancel"
-	dxBarStrs_dxSBAR_SUBMENUEDITOR,	"SubMenu Editor..."
-	dxBarStrs_dxSBAR_SUBMENUEDITORCAPTION,	"ExpressBars SubMenu Editor"
-	dxBarStrs_dxSBAR_INSERTEX,	"Insert..."
-	dxBarStrs_dxSBAR_MOVEUP,	"Move Up"
-	dxBarStrs_dxSBAR_MOVEDOWN,	"Move Down"
-	dxBarStrs_dxSBAR_TABSHEET1,	" Toolbars "
-	dxBarStrs_dxSBAR_TABSHEET2,	" Commands "
-	dxBarStrs_dxSBAR_TABSHEET3,	" Options "
-	dxBarStrs_dxSBAR_TOOLBARS,	"Toolb&ars:"
-	dxBarStrs_dxSBAR_TNEW,	"&New..."
-	dxBarStrs_dxSBAR_TRENAME,	"R&ename..."
-	dxBarStrs_dxSBAR_TDELETE,	"&Delete"
-	dxBarStrs_dxSBAR_CP_ADDITEM,	"Add &Item"
-	dxBarStrs_dxSBAR_CP_DELETEBAR,	"Delete Bar"
-	dxBarStrs_dxSBAR_CP_RESET,	"&Reset"
-	dxBarStrs_dxSBAR_CP_DELETE,	"&Delete"
-	dxBarStrs_dxSBAR_CP_NAME,	"&Name:"
-	dxBarStrs_dxSBAR_CP_CAPTION,	"&Caption:"
-	dxBarStrs_dxSBAR_CP_DEFAULTSTYLE,	"Defa&ult style"
-	dxBarStrs_dxSBAR_CP_TEXTONLYALWAYS,	"&Text Only (Always)"
-	dxBarStrs_dxSBAR_CP_TEXTONLYINMENUS,	"Text &Only (in Menus)"
-	dxBarStrs_dxSBAR_CP_IMAGEANDTEXT,	"Image &and Text"
-	dxBarStrs_dxSBAR_CP_BEGINAGROUP,	"Begin a &Group"
-	dxBarStrs_dxSBAR_CP_VISIBLE,	"&Visible"
-	dxBarStrs_dxSBAR_CP_MOSTRECENTLYUSED,	"&Most recently used"
-	dxBarStrs_dxSBAR_ADDEX,	"Add..."
-	dxBarStrs_dxSBAR_RENAMEEX,	"Rename..."
-	dxBarStrs_dxSBAR_DELETE,	"Delete"
-	dxBarStrs_dxSBAR_CANTASSIGNCONTROL,	"You cannot assign the same control to more than one TdxBarControlContainerItem."
-	dxBarStrs_dxSBAR_WANTTORESETTOOLBAR,	"Are you sure you want to reset the changes made to the '%s' toolbar?"
-	dxBarStrs_dxSBAR_WANTTORESETUSAGEDATA,	"This will delete the record of the commands you've used in this application and restore the default set of visible commands to the menus and toolbars. It will not undo any explicit customizations.   Are you sure you want to proceed?"
-	dxBarStrs_dxSBAR_BARMANAGERMORETHENONE,	"A Form should contain only a single TdxBarManager"
-	dxBarStrs_dxSBAR_BARMANAGERBADOWNER,	"TdxBarManager should have as its Owner - TForm (TCustomForm)"
-	dxBarStrs_dxSBAR_NOBARMANAGERS,	"There are no TdxBarManagers available"
-	dxBarStrs_dxSBAR_WANTTODELETETOOLBAR,	"Are you sure you want to delete the '%s' toolbar?"
-	dxBarStrs_dxSBAR_WANTTODELETECATEGORY,	"Are you sure you want to delete the '%s' category?"
-	dxBarStrs_dxSBAR_WANTTOCLEARCOMMANDS,	"Are you sure you want to delete all commands in the '%s' category?"
-	dxBarStrs_dxSBAR_RECURSIVESUBITEMS,	"You cannot create recursive subitems"
-	dxBarStrs_dxSBAR_COMMANDNAMECANNOTBEBLANK,	"A command name cannot be blank. Please enter a name."
-	dxBarStrs_dxSBAR_TOOLBAREXISTS,	"A toolbar named '%s' already exists. Type another name."
-	dxBarStrs_dxSBAR_RECURSIVEGROUPS,	"You cannot create recursive groups"
-	dxBarStrs_dxSBAR_DEFAULTCATEGORYNAME,	"Default"
-	dxBarStrs_dxSBAR_CP_ADDSUBITEM,	"Add &SubItem"
-	dxBarStrs_dxSBAR_CP_ADDBUTTON,	"Add &Button"
-	dxBarStrs_dxSBAR_COLOR_STR_8,	"Silver"
-	dxBarStrs_dxSBAR_COLOR_STR_9,	"Red"
-	dxBarStrs_dxSBAR_COLOR_STR_10,	"Lime"
-	dxBarStrs_dxSBAR_COLOR_STR_11,	"Yellow"
-	dxBarStrs_dxSBAR_COLOR_STR_12,	"Blue"
-	dxBarStrs_dxSBAR_COLOR_STR_13,	"Fuchsia"
-	dxBarStrs_dxSBAR_COLOR_STR_14,	"Aqua"
-	dxBarStrs_dxSBAR_COLOR_STR_15,	"White"
-	dxBarStrs_dxSBAR_COLORAUTOTEXT,	"(automatic)"
-	dxBarStrs_dxSBAR_COLORCUSTOMTEXT,	"(custom)"
-	dxBarStrs_dxSBAR_DATETODAY,	"Today"
-	dxBarStrs_dxSBAR_DATECLEAR,	"Clear"
-	dxBarStrs_dxSBAR_DATEDIALOGCAPTION,	"Select the date"
-	dxBarStrs_dxSBAR_TREEVIEWDIALOGCAPTION,	"Select item"
-	dxBarStrs_dxSBAR_IMAGEDIALOGCAPTION,	"Select item"
-	dxBarStrs_dxSBAR_PLACEFORCONTROL,	"The place for the "
-	raSynEditStrConst_raSYNS_ScrollInfoFmt,	"%d - %d"
-	raSynEditStrConst_raSYNS_ScrollInfoFmtTop,	"Top Line: %d"
-	raSynEditStrConst_raSYNS_EDuplicateShortcut,	"Shortcut already exists"
-	raSynEditStrConst_raSYNS_FilterPascal,	"Pascal Files (*.pas,*.dpr,*.dpk,*.inc)|*.pas;*.dpr;*.dpk;*.inc"
-	raSynEditStrConst_raSYNS_LangPascal,	"ObjectPascal"
-	raSynEditTextBuffer_SListIndexOutOfBounds,	"Invalid stringlist index %d"
-	dxBarStrs_dxSBAR_DIALOGOK,	"OK"
-	dxBarStrs_dxSBAR_DIALOGCANCEL,	"Cancel"
-	dxBarStrs_dxSBAR_COLOR_STR_0,	"Black"
-	dxBarStrs_dxSBAR_COLOR_STR_1,	"Maroon"
-	dxBarStrs_dxSBAR_COLOR_STR_2,	"Green"
-	dxBarStrs_dxSBAR_COLOR_STR_3,	"Olive"
-	dxBarStrs_dxSBAR_COLOR_STR_4,	"Navy"
-	dxBarStrs_dxSBAR_COLOR_STR_5,	"Purple"
-	dxBarStrs_dxSBAR_COLOR_STR_6,	"Teal"
-	dxBarStrs_dxSBAR_COLOR_STR_7,	"Gray"
-	ppJvInspector_sppJvAssertDataParent,	"TppJvInspectorSetMemberData.New: unexpected ADataParent = nil"
-	ppJvInspector_sppJvAssertParent,	"TppJvInspectorSetMemberData.New: unexpected AParent = nil"
-	ppJvInspector_sppJvAssertPropInfo,	"TppJvInspectorPropData.New: unexpected PropInfo = nil"
-	ppInspector_sJvInspDataNoSelectionController,	"TppInspectorSelectionData - SelectionController is nil"
-	raSynEditStrConst_raSYNS_AttrAssembler,	"Assembler"
-	raSynEditStrConst_raSYNS_AttrCharacter,	"Character"
-	raSynEditStrConst_raSYNS_AttrComment,	"Comment"
-	raSynEditStrConst_raSYNS_AttrFloat,	"Float"
-	raSynEditStrConst_raSYNS_AttrHexadecimal,	"Hexadecimal"
-	raSynEditStrConst_raSYNS_AttrIdentifier,	"Identifier"
-	raSynEditStrConst_raSYNS_AttrNumber,	"Number"
-	raSynEditStrConst_raSYNS_AttrPreprocessor,	"Preprocessor"
-	raSynEditStrConst_raSYNS_AttrReservedWord,	"Reserved word"
-	raSynEditStrConst_raSYNS_AttrSpace,	"Space"
-	raSynEditStrConst_raSYNS_AttrString,	"String"
-	raSynEditStrConst_raSYNS_AttrSymbol,	"Symbol"
+	cxExportStrs_scxInvalidStyleIndex,	"Invalid style index %d"
+	cxExportStrs_scxExportToExcel,	"Export to MS Excel (*.xls)"
 	ppJvInspector_sppJvInspItemUnassigned,	"(unassigned)"
 	ppJvInspector_sppJvInspItemNoValue,	"(no value)"
 	ppJvInspector_sppJvInspItemNotAChild,	"Specified Item is not a child of this item."
@@ -3042,6 +2754,342 @@ BEGIN
 	ppJvInspector_sppJvInspItemHasParent,	"Item already assigned to another parent."
 	ppJvInspector_sppJvInspItemValueException,	"Exception "
 	ppJvInspector_sppJvInspItemUnInitialized,	"(uninitialized)"
+	dxBarDBNavStrs_dxSBAR_DELETERECORD,	"Do you want to delete the current record?"
+	dxBarDBNavStrs_dxSBAR_BTNCAPTION_FIRST,	"First"
+	dxBarDBNavStrs_dxSBAR_BTNCAPTION_PRIOR,	"Prior"
+	dxBarDBNavStrs_dxSBAR_BTNCAPTION_NEXT,	"Next"
+	dxBarDBNavStrs_dxSBAR_BTNCAPTION_LAST,	"Last"
+	dxBarDBNavStrs_dxSBAR_BTNCAPTION_INSERT,	"Insert"
+	dxBarDBNavStrs_dxSBAR_BTNCAPTION_DELETE,	"Delete"
+	dxBarDBNavStrs_dxSBAR_BTNCAPTION_EDIT,	"Edit"
+	dxBarDBNavStrs_dxSBAR_BTNCAPTION_POST,	"Post"
+	dxBarDBNavStrs_dxSBAR_BTNCAPTION_CANCEL,	"Cancel"
+	dxBarDBNavStrs_dxSBAR_BTNCAPTION_REFRESH,	"Refresh"
+	dxStatusBar_cxSTextPanelStyle,	"Text Panel"
+	dxStatusBar_cxSContainerPanelStyle,	"Container Panel"
+	dxStatusBar_cxSKeyboardStatePanelStyle,	"Keyboard State Panel"
+	dxStatusBar_cxSStateIndicatorPanelStyle,	"State Indicator Panel"
+	ppJclResources_ppJclRsRTTIValueOutOfRange,	"Value out of range (%s)."
+	dxDockConsts_sdxInvalidParent,	"The Parent of the %s must be TdxCustomDockControl."
+	dxDockConsts_sdxInvalidDockSiteParent,	"The Parent of the TdxDockSite cannot be TdxCustomDockControl."
+	dxDockConsts_sdxInvalidFloatSiteParent,	"The Parent of the TdxFloatDockSite can only be TdxFloatForm."
+	dxDockConsts_sdxInvalidPanelChild,	"You cannot insert a TdxCustomDockControl into TdxDockPanel (%s is being inserted)."
+	dxDockConsts_sdxInvalidSiteChild,	"You can only insert a TdxCustomDockControl into TdxCustomDockSite (%s is being inserted)."
+	dxDockConsts_sdxInvaldZoneOwner,	"You cannot create a TdxZone without the owning TdxCustomDockControl."
+	dxDockConsts_sdxInternalErrorAutoHide,	"Internal error while autohide controls."
+	dxDockConsts_sdxInternalErrorCreateLayout,	"Internal error while creating a %s object layout."
+	dxDockConsts_sdxInternalErrorDestroyLayout,	"Internal error while destroying a %s object layout."
+	dxDockConsts_sdxManagerError,	"You cannot have more than one TdxDockingManager instance on a Form."
+	dxDockConsts_sdxAncestorError,	"Docking and auto hiding operations are not available for controls declared in an ancestor form."
+	dxsbstrs_DXSB_DEFAULTGROUP,	"Default"
+	dxsbstrs_DXSB_DEFAULTITEMCAPTION,	"New Item"
+	dxsbstrs_DXSB_CANTDELETEGROUP,	"Can't delete the group. It has items."
+	dxBarDBNavStrs_dxSBAR_DBNAVERROR1,	"You already have an existing DBNavigator button with the same defined style"
+	dxBarDBNavStrs_dxSBAR_CATEGORYNAME,	"DB Navigator"
+	cxVGridConsts_cxSvgRTTICollectionMoveUp,	"Move &Up"
+	cxVGridConsts_cxSvgRTTICollectionMoveUpHint,	"Move Selected Up"
+	cxVGridConsts_cxSvgRTTICollectionMoveDown,	"Move Dow&n"
+	cxVGridConsts_cxSvgRTTICollectionMoveDownHint,	"Move Selected Down"
+	RzDBStat_sRzInactive,	"Inactive"
+	RzDBStat_sRzBrowse,	"Browse"
+	RzDBStat_sRzEdit,	"Edit"
+	RzDBStat_sRzInsert,	"Insert"
+	RzDBStat_sRzSetKey,	"Search"
+	RzDBStat_sRzCalcFields,	"Calculate"
+	RzDBStat_sRzFilter,	"Filter"
+	dxDockConsts_sdxInvalidLayoutSiteDeleting,	"You cannot delete a TdxLayoutDockSite."
+	dxDockConsts_sdxInvalidFloatSiteDeleting,	"You cannot delete a TdxFloatDockSite."
+	dxDockConsts_sdxInvalidFloatingDeleting,	"You cannot delete a TdxCustomDockSite in floating mode."
+	dxDockConsts_sdxInvalidParentAssigning,	"You cannot set the parent for this component."
+	dxDockConsts_sdxInvalidOwner,	"The Owner of the TdxCustomDockControl must be TCustomForm."
+	cxVGridConsts_cxSvgCustomizeCategoriesCaption,	"Categories"
+	cxVGridConsts_cxSvgCustomizeDeleteCategory,	"&Delete"
+	cxVGridConsts_cxSvgCustomizeNewCategory,	"&New..."
+	cxVGridConsts_cxSvgCustomizeRowsCaption,	"Rows"
+	cxVGridConsts_cxSvgNewCategoryCaption,	"New Category"
+	cxVGridConsts_cxSvgNewCategoryLabelCaption,	"&Category:"
+	cxVGridConsts_cxSvgRTTIInspectorEmptyGlyph,	"(None)"
+	cxVGridConsts_cxSvgUnknown,	"(Unknown)"
+	cxVGridConsts_cxSvgRTTICollectionEditCaption,	"Editing %s%s%s"
+	cxVGridConsts_cxSvgRTTICollectionAdd,	"&Add"
+	cxVGridConsts_cxSvgRTTICollectionAddHint,	"Add New"
+	cxVGridConsts_cxSvgRTTICollectionDelete,	"&Delete"
+	cxVGridConsts_cxSvgRTTICollectionDeleteHint,	"Delete Selected"
+	cxVGridConsts_cxSvgRTTICollectionSelectAll,	"&Select All"
+	cxVGridConsts_cxSvgRTTICollectionToolbar,	"&Toolbar"
+	cxVGridConsts_cxSvgRTTICollectionTextLabel,	"Text &Labels"
+	bdeconst_SIDAPILangID,	"0009"
+	bdeconst_SBDEError,	"BDE error $%.4x"
+	bdeconst_SIndexDoesNotExist,	"Index does not exist. Index: %s"
+	bdeconst_SNoTableName,	"Missing TableName property"
+	bdeconst_SNoDataSetField,	"Missing DataSetField property"
+	bdeconst_SNoCachedUpdates,	"Not in cached update mode"
+	bdeconst_SInvalidAliasName,	"Invalid alias name %s"
+	bdeconst_SNoFieldAccess,	"Cannot access field '%s' in a filter"
+	bdeconst_SUntitled,	"Untitled Application"
+	bdeconst_SLocalTransDirty,	"The transaction isolation level must be dirty read for local databases"
+	cxVGridConsts_cxSvgIndexError,	"Index error"
+	cxVGridConsts_cxSvgInvalidRowClass,	"Can't create row"
+	cxVGridConsts_cxSvgAssignRowsError,	"Can't assign rows"
+	cxVGridConsts_cxSvgOKCaption,	"OK"
+	cxVGridConsts_cxSvgCancelCaption,	"Cancel"
+	cxVGridConsts_cxSvgCustomizeCaption,	"Customize"
+	bdeconst_SAutoSessionActive,	"Cannot modify SessionName while AutoSessionName is enabled"
+	bdeconst_SDuplicateDatabaseName,	"Duplicate database name '%s'"
+	bdeconst_SDuplicateSessionName,	"Duplicate session name '%s'"
+	bdeconst_SInvalidSessionName,	"Invalid session name %s"
+	bdeconst_SDatabaseNameMissing,	"Database name missing"
+	bdeconst_SSessionNameMissing,	"Session name missing"
+	bdeconst_SDatabaseOpen,	"Cannot perform this operation on an open database"
+	bdeconst_SDatabaseClosed,	"Cannot perform this operation on a closed database"
+	bdeconst_SDatabaseHandleSet,	"Database handle owned by a different session"
+	bdeconst_SSessionActive,	"Cannot perform this operation on an active session"
+	bdeconst_SHandleError,	"Error creating cursor handle"
+	bdeconst_SNoReferenceTableName,	"ReferenceTableName not specified for field '%s'"
+	bdeconst_SEmptySQLStatement,	"No SQL statement available"
+	bdeconst_SNoParameterValue,	"No value for parameter '%s'"
+	bdeconst_SLoginError,	"Cannot connect to database '%s'"
+	bdeconst_SInitError,	"An error occurred while attempting to initialize the Borland Database Engine (error $%.4x)"
+	cxGridPopupMenuConsts_cxSGridBestFitAllColumns,	"Best Fit (all columns)"
+	cxGridPopupMenuConsts_cxSGridShowFooter,	"Footer"
+	cxGridPopupMenuConsts_cxSGridShowGroupFooter,	"Group Footers"
+	cxGridPopupMenuConsts_cxSGridSumMenuItem,	"Sum"
+	cxGridPopupMenuConsts_cxSGridMinMenuItem,	"Min"
+	cxGridPopupMenuConsts_cxSGridMaxMenuItem,	"Max"
+	cxGridPopupMenuConsts_cxSGridCountMenuItem,	"Count"
+	cxGridPopupMenuConsts_cxSGridAvgMenuItem,	"Average"
+	cxGridPopupMenuConsts_cxSGridNoneMenuItem,	"None"
+	OleConst_SCannotActivate,	"OLE control activation failed"
+	OleConst_SNoWindowHandle,	"Could not obtain OLE control window handle"
+	OleConst_SInvalidLicense,	"License information for %s is invalid"
+	OleConst_SNotLicensed,	"License information for %s not found. You cannot use this control in design mode"
+	OleConst_sNoRunningObject,	"Unable to retrieve a pointer to a running object registered with OLE for %s/%s"
+	bdeconst_SAutoSessionExclusive,	"Cannot enable AutoSessionName property with more than one session on a form or data-module"
+	bdeconst_SAutoSessionExists,	"Cannot add a session to the form or data-module while session '%s' has AutoSessionName enabled"
+	dxNavBarConsts_sdxNavBarOffice11ShowFewerButtons,	"Show &Fewer Buttons"
+	dxNavBarConsts_sdxNavBarOffice11AddRemoveButtons,	"&Add or Remove Buttons"
+	cxGridPopupMenuConsts_cxSGridNone,	"None"
+	cxGridPopupMenuConsts_cxSGridSortColumnAsc,	"Sort Ascending"
+	cxGridPopupMenuConsts_cxSGridSortColumnDesc,	"Sort Descending"
+	cxGridPopupMenuConsts_cxSGridClearSorting,	"Clear Sorting"
+	cxGridPopupMenuConsts_cxSGridGroupByThisField,	"Group By This Field"
+	cxGridPopupMenuConsts_cxSGridRemoveThisGroupItem,	"Remove from grouping"
+	cxGridPopupMenuConsts_cxSGridGroupByBox,	"Group By Box"
+	cxGridPopupMenuConsts_cxSGridAlignmentSubMenu,	"Alignment"
+	cxGridPopupMenuConsts_cxSGridAlignLeft,	"Align Left"
+	cxGridPopupMenuConsts_cxSGridAlignRight,	"Align Right"
+	cxGridPopupMenuConsts_cxSGridAlignCenter,	"Align Center"
+	cxGridPopupMenuConsts_cxSGridRemoveColumn,	"Remove This Column"
+	cxGridPopupMenuConsts_cxSGridFieldChooser,	"Field Chooser"
+	cxGridPopupMenuConsts_cxSGridBestFit,	"Best Fit"
+	dxExtCtrlsStrs_sdxPureColorOlive,	"Olive"
+	dxExtCtrlsStrs_sdxPureColorMoneyGreen,	"Money Green"
+	dxExtCtrlsStrs_sdxPureColorNavy,	"Navy"
+	dxExtCtrlsStrs_sdxPureColorSkyBlue,	"Sky Blue"
+	dxExtCtrlsStrs_sdxPureColorGray,	"Gray"
+	dxExtCtrlsStrs_sdxPureColorMedGray,	"Medium Gray"
+	dxExtCtrlsStrs_sdxPureColorSilver,	"Silver"
+	dxExtCtrlsStrs_sdxPureColorMaroon,	"Maroon"
+	dxExtCtrlsStrs_sdxPureColorPurple,	"Purple"
+	dxExtCtrlsStrs_sdxPureColorFuchsia,	"Fuchsia"
+	dxExtCtrlsStrs_sdxPureColorCream,	"Cream"
+	dxNavBarConsts_sdxNavigationPaneOverflowPanelCustomizeHint,	"Configure buttons"
+	dxNavBarConsts_sdxInvalideGroupControl,	"Invalid the TdxNavBarGroupControl parent or group."
+	dxNavBarConsts_sdxCannotFindView,	"Cannot find view with ID = %d."
+	dxNavBarConsts_sdxViewAlreadyExists,	"ID of view = %d is already exists."
+	dxNavBarConsts_sdxNavBarOffice11ShowMoreButtons,	"Show &More Buttons"
+	dxExtCtrlsStrs_sdxSysColorBtnText,	"Button Text"
+	dxExtCtrlsStrs_sdxSysColorInactiveCaptionText,	"Inactive Caption Text"
+	dxExtCtrlsStrs_sdxSysColorBtnHighligh,	"Button Highlight"
+	dxExtCtrlsStrs_sdxSysColor3DDkShadow,	"3DDk Shadow"
+	dxExtCtrlsStrs_sdxSysColor3DLight,	"3DLight"
+	dxExtCtrlsStrs_sdxSysColorInfoText,	"Info Text"
+	dxExtCtrlsStrs_sdxSysColorInfoBk,	"InfoBk"
+	dxExtCtrlsStrs_sdxPureColorBlack,	"Black"
+	dxExtCtrlsStrs_sdxPureColorRed,	"Red"
+	dxExtCtrlsStrs_sdxPureColorLime,	"Lime"
+	dxExtCtrlsStrs_sdxPureColorYellow,	"Yellow"
+	dxExtCtrlsStrs_sdxPureColorGreen,	"Green"
+	dxExtCtrlsStrs_sdxPureColorTeal,	"Teal"
+	dxExtCtrlsStrs_sdxPureColorAqua,	"Aqua"
+	dxExtCtrlsStrs_sdxPureColorBlue,	"Blue"
+	dxExtCtrlsStrs_sdxPureColorWhite,	"White"
+	dxExtCtrlsStrs_sdxSysColorActiveCaption,	"Active Caption"
+	dxExtCtrlsStrs_sdxSysColorInactiveCaption,	"Inactive Caption"
+	dxExtCtrlsStrs_sdxSysColorMenu,	"Menu"
+	dxExtCtrlsStrs_sdxSysColorWindow,	"Window"
+	dxExtCtrlsStrs_sdxSysColorWindowFrame,	"Window Frame"
+	dxExtCtrlsStrs_sdxSysColorMenuText,	"Menu Text"
+	dxExtCtrlsStrs_sdxSysColorWindowText,	"Window Text"
+	dxExtCtrlsStrs_sdxSysColorCaptionText,	"Caption Text"
+	dxExtCtrlsStrs_sdxSysColorActiveBorder,	"Active Border"
+	dxExtCtrlsStrs_sdxSysColorInactiveBorder,	"Inactive Border"
+	dxExtCtrlsStrs_sdxSysColorAppWorkSpace,	"App Workspace"
+	dxExtCtrlsStrs_sdxSysColorHighLight,	"Highlight"
+	dxExtCtrlsStrs_sdxSysColorHighLighText,	"Highlight Text"
+	dxExtCtrlsStrs_sdxSysColorBtnFace,	"Button Face"
+	dxExtCtrlsStrs_sdxSysColorBtnShadow,	"Button Shadow"
+	dxExtCtrlsStrs_sdxSysColorGrayText,	"Gray Text"
+	dxBarStrs_dxSBAR_SHOWFULLMENUSAFTERDELAY,	"Show f&ull menus after a short delay"
+	dxBarStrs_dxSBAR_RESETUSAGEDATA,	"&Reset my usage data"
+	dxBarStrs_dxSBAR_OTHEROPTIONS,	"Other  "
+	dxBarStrs_dxSBAR_LARGEICONS,	"&Large icons"
+	dxBarStrs_dxSBAR_HINTOPT1,	"Show Tool&Tips on toolbars"
+	dxBarStrs_dxSBAR_HINTOPT2,	"Show s&hortcut keys in ToolTips"
+	dxBarStrs_dxSBAR_MENUANIMATIONS,	"&Menu animations:"
+	dxBarStrs_dxSBAR_MENUANIM1,	"(None)"
+	dxBarStrs_dxSBAR_MENUANIM2,	"Random"
+	dxBarStrs_dxSBAR_MENUANIM3,	"Unfold"
+	dxBarStrs_dxSBAR_MENUANIM4,	"Slide"
+	dxBarStrs_dxSBAR_MENUANIM5,	"Fade"
+	dxExtCtrlsStrs_sdxAutoColorText,	"Auto"
+	dxExtCtrlsStrs_sdxCustomColorText,	"Custom..."
+	dxExtCtrlsStrs_sdxSysColorScrollBar,	"ScrollBar"
+	dxExtCtrlsStrs_sdxSysColorBackground,	"Background"
+	dxBarStrs_dxSBAR_ADDREMOVEBUTTONS,	"&Add or Remove Buttons"
+	dxBarStrs_dxSBAR_MOREBUTTONS,	"More Buttons"
+	dxBarStrs_dxSBAR_RESETTOOLBAR,	"&Reset Toolbar"
+	dxBarStrs_dxSBAR_EXPAND,	"Expand (Ctrl-Down)"
+	dxBarStrs_dxSBAR_DRAGTOMAKEMENUFLOAT,	"Drag to make this menu float"
+	dxBarStrs_dxSBAR_TOOLBARNEWNAME,	"Custom "
+	dxBarStrs_dxSBAR_CATEGORYADD,	"Add Category"
+	dxBarStrs_dxSBAR_CATEGORYINSERT,	"Insert Category"
+	dxBarStrs_dxSBAR_CATEGORYRENAME,	"Rename Category"
+	dxBarStrs_dxSBAR_TOOLBARADD,	"Add Toolbar"
+	dxBarStrs_dxSBAR_TOOLBARRENAME,	"Rename Toolbar"
+	dxBarStrs_dxSBAR_CATEGORYNAME,	"&Category name:"
+	dxBarStrs_dxSBAR_TOOLBARNAME,	"&Toolbar name:"
+	dxBarStrs_dxSBAR_MODIFY,	"... modify"
+	dxBarStrs_dxSBAR_PERSMENUSANDTOOLBARS,	"Personalized Menus and Toolbars  "
+	dxBarStrs_dxSBAR_MENUSSHOWRECENTITEMS,	"Me&nus show recently used commands first"
+	dxBarStrs_dxSBAR_MOVEUP,	"Move Up"
+	dxBarStrs_dxSBAR_MOVEDOWN,	"Move Down"
+	dxBarStrs_dxSBAR_TABSHEET1,	" Toolbars "
+	dxBarStrs_dxSBAR_TABSHEET2,	" Commands "
+	dxBarStrs_dxSBAR_TABSHEET3,	" Options "
+	dxBarStrs_dxSBAR_TOOLBARS,	"Toolb&ars:"
+	dxBarStrs_dxSBAR_TNEW,	"&New..."
+	dxBarStrs_dxSBAR_TRENAME,	"R&ename..."
+	dxBarStrs_dxSBAR_TDELETE,	"&Delete"
+	dxBarStrs_dxSBAR_TRESET,	"&Reset..."
+	dxBarStrs_dxSBAR_CLOSE,	"Close"
+	dxBarStrs_dxSBAR_CAPTION,	"Customize"
+	dxBarStrs_dxSBAR_CATEGORIES,	"Cate&gories:"
+	dxBarStrs_dxSBAR_COMMANDS,	"Comman&ds:"
+	dxBarStrs_dxSBAR_DESCRIPTION,	"Description  "
+	dxBarStrs_dxSBAR_CUSTOMIZE,	"&Customize..."
+	dxBarStrs_dxSBAR_CP_TEXTONLYALWAYS,	"&Text Only (Always)"
+	dxBarStrs_dxSBAR_CP_TEXTONLYINMENUS,	"Text &Only (in Menus)"
+	dxBarStrs_dxSBAR_CP_IMAGEANDTEXT,	"Image &and Text"
+	dxBarStrs_dxSBAR_CP_BEGINAGROUP,	"Begin a &Group"
+	dxBarStrs_dxSBAR_CP_VISIBLE,	"&Visible"
+	dxBarStrs_dxSBAR_CP_MOSTRECENTLYUSED,	"&Most recently used"
+	dxBarStrs_dxSBAR_ADDEX,	"Add..."
+	dxBarStrs_dxSBAR_RENAMEEX,	"Rename..."
+	dxBarStrs_dxSBAR_DELETE,	"Delete"
+	dxBarStrs_dxSBAR_CLEAR,	"Clear"
+	dxBarStrs_dxSBAR_VISIBLE,	"Visible"
+	dxBarStrs_dxSBAR_OK,	"OK"
+	dxBarStrs_dxSBAR_CANCEL,	"Cancel"
+	dxBarStrs_dxSBAR_SUBMENUEDITOR,	"SubMenu Editor..."
+	dxBarStrs_dxSBAR_SUBMENUEDITORCAPTION,	"ExpressBars SubMenu Editor"
+	dxBarStrs_dxSBAR_INSERTEX,	"Insert..."
+	dxBarStrs_dxSBAR_WANTTODELETECATEGORY,	"Are you sure you want to delete the '%s' category?"
+	dxBarStrs_dxSBAR_WANTTOCLEARCOMMANDS,	"Are you sure you want to delete all commands in the '%s' category?"
+	dxBarStrs_dxSBAR_RECURSIVESUBITEMS,	"You cannot create recursive subitems"
+	dxBarStrs_dxSBAR_COMMANDNAMECANNOTBEBLANK,	"A command name cannot be blank. Please enter a name."
+	dxBarStrs_dxSBAR_TOOLBAREXISTS,	"A toolbar named '%s' already exists. Type another name."
+	dxBarStrs_dxSBAR_RECURSIVEGROUPS,	"You cannot create recursive groups"
+	dxBarStrs_dxSBAR_DEFAULTCATEGORYNAME,	"Default"
+	dxBarStrs_dxSBAR_CP_ADDSUBITEM,	"Add &SubItem"
+	dxBarStrs_dxSBAR_CP_ADDBUTTON,	"Add &Button"
+	dxBarStrs_dxSBAR_CP_ADDITEM,	"Add &Item"
+	dxBarStrs_dxSBAR_CP_DELETEBAR,	"Delete Bar"
+	dxBarStrs_dxSBAR_CP_RESET,	"&Reset"
+	dxBarStrs_dxSBAR_CP_DELETE,	"&Delete"
+	dxBarStrs_dxSBAR_CP_NAME,	"&Name:"
+	dxBarStrs_dxSBAR_CP_CAPTION,	"&Caption:"
+	dxBarStrs_dxSBAR_CP_DEFAULTSTYLE,	"Defa&ult style"
+	dxBarStrs_dxSBAR_COLOR_STR_15,	"White"
+	dxBarStrs_dxSBAR_COLORAUTOTEXT,	"(automatic)"
+	dxBarStrs_dxSBAR_COLORCUSTOMTEXT,	"(custom)"
+	dxBarStrs_dxSBAR_DATETODAY,	"Today"
+	dxBarStrs_dxSBAR_DATECLEAR,	"Clear"
+	dxBarStrs_dxSBAR_DATEDIALOGCAPTION,	"Select the date"
+	dxBarStrs_dxSBAR_TREEVIEWDIALOGCAPTION,	"Select item"
+	dxBarStrs_dxSBAR_IMAGEDIALOGCAPTION,	"Select item"
+	dxBarStrs_dxSBAR_PLACEFORCONTROL,	"The place for the "
+	dxBarStrs_dxSBAR_CANTASSIGNCONTROL,	"You cannot assign the same control to more than one TdxBarControlContainerItem."
+	dxBarStrs_dxSBAR_WANTTORESETTOOLBAR,	"Are you sure you want to reset the changes made to the '%s' toolbar?"
+	dxBarStrs_dxSBAR_WANTTORESETUSAGEDATA,	"This will delete the record of the commands you've used in this application and restore the default set of visible commands to the menus and toolbars. It will not undo any explicit customizations.   Are you sure you want to proceed?"
+	dxBarStrs_dxSBAR_BARMANAGERMORETHENONE,	"A Form should contain only a single TdxBarManager"
+	dxBarStrs_dxSBAR_BARMANAGERBADOWNER,	"TdxBarManager should have as its Owner - TForm (TCustomForm)"
+	dxBarStrs_dxSBAR_NOBARMANAGERS,	"There are no TdxBarManagers available"
+	dxBarStrs_dxSBAR_WANTTODELETETOOLBAR,	"Are you sure you want to delete the '%s' toolbar?"
+	dxBarStrs_dxSBAR_DIALOGCANCEL,	"Cancel"
+	dxBarStrs_dxSBAR_COLOR_STR_0,	"Black"
+	dxBarStrs_dxSBAR_COLOR_STR_1,	"Maroon"
+	dxBarStrs_dxSBAR_COLOR_STR_2,	"Green"
+	dxBarStrs_dxSBAR_COLOR_STR_3,	"Olive"
+	dxBarStrs_dxSBAR_COLOR_STR_4,	"Navy"
+	dxBarStrs_dxSBAR_COLOR_STR_5,	"Purple"
+	dxBarStrs_dxSBAR_COLOR_STR_6,	"Teal"
+	dxBarStrs_dxSBAR_COLOR_STR_7,	"Gray"
+	dxBarStrs_dxSBAR_COLOR_STR_8,	"Silver"
+	dxBarStrs_dxSBAR_COLOR_STR_9,	"Red"
+	dxBarStrs_dxSBAR_COLOR_STR_10,	"Lime"
+	dxBarStrs_dxSBAR_COLOR_STR_11,	"Yellow"
+	dxBarStrs_dxSBAR_COLOR_STR_12,	"Blue"
+	dxBarStrs_dxSBAR_COLOR_STR_13,	"Fuchsia"
+	dxBarStrs_dxSBAR_COLOR_STR_14,	"Aqua"
+	TXString_SHTMDefaultExt,	"HTM"
+	TXString_SHTMDefaultExtFilter,	"HTML files|*.HTM|All files|*.*"
+	TXString_SHTMDeviceDescription,	"HTML File"
+	TXString_SRTFDeviceName,	"RTFFile"
+	TXString_SRTFDefaultExt,	"RTF"
+	TXString_SRTFDefaultExtFilter,	"RTF files|*.RTF|All files|*.*"
+	TXString_SRTFDeviceDescription,	"RTF File"
+	TXString_SPDFDeviceName,	"PDFFile"
+	TXString_SPDFDefaultExt,	"PDF"
+	TXString_SPDFDefaultExtFilter,	"PDF files|*.PDF|All files|*.*"
+	TXString_SPDFDeviceDescription,	"PDF File"
+	TXString_SPRNDeviceName,	"PrinterFile"
+	TXString_SPRNDefaultExt,	"PRN"
+	TXString_SPRNDefaultExtFilter,	"Printer File|*.PRN|All files|*.*"
+	TXString_SPRNDeviceDescription,	"Printer File"
+	dxBarStrs_dxSBAR_DIALOGOK,	"OK"
+	TXString_SWQ1DefaultExt,	"WQ1"
+	TXString_SWQ1DefaultExtFilter,	"Quattro files|*.WQ1|All files|*.*"
+	TXString_SWQ1DeviceDescription,	"Quattro File"
+	TXString_SXLSDeviceName,	"ExcelFile"
+	TXString_SXLSDefaultExt,	"XLS"
+	TXString_SXLSDefaultExtFilter,	"Excel files|*.XLS|All files|*.*"
+	TXString_SXLSDeviceDescription,	"Excel File"
+	TXString_SBMPDeviceName,	"GraphicFile"
+	TXString_SBMPDefaultExt,	"BMP"
+	TXString_SBMPDefaultExtFilter,	"BMP files|*.BMP|JPEG files|*.JPG|TIFF files|*.TIF|WMF files|*.WMF"
+	TXString_SBMPDeviceDescription,	"Graphic File"
+	TXString_SXTMDeviceName,	"XHTMLFile"
+	TXString_SXTMDefaultExt,	"HTM"
+	TXString_SXTMDefaultExtFilter,	"XHTML files|*.HTM|All files|*.*"
+	TXString_SXTMDeviceDescription,	"XHTML File"
+	TXString_SHTMDeviceName,	"HTMLFile"
+	ABSDecConst2_sStringFormatExists,	"String Format \"%d\" not exists."
+	ABSDecConst2_sInvalidStringFormat,	"Input is not an valid %s Format."
+	ABSDecConst2_sInvalidFormatString,	"Input can not be convert to %s Format."
+	ABSDecConst2_sFMT_COPY,	"copy Input to Output"
+	ABSDecConst2_sFMT_HEX,	"Hexadecimal"
+	ABSDecConst2_sFMT_HEXL,	"Hexadecimal lowercase"
+	ABSDecConst2_sFMT_MIME64,	"MIME Base 64"
+	ABSDecConst2_sFMT_UU,	"UU Coding"
+	ABSDecConst2_sFMT_XX,	"XX Coding"
+	ABSDecConst2_sInvalidKeySize,	"Length from Encryptionkey is invalid.\r\nKeysize for %s must be to %d-%d bytes"
+	ABSDecConst2_sNotInitialized,	"%s is not initialized call Init() or InitKey() before."
+	TXString_SWK1DeviceName,	"LotusFile"
+	TXString_SWK1DefaultExt,	"WK1"
+	TXString_SWK1DefaultExtFilter,	"123 files|*.WK1|All files|*.*"
+	TXString_SWK1DeviceDescription,	"Lotus File"
+	TXString_SWQ1DeviceName,	"QuattroFile"
 	PymeConst_SNoPuedeEliminarLa,	"No puede eliminar la carpeta principal."
 	PymeConst_SEstaCarpetaNoEsta,	"Esta carpeta no esta vacia. No puede ser borrada."
 	PymeConst_SDeseaBorrarEstaCa,	"Desea borrar esta carpeta?"
@@ -3057,7 +3105,7 @@ BEGIN
 	PymeConst_SImportacionDeDatos,	"Importación de Datos"
 	PymeConst_SDatosAImportar,	"Datos a Importar"
 	PymeConst_SGrabarCambiosConsulta,	"Desea grabar los cambios en la consulta?"
-	ppJclResources_ppJclRsRTTIValueOutOfRange,	"Value out of range (%s)."
+	ABSDecConst2_sProtectionCircular,	"Circular Protection detected, Protection Object is invalid."
 	PymeConst_SErrorEnProcesoIn,	"Error en proceso, información incompatible o no se encotro el archivo."
 	PymeConst_SDebeEspecificarUn3,	"Debe especificar un nombre para la vista."
 	PymeConst_SDisenos,	"Diseños - "
@@ -3090,54 +3138,6 @@ BEGIN
 	PymeConst_STasasDeCambio,	"Tasas de Cambio - "
 	PymeConst_SProcesoCompletado,	"Proceso completado."
 	PymeConst_SVistas,	"Vistas - "
-	TXString_SPRNDeviceName,	"PrinterFile"
-	TXString_SPRNDefaultExt,	"PRN"
-	TXString_SPRNDefaultExtFilter,	"Printer File|*.PRN|All files|*.*"
-	TXString_SPRNDeviceDescription,	"Printer File"
-	ABSDecConst2_sProtectionCircular,	"Circular Protection detected, Protection Object is invalid."
-	ABSDecConst2_sStringFormatExists,	"String Format \"%d\" not exists."
-	ABSDecConst2_sInvalidStringFormat,	"Input is not an valid %s Format."
-	ABSDecConst2_sInvalidFormatString,	"Input can not be convert to %s Format."
-	ABSDecConst2_sFMT_COPY,	"copy Input to Output"
-	ABSDecConst2_sFMT_HEX,	"Hexadecimal"
-	ABSDecConst2_sFMT_HEXL,	"Hexadecimal lowercase"
-	ABSDecConst2_sFMT_MIME64,	"MIME Base 64"
-	ABSDecConst2_sFMT_UU,	"UU Coding"
-	ABSDecConst2_sFMT_XX,	"XX Coding"
-	ABSDecConst2_sInvalidKeySize,	"Length from Encryptionkey is invalid.\r\nKeysize for %s must be to %d-%d bytes"
-	ABSDecConst2_sNotInitialized,	"%s is not initialized call Init() or InitKey() before."
-	TXString_SXTMDeviceName,	"XHTMLFile"
-	TXString_SXTMDefaultExt,	"HTM"
-	TXString_SXTMDefaultExtFilter,	"XHTML files|*.HTM|All files|*.*"
-	TXString_SXTMDeviceDescription,	"XHTML File"
-	TXString_SHTMDeviceName,	"HTMLFile"
-	TXString_SHTMDefaultExt,	"HTM"
-	TXString_SHTMDefaultExtFilter,	"HTML files|*.HTM|All files|*.*"
-	TXString_SHTMDeviceDescription,	"HTML File"
-	TXString_SRTFDeviceName,	"RTFFile"
-	TXString_SRTFDefaultExt,	"RTF"
-	TXString_SRTFDefaultExtFilter,	"RTF files|*.RTF|All files|*.*"
-	TXString_SRTFDeviceDescription,	"RTF File"
-	TXString_SPDFDeviceName,	"PDFFile"
-	TXString_SPDFDefaultExt,	"PDF"
-	TXString_SPDFDefaultExtFilter,	"PDF files|*.PDF|All files|*.*"
-	TXString_SPDFDeviceDescription,	"PDF File"
-	TXString_SWK1DeviceName,	"LotusFile"
-	TXString_SWK1DefaultExt,	"WK1"
-	TXString_SWK1DefaultExtFilter,	"123 files|*.WK1|All files|*.*"
-	TXString_SWK1DeviceDescription,	"Lotus File"
-	TXString_SWQ1DeviceName,	"QuattroFile"
-	TXString_SWQ1DefaultExt,	"WQ1"
-	TXString_SWQ1DefaultExtFilter,	"Quattro files|*.WQ1|All files|*.*"
-	TXString_SWQ1DeviceDescription,	"Quattro File"
-	TXString_SXLSDeviceName,	"ExcelFile"
-	TXString_SXLSDefaultExt,	"XLS"
-	TXString_SXLSDefaultExtFilter,	"Excel files|*.XLS|All files|*.*"
-	TXString_SXLSDeviceDescription,	"Excel File"
-	TXString_SBMPDeviceName,	"GraphicFile"
-	TXString_SBMPDefaultExt,	"BMP"
-	TXString_SBMPDefaultExtFilter,	"BMP files|*.BMP|JPEG files|*.JPG|TIFF files|*.TIF|WMF files|*.WMF"
-	TXString_SBMPDeviceDescription,	"Graphic File"
 	JvResources_RsClHighlightText,	"Selection text"
 	JvResources_RsClBtnFace,	"Button face"
 	JvResources_RsClBtnShadow,	"Button shadow"
