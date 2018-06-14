@@ -405,8 +405,8 @@ object InterfaseAS: TInterfaseAS
   object qrResult: TADOConnection
     Connected = True
     ConnectionString = 
-      'Provider=MSDASQL.1;Password=FIDEL;Persist Security Info=True;Use' +
-      'r ID=JULIO;Data Source=Laboratorio;Mode=ReadWrite'
+      'Provider=MSDASQL.1;Password=interfase;Persist Security Info=True' +
+      ';User ID=INTERFASE;Data Source=laboratorio;Mode=ReadWrite'
     DefaultDatabase = 'S10D7471'
     LoginPrompt = False
     Mode = cmReadWrite

@@ -178,7 +178,6 @@ inherited frmPasaraInventario: TfrmPasaraInventario
         Action = DataSetInsert1
         Anchors = [akLeft, akTop, akBottom]
         TabOrder = 5
-        OnClick = cxButton3Click
       end
       object DBLookupComboBox1: TDBLookupComboBox
         Left = 101
@@ -2024,7 +2023,7 @@ inherited frmPasaraInventario: TfrmPasaraInventario
     PrinterSetup.mmMarginTop = 6350
     PrinterSetup.mmPaperHeight = 101600
     PrinterSetup.mmPaperWidth = 76200
-    PrinterSetup.PaperSize = 119
+    PrinterSetup.PaperSize = 256
     DeviceType = 'Screen'
     EmailSettings.ReportFormat = 'PDF'
     OutlineSettings.CreateNode = True
@@ -2829,7 +2828,7 @@ inherited frmPasaraInventario: TfrmPasaraInventario
     PrinterSetup.mmMarginTop = 6350
     PrinterSetup.mmPaperHeight = 63500
     PrinterSetup.mmPaperWidth = 63500
-    PrinterSetup.PaperSize = 119
+    PrinterSetup.PaperSize = 256
     DeviceType = 'Screen'
     EmailSettings.ReportFormat = 'PDF'
     OutlineSettings.CreateNode = True

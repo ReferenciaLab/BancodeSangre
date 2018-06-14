@@ -226,7 +226,6 @@ inherited frmBanco: TfrmBanco
             ImageIndex = 6
             ParentColor = False
             OnEnter = cxTabSheet7Enter
-            ExplicitWidth = 939
             object Label2: TLabel
               Left = 552
               Top = 176
@@ -1203,7 +1202,6 @@ inherited frmBanco: TfrmBanco
           object cxTabSheet4: TcxTabSheet
             Caption = 'Recoleccion'
             ImageIndex = 3
-            ExplicitWidth = 939
             object cxDBTextEdit8: TcxDBTextEdit
               Left = 151
               Top = 50
@@ -1459,7 +1457,6 @@ inherited frmBanco: TfrmBanco
           object cxTabSheet6: TcxTabSheet
             Caption = 'Rechazo'
             ImageIndex = 5
-            ExplicitWidth = 939
             object cxDBComboBox4: TcxDBComboBox
               Left = 160
               Top = 10

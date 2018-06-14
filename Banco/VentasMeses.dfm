@@ -1,7 +1,5 @@
 inherited frmVentasMeses: TfrmVentasMeses
   Caption = 'Ventas por meses'
-  ExplicitWidth = 642
-  ExplicitHeight = 422
   PixelsPerInch = 96
   TextHeight = 13
   inherited dxLayoutControl1: TdxLayoutControl
@@ -187,7 +185,6 @@ inherited frmVentasMeses: TfrmVentasMeses
           object desde: TcxDateEdit [2]
             Left = 59
             Top = 36
-            Enabled = False
             Style.BorderColor = clTeal
             Style.BorderStyle = ebsSingle
             Style.HotTrack = False

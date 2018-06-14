@@ -2765,13 +2765,13 @@ object DMB: TDMB
     end
   end
   object ASConnection: TADOConnection
-    Connected = True
     ConnectionString = 
-      'Provider=MSDASQL.1;Password=FIDEL;Persist Security Info=True;Use' +
-      'r ID=JULIO;Data Source=Laboratorio;Initial Catalog=QS36F'
+      'Provider=MSDASQL.1;Password=interfase;Persist Security Info=True' +
+      ';User ID=INTERFASE;Data Source=Laboratorio;Initial Catalog=QS36F'
     DefaultDatabase = 'S10D7471'
     LoginPrompt = False
     Mode = cmReadWrite
+    Provider = 'MSDASQL.1'
     Left = 448
     Top = 16
   end
